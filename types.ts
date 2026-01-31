@@ -22,6 +22,7 @@ export interface FlowformModel {
   maintenance: string;
   durability: string;
   industries: string[];
+  secondaryImages?: string[];
 }
 
 export interface CaseStudy {

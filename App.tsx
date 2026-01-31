@@ -6,7 +6,7 @@ import Home from './pages/Home';
 import ModelDetails from './pages/ModelDetails';
 import Biochemistry from './pages/Biochemistry';
 import { LanguageProvider, useLanguage } from './LanguageContext';
-import logo from './private/imagenes/logo.png';
+
 
 const Navbar: React.FC = () => {
   const location = useLocation();
@@ -15,52 +15,53 @@ const Navbar: React.FC = () => {
   if (location.pathname === '/') return null;
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16 items-center">
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 rounded-full bg-teal-600 flex items-center justify-center overflow-hidden">
-              <img src={logo} alt="Flowform" className="w-5 h-5 object-contain brightness-0 invert" />
-            </div>
-            <span className="font-bold text-xl tracking-tight text-slate-800">Flowform <span className="text-teal-600">Eco-Tech</span></span>
-          </Link>
-          <div className="hidden md:flex space-x-6 items-center">
+    <nav className="fixed top-0 left-0 right-0 z-[100] px-4 py-6 pointer-events-none">
+      <div className="max-w-7xl mx-auto flex justify-between items-center pointer-events-auto">
+        <Link to="/" className="flex items-center space-x-4 bg-white/70 backdrop-blur-2xl border border-white/20 px-8 py-3 rounded-full shadow-2xl group transition-all duration-500 hover:scale-105 active:scale-95">
+          <div className="w-8 h-8 flex items-center justify-center overflow-hidden">
+            <img src="/images/logo.png" alt="Flowform" className="w-8 h-8 object-contain group-hover:rotate-[360deg] transition-transform duration-1000" />
+          </div>
+          <span className="font-black text-xs uppercase tracking-[0.3em] text-neutral-900 border-l border-neutral-200 pl-4">Flowform</span>
+        </Link>
+
+        <div className="hidden md:flex space-x-4 items-center bg-white/70 backdrop-blur-2xl border border-white/20 p-2 rounded-full shadow-2xl">
+          <div className="flex space-x-1 px-4">
             <Link
               to="/category/vitalization"
-              className={`text-xs font-black uppercase tracking-widest transition-colors ${location.pathname.includes('/vitalization') ? 'text-teal-600' : 'text-slate-500 hover:text-teal-600'}`}
+              className={`px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-[0.2em] transition-all duration-300 ${location.pathname.includes('/vitalization') ? 'bg-neutral-950 text-white shadow-xl' : 'text-neutral-500 hover:text-neutral-900'}`}
             >
               {t('nav_vitalization')}
             </Link>
             <Link
               to="/category/industrial"
-              className={`text-xs font-black uppercase tracking-widest transition-colors ${location.pathname.includes('/industrial') ? 'text-orange-600' : 'text-slate-500 hover:text-orange-600'}`}
+              className={`px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-[0.2em] transition-all duration-300 ${location.pathname.includes('/industrial') ? 'bg-neutral-950 text-white shadow-xl' : 'text-neutral-500 hover:text-neutral-900'}`}
             >
               {t('nav_industrial')}
             </Link>
             <Link
               to="/category/municipal"
-              className={`text-xs font-black uppercase tracking-widest transition-colors ${location.pathname.includes('/municipal') ? 'text-blue-600' : 'text-slate-500 hover:text-blue-600'}`}
+              className={`px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-[0.2em] transition-all duration-300 ${location.pathname.includes('/municipal') ? 'bg-neutral-950 text-white shadow-xl' : 'text-neutral-500 hover:text-neutral-900'}`}
             >
               {t('nav_municipal')}
             </Link>
+          </div>
 
-            <div className="w-px h-6 bg-slate-200 mx-2"></div>
+          <div className="w-px h-6 bg-neutral-200/50"></div>
 
-            {/* Language Toggle */}
-            <div className="flex items-center bg-slate-100 rounded-full p-1 border border-slate-200">
-              <button
-                onClick={() => setLanguage('en')}
-                className={`px-3 py-1 rounded-full text-[10px] font-black transition-all ${language === 'en' ? 'bg-white text-teal-600 shadow-sm' : 'text-slate-400 hover:text-slate-600'}`}
-              >
-                EN
-              </button>
-              <button
-                onClick={() => setLanguage('es')}
-                className={`px-3 py-1 rounded-full text-[10px] font-black transition-all ${language === 'es' ? 'bg-white text-teal-600 shadow-sm' : 'text-slate-400 hover:text-slate-600'}`}
-              >
-                ES
-              </button>
-            </div>
+          {/* Language Toggle */}
+          <div className="flex items-center bg-neutral-100/50 rounded-full p-1 border border-neutral-200/50">
+            <button
+              onClick={() => setLanguage('en')}
+              className={`px-3 py-1.5 rounded-full text-[9px] font-black tracking-widest transition-all duration-300 ${language === 'en' ? 'bg-white text-neutral-900 shadow-lg' : 'text-neutral-400 hover:text-neutral-600'}`}
+            >
+              EN
+            </button>
+            <button
+              onClick={() => setLanguage('es')}
+              className={`px-3 py-1.5 rounded-full text-[9px] font-black tracking-widest transition-all duration-300 ${language === 'es' ? 'bg-white text-neutral-900 shadow-lg' : 'text-neutral-400 hover:text-neutral-600'}`}
+            >
+              ES
+            </button>
           </div>
         </div>
       </div>
@@ -73,10 +74,21 @@ const Footer: React.FC = () => {
   if (location.pathname === '/') return null;
 
   return (
-    <footer className="bg-slate-900 text-white py-12 border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-4 text-center">
-        <p className="text-slate-400 text-xs font-black uppercase tracking-[0.2em]">Flowform Eco-Technology Research</p>
-        <p className="text-slate-500 text-[10px] mt-4 max-w-xl mx-auto leading-relaxed">Advanced biomimetic solutions for structural and biochemical water stabilization. Supporting global ecological restoration since 1970.</p>
+    <footer className="bg-neutral-950 text-white py-24 relative overflow-hidden bg-grid-technical border-t border-white/5">
+      <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 to-transparent pointer-events-none"></div>
+      <div className="max-w-7xl mx-auto px-4 text-center relative z-10">
+        <div className="w-12 h-12 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl mx-auto flex items-center justify-center mb-8">
+          <img src="/images/logo.png" alt="Logo" className="w-6 h-6 object-contain opacity-50" />
+        </div>
+        <p className="text-neutral-400 text-[10px] font-black uppercase tracking-[0.4em] mb-6">Flowform Eco-Technology Research</p>
+        <div className="w-12 h-px bg-white/10 mx-auto mb-6"></div>
+        <p className="text-neutral-500 text-[10px] max-w-xl mx-auto leading-loose uppercase tracking-widest font-medium opacity-60">
+          Advanced biomimetic solutions for structural and biochemical water stabilization. <br />
+          Supporting global ecological restoration since 1970.
+        </p>
+        <div className="mt-12 text-[9px] font-black text-neutral-600 uppercase tracking-widest leading-none">
+          © {new Date().getFullYear()} Flowform. All rights reserved.
+        </div>
       </div>
     </footer>
   );
