@@ -5,14 +5,13 @@ import Landing from './pages/Landing';
 import Home from './pages/Home';
 import ModelDetails from './pages/ModelDetails';
 import Biochemistry from './pages/Biochemistry';
+import Contact from './pages/Contact';
 import { LanguageProvider, useLanguage } from './LanguageContext';
 
 
 const Navbar: React.FC = () => {
   const location = useLocation();
   const { language, setLanguage, t } = useLanguage();
-
-  if (location.pathname === '/') return null;
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-[100] px-4 py-6 pointer-events-none">
@@ -21,28 +20,28 @@ const Navbar: React.FC = () => {
           <div className="w-8 h-8 flex items-center justify-center overflow-hidden">
             <img src="/images/logo.png" alt="Flowform" className="w-8 h-8 object-contain group-hover:rotate-[360deg] transition-transform duration-1000" />
           </div>
-          <span className="font-black text-xs uppercase tracking-[0.3em] text-neutral-900 border-l border-neutral-200 pl-4">Flowform</span>
+          <span className="font-bold text-xs uppercase tracking-[0.25em] text-neutral-900 border-l border-neutral-200 pl-4 font-outfit">Flowform</span>
         </Link>
 
         <div className="hidden md:flex space-x-4 items-center bg-white/70 backdrop-blur-2xl border border-white/20 p-2 rounded-full shadow-2xl">
           <div className="flex space-x-1 px-4">
             <Link
-              to="/category/vitalization"
-              className={`px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-[0.2em] transition-all duration-300 ${location.pathname.includes('/vitalization') ? 'bg-neutral-950 text-white shadow-xl' : 'text-neutral-500 hover:text-neutral-900'}`}
+              to="/"
+              className={`px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-[0.2em] transition-all duration-300 ${location.pathname === '/' ? 'bg-neutral-950 text-white shadow-xl' : 'text-neutral-500 hover:text-neutral-900'}`}
             >
-              {t('nav_vitalization')}
+              {t('nav_home')}
             </Link>
             <Link
-              to="/category/industrial"
-              className={`px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-[0.2em] transition-all duration-300 ${location.pathname.includes('/industrial') ? 'bg-neutral-950 text-white shadow-xl' : 'text-neutral-500 hover:text-neutral-900'}`}
+              to="/products"
+              className={`px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-[0.2em] transition-all duration-300 ${location.pathname === '/products' ? 'bg-neutral-950 text-white shadow-xl' : 'text-neutral-500 hover:text-neutral-900'}`}
             >
-              {t('nav_industrial')}
+              {t('nav_products')}
             </Link>
             <Link
-              to="/category/municipal"
-              className={`px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-[0.2em] transition-all duration-300 ${location.pathname.includes('/municipal') ? 'bg-neutral-950 text-white shadow-xl' : 'text-neutral-500 hover:text-neutral-900'}`}
+              to="/contact"
+              className={`px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-[0.2em] transition-all duration-300 ${location.pathname === '/contact' ? 'bg-neutral-950 text-white shadow-xl' : 'text-neutral-500 hover:text-neutral-900'}`}
             >
-              {t('nav_municipal')}
+              {t('nav_contact')}
             </Link>
           </div>
 
@@ -101,9 +100,11 @@ const AppContent: React.FC = () => {
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Landing />} />
+          <Route path="/products" element={<Home />} />
           <Route path="/category/:category" element={<Home />} />
           <Route path="/model/:category/:id" element={<ModelDetails />} />
           <Route path="/biochemistry/:category" element={<Biochemistry />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
       <Footer />

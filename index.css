@@ -84,7 +84,7 @@
 
 .no-scrollbar {
   -ms-overflow-style: none;
-  scrollbar-width: none;
+  scroll-behavior: smooth;
 }
 
 /* Custom Gradients for Greys */

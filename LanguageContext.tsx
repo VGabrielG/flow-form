@@ -38,10 +38,14 @@ const translations: Record<Language, Record<string, string>> = {
     nav_industrial: "Farming",
     nav_municipal: "Landscape & Architecture",
     nav_science: "Biochemistry",
+    nav_home: "Home",
+    nav_products: "Products",
+    nav_contact: "Contact",
 
     // Landing Page
     landing_title: "Flowform Eco-Tech",
     landing_subtitle: "Structural & Biochemical Water Restoration",
+    landing_main_desc: "Flowform® technology channels the kinetic energy of rhythmic water movement to restore the vital essence of our world's most precious resource. Through meticulously crafted lemniscate paths, our systems induce a natural figure-of-eight pulse—amplifying oxygen exchange and revitalizing biological activity through pure biomimicry, entirely free from chemical additives.",
 
     landing_vitalization_title: "Home",
     landing_vitalization_desc: "Precision vitalization for nurseries, hydroponics, and sensitive biological growth. Stimulating root biomass and vitality.",
@@ -54,6 +58,12 @@ const translations: Record<Language, Record<string, string>> = {
 
     btn_explore: "View Solutions",
     btn_research: "Scientific Data",
+    core_tech_label: "Core Technology",
+    how_it_works_title: "How it Works",
+    how_it_works_desc: "Our systems use biological rhythm to transform water quality.",
+    step_4_title: "4. Biological Stability",
+    step_4_desc: "The ecosystem stabilizes as aerobic bacteria dominate, creating a self-sustaining healthy environment.",
+    see_products: "See Products",
 
     // Catalog
     grid_title: "Products",
@@ -64,12 +74,22 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Model Details
     capacity_label: "Hourly Flow (LPH)",
+    opt_flow_label: "Opt Flow",
+    weight_label: "Weight",
     motor_hp: "Pump Power (HP)",
-    back_models: "Back to Sector",
+    back_models: "Back to Products",
     milestones_title: "Operational Benchmarks",
     milestone_time: "Biological Shift",
     milestone_result: "Primary Result",
-    benefits_title: "System Impact & Logic",
+    benefits_title: "Benefits",
+    technical_specs: "Technical Specifications",
+    material_label: "Material",
+    dimensions_label: "Dimensions",
+    durability_label: "Durability",
+    maintenance_label: "Maintenance",
+    scientific_validation: "Scientific Validation",
+    studies_disclaimer: "These studies document specific field and laboratory results verified by third parties.",
+    more_solutions: "More Solutions",
     pump_req: "Pumping Requirements",
     spec_flow_h: "Recirculation Flow",
     pump_desc: "Minimum Rhythmic Activation",
@@ -137,10 +157,14 @@ const translations: Record<Language, Record<string, string>> = {
     nav_industrial: "Farming",
     nav_municipal: "Paisajismo y Arquitectura",
     nav_science: "Bioquímica",
+    nav_home: "Inicio",
+    nav_products: "Productos",
+    nav_contact: "Contacto",
 
     // Página de Inicio
     landing_title: "Flowform Eco-Tech",
     landing_subtitle: "Restauración Estructural y Bioquímica del Agua",
+    landing_main_desc: "La tecnología Flowform® canaliza la energía cinética del movimiento rítmico del agua para restaurar la esencia vital del recurso más preciado de nuestro mundo. A través de trayectorias de lemniscata meticulosamente diseñadas, nuestros sistemas inducen un pulso natural en forma de ocho, amplificando el intercambio de oxígeno y revitalizando la actividad biológica mediante pura biomímesis, sin necesidad de aditivos químicos.",
 
     landing_vitalization_title: "Hogar",
     landing_vitalization_desc: "Vitalización de precisión para viveros, hidroponía y crecimiento sensible. Estimulación de biomasa radicular.",
@@ -153,6 +177,12 @@ const translations: Record<Language, Record<string, string>> = {
 
     btn_explore: "Ver Soluciones",
     btn_research: "Datos Científicos",
+    core_tech_label: "Tecnología Principal",
+    how_it_works_title: "¿Cómo funciona?",
+    how_it_works_desc: "Nuestros sistemas utilizan el ritmo biológico para transformar la calidad del agua.",
+    step_4_title: "4. Estabilidad Biológica",
+    step_4_desc: "El ecosistema se estabiliza a medida que dominan las bacterias aeróbicas, creando un ambiente saludable autosustentable.",
+    see_products: "Ver Productos",
 
     // Catálogo
     grid_title: "Productos",
@@ -163,12 +193,22 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Detalles del Modelo
     capacity_label: "Caudal Horario (LPH)",
+    opt_flow_label: "Flujo Óptimo",
+    weight_label: "Peso",
     motor_hp: "Potencia Bomba (HP)",
-    back_models: "Volver a Sector",
+    back_models: "Volver a Productos",
     milestones_title: "Hitos Operacionales",
     milestone_time: "Cambio Biológico",
     milestone_result: "Resultado Primario",
-    benefits_title: "Impacto y Lógica del Sistema",
+    benefits_title: "Beneficios",
+    technical_specs: "Especificaciones Técnicas",
+    material_label: "Material",
+    dimensions_label: "Dimensiones",
+    durability_label: "Durabilidad",
+    maintenance_label: "Mantenimiento",
+    scientific_validation: "Validación Científica",
+    studies_disclaimer: "Estos estudios documentan resultados específicos de campo y laboratorio verificados por terceros.",
+    more_solutions: "Más Soluciones",
     pump_req: "Requerimientos de Bombeo",
     spec_flow_h: "Flujo de Recirculación",
     pump_desc: "Activación Rítmica Mínima",

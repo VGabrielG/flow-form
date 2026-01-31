@@ -4,90 +4,122 @@ import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../LanguageContext';
 
 const Landing: React.FC = () => {
-  const { t, setLanguage, language } = useLanguage();
+  const { t } = useLanguage();
   const navigate = useNavigate();
 
-  const categoryThemes: Record<string, string> = {
-    vitalization: 'neutral',
-    industrial: 'zinc',
-    municipal: 'stone'
-  };
-
-  const categories = [
-    {
-      id: 'vitalization',
-      title: t('landing_vitalization_title'),
-      desc: t('landing_vitalization_desc'),
-      image: '/images/whirlpool-petg.png',
-      color: 'neutral'
-    },
-    {
-      id: 'industrial',
-      title: t('landing_industrial_title'),
-      desc: t('landing_industrial_desc'),
-      image: '/images/vortex.png',
-      color: 'zinc'
-    },
-    {
-      id: 'municipal',
-      title: t('landing_municipal_title'),
-      desc: t('landing_municipal_desc'),
-      image: '/images/vortex-municipal.png',
-      color: 'stone'
-    }
-  ];
-
   return (
-    <div className="min-h-screen bg-neutral-950 flex flex-col items-center justify-center p-6 relative overflow-hidden">
+    <div className="min-h-screen bg-transparent flex flex-col items-center justify-center p-6 relative overflow-hidden">
+      {/* Background Gradient Overlays for Premium Look */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-transparent to-white/60 pointer-events-none z-[1]"></div>
 
-      {/* Decorative Gradient Overlays */}
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-neutral-950/50 via-transparent to-neutral-950 pointer-events-none"></div>
-      <div className="absolute -top-24 -left-24 w-96 h-96 bg-neutral-800/20 rounded-full blur-[120px] pulse-slow"></div>
-      <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-zinc-800/20 rounded-full blur-[120px] pulse-slow"></div>
-
-      {/* Language Selector - Top Right */}
-      <div className="absolute top-8 right-8 z-20 flex space-x-3">
-        <button onClick={() => setLanguage('en')} className={`px-5 py-2 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all ${language === 'en' ? 'bg-white text-neutral-950 shadow-2xl' : 'text-neutral-500 border border-white/5 hover:border-white/20 hover:text-white'}`}>EN</button>
-        <button onClick={() => setLanguage('es')} className={`px-5 py-2 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all ${language === 'es' ? 'bg-white text-neutral-950 shadow-2xl' : 'text-neutral-500 border border-white/5 hover:border-white/20 hover:text-white'}`}>ES</button>
-      </div>
-
-      <div className="max-w-7xl w-full z-10 text-center">
-        <header className="mb-24">
-          <div className="w-20 h-20 mx-auto rounded-[1.5rem] bg-white text-neutral-950 flex items-center justify-center mb-8 shadow-2xl overflow-hidden animate-fadeIn">
-            <img src="/images/logo.png" alt="Flowform Logo" className="w-12 h-12 object-contain" />
-          </div>
-          <h1 className="text-6xl md:text-8xl font-black text-white mb-6 tracking-tighter leading-none animate-fadeIn uppercase" style={{ animationDelay: '100ms' }}>
-            {t('landing_title')}
+      <div className="max-w-7xl w-full z-10 text-center pt-32 pb-20 relative">
+        <header className="mb-16">
+          <h1
+            className="text-5xl md:text-8xl font-black text-neutral-950 mb-12 tracking-[0.12em] leading-tight animate-fadeIn uppercase font-outfit"
+            style={{ animationDelay: '100ms' }}
+          >
+            FLOWFORM
           </h1>
-          <p className="text-lg md:text-xl text-neutral-400 font-medium tracking-tight max-w-4xl mx-auto leading-relaxed animate-fadeIn" style={{ animationDelay: '200ms' }}>{t('landing_subtitle')}</p>
-        </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {categories.map((cat, idx) => (
+          <div className="mb-16 animate-fadeIn" style={{ animationDelay: '200ms' }}>
             <button
-              key={cat.id}
-              onClick={() => navigate(`/category/${cat.id}`)}
-              className="group relative bg-neutral-900/40 backdrop-blur-md border border-white/5 rounded-[2.5rem] text-left hover:bg-white transition-all duration-700 transform hover:-translate-y-2 shadow-2xl overflow-hidden animate-fadeIn"
-              style={{ animationDelay: `${300 + idx * 100}ms` }}
+              onClick={() => navigate('/category/vitalization')}
+              className="group relative px-12 py-5 bg-white text-neutral-950 border border-neutral-200 rounded-full overflow-hidden shadow-xl transition-all hover:scale-105 hover:bg-neutral-950 hover:text-white"
             >
-              <div className="relative h-64 overflow-hidden">
-                <div className={`absolute inset-0 bg-${cat.color}-600/20 group-hover:bg-transparent transition-colors duration-700 z-10`}></div>
-                <img
-                  src={cat.image}
-                  alt={cat.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 opacity-60 group-hover:opacity-100 grayscale group-hover:grayscale-0"
-                />
-              </div>
-              <div className="p-10">
-                <h2 className="text-2xl font-black mb-3 tracking-tight leading-none text-white group-hover:text-neutral-950 transition-colors">{cat.title}</h2>
-                <p className="text-neutral-400 group-hover:text-neutral-600 leading-relaxed mb-8 text-sm font-medium transition-colors">{cat.desc}</p>
-                <div className={`inline-flex items-center text-white p-3 rounded-full bg-white/5 group-hover:bg-neutral-100 group-hover:text-neutral-900 font-black uppercase transition-all tracking-[0.2em] text-[10px]`}>
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M13 7l5 5-5 5M6 7l5 5-5 5" strokeWidth={3} /></svg>
-                </div>
-              </div>
+              <span className="relative font-black uppercase tracking-[0.25em] text-sm md:text-base">
+                {t('see_products')}
+              </span>
             </button>
-          ))}
-        </div>
+          </div>
+
+          <div className="flex justify-center mb-16 animate-fadeIn" style={{ animationDelay: '300ms' }}>
+            <div className="rounded-3xl overflow-hidden shadow-2xl shadow-neutral-900/10 border-[8px] border-white bg-neutral-100">
+              <iframe
+                width="1000"
+                height="562"
+                src="https://www.youtube.com/embed/zNYkAv-ccXw?si=55mR_8hnJK5MWvIW&autoplay=1&mute=0"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                className="w-[95vw] md:w-[1000px] aspect-video h-auto grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
+              ></iframe>
+            </div>
+          </div>
+
+          <div className="max-w-7xl mx-auto mb-32 px-6 animate-fadeIn" style={{ animationDelay: '400ms' }}>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <div className="space-y-8 text-left">
+                <div className="inline-flex items-center space-x-2 px-3 py-1 bg-neutral-900 rounded-full border border-neutral-800">
+                  <div className="w-2 h-2 rounded-full bg-white animate-pulse"></div>
+                  <span className="text-white text-xs font-bold uppercase tracking-widest">{t('core_tech_label')}</span>
+                </div>
+                <h2 className="text-5xl md:text-6xl font-black text-neutral-900 tracking-tighter leading-tight">
+                  What is Flowform?
+                </h2>
+                <p className="text-xl text-neutral-600 leading-relaxed max-w-xl">
+                  {t('landing_main_desc')}
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 gap-4 text-left">
+                {[
+                  { id: '01', title: 'Natural Oxygenation', desc: 'Restores dissolved oxygen levels naturally through rhythmic pulse actions.' },
+                  { id: '02', title: 'Water Revitalization', desc: 'Realigns water structure for improved biological absorption and health.' },
+                  { id: '03', title: 'Aesthetic Harmony', desc: 'Creates stunning visual and auditory landscapes that promote relaxation.' }
+                ].map((item) => (
+                  <div key={item.id} className="bg-neutral-950 p-8 rounded-3xl border border-neutral-800 hover:border-neutral-600 transition-all group">
+                    <h3 className="text-xl font-bold text-white mb-3 flex items-center">
+                      <span className="w-10 h-10 rounded-full bg-white text-neutral-900 flex items-center justify-center text-sm mr-4 font-black">{item.id}</span>
+                      {item.title}
+                    </h3>
+                    <p className="text-neutral-400 pl-14 group-hover:text-neutral-300 transition-colors leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="max-w-7xl mx-auto mb-32 px-6 animate-fadeIn" style={{ animationDelay: '500ms' }}>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-black text-neutral-900 tracking-tight mb-6 uppercase">
+                {t('how_it_works_title')}
+              </h2>
+              <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
+                {t('how_it_works_desc')}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+              {[
+                { step: 1, title: 'step_1_title', desc: 'step_1_desc' },
+                { step: 2, title: 'step_2_title', desc: 'step_2_desc' },
+                { step: 3, title: 'step_3_title', desc: 'step_3_desc' },
+                { step: 4, title: 'step_4_title', desc: 'step_4_desc' }
+              ].map((item, idx) => (
+                <div key={item.step} className="bg-neutral-950 p-8 rounded-3xl border border-neutral-800 relative group hover:border-neutral-600 transition-all">
+                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-white text-neutral-900 rounded-2xl flex items-center justify-center font-black text-xl shadow-lg">
+                    {item.step}
+                  </div>
+                  <div className="pt-4">
+                    <h3 className="text-xl font-bold text-white mb-3 mt-2">{t(item.title)}</h3>
+                    <p className="text-neutral-400 text-sm leading-relaxed">{t(item.desc)}</p>
+                  </div>
+                  {idx < 3 && (
+                    <div className="absolute -right-3 top-1/2 transform -translate-y-1/2 text-neutral-600 hidden lg:block">
+                      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </header>
       </div>
     </div>
   );
