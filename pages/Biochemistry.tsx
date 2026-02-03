@@ -57,10 +57,15 @@ export default function Biochemistry() {
                     <div className="bg-neutral-800/80 px-4 py-2 rounded-xl text-[10px] font-black text-white tracking-widest uppercase border border-white/5 shadow-lg">
                       {language === 'es' ? 'Pág.' : 'Pg.'} {fact.page}
                     </div>
-                    <button className={`text-[10px] font-black uppercase tracking-[0.3em] text-white/40 hover:text-white flex items-center transition-all duration-300 group/btn`}>
+                    <a
+                      href={fact.pdf}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`text-[10px] font-black uppercase tracking-[0.3em] text-white/40 hover:text-white flex items-center transition-all duration-300 group/btn`}
+                    >
                       {language === 'es' ? 'Análisis Técnico' : 'Technical Analysis'}
                       <svg className="w-3.5 h-3.5 ml-2 transform group-hover/btn:translate-x-1 transition-transform opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M13 7l5 5-5 5M6 7l5 5-5 5" strokeWidth={3} /></svg>
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>

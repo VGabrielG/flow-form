@@ -6,7 +6,12 @@ import Home from './pages/Home';
 import ModelDetails from './pages/ModelDetails';
 import Biochemistry from './pages/Biochemistry';
 import Contact from './pages/Contact';
+import Winery from './pages/Winery';
+import MeatIndustry from './pages/MeatIndustry';
+import Mining from './pages/Mining';
+import Municipalities from './pages/Municipalities';
 import { LanguageProvider, useLanguage } from './LanguageContext';
+import ScrollToTop from './components/ScrollToTop';
 
 
 const Navbar: React.FC = () => {
@@ -36,6 +41,30 @@ const Navbar: React.FC = () => {
               className={`px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-[0.2em] transition-all duration-300 ${location.pathname === '/products' ? 'bg-neutral-950 text-white shadow-xl' : 'text-neutral-500 hover:text-neutral-900'}`}
             >
               {t('nav_products')}
+            </Link>
+            <Link
+              to="/winery"
+              className={`px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-[0.2em] transition-all duration-300 ${location.pathname === '/winery' ? 'bg-neutral-950 text-white shadow-xl' : 'text-neutral-500 hover:text-neutral-900'}`}
+            >
+              {t('nav_winery')}
+            </Link>
+            <Link
+              to="/meat-industry"
+              className={`px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-[0.2em] transition-all duration-300 ${location.pathname === '/meat-industry' ? 'bg-neutral-950 text-white shadow-xl' : 'text-neutral-500 hover:text-neutral-900'}`}
+            >
+              {t('nav_meat')}
+            </Link>
+            <Link
+              to="/mining"
+              className={`px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-[0.2em] transition-all duration-300 ${location.pathname === '/mining' ? 'bg-neutral-950 text-white shadow-xl' : 'text-neutral-500 hover:text-neutral-900'}`}
+            >
+              {t('nav_mining')}
+            </Link>
+            <Link
+              to="/municipalities"
+              className={`px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-[0.2em] transition-all duration-300 ${location.pathname === '/municipalities' ? 'bg-neutral-950 text-white shadow-xl' : 'text-neutral-500 hover:text-neutral-900'}`}
+            >
+              {t('nav_municipalities')}
             </Link>
             <Link
               to="/contact"
@@ -96,6 +125,7 @@ const Footer: React.FC = () => {
 const AppContent: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col">
+      <ScrollToTop />
       <Navbar />
       <main className="flex-grow">
         <Routes>
@@ -104,6 +134,10 @@ const AppContent: React.FC = () => {
           <Route path="/category/:category" element={<Home />} />
           <Route path="/model/:category/:id" element={<ModelDetails />} />
           <Route path="/biochemistry/:category" element={<Biochemistry />} />
+          <Route path="/winery" element={<Winery />} />
+          <Route path="/meat-industry" element={<MeatIndustry />} />
+          <Route path="/mining" element={<Mining />} />
+          <Route path="/municipalities" element={<Municipalities />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>

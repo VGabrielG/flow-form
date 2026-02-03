@@ -2,9 +2,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../LanguageContext';
+import AnimatedPulsePill from '../components/AnimatedPulsePill';
+
 
 const Landing: React.FC = () => {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
   const navigate = useNavigate();
 
   return (
@@ -21,15 +23,23 @@ const Landing: React.FC = () => {
             FLOWFORM
           </h1>
 
-          <div className="mb-16 animate-fadeIn" style={{ animationDelay: '200ms' }}>
-            <button
-              onClick={() => navigate('/category/vitalization')}
-              className="group relative px-12 py-5 bg-white text-neutral-950 border border-neutral-200 rounded-full overflow-hidden shadow-xl transition-all hover:scale-105 hover:bg-neutral-950 hover:text-white"
-            >
-              <span className="relative font-black uppercase tracking-[0.25em] text-sm md:text-base">
-                {t('see_products')}
-              </span>
-            </button>
+          <div className="mb-16 animate-fadeIn grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto" style={{ animationDelay: '200ms' }}>
+            {[
+              { label: t('nav_mining'), path: '/mining', color: 'hover:border-blue-500' },
+              { label: t('nav_meat'), path: '/meat-industry', color: 'hover:border-green-500' },
+              { label: t('nav_winery'), path: '/winery', color: 'hover:border-red-500' },
+              { label: t('nav_municipalities'), path: '/municipalities', color: 'hover:border-cyan-500' }
+            ].map((industry) => (
+              <button
+                key={industry.path}
+                onClick={() => navigate(industry.path)}
+                className={`group relative px-6 py-5 bg-white text-neutral-950 border border-neutral-200 rounded-3xl overflow-hidden shadow-xl transition-all hover:scale-105 hover:bg-neutral-950 hover:text-white ${industry.color}`}
+              >
+                <span className="relative font-black uppercase tracking-[0.2em] text-[10px] md:text-[11px]">
+                  {industry.label}
+                </span>
+              </button>
+            ))}
           </div>
 
           <div className="flex justify-center mb-16 animate-fadeIn" style={{ animationDelay: '300ms' }}>
@@ -51,10 +61,11 @@ const Landing: React.FC = () => {
           <div className="max-w-7xl mx-auto mb-32 px-6 animate-fadeIn" style={{ animationDelay: '400ms' }}>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-8 text-left">
-                <div className="inline-flex items-center space-x-2 px-3 py-1 bg-neutral-900 rounded-full border border-neutral-800">
-                  <div className="w-2 h-2 rounded-full bg-white animate-pulse"></div>
-                  <span className="text-white text-xs font-bold uppercase tracking-widest">{t('core_tech_label')}</span>
-                </div>
+                <AnimatedPulsePill
+                  label={t('core_tech_label')}
+                  color="white"
+                />
+
                 <h2 className="text-5xl md:text-6xl font-black text-neutral-900 tracking-tighter leading-tight">
                   What is Flowform?
                 </h2>
@@ -117,6 +128,82 @@ const Landing: React.FC = () => {
                   )}
                 </div>
               ))}
+            </div>
+          </div>
+
+          <div className="max-w-7xl mx-auto mb-32 px-6 animate-fadeIn" style={{ animationDelay: '600ms' }}>
+            <div className="bg-neutral-50 rounded-[4rem] p-12 md:p-24 border border-neutral-100 flex flex-col md:flex-row items-center gap-16 text-left">
+              <div className="flex-1 space-y-8">
+                <AnimatedPulsePill
+                  label={language === 'es' ? 'Sector de Élite' : 'Elite Sector'}
+                  color="red"
+                  className="mb-8"
+                />
+
+                <h2 className="text-5xl font-black text-neutral-900 tracking-tighter leading-tight uppercase">
+                  {t('winery_title')}
+                </h2>
+                <p className="text-xl text-neutral-500 font-medium leading-relaxed">
+                  {t('winery_desc')}
+                </p>
+                <button
+                  onClick={() => navigate('/winery')}
+                  className="px-10 py-4 bg-neutral-900 text-white rounded-full font-black uppercase tracking-widest text-xs hover:bg-red-900 transition-colors shadow-xl"
+                >
+                  {language === 'es' ? 'VER ANÁLISIS TÉCNICO' : 'VIEW TECHNICAL ANALYSIS'}
+                </button>
+              </div>
+              <div className="flex-1 grid grid-cols-2 gap-4">
+                {[
+                  { value: '100%', label: language === 'es' ? 'OLORES' : 'ODORS' },
+                  { value: '6.3 ppm', label: language === 'es' ? 'OXÍGENO' : 'OXYGEN' },
+                  { value: '+32.5%', label: language === 'es' ? 'BIOMASA' : 'BIOMASS' },
+                  { value: '+22%', label: language === 'es' ? 'NUTRIENTES' : 'NUTRIENTS' }
+                ].map((stat, i) => (
+                  <div key={i} className="bg-white p-8 rounded-3xl border border-neutral-100 shadow-sm text-center">
+                    <div className="text-3xl font-black text-red-900 mb-2">{stat.value}</div>
+                    <div className="text-[9px] font-black text-neutral-400 uppercase tracking-widest">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="max-w-7xl mx-auto mb-32 px-6 animate-fadeIn" style={{ animationDelay: '700ms' }}>
+            <div className="bg-gradient-to-br from-slate-950 to-cyan-950 rounded-[4rem] p-12 md:p-24 border border-cyan-900/30 flex flex-col md:flex-row items-center gap-16 text-left shadow-2xl">
+              <div className="flex-1 space-y-8">
+                <AnimatedPulsePill
+                  label={language === 'es' ? 'SECTOR INDUSTRIAL' : 'INDUSTRIAL SECTOR'}
+                  color="cyan"
+                  className="mb-8"
+                />
+
+                <h2 className="text-5xl font-black text-white tracking-tighter leading-tight uppercase">
+                  {t('mining_title')}
+                </h2>
+                <p className="text-xl text-slate-300 font-medium leading-relaxed">
+                  {t('mining_desc')}
+                </p>
+                <button
+                  onClick={() => navigate('/mining')}
+                  className="px-10 py-4 bg-cyan-600 text-white rounded-full font-black uppercase tracking-widest text-xs hover:bg-cyan-500 transition-colors shadow-xl"
+                >
+                  {language === 'es' ? 'VER EVIDENCIA CIENTÍFICA' : 'VIEW SCIENTIFIC EVIDENCE'}
+                </button>
+              </div>
+              <div className="flex-1 grid grid-cols-2 gap-4">
+                {[
+                  { value: '92%', label: language === 'es' ? 'NITRÓGENO' : 'NITROGEN' },
+                  { value: '6.3 ppm', label: language === 'es' ? 'OD (OXÍGENO)' : 'DO (OXYGEN)' },
+                  { value: '100%', label: language === 'es' ? 'OLORES' : 'ODORS' },
+                  { value: '99.9%', label: language === 'es' ? 'PATÓGENOS' : 'PATHOGENS' }
+                ].map((stat, i) => (
+                  <div key={i} className="bg-slate-900/50 backdrop-blur-sm p-8 rounded-3xl border border-cyan-800/30 shadow-xl text-center">
+                    <div className="text-3xl font-black text-cyan-400 mb-2">{stat.value}</div>
+                    <div className="text-[9px] font-black text-slate-400 uppercase tracking-widest">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </header>

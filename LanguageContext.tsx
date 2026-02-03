@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 type Language = 'en' | 'es';
@@ -41,6 +40,10 @@ const translations: Record<Language, Record<string, string>> = {
     nav_home: "Home",
     nav_products: "Products",
     nav_contact: "Contact",
+    nav_winery: "Wine",
+    nav_meat: "Livestock & Meat",
+    nav_mining: "Mining",
+    nav_municipalities: "Municipalities",
 
     // Landing Page
     landing_title: "Flowform Eco-Tech",
@@ -149,7 +152,49 @@ const translations: Record<Language, Record<string, string>> = {
     purchase_title: "Order & Shipping Info",
     price_note: "Please note that our prices are valid for single units and not sets or cascades and are without your national VAT or GST tax added!",
     shipping_note: "Do check our Shipping Policy under FAQ - we supply in multiple countries with different shipping costs which need calculating for you.",
-    checkout_note: "Our check out asks for you to register interest with a small payment after which we check shipping costs for you. If the amount is fine then we ask for full or half payment, depending on whether the product is in stock or needs casting."
+    checkout_note: "Our check out asks for you to register interest with a small payment after which we check shipping costs for you. If the amount is fine then we ask for full or half payment, depending on whether the product is in stock or needs casting.",
+
+
+    // Winery Specific
+    winery_title: "Wine",
+    winery_desc: "Advanced water treatment for premium wine production, from irrigation to effluent remediation.",
+    winery_pillar_1_title: "Product Quality & Value",
+    winery_pillar_1_desc: "Enhancing flavor profiles, Brix levels, and shelf life through rhythmic water vitalization.",
+    winery_pillar_2_title: "Effluent Management",
+    winery_pillar_2_desc: "100% odor elimination and nutrient recovery for winery wastewater.",
+    winery_pillar_3_title: "Soil & Terroir Vitalization",
+    winery_pillar_3_desc: "Deep root stimulation and improved nutrient uptake for resilient vineyards.",
+    winery_pillar_4_title: "Biodynamic Dynamization",
+    winery_pillar_4_desc: "Perfect lemniscate stirring for preparations 500/501, saving labor and improving energy.",
+
+    // Mining Specific
+    mining_title: "Mining & Remediation",
+    mining_desc: "Industrial-scale water treatment for sustainable mining operations and community impact reduction.",
+
+    // Municipal Specific
+    muni_title: "Municipalities & Public Spaces",
+    muni_desc: "Sustainable water management solutions for urban environments, parks, and waste treatment facilities.",
+    muni_pillar_1_title: "Wastewater Polishing",
+    muni_pillar_1_desc: "Efficient removal of pathogens and nutrients (N, P) for safe discharge or reuse.",
+    muni_pillar_2_title: "Urban Lakes & Parks",
+    muni_pillar_2_desc: "Revitalization of stagnant water bodies, eliminating odors and enhancing aesthetic value.",
+    muni_pillar_3_title: "Public Health",
+    muni_pillar_3_desc: "Mosquito control and pathogen reduction through continuous rhythmic oxygenation.",
+    muni_pillar_4_title: "Green Infrastructure",
+    muni_pillar_4_desc: "Integration with constructed wetlands for low-energy, ecological water treatment.",
+
+    // Meat Industry Specific
+    meat_title: "Animal Agriculture",
+    meat_desc: "Advanced effluent remediation and animal health solutions for Dairy, Piggery, and Poultry operations.",
+    meat_pillar_1_title: "Odor Elimination",
+    meat_pillar_1_desc: "Complete neutralization of H2S and Ammonia odors in lagoons and effluent ponds.",
+    meat_pillar_2_title: "Regulatory Compliance",
+    meat_pillar_2_desc: "Meet strict environmental standards (EU IED, EPA) and avoid costly fines or closures.",
+    meat_pillar_3_title: "Waste-to-Fertilizer",
+    meat_pillar_3_desc: "Convert basic anaerobic sludge into high-value, nutrient-rich aerobic liquid fertilizer.",
+    meat_pillar_4_title: "Animal Health",
+    meat_pillar_4_desc: "Improve hydration and feed conversion ratios with vitalized, pathogen-free water."
+
   },
   es: {
     // Navegación
@@ -160,6 +205,10 @@ const translations: Record<Language, Record<string, string>> = {
     nav_home: "Inicio",
     nav_products: "Productos",
     nav_contact: "Contacto",
+    nav_winery: "Vinos",
+    nav_meat: "Ganadería y Carnes",
+    nav_mining: "Minería",
+    nav_municipalities: "Municipalidades",
 
     // Página de Inicio
     landing_title: "Flowform Eco-Tech",
@@ -268,6 +317,46 @@ const translations: Record<Language, Record<string, string>> = {
     purchase_title: "Información de Pedido y Envío",
     price_note: "¡Tenga en cuenta que nuestros precios son válidos para unidades individuales y no para juegos o cascadas, y no se incluye el IVA o impuesto GST nacional!",
     shipping_note: "Consulte nuestra Política de envío en las Preguntas frecuentes: realizamos envíos a varios países con diferentes costos de envío que debemos calcular para usted.",
-    checkout_note: "Nuestro proceso de pago le solicita registrar su interés con un pequeño pago, tras lo cual verificamos los costos de envío por usted. Si el monto es correcto, solicitamos el pago total o parcial, dependiendo de si el producto está en stock o necesita fundirse."
+    checkout_note: "Nuestro proceso de pago le solicita registrar su interés con un pequeño pago, tras lo cual verificamos los costos de envío por usted. Si el monto es correcto, solicitamos el pago total o parcial, dependiendo de si el producto está en stock o necesita fundirse.",
+
+    // Winery Specific
+    winery_title: "Vinos",
+    winery_desc: "Tratamiento avanzado de agua para la producción de vinos premium, desde el riego hasta la remediación de efluentes.",
+    winery_pillar_1_title: "Calidad y Valor del Producto",
+    winery_pillar_1_desc: "Mejora de perfiles de sabor, grados Brix y vida útil mediante vitalización rítmica.",
+    winery_pillar_2_title: "Gestión de Efluentes",
+    winery_pillar_2_desc: "Eliminación del 100% de olores y recuperación de nutrientes en aguas de bodega.",
+    winery_pillar_3_title: "Vitalización del Terroir",
+    winery_pillar_3_desc: "Estimulación radicular profunda y mejor absorción de nutrientes para viñedos resilientes.",
+    winery_pillar_4_title: "Dinamización Biodinámica",
+    winery_pillar_4_desc: "Agitación en elipse perfecta para preparados 500/501, ahorrando trabajo y mejorando la energía.",
+
+    // Mining Specific
+    mining_title: "Minería y Remediación",
+    mining_desc: "Tratamiento de agua a escala industrial para operaciones mineras sostenibles y reducción del impacto comunitario.",
+
+    // Municipal Specific
+    muni_title: "Municipalidades y Espacios Públicos",
+    muni_desc: "Soluciones de gestión de agua sostenible para entornos urbanos, parques e instalaciones de tratamiento de residuos.",
+    muni_pillar_1_title: "Pulido de Aguas Residuales",
+    muni_pillar_1_desc: "Eliminación eficiente de patógenos y nutrientes (N, P) para descarga segura o reutilización.",
+    muni_pillar_2_title: "Lagos y Parques Urbanos",
+    muni_pillar_2_desc: "Revitalización de cuerpos de agua estancados, eliminando olores y mejorando el valor estético.",
+    muni_pillar_3_title: "Salud Pública",
+    muni_pillar_3_desc: "Control de mosquitos y reducción de patógenos mediante oxigenación rítmica continua.",
+    muni_pillar_4_title: "Infraestructura Verde",
+    muni_pillar_4_desc: "Integración con humedales construidos para tratamiento de agua ecológico y de baja energía.",
+
+    // Meat Industry Specific
+    meat_title: "Agricultura Animal",
+    meat_desc: "Soluciones avanzadas de remediación de efluentes y salud animal para operaciones lecheras, porcinas y avícolas.",
+    meat_pillar_1_title: "Eliminación de Olores",
+    meat_pillar_1_desc: "Neutralización completa de olores de H2S y Amoníaco en lagunas y estanques de efluentes.",
+    meat_pillar_2_title: "Cumplimiento Normativo",
+    meat_pillar_2_desc: "Cumpla con los estándares ambientales estrictos (EU IED, EPA) y evite multas costosas o cierres.",
+    meat_pillar_3_title: "Residuos a Fertilizante",
+    meat_pillar_3_desc: "Convierta lodos anaeróbicos básicos en fertilizante líquido aeróbico rico en nutrientes y de alto valor.",
+    meat_pillar_4_title: "Salud Animal",
+    meat_pillar_4_desc: "Mejore la hidratación y las tasas de conversión alimenticia con agua vitalizada libre de patógenos."
   }
 };
