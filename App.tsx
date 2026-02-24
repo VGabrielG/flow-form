@@ -20,14 +20,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-[100] px-4 py-6 pointer-events-none">
-      <div className="max-w-7xl mx-auto flex justify-between items-center pointer-events-auto">
-        <Link to="/" className="flex items-center space-x-4 bg-white/70 backdrop-blur-2xl border border-white/20 px-8 py-3 rounded-full shadow-2xl group transition-all duration-500 hover:scale-105 active:scale-95">
-          <div className="w-8 h-8 flex items-center justify-center overflow-hidden">
-            <img src="/images/logo.png" alt="Flowform" className="w-8 h-8 object-contain group-hover:rotate-[360deg] transition-transform duration-1000" />
-          </div>
-          <span className="font-bold text-xs uppercase tracking-[0.25em] text-neutral-900 border-l border-neutral-200 pl-4 font-outfit">Flowform</span>
-        </Link>
-
+      <div className="max-w-7xl mx-auto flex justify-center items-center pointer-events-auto">
         <div className="hidden md:flex space-x-4 items-center bg-white/70 backdrop-blur-2xl border border-white/20 p-2 rounded-full shadow-2xl">
           <div className="flex space-x-1 px-4">
             <Link

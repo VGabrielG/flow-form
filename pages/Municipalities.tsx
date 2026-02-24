@@ -3,6 +3,7 @@ import { CASE_STUDIES_DATA, SCIENCE_STATS } from '../constants';
 import { useLanguage } from '../LanguageContext';
 import TechnicalEvaluationCTA from '../components/TechnicalEvaluationCTA';
 import AnimatedPulsePill from '../components/AnimatedPulsePill';
+import CoreTechnologySection from '../components/CoreTechnologySection';
 
 
 interface MetricCardProps {
@@ -14,7 +15,7 @@ interface MetricCardProps {
 
 const MetricCard: React.FC<MetricCardProps> = ({ label, value, study, language }) => {
     return (
-        <div className="bg-neutral-50 p-10 rounded-[3rem] border border-neutral-100 shadow-sm hover:shadow-md transition-all duration-500 flex flex-col h-full border-l-4 border-l-cyan-900/20">
+        <div className="bg-neutral-50/40 backdrop-blur-sm p-10 rounded-[3rem] border border-neutral-100 shadow-sm hover:shadow-md transition-all duration-500 flex flex-col h-full border-l-4 border-l-cyan-900/20">
             <div className="text-5xl font-black text-cyan-900 mb-6 tracking-tighter">
                 {value}
             </div>
@@ -45,139 +46,84 @@ export default function Municipalities() {
     const caseStudies = CASE_STUDIES_DATA[language][cat] || [];
     const scienceFacts = SCIENCE_STATS[language][cat] || [];
 
-    const pillars = [
-        { title: t('muni_pillar_1_title'), desc: t('muni_pillar_1_desc'), color: 'bg-cyan-50 text-cyan-900' },
-        { title: t('muni_pillar_2_title'), desc: t('muni_pillar_2_desc'), color: 'bg-neutral-100 text-neutral-900' },
-        { title: t('muni_pillar_3_title'), desc: t('muni_pillar_3_desc'), color: 'bg-neutral-100 text-neutral-900' },
-        { title: t('muni_pillar_4_title'), desc: t('muni_pillar_4_desc'), color: 'bg-neutral-100 text-neutral-900' },
+    const unifiedPillars = [
+        {
+            icon: '🏙️',
+            title: language === 'es' ? 'Bienestar Ciudadano' : 'Citizen Well-being',
+            desc: language === 'es' ? 'Eliminación de olores ofensivos en zonas urbanas densas.' : 'Elimination of offensive odors in dense urban areas.',
+            color: 'bg-cyan-50/40 backdrop-blur-md text-cyan-900'
+        },
+        {
+            icon: '🦆',
+            title: language === 'es' ? 'Restauración Ecológica' : 'Ecological Restoration',
+            desc: language === 'es' ? 'Lagos limpios y claros que invitan a la recreación.' : 'Clean lakes and canals that invite recreation.',
+            color: 'bg-neutral-50/40 backdrop-blur-md text-neutral-900'
+        },
+        {
+            icon: '💰',
+            title: language === 'es' ? 'Ahorro Operativo' : 'Operational Savings',
+            desc: language === 'es' ? 'Reducción de consumo en aireación y menos químicos.' : 'Reduced energy consumption and fewer chemicals.',
+            color: 'bg-neutral-50/40 backdrop-blur-md text-neutral-900'
+        },
+        { icon: '🌍', title: t('muni_pillar_1_title'), desc: t('muni_pillar_1_desc'), color: 'bg-neutral-50/40 backdrop-blur-md text-neutral-900' },
+        { icon: '♻️', title: t('muni_pillar_2_title'), desc: t('muni_pillar_2_desc'), color: 'bg-neutral-50/40 backdrop-blur-md text-neutral-900' },
+        { icon: '⭐', title: t('muni_pillar_3_title'), desc: t('muni_pillar_3_desc'), color: 'bg-neutral-50/40 backdrop-blur-md text-neutral-900' },
+        { icon: '📈', title: t('muni_pillar_4_title'), desc: t('muni_pillar_4_desc'), color: 'bg-neutral-50/40 backdrop-blur-md text-neutral-900' },
     ];
 
     return (
         <div className="min-h-screen bg-white text-neutral-900 font-outfit">
             {/* Hero Section - Municipal Dark Theme */}
-            <header className="pt-32 pb-48 text-white relative overflow-hidden bg-cyan-950 border-b border-cyan-900/30">
+            <header className="pt-32 pb-24 text-white relative overflow-hidden bg-cyan-950 border-b border-cyan-900/30">
                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
                 <div className="absolute inset-0 bg-gradient-to-b from-cyan-900/20 via-transparent to-cyan-950/50 pointer-events-none"></div>
 
-                <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
-                    <div className="max-w-4xl mx-auto">
-                        <AnimatedPulsePill
-                            label={language === 'es' ? 'SECTOR MUNICIPAL' : 'MUNICIPAL SECTOR'}
-                            color="cyan"
-                            className="mb-8"
-                        />
-
-
-
-                        <h1 className="text-6xl md:text-8xl font-black mb-8 tracking-tighter leading-none uppercase">
-                            {t('muni_title')}
-                        </h1>
-
-                        <p className="text-xl text-cyan-200/70 leading-relaxed font-medium max-w-3xl mx-auto">
-                            {t('muni_desc')}
-                        </p>
+                <div className="max-w-7xl mx-auto px-6 relative z-10">
+                    <div className="flex flex-col md:flex-row items-center gap-12">
+                        {/* Text side */}
+                        <div className="flex-1 text-left">
+                            <AnimatedPulsePill
+                                label={language === 'es' ? 'SECTOR MUNICIPAL' : 'MUNICIPAL SECTOR'}
+                                color="cyan"
+                                className="mb-8"
+                            />
+                            <h1 className="text-6xl md:text-7xl font-black mb-8 tracking-tighter leading-none uppercase">
+                                {t('muni_title')}
+                            </h1>
+                            <p className="text-xl text-cyan-200/70 leading-relaxed font-medium max-w-xl">
+                                {t('muni_desc')}
+                            </p>
+                        </div>
+                        {/* Image side */}
+                        <div className="flex-1 flex justify-center items-center">
+                            <img
+                                src="/images/meander.png"
+                                alt="Flowform Meander"
+                                className="w-full max-w-md h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700 rounded-3xl"
+                            />
+                        </div>
                     </div>
                 </div>
             </header>
 
-            <div className="max-w-7xl mx-auto px-6 relative z-20 pb-32 -mt-24">
+            <div className="max-w-7xl mx-auto px-6 relative z-20 pb-32">
 
-                {/* Problems & Solutions (1st Section) */}
-                <section className="mb-32">
-                    <div className="bg-cyan-950 rounded-[4rem] p-12 md:p-24 text-white relative overflow-hidden">
-                        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-cyan-600/20 rounded-full blur-[100px] -translate-y-1/2 -translate-x-1/3 pointer-events-none"></div>
-
-                        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16">
-                            <div>
-                                <h2 className="text-4xl md:text-5xl font-black mb-8 tracking-tighter leading-none uppercase">
-                                    {language === 'es' ? 'Gestión Urbana' : 'Urban Management'}
-                                </h2>
-                                <p className="text-xl text-cyan-200/80 mb-12 font-medium leading-relaxed">
-                                    {language === 'es'
-                                        ? 'Las municipalidades modernas deben equilibrar presupuestos ajustados con expectativas ciudadanas altas sobre calidad de vida y medio ambiente.'
-                                        : 'Modern municipalities must balance tight budgets with high citizen expectations for quality of life and the environment.'}
-                                </p>
-
-                                <div className="space-y-6">
-                                    {[
-                                        {
-                                            title: language === 'es' ? 'QUEJAS VECINALES' : 'NEIGHBOR COMPLAINTS',
-                                            desc: language === 'es' ? 'Olores de plantas de tratamiento cerca de zonas residenciales.' : 'Odors from treatment plants near residential zones.'
-                                        },
-                                        {
-                                            title: language === 'es' ? 'COSTOS MANTENIMIENTO' : 'MAINTENANCE COSTS',
-                                            desc: language === 'es' ? 'Dragado frecuente de lodos y uso intensivo de químicos.' : 'Frequent sludge dredging and intensive chemical use.'
-                                        },
-                                        {
-                                            title: language === 'es' ? 'ESTÉTICA URBANA' : 'URBAN AESTHETICS',
-                                            desc: language === 'es' ? 'Cuerpos de agua eutrofizados (verdes/sucios).' : 'Eutrophic water bodies (green/dirty).'
-                                        }
-                                    ].map((item, i) => (
-                                        <div key={i} className="flex items-center space-x-4 border-b border-white/10 pb-4">
-                                            <div className="w-2 h-2 bg-cyan-500 rounded-full"></div>
-                                            <div>
-                                                <div className="text-xs font-black uppercase tracking-widest text-cyan-400">{item.title}</div>
-                                                <div className="text-sm text-neutral-300">{item.desc}</div>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-
-                            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-[3rem] p-10">
-                                <h3 className="text-2xl font-black mb-8 uppercase tracking-tight">
-                                    {language === 'es' ? 'Soluciones Flowform' : 'Flowform Solutions'}
-                                </h3>
-                                <div className="space-y-8">
-                                    <div className="flex items-start">
-                                        <div className="mr-6 text-4xl p-2 bg-cyan-500/10 rounded-2xl">🏙️</div>
-                                        <div>
-                                            <h4 className="text-lg font-bold mb-2">{language === 'es' ? 'Bienestar Ciudadano' : 'Citizen Well-being'}</h4>
-                                            <p className="text-sm text-neutral-400 leading-relaxed">
-                                                {language === 'es'
-                                                    ? 'Eliminación de olores ofensivos en zonas urbanas densas.'
-                                                    : 'Elimination of offensive odors in dense urban areas.'}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-start">
-                                        <div className="mr-6 text-4xl p-2 bg-cyan-500/10 rounded-2xl">🦆</div>
-                                        <div>
-                                            <h4 className="text-lg font-bold mb-2">{language === 'es' ? 'Restauración Ecológica' : 'Ecological Restoration'}</h4>
-                                            <p className="text-sm text-neutral-400 leading-relaxed">
-                                                {language === 'es'
-                                                    ? 'Lagos y canales limpios y claros que invitan a la recreación.'
-                                                    : 'Clean, clear lakes and canals that invite recreation.'}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-start">
-                                        <div className="mr-6 text-4xl p-2 bg-cyan-500/10 rounded-2xl">💰</div>
-                                        <div>
-                                            <h4 className="text-lg font-bold mb-2">{language === 'es' ? 'Ahorro Operativo' : 'Operational Savings'}</h4>
-                                            <p className="text-sm text-neutral-400 leading-relaxed">
-                                                {language === 'es'
-                                                    ? 'Reducción de consumo energético en aireación y menos químicos.'
-                                                    : 'Reduced energy consumption in aeration and fewer chemicals.'}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                {/* Core Technology Description */}
+                <section className="mb-20">
+                    <CoreTechnologySection themeColor="cyan" />
                 </section>
 
-                {/* Strategic Pillars (2nd Section) */}
+                {/* Strategic Pillars Unified (2nd Section) */}
                 <section className="mb-32">
-                    <h2 className="text-sm font-black text-neutral-400 uppercase tracking-[0.4em] mb-12 border-l-2 border-cyan-900 pl-4">
-                        {language === 'es' ? 'PILARES ESTRATÉGICOS' : 'STRATEGIC PILLARS'}
+                    <h2 className="text-4xl md:text-5xl font-black text-neutral-900 tracking-tighter leading-none uppercase mb-12">
+                        {language === 'es' ? 'VALOR' : 'VALUE'}
                     </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {pillars.map((pillar, i) => (
-                            <div key={i} className={`${pillar.color} p-12 rounded-[3.5rem] border border-black/5`}>
-                                <h3 className="text-2xl font-black mb-6 uppercase tracking-tight">{pillar.title}</h3>
-                                <p className="text-sm font-bold leading-relaxed opacity-80">{pillar.desc}</p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                        {unifiedPillars.map((pillar, i) => (
+                            <div key={i} className={`${pillar.color} p-8 rounded-[2.5rem] border-2 border-cyan-200 hover:border-cyan-400 hover:shadow-lg transition-all`}>
+                                {pillar.icon && <div className="text-4xl mb-6">{pillar.icon}</div>}
+                                <h3 className="text-xl font-black mb-4 uppercase tracking-tight">{pillar.title}</h3>
+                                <p className="text-sm font-medium leading-relaxed opacity-80">{pillar.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -187,12 +133,9 @@ export default function Municipalities() {
                 <section className="mb-32">
                     <div className="flex flex-col md:flex-row justify-between items-end mb-16">
                         <div className="max-w-2xl">
-                            <h2 className="text-sm font-black text-cyan-600 uppercase tracking-[0.4em] mb-4">
+                            <h2 className="text-4xl md:text-5xl font-black text-neutral-900 tracking-tighter leading-none uppercase">
                                 {language === 'es' ? 'CASOS DE ÉXITO' : 'SUCCESS STORIES'}
                             </h2>
-                            <h3 className="text-4xl md:text-5xl font-black text-neutral-900 tracking-tighter leading-none uppercase">
-                                {language === 'es' ? 'Ciudades Vivas' : 'Living Cities'}
-                            </h3>
                         </div>
                     </div>
 

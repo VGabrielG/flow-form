@@ -41,7 +41,7 @@ const translations: Record<Language, Record<string, string>> = {
     nav_products: "Products",
     nav_contact: "Contact",
     nav_winery: "Wine",
-    nav_meat: "Livestock & Meat",
+    nav_meat: "Animal Agriculture",
     nav_mining: "Mining",
     nav_municipalities: "Municipalities",
 
@@ -206,7 +206,7 @@ const translations: Record<Language, Record<string, string>> = {
     nav_products: "Productos",
     nav_contact: "Contacto",
     nav_winery: "Vinos",
-    nav_meat: "Ganadería y Carnes",
+    nav_meat: "Agricultura Animal",
     nav_mining: "Minería",
     nav_municipalities: "Municipalidades",
 

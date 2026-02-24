@@ -4,6 +4,7 @@ import { SCIENCE_STATS, CASE_STUDIES_DATA } from '../constants';
 import { useLanguage } from '../LanguageContext';
 import TechnicalEvaluationCTA from '../components/TechnicalEvaluationCTA';
 import AnimatedPulsePill from '../components/AnimatedPulsePill';
+import CoreTechnologySection from '../components/CoreTechnologySection';
 
 
 export default function Mining() {
@@ -16,175 +17,119 @@ export default function Mining() {
     return (
         <div className="animate-fadeIn min-h-screen bg-white text-neutral-900 font-outfit">
             {/* Hero Section - Industrial Dark Theme */}
-            <header className="pt-32 pb-48 text-white relative overflow-hidden bg-slate-950 border-b border-slate-800">
+            <header className="pt-32 pb-24 text-white relative overflow-hidden bg-slate-950 border-b border-slate-800">
                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
                 <div className="absolute inset-0 bg-gradient-to-b from-cyan-950/30 via-transparent to-slate-950/50 pointer-events-none"></div>
 
-                <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
-                    <div className="max-w-4xl mx-auto">
-                        <AnimatedPulsePill
-                            label={language === 'es' ? 'REMEDIACIÓN INDUSTRIAL' : 'INDUSTRIAL REMEDIATION'}
-                            color="cyan"
-                            className="mb-8"
-                        />
-
-
-
-                        <h1 className="text-6xl md:text-8xl font-black mb-8 tracking-tighter leading-none uppercase">
-                            {language === 'es' ? 'MINERÍA SOSTENIBLE' : 'SUSTAINABLE MINING'}
-                        </h1>
-
-                        <p className="text-xl text-slate-300 leading-relaxed font-medium max-w-3xl mx-auto">
-                            {language === 'es'
-                                ? 'Tecnología de flujo rítmico para la remediación de aguas en operaciones mineras. Reducción de impacto ambiental y mejora de la licencia social para operar.'
-                                : 'Rhythmic flow technology for water remediation in mining operations. Reducing environmental impact and improving social license to operate.'}
-                        </p>
+                <div className="max-w-7xl mx-auto px-6 relative z-10">
+                    <div className="flex flex-col md:flex-row items-center gap-12">
+                        {/* Text side */}
+                        <div className="flex-1 text-left">
+                            <AnimatedPulsePill
+                                label={language === 'es' ? 'REMEDIACIÓN INDUSTRIAL' : 'INDUSTRIAL REMEDIATION'}
+                                color="cyan"
+                                className="mb-8"
+                            />
+                            <h1 className="text-6xl md:text-7xl font-black mb-8 tracking-tighter leading-none uppercase">
+                                {language === 'es' ? 'MINERÍA SOSTENIBLE' : 'SUSTAINABLE MINING'}
+                            </h1>
+                            <p className="text-xl text-slate-300 leading-relaxed font-medium max-w-xl">
+                                {language === 'es'
+                                    ? 'Tecnología de flujo rítmico para la remediación de aguas en operaciones mineras. Reducción de impacto ambiental y mejora de la licencia social para operar.'
+                                    : 'Rhythmic flow technology for water remediation in mining operations. Reducing environmental impact and improving social license to operate.'}
+                            </p>
+                        </div>
+                        {/* Image side */}
+                        <div className="flex-1 flex justify-center items-center">
+                            <img
+                                src="/images/sevenfold.png"
+                                alt="Flowform Sevenfold"
+                                className="w-full max-w-md h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700 rounded-3xl"
+                            />
+                        </div>
                     </div>
                 </div>
             </header>
 
-            <div className="max-w-7xl mx-auto px-6 relative z-20 pb-32 -mt-24">
+            <div className="max-w-7xl mx-auto px-6 relative z-20 pb-32">
 
-                {/* Problems & Solutions (1st Section) */}
-                <section className="mb-32">
-                    <div className="bg-slate-900 rounded-[4rem] p-12 md:p-24 text-white relative overflow-hidden border border-slate-800">
-                        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-cyan-600/10 rounded-full blur-[120px] translate-y-1/3 translate-x-1/3 pointer-events-none"></div>
-
-                        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16">
-                            <div>
-                                <div className="inline-block px-4 py-1.5 bg-red-900/30 rounded-full border border-red-800/50 mb-6">
-                                    <span className="text-red-400 text-[10px] font-bold uppercase tracking-widest">
-                                        {language === 'es' ? 'LA PROBLEMÁTICA' : 'THE PROBLEM'}
-                                    </span>
-                                </div>
-                                <h2 className="text-4xl md:text-5xl font-black mb-8 tracking-tighter leading-none uppercase">
-                                    {language === 'es' ? 'Desafíos Industriales' : 'Industrial Challenges'}
-                                </h2>
-                                <p className="text-xl text-slate-400 mb-12 font-medium leading-relaxed">
-                                    {language === 'es'
-                                        ? 'La industria minera enfrenta un escrutinio sin precedentes sobre su gestión del agua, con regulaciones ESG cada vez más estrictas.'
-                                        : 'The mining industry faces unprecedented scrutiny over its water management, with increasingly strict ESG regulations.'}
-                                </p>
-
-                                <div className="space-y-6">
-                                    {[
-                                        {
-                                            title: language === 'es' ? 'DRENAJE ÁCIDO (AMD)' : 'ACID MINE DRAINAGE (AMD)',
-                                            desc: language === 'es' ? 'Costoso tratamiento químico y riesgo ambiental.' : 'Costly chemical treatment and environmental risk.'
-                                        },
-                                        {
-                                            title: language === 'es' ? 'CONSUMO DE AGUA' : 'WATER CONSUMPTION',
-                                            desc: language === 'es' ? 'Competencia por recursos hídricos con comunidades.' : 'Competition for water resources with communities.'
-                                        },
-                                        {
-                                            title: language === 'es' ? 'PASIVOS AMBIENTALES' : 'ENVIRONMENTAL LIABILITIES',
-                                            desc: language === 'es' ? 'Lagunas de relaves tóxicas a perpetuidad.' : 'Toxic tailings ponds in perpetuity.'
-                                        }
-                                    ].map((item, i) => (
-                                        <div key={i} className="flex items-center space-x-4 border-b border-slate-800 pb-4">
-                                            <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                                            <div>
-                                                <div className="text-xs font-black uppercase tracking-widest text-red-400">{item.title}</div>
-                                                <div className="text-sm text-slate-400">{item.desc}</div>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-
-                            <div className="bg-cyan-950/30 backdrop-blur-md border border-cyan-900/30 rounded-[3rem] p-10">
-                                <h3 className="text-2xl font-black mb-8 uppercase tracking-tight text-cyan-400">
-                                    {language === 'es' ? 'Soluciones Flowform' : 'Flowform Solutions'}
-                                </h3>
-                                <div className="space-y-8">
-                                    <div className="flex items-start">
-                                        <div className="mr-6 text-4xl p-2 bg-cyan-900/50 rounded-2xl">⚒️</div>
-                                        <div>
-                                            <h4 className="text-lg font-bold mb-2 text-white">{language === 'es' ? 'Oxidación Pasiva' : 'Passive Oxidation'}</h4>
-                                            <p className="text-sm text-slate-400 leading-relaxed">
-                                                {language === 'es'
-                                                    ? 'Manejo de grandes volúmenes de AMD con precipitación eficiente de metales.'
-                                                    : 'Handling large volumes of AMD with efficient metal precipitation.'}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-start">
-                                        <div className="mr-6 text-4xl p-2 bg-cyan-900/50 rounded-2xl">🔄</div>
-                                        <div>
-                                            <h4 className="text-lg font-bold mb-2 text-white">{language === 'es' ? 'Recirculación Segura' : 'Safe Recirculation'}</h4>
-                                            <p className="text-sm text-slate-400 leading-relaxed">
-                                                {language === 'es'
-                                                    ? 'Restauración de la calidad del agua para su reutilización en procesos, reduciendo la extracción fresca.'
-                                                    : 'Restoration of water quality for reuse in processes, reducing fresh extraction.'}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-start">
-                                        <div className="mr-6 text-4xl p-2 bg-cyan-900/50 rounded-2xl">🛡️</div>
-                                        <div>
-                                            <h4 className="text-lg font-bold mb-2 text-white">{language === 'es' ? 'Cumplimiento ESG' : 'ESG Compliance'}</h4>
-                                            <p className="text-sm text-slate-400 leading-relaxed">
-                                                {language === 'es'
-                                                    ? 'Demonstración tangible de compromiso ambiental y protección de cuencas.'
-                                                    : 'Tangible demonstration of environmental commitment and watershed protection.'}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                {/* Core Technology Description */}
+                <section className="mb-20">
+                    <CoreTechnologySection themeColor="cyan" />
                 </section>
 
-                {/* Community Impact Icons (Pillars equivalent) (2nd Section) */}
+                {/* Solutions & Strategic Value Grid */}
                 <section className="mb-32">
-                    <h2 className="text-sm font-black text-slate-400 uppercase tracking-[0.4em] mb-12 border-l-2 border-cyan-600 pl-4">
-                        {language === 'es' ? 'IMPACTO COMUNITARIO' : 'COMMUNITY IMPACT'}
+                    <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tighter leading-none uppercase mb-12">
+                        {language === 'es' ? 'VALOR' : 'VALUE'}
                     </h2>
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {[
+                            {
+                                icon: '⚒️',
+                                title: language === 'es' ? 'Oxidación Pasiva' : 'Passive Oxidation',
+                                desc: language === 'es'
+                                    ? 'Manejo de grandes volúmenes de AMD con precipitación eficiente de metales.'
+                                    : 'Handling large volumes of AMD with efficient metal precipitation.',
+                                color: 'bg-cyan-50/30 backdrop-blur-md text-cyan-900'
+                            },
+                            {
+                                icon: '🔄',
+                                title: language === 'es' ? 'Recirculación Segura' : 'Safe Recirculation',
+                                desc: language === 'es'
+                                    ? 'Restauración de la calidad del agua para su reutilización en procesos.'
+                                    : 'Restoration of water quality for reuse in processes.',
+                                color: 'bg-slate-50/40 backdrop-blur-md text-slate-900'
+                            },
+                            {
+                                icon: '🛡️',
+                                title: language === 'es' ? 'Cumplimiento ESG' : 'ESG Compliance',
+                                desc: language === 'es'
+                                    ? 'Demostración tangible de compromiso ambiental y protección de cuencas.'
+                                    : 'Tangible demonstration of environmental commitment and watershed protection.',
+                                color: 'bg-slate-50/40 backdrop-blur-md text-slate-900'
+                            },
                             {
                                 icon: '👃',
                                 title: language === 'es' ? 'Aire Limpio' : 'Clean Air',
                                 desc: language === 'es'
                                     ? 'Eliminación de olores que afectan la calidad de vida.'
-                                    : 'Elimination of odors affecting quality of life.'
+                                    : 'Elimination of odors affecting quality of life.',
+                                color: 'bg-slate-50/40 backdrop-blur-md text-slate-900'
                             },
                             {
                                 icon: '🌿',
                                 title: language === 'es' ? 'Estética' : 'Aesthetics',
                                 desc: language === 'es'
                                     ? 'Integración paisajística de estructuras de tratamiento.'
-                                    : 'Landscape integration of treatment structures.'
+                                    : 'Landscape integration of treatment structures.',
+                                color: 'bg-slate-50/40 backdrop-blur-md text-slate-900'
                             },
                             {
                                 icon: '🐟',
                                 title: language === 'es' ? 'Biodiversidad' : 'Biodiversity',
                                 desc: language === 'es'
                                     ? 'Retorno de flora y fauna a cuerpos de agua recuperados.'
-                                    : 'Return of flora and fauna to recovered water bodies.'
+                                    : 'Return of flora and fauna to recovered water bodies.',
+                                color: 'bg-slate-50/40 backdrop-blur-md text-slate-900'
                             }
                         ].map((item, idx) => (
-                            <div key={idx} className="bg-slate-50 p-8 rounded-[2.5rem] border border-slate-200 hover:border-cyan-200 transition-colors">
+                            <div key={idx} className={`${item.color} p-10 rounded-[2.5rem] border-2 border-cyan-200 hover:border-cyan-400 hover:shadow-lg transition-all`}>
                                 <div className="text-4xl mb-6">{item.icon}</div>
-                                <h3 className="text-xl font-black text-slate-900 mb-4">{item.title}</h3>
-                                <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
+                                <h3 className="text-xl font-black mb-4">{item.title}</h3>
+                                <p className="text-sm opacity-80 leading-relaxed font-medium">{item.desc}</p>
                             </div>
                         ))}
                     </div>
                 </section>
 
-
                 {/* Success Stories (Narrative Section) (3rd Section) */}
                 <section className="mb-32">
                     <div className="flex flex-col md:flex-row justify-between items-end mb-16">
                         <div className="max-w-2xl">
-                            <h2 className="text-sm font-black text-cyan-600 uppercase tracking-[0.4em] mb-4">
+                            <h2 className="text-4xl md:text-5xl font-black text-neutral-900 tracking-tighter leading-none uppercase">
                                 {language === 'es' ? 'CASOS DE ÉXITO' : 'SUCCESS STORIES'}
                             </h2>
-                            <h3 className="text-4xl md:text-5xl font-black text-neutral-900 tracking-tighter leading-none uppercase">
-                                {language === 'es' ? 'Remediación Comprobada' : 'Proven Remediation'}
-                            </h3>
                         </div>
                     </div>
 
