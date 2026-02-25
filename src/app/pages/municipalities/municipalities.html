@@ -1,0 +1,208 @@
+<div class="min-h-screen bg-white text-neutral-900 font-outfit">
+    <!-- Hero Section - Municipal Dark Theme -->
+    <header class="pt-32 pb-24 text-white relative overflow-hidden bg-cyan-950 border-b border-cyan-900/30">
+        <div
+            class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10">
+        </div>
+        <div
+            class="absolute inset-0 bg-gradient-to-b from-cyan-900/20 via-transparent to-cyan-950/50 pointer-events-none">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <!-- Text side -->
+                <div class="flex-1 text-left">
+                    <app-animated-pulse-pill
+                        [label]="lang.language() === 'es' ? 'SECTOR MUNICIPAL' : 'MUNICIPAL SECTOR'" color="cyan"
+                        class="mb-8"></app-animated-pulse-pill>
+                    <h1 class="text-6xl md:text-7xl font-black mb-8 tracking-tighter leading-none uppercase">
+                        {{ lang.t('muni_title') }}
+                    </h1>
+                    <p class="text-xl text-cyan-200/70 leading-relaxed font-medium max-w-xl">
+                        {{ lang.t('muni_desc') }}
+                    </p>
+                </div>
+                <!-- Image side -->
+                <div class="flex-1 flex justify-center items-center">
+                    <img src="/images/meander.png" alt="Flowform Meander"
+                        class="w-full max-w-md h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700 rounded-3xl" />
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-20 pb-32">
+        <!-- Core Technology Description -->
+        <section class="mb-20">
+            <app-core-technology-section themeColor="cyan"></app-core-technology-section>
+        </section>
+
+        <!-- Strategic Pillars Unified -->
+        <section class="mb-32">
+            <h2 class="text-4xl md:text-5xl font-black text-neutral-900 tracking-tighter leading-none uppercase mb-12">
+                {{ lang.language() === 'es' ? 'VALOR' : 'VALUE' }}
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <div *ngFor="let pillar of unifiedPillars"
+                    class="p-8 rounded-[2.5rem] border-2 border-cyan-200 hover:border-cyan-400 hover:shadow-lg transition-all"
+                    [ngClass]="pillar.color">
+                    <div class="text-4xl mb-6">{{ pillar.icon }}</div>
+                    <h3 class="text-xl font-black mb-4 uppercase tracking-tight">{{ pillar.title }}</h3>
+                    <p class="text-sm font-medium leading-relaxed opacity-80">{{ pillar.desc }}</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Stories (Narrative) -->
+        <section class="mb-32">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16">
+                <div class="max-w-2xl">
+                    <h2
+                        class="text-4xl md:text-5xl font-black text-neutral-900 tracking-tighter leading-none uppercase">
+                        {{ lang.language() === 'es' ? 'CASOS DE ÉXITO' : 'SUCCESS STORIES' }}
+                    </h2>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Story 1: Soerendonk -->
+                <div
+                    class="group relative overflow-hidden rounded-[2.5rem] bg-neutral-900 text-white p-8 flex flex-col justify-between min-h-[450px] border border-white/5 hover:border-cyan-500/30 transition-all duration-500">
+                    <div
+                        class="absolute top-0 right-0 w-64 h-64 bg-cyan-500/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 group-hover:bg-cyan-500/30 transition-all duration-700">
+                    </div>
+                    <div>
+                        <div
+                            class="inline-block px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 backdrop-blur-md rounded-full text-cyan-300 text-[9px] font-black uppercase tracking-[0.2em] mb-6 shadow-[0_0_15px_rgba(6,182,212,0.3)]">
+                            SOERENDONK
+                        </div>
+                        <h4 class="text-2xl font-black leading-tight mb-4 tracking-tight">
+                            {{ lang.language() === 'es' ? 'Tratamiento Terciario' : 'Tertiary Treatment' }}
+                        </h4>
+                        <p class="text-neutral-400 text-sm font-medium leading-relaxed mb-6">
+                            {{ lang.language() === 'es'
+                            ? 'Planta municipal (40,000 h.e.) implementó sistema en cascada. Eliminación de patógenos y
+                            efluente cristalino en 4 días.'
+                            : 'Municipal plant (40,000 p.e.) implemented cascade system. Pathogen elimination and
+                            crystal clear effluent in 4 days.' }}
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-white/10 grid grid-cols-2 gap-4 mb-6">
+                        <div>
+                            <div class="text-[9px] text-neutral-500 uppercase tracking-widest mb-1">{{ lang.language()
+                                === 'es' ? 'PATÓGENOS' : 'PATHOGENS' }}</div>
+                            <div class="text-xl font-black text-white">0%</div>
+                        </div>
+                        <div>
+                            <div class="text-[9px] text-cyan-400 uppercase tracking-widest mb-1">{{ lang.language() ===
+                                'es' ? 'FÓSFORO' : 'PHOSPHORUS' }}</div>
+                            <div class="text-3xl font-black text-cyan-400">-96%</div>
+                        </div>
+                    </div>
+                    <a href="/studies/human aplications/16. Municipal effluent treatment_Netherlands_Soerendonk.pdf"
+                        target="_blank" rel="noopener noreferrer"
+                        class="w-full py-3 bg-white/5 border border-white/10 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-cyan-500 hover:text-white transition-all text-center">
+                        {{ lang.language() === 'es' ? 'VER ESTUDIO TÉCNICO' : 'VIEW TECHNICAL STUDY' }}
+                    </a>
+                </div>
+
+                <!-- Story 2: Hanoi -->
+                <div
+                    class="group relative overflow-hidden rounded-[2.5rem] bg-neutral-900 text-white p-8 flex flex-col justify-between min-h-[450px] border border-white/5 hover:border-cyan-500/30 transition-all duration-500">
+                    <div
+                        class="absolute bottom-0 left-0 w-64 h-64 bg-cyan-900/40 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2 group-hover:bg-cyan-800/50 transition-all duration-700">
+                    </div>
+                    <div>
+                        <div
+                            class="inline-block px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 backdrop-blur-md rounded-full text-cyan-300 text-[9px] font-black uppercase tracking-[0.2em] mb-6 shadow-[0_0_15px_rgba(6,182,212,0.3)]">
+                            HANOI, VIETNAM
+                        </div>
+                        <h4 class="text-2xl font-black leading-tight mb-4 tracking-tight">
+                            {{ lang.language() === 'es' ? 'Rehabilitación de Lagos' : 'Lake Rehabilitation' }}
+                        </h4>
+                        <p class="text-neutral-400 text-sm font-medium leading-relaxed mb-6">
+                            {{ lang.language() === 'es'
+                            ? 'Lagos urbanos severamente eutrofizados recuperaron claridad y vida acuática. Reducción
+                            masiva de DQO y olores.'
+                            : 'Severely eutrophic urban lakes regained clarity and aquatic life. Massive reduction in
+                            COD and odors.' }}
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-white/10 grid grid-cols-2 gap-4 mb-6">
+                        <div>
+                            <div class="text-[9px] text-neutral-500 uppercase tracking-widest mb-1">{{ lang.language()
+                                === 'es' ? 'DQO' : 'COD' }}</div>
+                            <div class="text-xl font-black text-white">-92%</div>
+                        </div>
+                        <div>
+                            <div class="text-[9px] text-cyan-400 uppercase tracking-widest mb-1">{{ lang.language() ===
+                                'es' ? 'OD' : 'DO' }}</div>
+                            <div class="text-3xl font-black text-cyan-400">5.6 <span class="text-sm">mg/L</span></div>
+                        </div>
+                    </div>
+                    <a href="/studies/human aplications/7. Improving water quality of polluted urban lakes Thi Thuy 2019.pdf"
+                        target="_blank" rel="noopener noreferrer"
+                        class="w-full py-3 bg-white/5 border border-white/10 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-cyan-500 hover:text-white transition-all text-center">
+                        {{ lang.language() === 'es' ? 'VER EVIDENCIA CIENTÍFICA' : 'VIEW SCIENTIFIC EVIDENCE' }}
+                    </a>
+                </div>
+
+                <!-- Story 3: Vidaråsen -->
+                <div
+                    class="group relative overflow-hidden rounded-[2.5rem] bg-neutral-900 text-white p-8 flex flex-col justify-between min-h-[450px] border border-white/5 hover:border-cyan-500/30 transition-all duration-500">
+                    <div
+                        class="absolute bottom-0 left-0 w-64 h-64 bg-cyan-900/20 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2 group-hover:bg-cyan-900/30 transition-all duration-700">
+                    </div>
+                    <div>
+                        <div
+                            class="inline-block px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 backdrop-blur-md rounded-full text-cyan-300 text-[9px] font-black uppercase tracking-[0.2em] mb-6 shadow-[0_0_15px_rgba(6,182,212,0.3)]">
+                            VIDARÅSEN, NORWAY
+                        </div>
+                        <h4 class="text-2xl font-black leading-tight mb-4 tracking-tight">
+                            {{ lang.language() === 'es' ? 'Ecosistemas de Tratamiento' : 'Treatment Ecosystems' }}
+                        </h4>
+                        <p class="text-neutral-400 text-sm font-medium leading-relaxed mb-6">
+                            {{ lang.language() === 'es'
+                            ? 'Comunidad de 200 personas utiliza sistema Vortex y Meander como parte integral de su
+                            tratamiento de aguas por más de 5 años.'
+                            : 'A community of 200 people uses the Vortex and Meander system as an integral part of their
+                            water treatment for over 5 years.' }}
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-white/10 grid grid-cols-2 gap-4 mb-6">
+                        <div>
+                            <div class="text-[9px] text-neutral-500 uppercase tracking-widest mb-1">{{ lang.language()
+                                === 'es' ? 'FÓSFORO' : 'PHOSPHORUS' }}</div>
+                            <div class="text-xl font-black text-white">-96%</div>
+                        </div>
+                        <div>
+                            <div class="text-[9px] text-cyan-400 uppercase tracking-widest mb-1">{{ lang.language() ===
+                                'es' ? 'NITRÓGENO' : 'NITROGEN' }}</div>
+                            <div class="text-3xl font-black text-cyan-400">-92%</div>
+                        </div>
+                    </div>
+                    <a href="/studies/landscaping/Hawkwood Ponds and Wetlands Sewage System.pdf" target="_blank"
+                        rel="noopener noreferrer"
+                        class="w-full py-3 bg-white/5 border border-white/10 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-cyan-500 hover:text-white transition-all text-center">
+                        {{ lang.language() === 'es' ? 'VER VALIDACIÓN' : 'VIEW VALIDATION' }}
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Metrics Grid -->
+        <section class="mb-32">
+            <div class="flex items-center space-x-5 mb-20">
+                <h2 class="text-4xl font-black text-neutral-900 tracking-tight leading-none uppercase">
+                    {{ lang.language() === 'es' ? 'Métricas de Validación Técnica' : 'Technical Validation Metrics' }}
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <app-metric-card *ngFor="let fact of scienceFacts" [label]="fact.label" [value]="fact.value"
+                    [study]="fact.pdf" [language]="lang.language()" variant="cyan"></app-metric-card>
+            </div>
+        </section>
+
+        <app-technical-evaluation-cta variant="municipalities"></app-technical-evaluation-cta>
+    </div>
+</div>
