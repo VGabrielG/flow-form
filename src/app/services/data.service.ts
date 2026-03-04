@@ -30,97 +30,97 @@ export class DataService {
 export const SCIENCE_STATS: Record<string, Record<string, ScienceFact[]>> = {
     en: {
         vitalization: [
-            { label: 'Total Biomass Weight', value: '+32.5%', pdf: '/studies/Farming/12. Transforming animal effluent into liquid fertilizer.pdf', page: '1' },
+            { label: 'Total Biomass Weight', value: '+32.5%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
             { label: 'Root System Expansion', value: '+9.5%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
-            { label: 'Leaf Surface Area', value: '+14.2%', pdf: '/studies/Farming/5. Agricultural_Effluent_Brochure.pdf', page: '2' }
+            { label: 'Leaf Surface Area', value: '+14.2%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '2' }
         ],
         industrial: [
             { label: 'Dissolved Oxygen (DO)', value: '6.3 ppm', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
             { label: 'Odor Neutralization', value: '100%', pdf: '/studies/Farming/11.Report on HOHEPA Farm use of Flowform treated effluent.pdf', page: '1' },
-            { label: 'DQO / COD Reduction', value: '17%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' }
+            { label: 'DQO / COD (Chem. Oxygen Demand) Reduction', value: '17%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' }
         ],
         municipal: [
-            { label: 'Phosphorus (P) Removal', value: '96%', pdf: '/studies/human aplications/16. Municipal effluent treatment_Netherlands_Soerendonk.pdf', page: '2' },
-            { label: 'Nitrogen (N) Removal', value: '92%', pdf: '/studies/human aplications/16. Municipal effluent treatment_Netherlands_Soerendonk.pdf', page: '2' },
-            { label: 'Pathogen Elimination', value: '99.9%', pdf: '/studies/human aplications/16. Municipal effluent treatment_Netherlands_Soerendonk.pdf', page: '2' }
+            { label: 'Phosphorus (P) Removal', value: '96%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '2' },
+            { label: 'Nitrogen (N) Removal', value: '92%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '2' },
+            { label: 'Pathogen Elimination', value: '99.9%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '2' }
         ],
         winery: [
             { label: 'Dissolved Oxygen (DO)', value: '6.3 ppm', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
             { label: 'Odor Neutralization', value: '100%', pdf: '/studies/Farming/11.Report on HOHEPA Farm use of Flowform treated effluent.pdf', page: '1' },
-            { label: 'Total Biomass Weight', value: 'Greater', pdf: '/studies/Farming/12. Transforming animal effluent into liquid fertilizer.pdf', page: '1' },
+            { label: 'Total Biomass Weight', value: '+32.5%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
             { label: 'Root System Expansion', value: 'Superior', pdf: '/studies/flow form studies/8. Report 2015 Four Plants research 20151027.pdf', page: '1' },
             { label: 'Branching Development', value: 'Significant', pdf: '/studies/flow form studies/8. Report 2015 Four Plants research 20151027.pdf', page: '1' },
-            { label: 'Nutrient Uptake Efficiency', value: 'Optimized', pdf: '/studies/Farming/12. Transforming animal effluent into liquid fertilizer.pdf', page: '1' },
+            { label: 'Nutrient Uptake Efficiency', value: 'Optimized', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
             { label: 'Biofilm Reduction', value: 'Prevented', pdf: '/studies/Farming/5. Agricultural_Effluent_Brochure.pdf', page: '1' },
-            { label: 'Pathogen Removal', value: '99.9%', pdf: '/studies/human aplications/16. Municipal effluent treatment_Netherlands_Soerendonk.pdf', page: '1' },
-            { label: 'Nitrogen (N) Removal', value: 'High', pdf: '/studies/human aplications/16. Municipal effluent treatment_Netherlands_Soerendonk.pdf', page: '2' },
-            { label: 'Phosphorus (P) Removal', value: 'High', pdf: '/studies/human aplications/16. Municipal effluent treatment_Netherlands_Soerendonk.pdf', page: '2' },
-            { label: 'COD / DQO Reduction', value: 'Reduced', pdf: '/studies/Farming/10. Animal effluent treatment chemistry by Peter Bacchus.pdf', page: '1' },
+            { label: 'Pathogen Removal', value: '99.9%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
+            { label: 'Nitrogen (N) Removal', value: 'High', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '2' },
+            { label: 'Phosphorus (P) Removal', value: 'High', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '2' },
+            { label: 'COD (Chem. Oxygen Demand) / DQO Reduction', value: 'Reduced', pdf: '/studies/Farming/5. Agricultural_Effluent_Brochure.pdf', page: '1' },
             { label: 'pH Stabilization', value: '6.5 - 7.5', pdf: '/studies/Farming/10. Animal effluent treatment chemistry by Peter Bacchus.pdf', page: '1' }
         ],
         mining: [
-            { label: 'Dissolved Oxygen (DO)', value: '6.3 ppm', pdf: '/studies/Farming/10. Animal effluent treatment chemistry by Peter Bacchus.pdf', page: '1' },
-            { label: 'Nitrogen (N) Removal', value: '92%', pdf: '/studies/human aplications/16. Municipal effluent treatment_Netherlands_Soerendonk.pdf', page: '2' },
-            { label: 'Phosphorus (P) Removal', value: '96%', pdf: '/studies/human aplications/16. Municipal effluent treatment_Netherlands_Soerendonk.pdf', page: '2' },
+            { label: 'Dissolved Oxygen (DO)', value: '6.3 ppm', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
+            { label: 'Nitrogen (N) Removal', value: '92%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '2' },
+            { label: 'Phosphorus (P) Removal', value: '96%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '2' },
             { label: 'Odor Neutralization', value: '100%', pdf: '/studies/Farming/11.Report on HOHEPA Farm use of Flowform treated effluent.pdf', page: '1' },
-            { label: 'COD Reduction', value: '17%', pdf: '/studies/Farming/10. Animal effluent treatment chemistry by Peter Bacchus.pdf', page: '1' },
+            { label: 'COD (Chem. Oxygen Demand) Reduction', value: '17%', pdf: '/studies/Farming/10. Animal effluent treatment chemistry by Peter Bacchus.pdf', page: '1' },
             { label: 'pH Stabilization', value: '6.5-7.5', pdf: '/studies/Farming/10. Animal effluent treatment chemistry by Peter Bacchus.pdf', page: '1' },
-            { label: 'Pathogen Elimination', value: '99.9%', pdf: '/studies/human aplications/16. Municipal effluent treatment_Netherlands_Soerendonk.pdf', page: '1' },
+            { label: 'Pathogen Elimination', value: '99.9%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
             { label: 'Heavy Metal Precipitation', value: 'Enhanced', pdf: '/studies/human aplications/7. Improving water quality of polluted urban lakes Thi Thuy 2019.pdf', page: '1' }
         ],
         meatIndustry: [
             { label: 'Odor Neutralization', value: '100%', pdf: '/studies/Farming/11.Report on HOHEPA Farm use of Flowform treated effluent.pdf', page: '1' },
-            { label: 'Dissolved Oxygen (DO)', value: '6.3 ppm', pdf: '/studies/Farming/10. Animal effluent treatment chemistry by Peter Bacchus.pdf', page: '1' },
-            { label: 'COD / DQO Reduction', value: '17%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
-            { label: 'Biomass Weight Gain', value: '+32.5%', pdf: '/studies/Farming/12. Transforming animal effluent into liquid fertilizer.pdf', page: '1' },
+            { label: 'Dissolved Oxygen (DO)', value: '6.3 ppm', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
+            { label: 'COD (Chem. Oxygen Demand) / DQO Reduction', value: '17%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
+            { label: 'Biomass Weight Gain', value: '+32.5%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
             { label: 'Root System Expansion', value: '+9.5%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' }
         ]
     },
     es: {
         vitalization: [
-            { label: 'Peso de Biomasa Total', value: '+32.5%', pdf: '/studies/Farming/12. Transforming animal effluent into liquid fertilizer.pdf', page: '1' },
+            { label: 'Peso de Biomasa Total', value: '+32.5%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
             { label: 'Expansión Radicular', value: '+9.5%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
-            { label: 'Área Foliar', value: '+14.2%', pdf: '/studies/Farming/5. Agricultural_Effluent_Brochure.pdf', page: '2' }
+            { label: 'Área Foliar', value: '+14.2%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '2' }
         ],
         industrial: [
             { label: 'Oxígeno Disuelto (OD)', value: '6.3 ppm', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
             { label: 'Neutralización de Olores', value: '100%', pdf: '/studies/Farming/11.Report on HOHEPA Farm use of Flowform treated effluent.pdf', page: '1' },
-            { label: 'Reducción de DQO', value: '17%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' }
+            { label: 'Reducción de DQO (Demanda Química de Oxígeno)', value: '17%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' }
         ],
         municipal: [
-            { label: 'Remoción de Fósforo (P)', value: '96%', pdf: '/studies/human aplications/16. Municipal effluent treatment_Netherlands_Soerendonk.pdf', page: '2' },
-            { label: 'Remoción de Nitrógeno (N)', value: '92%', pdf: '/studies/human aplications/16. Municipal effluent treatment_Netherlands_Soerendonk.pdf', page: '2' },
-            { label: 'Eliminación de Patógenos', value: '99.9%', pdf: '/studies/human aplications/16. Municipal effluent treatment_Netherlands_Soerendonk.pdf', page: '2' }
+            { label: 'Remoción de Fósforo (P)', value: '96%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '2' },
+            { label: 'Remoción de Nitrógeno (N)', value: '92%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '2' },
+            { label: 'Eliminación de Patógenos', value: '99.9%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '2' }
         ],
         winery: [
             { label: 'Oxígeno Disuelto (OD)', value: '6.3 ppm', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
             { label: 'Neutralización de Olores', value: '100%', pdf: '/studies/Farming/11.Report on HOHEPA Farm use of Flowform treated effluent.pdf', page: '1' },
-            { label: 'Peso de Biomasa Total', value: 'Mayor', pdf: '/studies/Farming/12. Transforming animal effluent into liquid fertilizer.pdf', page: '1' },
+            { label: 'Peso de Biomasa Total', value: '+32.5%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
             { label: 'Expansión Radicular', value: 'Superior', pdf: '/studies/flow form studies/8. Report 2015 Four Plants research 20151027.pdf', page: '1' },
             { label: 'Desarrollo de Ramas', value: 'Significativo', pdf: '/studies/flow form studies/8. Report 2015 Four Plants research 20151027.pdf', page: '1' },
-            { label: 'Eficiencia de Nutrientes', value: 'Optimizada', pdf: '/studies/Farming/12. Transforming animal effluent into liquid fertilizer.pdf', page: '1' },
+            { label: 'Eficiencia de Nutrientes', value: 'Optimizada', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
             { label: 'Reducción de Biofilm', value: 'Prevenida', pdf: '/studies/Farming/5. Agricultural_Effluent_Brochure.pdf', page: '1' },
-            { label: 'Eliminación de Patógenos', value: '99.9%', pdf: '/studies/human aplications/16. Municipal effluent treatment_Netherlands_Soerendonk.pdf', page: '1' },
-            { label: 'Remoción de Nitrógeno (N)', value: 'Alta', pdf: '/studies/human aplications/16. Municipal effluent treatment_Netherlands_Soerendonk.pdf', page: '2' },
-            { label: 'Remoción de Fósforo (P)', value: 'Alta', pdf: '/studies/human aplications/16. Municipal effluent treatment_Netherlands_Soerendonk.pdf', page: '2' },
-            { label: 'Reducción de DQO', value: 'Reducida', pdf: '/studies/Farming/10. Animal effluent treatment chemistry by Peter Bacchus.pdf', page: '1' },
+            { label: 'Eliminación de Patógenos', value: '99.9%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
+            { label: 'Remoción de Nitrógeno (N)', value: 'Alta', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '2' },
+            { label: 'Remoción de Fósforo (P)', value: 'Alta', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '2' },
+            { label: 'Reducción de DQO (Demanda Química de Oxígeno)', value: 'Reducida', pdf: '/studies/Farming/5. Agricultural_Effluent_Brochure.pdf', page: '1' },
             { label: 'Estabilización de pH', value: '6.5 - 7.5', pdf: '/studies/Farming/10. Animal effluent treatment chemistry by Peter Bacchus.pdf', page: '1' }
         ],
         mining: [
-            { label: 'Oxígeno Disuelto (OD)', value: '6.3 ppm', pdf: '/studies/Farming/10. Animal effluent treatment chemistry by Peter Bacchus.pdf', page: '1' },
-            { label: 'Remoción de Nitrógeno (N)', value: '92%', pdf: '/studies/human aplications/16. Municipal effluent treatment_Netherlands_Soerendonk.pdf', page: '2' },
-            { label: 'Remoción de Fósforo (P)', value: '96%', pdf: '/studies/human aplications/16. Municipal effluent treatment_Netherlands_Soerendonk.pdf', page: '2' },
+            { label: 'Oxígeno Disuelto (OD)', value: '6.3 ppm', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
+            { label: 'Remoción de Nitrógeno (N)', value: '92%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '2' },
+            { label: 'Remoción de Fósforo (P)', value: '96%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '2' },
             { label: 'Neutralización de Olores', value: '100%', pdf: '/studies/Farming/11.Report on HOHEPA Farm use of Flowform treated effluent.pdf', page: '1' },
-            { label: 'Reducción de DQO', value: '17%', pdf: '/studies/Farming/10. Animal effluent treatment chemistry by Peter Bacchus.pdf', page: '1' },
+            { label: 'Reducción de DQO (Demanda Química de Oxígeno)', value: '17%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
             { label: 'Estabilización de pH', value: '6.5-7.5', pdf: '/studies/Farming/10. Animal effluent treatment chemistry by Peter Bacchus.pdf', page: '1' },
-            { label: 'Eliminación de Patógenos', value: '99.9%', pdf: '/studies/human aplications/16. Municipal effluent treatment_Netherlands_Soerendonk.pdf', page: '1' },
+            { label: 'Eliminación de Patógenos', value: '99.9%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
             { label: 'Precipitación Metales Pesados', value: 'Mejorada', pdf: '/studies/human aplications/7. Improving water quality of polluted urban lakes Thi Thuy 2019.pdf', page: '1' }
         ],
         meatIndustry: [
             { label: 'Neutralización de Olores', value: '100%', pdf: '/studies/Farming/11.Report on HOHEPA Farm use of Flowform treated effluent.pdf', page: '1' },
-            { label: 'Oxígeno Disuelto (OD)', value: '6.3 ppm', pdf: '/studies/Farming/10. Animal effluent treatment chemistry by Peter Bacchus.pdf', page: '1' },
-            { label: 'Reducción de DQO', value: '17%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
-            { label: 'Ganancia Peso Biomasa', value: '+32.5%', pdf: '/studies/Farming/12. Transforming animal effluent into liquid fertilizer.pdf', page: '1' },
+            { label: 'Oxígeno Disuelto (OD)', value: '6.3 ppm', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
+            { label: 'Reducción de DQO (Demanda Química de Oxígeno)', value: '17%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
+            { label: 'Ganancia Peso Biomasa', value: '+32.5%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
             { label: 'Expansión Radicular', value: '+9.5%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' }
         ]
     }
@@ -292,7 +292,7 @@ export const MODELS_DATA: Record<string, Record<string, FlowformModel[]>> = {
                 durability: '15 years',
                 studies: [
                     { title: "Four Plants Research Report", url: "/studies/farming/Report 2015 Four Plants research 20151027.pdf", type: "PDF" },
-                    { title: "Transforming Effluent into Fertilizer", url: "/studies/farming/Transforming animal effluent into liquid fertilizer.pdf", type: "PDF" },
+                    { title: "Research Data on Livestock & Agriculture", url: "/studies/Farming/13. Research data on livestock and agriculture.doc.pdf", type: "PDF" },
                     { title: "Farming Scientific Validation", url: "/studies/farming/farming_validation.md", type: "PDF" }
                 ]
             },
@@ -304,16 +304,16 @@ export const MODELS_DATA: Record<string, Record<string, FlowformModel[]>> = {
                 price: '€526,33',
                 material: 'Reinforced Plastic / Fiberglass',
                 dimensions: '95 x 90 x 32 cm',
-                primaryApplication: 'Abattoir & Winery Remediation',
-                industries: ['Abattoirs', 'Wineries', 'Canneries'],
-                description: 'The Vortex is the flagship unit for high-capacity agricultural waste treatment. Processing up to 200 L/min (12,000 L/hour), this reinforced plastic/fiberglass unit transforms anaerobic animal effluent into valuable liquid fertilizer. Documented in the Byron Bay Abattoir study, dissolved oxygen rose from 0 ppm to 6.3 ppm within 6 weeks of continuous operation. The Hohepa Farm study demonstrates complete odor elimination, with smell shifting from pungent to sweet within 4 hours.',
+                primaryApplication: 'Animal Agriculture & Winery Remediation',
+                industries: ['Agriculture', 'Wineries', 'Canneries'],
+                description: 'The Vortex is the flagship unit for high-capacity agricultural waste treatment. Processing up to 200 L/min (12,000 L/hour), this reinforced plastic/fiberglass unit transforms anaerobic animal effluent into valuable liquid fertilizer. The Hohepa Farm study demonstrates complete odor elimination, with smell shifting from pungent to sweet within 4 hours of continuous operation.',
                 benefits: [
                     'Processes 12,000 liters per hour continuously',
                     'Eliminates 100% of offensive odors within 4 hours (Hohepa Farm study)',
-                    'Raises dissolved oxygen from 0 to 6.3 ppm in 6 weeks (Byron Bay study)',
                     'Converts anaerobic sludge to liquid fertilizer',
                     'Reduces COD (Chemical Oxygen Demand) by 17%',
-                    'Transforms H2S and CH4 to aerobic conditions'
+                    'Transforms H2S and CH4 to aerobic conditions',
+                    'Significantly increases dissolved oxygen levels'
                 ],
                 imageUrl: '/images/vortex.png',
                 pumpHP: '2.5 HP',
@@ -322,7 +322,7 @@ export const MODELS_DATA: Record<string, Record<string, FlowformModel[]>> = {
                 maintenance: 'Monthly structural check.',
                 durability: '25 years',
                 studies: [
-                    { title: "Animal Effluent Treatment (Bacchus)", url: "/studies/farming/Animal effluent treatment chemistry by Peter Bacchus.pdf", type: "PDF" },
+                    { title: "Research Data on Livestock & Agriculture", url: "/studies/Farming/13. Research data on livestock and agriculture.doc.pdf", type: "PDF" },
                     { title: "Hohepa Farm Effluent Report", url: "/studies/farming/Report on HOHEPA Farm use of Flowform treated effluent.pdf", type: "PDF" },
                     { title: "Laverstoke Oxygenation Research", url: "/studies/farming/Laverstoke research re oxygenation VORTEX.pdf", type: "PDF" },
                     { title: "Farming Scientific Validation", url: "/studies/farming/farming_validation.md", type: "PDF" }
@@ -780,7 +780,7 @@ export const MODELS_DATA: Record<string, Record<string, FlowformModel[]>> = {
                 durability: '15 años',
                 studies: [
                     { title: "Informe de investigación de cuatro plantas", url: "/studies/farming/Report 2015 Four Plants research 20151027.pdf", type: "PDF" },
-                    { title: "Transformando efluentes en fertilizante", url: "/studies/farming/Transforming animal effluent into liquid fertilizer.pdf", type: "PDF" },
+                    { title: "Datos de Investigación en Ganadería y Agricultura", url: "/studies/Farming/13. Research data on livestock and agriculture.doc.pdf", type: "PDF" },
                     { title: "Validación Científica Agrícola", url: "/studies/farming/farming_validation.md", type: "PDF" }
                 ]
             },
@@ -792,16 +792,16 @@ export const MODELS_DATA: Record<string, Record<string, FlowformModel[]>> = {
                 price: '€526,33',
                 material: 'Plástico Reforzado / Fibra de Vidrio',
                 dimensions: '95 x 90 x 32 cm',
-                primaryApplication: 'Remediación de Mataderos y Viñas',
-                industries: ['Mataderos', 'Viñas', 'Procesadoras'],
-                description: 'El Vortex es la unidad insignia para el tratamiento de desechos agrícolas de alta capacidad. Procesando hasta 200 L/min (12,000 L/hora), esta unidad de plástico reforzado/fibra de vidrio transforma el efluente animal anaeróbico en valioso fertilizante líquido. Documentado en el estudio del Matadero de Byron Bay, el oxígeno disuelto aumentó de 0 ppm a 6.3 ppm en 6 semanas de operación continua. El estudio de la Granja Hohepa demuestra la eliminación completa de olores, con un cambio de olor de acre a dulce en 4 horas.',
+                primaryApplication: 'Remediación en Agricultura Animal y Viñas',
+                industries: ['Agricultura', 'Viñas', 'Procesadoras'],
+                description: 'El Vortex es la unidad insignia para el tratamiento de desechos agrícolas de alta capacidad. Procesando hasta 200 L/min (12,000 L/hour), esta unidad de plástico reforzado/fibra de vidrio transforma el efluente animal anaeróbico en valioso fertilizante líquido. El estudio de la Granja Hohepa demuestra la eliminación completa de olores, con un cambio de olor de acre a dulce en 4 horas de operación continua.',
                 benefits: [
                     'Procesa 12,000 litros por hora de forma continua',
                     'Elimina el 100% de los olores ofensivos en 4 horas (estudio Granja Hohepa)',
-                    'Eleva el oxígeno disuelto de 0 a 6.3 ppm en 6 semanas (estudio Byron Bay)',
-                    'Convierte el lodo anaeróbico en fertilizante líquido',
+                    'Convierte lodo anaeróbico en fertilizante líquido',
                     'Reduce la DQO (Demanda Química de Oxígeno) en un 17%',
-                    'Transforma el H2S y CH4 a condiciones aeróbicas'
+                    'Transforma H2S y CH4 a condiciones aeróbicas',
+                    'Aumenta significativamente los niveles de oxígeno disuelto'
                 ],
                 imageUrl: '/images/vortex.png',
                 pumpHP: '2.5 HP',
@@ -810,7 +810,7 @@ export const MODELS_DATA: Record<string, Record<string, FlowformModel[]>> = {
                 maintenance: 'Control estructural mensual.',
                 durability: '25 años',
                 studies: [
-                    { title: "Tratamiento de efluentes animales (Bacchus)", url: "/studies/farming/Animal effluent treatment chemistry by Peter Bacchus.pdf", type: "PDF" },
+                    { title: "Datos de Investigación en Ganadería y Agricultura", url: "/studies/Farming/13. Research data on livestock and agriculture.doc.pdf", type: "PDF" },
                     { title: "Informe de efluentes de la Granja Hohepa", url: "/studies/farming/Report on HOHEPA Farm use of Flowform treated effluent.pdf", type: "PDF" },
                     { title: "Investigación de oxigenación de Laverstoke", url: "/studies/farming/Laverstoke research re oxygenation VORTEX.pdf", type: "PDF" },
                     { title: "Validación Científica Agrícola", url: "/studies/farming/farming_validation.md", type: "PDF" }

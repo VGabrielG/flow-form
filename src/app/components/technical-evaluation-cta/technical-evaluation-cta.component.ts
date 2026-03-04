@@ -1,12 +1,13 @@
 
 import { Component, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-technical-evaluation-cta',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   template: `
     <div class="w-full flex items-center justify-center gap-4 my-10">
       <!-- Arrow pointing right toward the button -->
@@ -25,9 +26,12 @@ import { LanguageService } from '../../services/language.service';
         </svg>
       </div>
 
-      <button class="bg-neutral-900 hover:bg-neutral-800 text-white border border-neutral-700 hover:border-neutral-500 px-8 py-3 rounded-full font-black uppercase tracking-[0.2em] text-sm hover:scale-105 transition-all duration-300 shadow-lg">
+      <a 
+        routerLink="/contact"
+        class="bg-neutral-900 hover:bg-neutral-800 text-white border border-neutral-700 hover:border-neutral-500 px-8 py-3 rounded-full font-black uppercase tracking-[0.2em] text-sm hover:scale-105 transition-all duration-300 shadow-lg cursor-pointer"
+      >
         {{ lang.language() === 'es' ? 'Solicitar Evaluación Técnica' : 'Request Technical Evaluation' }}
-      </button>
+      </a>
     </div>
   `,
   styles: [`

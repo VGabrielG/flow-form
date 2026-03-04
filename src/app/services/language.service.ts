@@ -49,7 +49,7 @@ const translations: Record<Language, Record<string, string>> = {
         landing_vitalization_desc: "Precision vitalization for nurseries, hydroponics, and sensitive biological growth. Stimulating root biomass and vitality.",
 
         landing_industrial_title: "Farming",
-        landing_industrial_desc: "Heavy-duty remediation for Dairies, Abattoirs, and Wineries. Reversing anaerobic conditions and eliminating odors.",
+        landing_industrial_desc: "Heavy-duty remediation for Dairies, Piggeries, and Wineries. Reversing anaerobic conditions and eliminating odors.",
 
         landing_municipal_title: "Landscape & Architecture",
         landing_municipal_desc: "Sewage treatment polishing and sustainable urban water systems. Fostering biodiversity and generative growth.",
@@ -96,12 +96,12 @@ const translations: Record<Language, Record<string, string>> = {
         glossary_title: "Biomimetic Heart Logic",
 
         // System Logic Steps
-        step_1_title: "1. Stagnant Extraction",
-        step_1_desc: "The pump pulls anaerobic water from the bottom where gases (H2S, CH4) and toxic sludge settle.",
-        step_2_title: "2. Rhythmic Stripping",
-        step_2_desc: "The cascade opens the water into thin films, forcing out CO2 and injecting molecular O2 through rhythmic pulses.",
-        step_3_title: "3. Aerobic Return",
-        step_3_desc: "Oxygen-saturated water returns to the surface, creating a current that eliminates dead zones.",
+        step_1_title: "1. CONTINUOUS INTAKE",
+        step_1_desc: "The system receives the constant flow of the fluid and channels it in a controlled manner into the upper head of the biomimetic cascades.",
+        step_2_title: "2. RHYTHMIC FIGURE-EIGHT OSCILLATION",
+        step_2_desc: "The fluid descends through precisely engineered cavities, generating a pulsating and oscillating movement. This action unfolds the liquid into thin sheets, exponentially maximizing its surface contact with the atmosphere.",
+        step_3_title: "3. VITALIZATION AND RETURN",
+        step_3_desc: "The liquid, now physically restructured and intensely passively oxygenated, returns to the main body. This continuous dynamic process actively promotes and accelerates natural beneficial biological processes.",
 
         // Microbiological Shift
         shift_title: "The 14-Day Shift",
@@ -113,7 +113,7 @@ const translations: Record<Language, Record<string, string>> = {
         nitro_title: "Gas Stripping & pH",
         nitro_desc: "Stripping CO2 naturally balances the carbonic acid cycle, raising pH for optimal aerobic life.",
         chem_title: "Key Transformations",
-        abattoir_chart: "Dissolved Oxygen Saturation",
+        oxygen_chart: "Dissolved Oxygen Saturation",
 
         root_growth: "Primary Growth Factor",
         shoot_length: "Secondary Growth Factor",
@@ -214,7 +214,7 @@ const translations: Record<Language, Record<string, string>> = {
         landing_vitalization_desc: "Vitalización de precisión para viveros, hidroponía y crecimiento sensible. Estimulación de biomasa radicular.",
 
         landing_industrial_title: "Farming",
-        landing_industrial_desc: "Remediación pesada para Lecherías, Mataderos y Viñas. Revierte condiciones anaeróbicas y elimina olores.",
+        landing_industrial_desc: "Remediación pesada para Lecherías, Porcinos y Viñas. Revierte condiciones anaeróbicas y elimina olores.",
 
         landing_municipal_title: "Paisajismo y Arquitectura",
         landing_municipal_desc: "Pulido de aguas servidas y sistemas urbanos. Fomenta la biodiversidad y el crecimiento generativo.",
@@ -261,12 +261,12 @@ const translations: Record<Language, Record<string, string>> = {
         glossary_title: "Lógica Biomimética",
 
         // Pasos de Lógica
-        step_1_title: "1. Extracción Estancada",
-        step_1_desc: "La bomba extrae agua anaeróbica del fondo donde se asientan gases (H2S, CH4) y lodos tóxicos.",
-        step_2_title: "2. Desgasificación Rítmica",
-        step_2_desc: "La cascada abre el agua en láminas finas, forzando la salida de CO2 e inyectando O2 molecular mediante pulsos.",
-        step_3_title: "3. Retorno Aeróbico",
-        step_3_desc: "El agua saturada de oxígeno vuelve a la superficie, creando una corriente que elimina zonas muertas.",
+        step_1_title: "1. CAPTACIÓN CONTINUA",
+        step_1_desc: "El sistema recibe el flujo constante del fluido a tratar y lo canaliza de manera controlada hacia el cabezal superior de las cascadas biomiméticas.",
+        step_2_title: "2. OSCILACIÓN RÍTMICA EN FORMA DE OCHO",
+        step_2_desc: "El fluido desciende a través de cavidades con geometrías precisas, lo que genera un movimiento pulsante y oscilante. Esta acción despliega el líquido en finas láminas, maximizando exponencialmente su superficie de contacto con la atmósfera.",
+        step_3_title: "3. VITALIZACIÓN Y RETORNO",
+        step_3_desc: "El líquido, ahora reestructurado físicamente e intensamente oxigenado de forma pasiva, se reintegra al volumen principal. Este proceso dinámico promueve y acelera activamente los procesos biológicos benéficos naturales.",
 
         // Cambio Microbiológico
         shift_title: "El Cambio de 14 Días",
@@ -278,7 +278,7 @@ const translations: Record<Language, Record<string, string>> = {
         nitro_title: "Extracción de Gases y pH",
         nitro_desc: "La extracción de CO2 balancea naturalmente el ácido carbónico, elevando el pH para la vida aeróbica.",
         chem_title: "Transformaciones Clave",
-        abattoir_chart: "Saturación de Oxígeno Disuelto",
+        oxygen_chart: "Saturación de Oxígeno Disuelto",
 
         root_growth: "Factor de Crecimiento Primario",
         shoot_length: "Factor de Crecimiento Secundario",

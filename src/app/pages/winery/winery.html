@@ -23,7 +23,7 @@
                 </div>
                 <!-- Image side -->
                 <div class="flex-1 flex justify-center items-center">
-                    <img src="/images/vortex.png" alt="Flowform Vortex"
+                    <img src="/images/multiple-steel.png" alt="Flowform Vortex"
                         class="w-full max-w-md max-h-72 object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700 rounded-3xl" />
                 </div>
             </div>
@@ -48,6 +48,47 @@
                     <div class="text-4xl mb-6">{{ pillar.icon }}</div>
                     <h3 class="text-xl font-black mb-4 uppercase tracking-tight">{{ pillar.title }}</h3>
                     <p class="text-sm font-medium leading-relaxed opacity-80">{{ pillar.desc }}</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Application Areas -->
+        <section class="mb-32">
+            <h2 class="text-4xl md:text-5xl font-black text-neutral-900 tracking-tighter leading-none uppercase mb-12">
+                {{ lang.language() === 'es' ? 'ÁREAS DE APLICACIÓN' : 'APPLICATION AREAS' }}
+            </h2>
+            <div class="flex flex-col gap-4">
+                <div *ngFor="let area of applicationAreas"
+                    class="rounded-[2rem] border-2 border-neutral-100 overflow-hidden bg-white shadow-sm hover:border-red-200 transition-all duration-300">
+                    <button (click)="toggleArea(area.id)"
+                        class="w-full px-8 py-6 flex items-center justify-between text-left focus:outline-none focus:bg-red-50/30 transition-colors group">
+                        <span
+                            class="text-xl font-black text-neutral-900 tracking-tight uppercase group-hover:text-red-700 transition-colors">
+                            {{ lang.language() === 'es' ? area.titleEs : area.titleEn }}
+                        </span>
+                        <div class="w-12 h-12 rounded-full border-2 border-neutral-100 flex items-center justify-center bg-white shrink-0 shadow-sm transition-transform duration-500 group-hover:border-red-200"
+                            [class.rotate-45]="activeArea === area.id" [class.bg-red-50]="activeArea === area.id">
+                            <span class="text-2xl font-black text-red-500 leading-none"
+                                style="margin-top: -2px;">+</span>
+                        </div>
+                    </button>
+                    <!-- Content Panel -->
+                    <div class="overflow-hidden transition-all duration-500 ease-in-out bg-neutral-50"
+                        [style.maxHeight]="activeArea === area.id ? '500px' : '0px'"
+                        [style.opacity]="activeArea === area.id ? '1' : '0'">
+                        <div class="px-8 pb-8 pt-6 border-t border-neutral-100">
+                            <div
+                                class="mb-6 inline-block px-4 py-2 bg-white border-2 border-red-100 rounded-full text-red-800 text-xs font-black uppercase tracking-[0.15em] shadow-sm">
+                                <span class="opacity-60">{{ lang.language() === 'es' ? 'UBICACIÓN:' : 'LOCATION:'
+                                    }}</span>
+                                <span class="ml-2">{{ lang.language() === 'es' ? area.locationEs : area.locationEn
+                                    }}</span>
+                            </div>
+                            <p class="text-neutral-700 text-lg font-medium leading-relaxed max-w-4xl">
+                                {{ lang.language() === 'es' ? area.detailsEs : area.detailsEn }}
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -83,7 +124,7 @@
                             ? 'Las pruebas comparativas mostraron una notable mejora en la estructura de los taninos y
                             la complejidad aromática, elevando el perfil premium del vino.'
                             : 'Comparative trials showed a remarkable improvement in tannin structure and aromatic
-                            complexity, elevating the wine\\'s premium profile.' }}
+                            complexity, elevating the wine\'s premium profile.' }}
                         </p>
                     </div>
                     <div class="pt-6 border-t border-white/10 grid grid-cols-2 gap-4 mb-6">
