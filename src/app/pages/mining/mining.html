@@ -1,0 +1,119 @@
+<div class="animate-fadeIn min-h-screen bg-white text-neutral-900 font-outfit">
+    <!-- Hero Section - Industrial Dark Theme -->
+    <header class="pt-32 pb-24 text-white relative overflow-hidden bg-slate-950 border-b border-slate-800">
+        <div
+            class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20">
+        </div>
+        <div
+            class="absolute inset-0 bg-gradient-to-b from-cyan-950/30 via-transparent to-slate-950/50 pointer-events-none">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <!-- Text side -->
+                <div class="flex-1 text-left">
+                    <app-animated-pulse-pill
+                        [label]="lang.language() === 'es' ? 'REMEDIACIÓN INDUSTRIAL' : 'INDUSTRIAL REMEDIATION'"
+                        color="cyan" class="mb-8"></app-animated-pulse-pill>
+                    <h1 class="text-6xl md:text-7xl font-black mb-8 tracking-tighter leading-none uppercase">
+                        {{ lang.language() === 'es' ? 'MINERÍA SOSTENIBLE' : 'SUSTAINABLE MINING' }}
+                    </h1>
+                    <p class="text-xl text-slate-300 leading-relaxed font-medium max-w-xl">
+                        {{ lang.language() === 'es'
+                        ? 'Tecnología de flujo rítmico para la remediación de aguas en operaciones mineras. Reducción de
+                        impacto ambiental y mejora de la licencia social para operar.'
+                        : 'Rhythmic flow technology for water remediation in mining operations. Reducing environmental
+                        impact and improving social license to operate.' }}
+                    </p>
+                </div>
+                <!-- Image side -->
+                <div class="flex-1 flex justify-center items-center">
+                    <img src="/images/multiple-plastic.png" alt="Flowform Sevenfold"
+                        class="w-full max-w-md h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700 rounded-3xl" />
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-20 pb-32">
+        <!-- Core Technology Description -->
+        <section class="mb-20">
+            <app-core-technology-section themeColor="cyan"></app-core-technology-section>
+        </section>
+
+        <!-- Strategic Value Grid -->
+        <section class="mb-32">
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tighter leading-none uppercase mb-12">
+                {{ lang.language() === 'es' ? 'VALOR' : 'VALUE' }}
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div *ngFor="let item of pillars"
+                    class="p-10 rounded-[2.5rem] border-2 border-cyan-200 hover:border-cyan-400 hover:shadow-lg transition-all"
+                    [ngClass]="item.color">
+                    <div class="text-4xl mb-6">{{ item.icon }}</div>
+                    <h3 class="text-xl font-black mb-4">{{ item.title }}</h3>
+                    <p class="text-sm opacity-80 leading-relaxed font-medium">{{ item.desc }}</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Application Areas -->
+        <section class="mb-32">
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tighter leading-none uppercase mb-12">
+                {{ lang.language() === 'es' ? 'ÁREAS DE APLICACIÓN' : 'APPLICATION AREAS' }}
+            </h2>
+            <div class="flex flex-col gap-4">
+                <div *ngFor="let area of applicationAreas"
+                    class="rounded-[2rem] border-2 border-slate-100 overflow-hidden bg-white shadow-sm hover:border-cyan-200 transition-all duration-300">
+                    <button (click)="toggleArea(area.id)"
+                        class="w-full px-8 py-6 flex items-center justify-between text-left focus:outline-none focus:bg-cyan-50/30 transition-colors group">
+                        <span
+                            class="text-xl font-black text-slate-900 tracking-tight uppercase group-hover:text-cyan-700 transition-colors">
+                            {{ lang.language() === 'es' ? area.titleEs : area.titleEn }}
+                        </span>
+                        <div class="w-12 h-12 rounded-full border-2 border-slate-100 flex items-center justify-center bg-white shrink-0 shadow-sm transition-transform duration-500 group-hover:border-cyan-200"
+                            [class.rotate-45]="activeArea === area.id" [class.bg-cyan-50]="activeArea === area.id">
+                            <span class="text-2xl font-black text-cyan-500 leading-none"
+                                style="margin-top: -2px;">+</span>
+                        </div>
+                    </button>
+                    <!-- Content Panel -->
+                    <div class="overflow-hidden transition-all duration-500 ease-in-out bg-slate-50"
+                        [style.maxHeight]="activeArea === area.id ? '500px' : '0px'"
+                        [style.opacity]="activeArea === area.id ? '1' : '0'">
+                        <div class="px-8 pb-8 pt-6 border-t border-slate-100">
+                            <div
+                                class="mb-6 inline-block px-4 py-2 bg-white border-2 border-cyan-100 rounded-full text-cyan-800 text-xs font-black uppercase tracking-[0.15em] shadow-sm">
+                                <span class="opacity-60">{{ lang.language() === 'es' ? 'UBICACIÓN:' : 'LOCATION:'
+                                    }}</span>
+                                <span class="ml-2">{{ lang.language() === 'es' ? area.locationEs : area.locationEn
+                                    }}</span>
+                            </div>
+                            <p class="text-slate-700 text-lg font-medium leading-relaxed max-w-4xl">
+                                {{ lang.language() === 'es' ? area.detailsEs : area.detailsEn }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Metrics Grid -->
+        <section class="mb-32">
+            <div class="flex items-center space-x-5 mb-20">
+                <h2 class="text-4xl font-black text-neutral-900 tracking-tight leading-none uppercase">
+                    {{ lang.language() === 'es' ? 'Métricas de Validación Técnica' : 'Technical Validation Metrics' }}
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <app-metric-card *ngFor="let fact of scienceFacts" [label]="fact.label" [value]="fact.value"
+                    [study]="fact.pdf" [language]="lang.language()" variant="cyan"></app-metric-card>
+            </div>
+        </section>
+
+        <app-technical-evaluation-cta variant="mining" [titleEs]="'¿Listo para Transformar tu Operación?'"
+            [titleEn]="'Ready to Transform Your Operation?'"
+            [descEs]="'Descubre cómo la tecnología Flowform puede ayudar a tu operación minera a cumplir normativas ambientales y mejorar la relación con las comunidades.'"
+            [descEn]="'Discover how Flowform technology can help your mining operation meet environmental regulations and improve community relations.'"></app-technical-evaluation-cta>
+    </div>
+</div>

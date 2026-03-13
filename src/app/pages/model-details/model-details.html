@@ -1,0 +1,220 @@
+<div class="min-h-screen flex flex-col relative bg-white">
+    <main class="flex-grow relative z-10">
+        <div class="animate-fadeIn pb-32 bg-transparent min-h-screen border-t border-neutral-100">
+
+            <div *ngIf="!product" class="min-h-screen flex items-center justify-center">
+                <div class="text-center">
+                    <h2 class="text-2xl font-bold mb-4">Product not found</h2>
+                    <a routerLink="/products" class="text-indigo-600 hover:underline">Back to Products</a>
+                </div>
+            </div>
+
+            <div *ngIf="product"
+                class="pt-32 pb-48 text-neutral-950 relative overflow-hidden border-b border-neutral-100">
+                <div class="absolute inset-0 bg-gradient-to-b from-neutral-50/50 to-transparent pointer-events-none">
+                </div>
+                <div class="max-w-7xl mx-auto px-4 relative z-10">
+                    <a class="flex items-center justify-center mb-12 text-[10px] font-black uppercase tracking-[0.3em] transition-colors group"
+                        [ngClass]="categoryColor === 'emerald' ? 'text-emerald-600 hover:text-emerald-500' : 'text-indigo-600 hover:text-indigo-500'"
+                        routerLink="/products">
+                        <svg class="w-4 h-4 mr-2 transform group-hover:-translate-x-1 transition-transform" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path d="M11 17l-5-5m0 0l5-5m-5 5h12" stroke-width="3"></path>
+                        </svg>
+                        {{ lang.t('back_models') }}
+                    </a>
+
+                    <div class="text-center max-w-4xl mx-auto mb-20">
+                        <div *ngIf="product.price" class="mb-6">
+                            <span
+                                class="inline-block px-4 py-1.5 text-[10px] font-black uppercase tracking-widest rounded-full border shadow-sm"
+                                [ngClass]="categoryColor === 'emerald' ? 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20' : 'bg-indigo-500/10 text-indigo-600 border-indigo-500/20'">
+                                {{ product.price }}
+                            </span>
+                        </div>
+                        <h1
+                            class="text-6xl md:text-8xl font-black mb-10 tracking-tighter leading-none text-neutral-950 uppercase">
+                            {{ product.name }}</h1>
+                        <p class="text-xl text-neutral-500 font-medium leading-relaxed max-w-3xl mx-auto">
+                            {{ product.description }}
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col items-center gap-16">
+                        <div class="relative group">
+                            <div class="absolute -inset-10 rounded-[4rem] blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000"
+                                [ngClass]="categoryColor === 'emerald' ? 'bg-emerald-600/10' : 'bg-indigo-600/10'">
+                            </div>
+                            <img [alt]="product.name"
+                                class="relative w-[500px] h-[500px] object-cover rounded-[4rem] shadow-2xl border border-neutral-100"
+                                [src]="product.imageUrl" />
+                        </div>
+
+                        <div
+                            class="bg-neutral-950 backdrop-blur-2xl border border-white/5 p-12 rounded-[4rem] flex flex-wrap justify-center items-center gap-12 md:gap-24 shadow-2xl">
+                            <div class="text-center">
+                                <div class="text-6xl font-black mb-2 leading-none"
+                                    [ngClass]="categoryColor === 'emerald' ? 'text-emerald-400' : 'text-indigo-400'">{{
+                                    product.lph }}</div>
+                                <div class="text-[10px] text-neutral-500 uppercase font-black tracking-[0.2em]">{{
+                                    lang.t('capacity_label') }}</div>
+                            </div>
+                            <div class="hidden md:block w-px h-20 bg-white/10"></div>
+                            <div class="text-center">
+                                <div class="text-6xl font-black text-white mb-2 leading-none">{{ product.optFlow ||
+                                    (product.pumpHP ? product.pumpHP.split(' ')[0] : '0') }}</div>
+                                <div class="text-[10px] text-neutral-500 uppercase font-black tracking-[0.2em]">{{
+                                    product.optFlow ? lang.t('opt_flow_label') : lang.t('motor_hp') }}</div>
+                            </div>
+                            <ng-container *ngIf="product.weight">
+                                <div class="hidden md:block w-px h-20 bg-white/10"></div>
+                                <div class="text-center">
+                                    <div class="text-6xl font-black text-white mb-2 leading-none">{{ product.weight }}
+                                    </div>
+                                    <div class="text-[10px] text-neutral-500 uppercase font-black tracking-[0.2em]">{{
+                                        lang.t('weight_label') }}</div>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="product" class="max-w-7xl mx-auto px-4 -mt-24 relative z-20">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                    <div class="lg:col-span-12 space-y-16">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <div class="bg-white p-10 rounded-3xl border border-neutral-200 shadow-lg">
+                                <h3
+                                    class="text-2xl font-black text-neutral-900 mb-8 flex items-center uppercase tracking-tight">
+                                    <div class="w-1.5 h-6 bg-neutral-900 rounded-full mr-3"></div>
+                                    {{ lang.t('benefits_title') }}
+                                </h3>
+                                <div class="space-y-4">
+                                    <div *ngFor="let benefit of product.benefits" class="flex items-start group">
+                                        <div
+                                            class="w-6 h-6 rounded-md bg-neutral-100 text-neutral-600 flex items-center justify-center mr-4 mt-0.5 shrink-0 group-hover:bg-neutral-900 group-hover:text-white transition-colors">
+                                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                    d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </div>
+                                        <span
+                                            class="text-neutral-600 font-medium leading-relaxed group-hover:text-neutral-900 transition-colors">{{
+                                            benefit }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-neutral-900 p-10 rounded-3xl border border-neutral-800 shadow-lg">
+                                <h3
+                                    class="text-2xl font-black text-white mb-8 flex items-center uppercase tracking-tight">
+                                    <div class="w-1.5 h-6 bg-white rounded-full mr-3"></div>
+                                    {{ lang.t('technical_specs') }}
+                                </h3>
+                                <div class="grid grid-cols-2 gap-6">
+                                    <div *ngFor="let spec of specs"
+                                        class="p-4 bg-white/5 rounded-xl border border-white/10">
+                                        <div
+                                            class="text-[10px] font-black text-neutral-500 uppercase mb-1 tracking-widest">
+                                            {{ spec.label }}</div>
+                                        <div class="text-base font-semibold text-white">{{ spec.value }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div *ngIf="product.studies && product.studies.length > 0" class="grid grid-cols-1 gap-10">
+                            <div class="bg-white p-10 rounded-3xl border border-neutral-200 shadow-lg">
+                                <h3
+                                    class="text-2xl font-black text-neutral-900 mb-8 flex items-center uppercase tracking-tight">
+                                    <div class="w-1.5 h-6 bg-neutral-900 rounded-full mr-3"></div>
+                                    {{ lang.t('scientific_validation') }}
+                                </h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <a *ngFor="let study of product.studies"
+                                        class="group flex items-center p-5 bg-neutral-50 hover:bg-neutral-100 rounded-2xl border border-neutral-200 transition-all hover:border-neutral-400"
+                                        [href]="study.url" target="_blank" rel="noopener noreferrer">
+                                        <div
+                                            class="w-10 h-10 rounded-xl bg-neutral-200 text-neutral-600 flex items-center justify-center mr-4 group-hover:bg-neutral-900 group-hover:text-white transition-colors">
+                                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div class="flex-1">
+                                            <h4
+                                                class="text-neutral-900 font-bold leading-tight group-hover:text-neutral-600 transition-colors text-sm">
+                                                {{ study.title }}</h4>
+                                            <div class="text-[10px] text-neutral-500 mt-1 font-mono uppercase">{{
+                                                study.type }}</div>
+                                        </div>
+                                        <svg class="w-5 h-5 text-neutral-400 group-hover:text-neutral-900 transition-colors ml-2"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                            </path>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="mt-6 pt-6 border-t border-neutral-200 text-sm text-neutral-500 font-medium">
+                                    {{ lang.t('studies_disclaimer') }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section *ngIf="product" class="py-32 bg-neutral-50 border-t border-neutral-200 mt-32">
+                <div class="max-w-7xl mx-auto px-4 text-center">
+                    <h2 class="text-4xl font-black text-neutral-900 mb-12 tracking-tight uppercase">
+                        {{ lang.language() === 'en' ? 'More ' + categoryName + ' Solutions' : 'Más Soluciones de ' +
+                        categoryName }}
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                        <a *ngFor="let m of otherProducts"
+                            class="group relative h-96 rounded-[3rem] overflow-hidden shadow-2xl transition-transform duration-500 hover:-translate-y-4"
+                            [routerLink]="['/model', categoryId, m.id]">
+                            <img [alt]="m.name"
+                                class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                                [src]="m.imageUrl" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/20 to-transparent">
+                            </div>
+                            <div class="absolute bottom-12 left-12 right-12 text-left">
+                                <h3
+                                    class="text-3xl font-black text-white mb-6 group-hover:text-blue-400 transition-colors">
+                                    {{ m.name }}</h3>
+                                <div
+                                    class="inline-flex items-center space-x-3 text-white font-black uppercase tracking-widest text-[10px]">
+                                    <span>{{ lang.language() === 'en' ? 'View Details' : 'Ver Detalles' }}</span>
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="group relative h-96 rounded-[3rem] overflow-hidden shadow-2xl border-2 border-dashed border-neutral-300 flex items-center justify-center p-12 transition-all hover:bg-white hover:border-neutral-900"
+                            [routerLink]="['/products']" [queryParams]="{ category: categoryId }">
+                            <div class="text-center">
+                                <div
+                                    class="w-16 h-16 bg-neutral-950 text-white rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="w-8 h-8">
+                                        <path d="M5 12h14"></path>
+                                        <path d="m12 5 7 7-7 7"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-2xl font-black text-neutral-900 uppercase tracking-tight">{{
+                                    lang.language() === 'en' ? 'View all products' : 'Ver todos los productos' }}</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+</div>
