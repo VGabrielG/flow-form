@@ -23,9 +23,9 @@ export class LandingComponent {
   ];
 
   features = [
-    { id: '01', title: 'Natural Oxygenation', desc: 'Restores dissolved oxygen levels naturally through rhythmic pulse actions.' },
-    { id: '02', title: 'Water Revitalization', desc: 'Realigns water structure for improved biological absorption and health.' },
-    { id: '03', title: 'Aesthetic Harmony', desc: 'Creates stunning visual and auditory landscapes that promote relaxation.' }
+    { id: '01', title_key: 'feature_1_title', desc_key: 'feature_1_desc' },
+    { id: '02', title_key: 'feature_2_title', desc_key: 'feature_2_desc' },
+    { id: '03', title_key: 'feature_3_title', desc_key: 'feature_3_desc' }
   ];
 
   steps = [

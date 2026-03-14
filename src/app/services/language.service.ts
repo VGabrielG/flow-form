@@ -28,31 +28,19 @@ export class LanguageService {
 const translations: Record<Language, Record<string, string>> = {
     en: {
         // Navigation
-        nav_vitalization: "Home",
-        nav_industrial: "Farming",
-        nav_municipal: "Landscape & Architecture",
-        nav_science: "Biochemistry",
         nav_home: "Home",
         nav_products: "Products",
         nav_contact: "Contact",
         nav_winery: "Wine",
         nav_meat: "Animal Agriculture",
         nav_mining: "Mining",
-        nav_municipalities: "Municipalities",
+        nav_municipalities: "Public Spaces",
 
         // Landing Page
-        landing_title: "Flowform Eco-Tech",
+        landing_title: "Flowform® Eco-Tech",
         landing_subtitle: "Structural & Biochemical Water Restoration",
+        landing_slogan: "Water treatment with eco-technology",
         landing_main_desc: "Flowform® technology channels the kinetic energy of rhythmic water movement to restore the vital essence of our world's most precious resource. Through meticulously crafted lemniscate paths, our systems induce a natural figure-of-eight pulse—amplifying oxygen exchange and revitalizing biological activity through pure biomimicry, entirely free from chemical additives.",
-
-        landing_vitalization_title: "Home",
-        landing_vitalization_desc: "Precision vitalization for nurseries, hydroponics, and sensitive biological growth. Stimulating root biomass and vitality.",
-
-        landing_industrial_title: "Farming",
-        landing_industrial_desc: "Heavy-duty remediation for Dairies, Piggeries, and Wineries. Reversing anaerobic conditions and eliminating odors.",
-
-        landing_municipal_title: "Landscape & Architecture",
-        landing_municipal_desc: "Sewage treatment polishing and sustainable urban water systems. Fostering biodiversity and generative growth.",
 
         btn_explore: "View Solutions",
         btn_research: "Scientific Data",
@@ -62,13 +50,29 @@ const translations: Record<Language, Record<string, string>> = {
         step_4_title: "4. Biological Stability",
         step_4_desc: "The ecosystem stabilizes as aerobic bacteria dominate, creating a self-sustaining healthy environment.",
         see_products: "See Products",
+        landing_what_is: "What is Flowform?",
+        feature_1_title: "Natural Oxygenation",
+        feature_1_desc: "Restores dissolved oxygen levels naturally through rhythmic pulse actions.",
+        feature_2_title: "Water Revitalization",
+        feature_2_desc: "Realigns water structure for improved biological absorption and health.",
+        feature_3_title: "Aesthetic Harmony",
+        feature_3_desc: "Creates stunning visual and auditory landscapes that promote relaxation.",
 
         // Catalog
         grid_title: "Products",
         grid_desc: "Engineering data for rhythmic water units across three core sectors.",
-        lpm: "LPM",
-        lph: "LPH",
         constant: "Constant",
+        products_title: "Our Products",
+        products_desc: "Explore our range of biomimetic water flow technologies designed for home, agriculture, and landscaping.",
+        search_placeholder: "Search products, applications...",
+        view_details: "VIEW DETAILS",
+        tab_all: "All",
+        tab_landscaping: "Landscaping",
+        tab_farming: "Farming",
+        tab_living: "Living",
+        cat_landscaping: "Landscaping",
+        cat_agricultural: "Agricultural Solutions",
+        cat_interior: "Interior Living",
 
         // Model Details
         capacity_label: "Hourly Flow (LPH)",
@@ -125,6 +129,27 @@ const translations: Record<Language, Record<string, string>> = {
         col_result: "Observed Result",
         col_action: "Link",
         btn_view_study: "View Data",
+        product_not_found: "Product not found",
+        back_to_products: "Back to Products",
+        view_all_products: "View all products",
+        footer_research: "Flowform® Eco-Technology Research",
+        footer_desc: "Advanced biomimetic solutions for structural and biochemical water stabilization. Supporting global ecological restoration since 1970.",
+        footer_rights: "All rights reserved.",
+        app_areas_title: "Application Areas",
+        location_label: "LOCATION:",
+        source_label: "Source:",
+        page_label: "Pg.",
+        tech_analysis_btn: "Technical Analysis",
+        verified_science_title: "Verified Scientific Evidence",
+        case_studies_desc: "Detailed field studies across diverse biological and industrial environments.",
+        success_stories_title: "Success Stories",
+        quality_label: "QUALITY",
+        effluent_label: "EFFLUENT",
+        irrigation_label: "IRRIGATION",
+        view_enological_btn: "VIEW ENOLOGICAL STUDY",
+        view_field_report_btn: "VIEW FIELD REPORT",
+        view_scientific_report_btn: "VIEW SCIENTIFIC REPORT",
+        tech_validation_metrics: "Technical Validation Metrics",
 
         // Farming
         farming_title: "Plants & Agriculture",
@@ -167,7 +192,7 @@ const translations: Record<Language, Record<string, string>> = {
         mining_desc: "Industrial-scale water treatment for sustainable mining operations and community impact reduction.",
 
         // Municipal Specific
-        muni_title: "Municipalities & Public Spaces",
+        muni_title: "Public Spaces",
         muni_desc: "Sustainable water management solutions for urban environments, parks, and waste treatment facilities.",
         muni_pillar_1_title: "Wastewater Polishing",
         muni_pillar_1_desc: "Efficient removal of pathogens and nutrients (N, P) for safe discharge or reuse.",
@@ -193,31 +218,19 @@ const translations: Record<Language, Record<string, string>> = {
     },
     es: {
         // Navegación
-        nav_vitalization: "Hogar",
-        nav_industrial: "Farming",
-        nav_municipal: "Paisajismo y Arquitectura",
-        nav_science: "Bioquímica",
         nav_home: "Inicio",
         nav_products: "Productos",
         nav_contact: "Contacto",
         nav_winery: "Vinos",
         nav_meat: "Agricultura Animal",
         nav_mining: "Minería",
-        nav_municipalities: "Municipalidades",
+        nav_municipalities: "Espacios Públicos",
 
         // Página de Inicio
-        landing_title: "Flowform Eco-Tech",
+        landing_title: "Flowform® Eco-Tech",
         landing_subtitle: "Restauración Estructural y Bioquímica del Agua",
+        landing_slogan: "Tratamiento de aguas con ecotecnología",
         landing_main_desc: "La tecnología Flowform® canaliza la energía cinética del movimiento rítmico del agua para restaurar la esencia vital del recurso más preciado de nuestro mundo. A través de trayectorias de lemniscata meticulosamente diseñadas, nuestros sistemas inducen un pulso natural en forma de ocho, amplificando el intercambio de oxígeno y revitalizando la actividad biológica mediante pura biomímesis, sin necesidad de aditivos químicos.",
-
-        landing_vitalization_title: "Hogar",
-        landing_vitalization_desc: "Vitalización de precisión para viveros, hidroponía y crecimiento sensible. Estimulación de biomasa radicular.",
-
-        landing_industrial_title: "Farming",
-        landing_industrial_desc: "Remediación pesada para Lecherías, Porcinos y Viñas. Revierte condiciones anaeróbicas y elimina olores.",
-
-        landing_municipal_title: "Paisajismo y Arquitectura",
-        landing_municipal_desc: "Pulido de aguas servidas y sistemas urbanos. Fomenta la biodiversidad y el crecimiento generativo.",
 
         btn_explore: "Ver Soluciones",
         btn_research: "Datos Científicos",
@@ -227,13 +240,29 @@ const translations: Record<Language, Record<string, string>> = {
         step_4_title: "4. Estabilidad Biológica",
         step_4_desc: "El ecosistema se estabiliza a medida que dominan las bacterias aeróbicas, creando un ambiente saludable autosustentable.",
         see_products: "Ver Productos",
+        landing_what_is: "¿Qué es Flowform?",
+        feature_1_title: "Oxigenación Natural",
+        feature_1_desc: "Restaura los niveles de oxígeno disuelto de forma natural mediante acciones de pulso rítmico.",
+        feature_2_title: "Revitalización del Agua",
+        feature_2_desc: "Realinea la estructura del agua para una mejor absorción biológica y salud.",
+        feature_3_title: "Armonía Estética",
+        feature_3_desc: "Crea impresionantes paisajes visuales y auditivos que promueven la relajación.",
 
         // Catálogo
         grid_title: "Productos",
         grid_desc: "Datos de ingeniería para unidades rítmicas en tres sectores principales.",
-        lpm: "LPM",
-        lph: "LPH",
         constant: "Constante",
+        products_title: "Nuestros Productos",
+        products_desc: "Explore nuestra gama de tecnologías biomiméticas de flujo de agua diseñadas para el hogar, la agricultura y el paisajismo.",
+        search_placeholder: "Buscar productos, aplicaciones...",
+        view_details: "VER DETALLES",
+        tab_all: "Todos",
+        tab_landscaping: "Paisajismo",
+        tab_farming: "Agricultura",
+        tab_living: "Interior",
+        cat_landscaping: "Paisajismo",
+        cat_agricultural: "Soluciones Agrícolas",
+        cat_interior: "Vida Interior",
 
         // Detalles del Modelo
         capacity_label: "Caudal Horario (LPH)",
@@ -290,6 +319,27 @@ const translations: Record<Language, Record<string, string>> = {
         col_result: "Resultado Observado",
         col_action: "Link",
         btn_view_study: "Ver Datos",
+        product_not_found: "Producto no encontrado",
+        back_to_products: "Volver a Productos",
+        view_all_products: "Ver todos los productos",
+        footer_research: "Investigación en Eco-Tecnología Flowform®",
+        footer_desc: "Soluciones biomiméticas avanzadas para la estabilización estructural y bioquímica del agua. Apoyando la restauración ecológica global desde 1970.",
+        footer_rights: "Todos los derechos reservados.",
+        app_areas_title: "Áreas de Aplicación",
+        location_label: "UBICACIÓN:",
+        source_label: "Fuente:",
+        page_label: "Pág.",
+        tech_analysis_btn: "Análisis Técnico",
+        verified_science_title: "Evidencia Científica Verificada",
+        case_studies_desc: "Estudios de campo detallados a través de diversos entornos biológicos e industriales.",
+        success_stories_title: "Casos de Éxito",
+        quality_label: "CALIDAD",
+        effluent_label: "EFLUENTES",
+        irrigation_label: "RIEGO",
+        view_enological_btn: "VER ESTUDIO ENOLÓGICO",
+        view_field_report_btn: "VER REPORTE DE CAMPO",
+        view_scientific_report_btn: "VER REPORTE CIENTÍFICO",
+        tech_validation_metrics: "Métricas de Validación Técnica",
 
         // Farming
         farming_title: "Plantas y Agricultura",
@@ -331,7 +381,7 @@ const translations: Record<Language, Record<string, string>> = {
         mining_desc: "Tratamiento de agua a escala industrial para operaciones mineras sostenibles y reducción del impacto comunitario.",
 
         // Municipal Specific
-        muni_title: "Municipalidades y Espacios Públicos",
+        muni_title: "Espacios Públicos",
         muni_desc: "Soluciones de gestión de agua sostenible para entornos urbanos, parques e instalaciones de tratamiento de residuos.",
         muni_pillar_1_title: "Pulido de Aguas Residuales",
         muni_pillar_1_desc: "Eliminación eficiente de patógenos y nutrientes (N, P) para descarga segura o reutilización.",

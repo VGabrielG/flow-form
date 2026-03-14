@@ -24,16 +24,16 @@ export class HomeComponent implements OnInit, OnDestroy {
   activeTab = signal<string>('all');
 
   tabs = [
-    { id: 'all', label: 'All' },
-    { id: 'landscaping', label: 'Landscaping' },
-    { id: 'farming', label: 'Farming' },
-    { id: 'living', label: 'Living' }
+    { id: 'all', label_key: 'tab_all' },
+    { id: 'landscaping', label_key: 'tab_landscaping' },
+    { id: 'farming', label_key: 'tab_farming' },
+    { id: 'living', label_key: 'tab_living' }
   ];
 
-  categories: Array<{ id: 'municipal' | 'industrial' | 'vitalization', title: string }> = [
-    { id: 'municipal', title: 'Landscaping' },
-    { id: 'industrial', title: 'Agricultural Solutions' },
-    { id: 'vitalization', title: 'Interior Living' }
+  categories: Array<{ id: 'municipal' | 'industrial' | 'vitalization', title_key: string }> = [
+    { id: 'municipal', title_key: 'cat_landscaping' },
+    { id: 'industrial', title_key: 'cat_agricultural' },
+    { id: 'vitalization', title_key: 'cat_interior' }
   ];
 
   allModels = computed(() => {
@@ -90,8 +90,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     const canvas = this.canvasRef.nativeElement;
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    // Note: React version didn't have drawing logic in useEffect either, 
-    // it just set the dimensions. If there was more logic, I'd add it here.
+    // Set canvas dimensions
   }
 
   onResize = () => {

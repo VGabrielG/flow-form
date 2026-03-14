@@ -17,7 +17,7 @@
         <!-- Application Areas -->
         <section class="mb-32">
             <h2 class="text-4xl md:text-5xl font-black text-neutral-900 tracking-tighter leading-none uppercase mb-12">
-                {{ lang.language() === 'es' ? 'ÁREAS DE APLICACIÓN' : 'APPLICATION AREAS' }}
+                {{ lang.t('app_areas_title') }}
             </h2>
             <div class="flex flex-col gap-4">
                 <div *ngFor="let area of applicationAreas"
@@ -41,8 +41,7 @@
                         <div class="px-8 pb-8 pt-6 border-t border-neutral-200">
                             <div
                                 class="mb-6 inline-block px-4 py-2 bg-white border border-neutral-300 rounded-full text-neutral-800 text-xs font-black uppercase tracking-[0.15em] shadow-sm">
-                                <span class="opacity-60">{{ lang.language() === 'es' ? 'UBICACIÓN:' : 'LOCATION:'
-                                    }}</span>
+                                <span class="opacity-60">{{ lang.t('location_label') }}</span>
                                 <span class="ml-2">{{ lang.language() === 'es' ? area.locationEs : area.locationEn
                                     }}</span>
                             </div>
@@ -65,7 +64,7 @@
                     </svg>
                 </div>
                 <h2 class="text-4xl font-black text-neutral-950 tracking-tight leading-none uppercase">
-                    {{ lang.language() === 'es' ? 'Evidencia Científica Verificada' : 'Verified Scientific Evidence' }}
+                    {{ lang.t('verified_science_title') }}
                 </h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -81,19 +80,19 @@
                         {{ fact.label }}</div>
                     <div class="mt-auto space-y-8">
                         <div class="space-y-3">
-                            <div class="text-[9px] font-black text-neutral-500 uppercase tracking-[0.3em]">{{
-                                lang.language() === 'es' ? 'Fuente:' : 'Source:' }}</div>
+                            <div class="text-[9px] font-black text-neutral-500 uppercase tracking-[0.3em]">
+                                {{ lang.t('source_label') }}</div>
                             <div class="text-xs text-neutral-400 font-bold italic line-clamp-2 leading-relaxed">{{
                                 fact.pdf }}</div>
                         </div>
                         <div class="pt-8 border-t border-white/5 flex items-center justify-between">
                             <div
                                 class="bg-neutral-800/80 px-4 py-2 rounded-xl text-[10px] font-black text-white tracking-widest uppercase border border-white/5 shadow-lg">
-                                {{ lang.language() === 'es' ? 'Pág.' : 'Pg.' }} {{ fact.page }}
+                                {{ lang.t('page_label') }} {{ fact.page }}
                             </div>
                             <a [href]="fact.pdf" target="_blank" rel="noopener noreferrer"
                                 class="text-[10px] font-black uppercase tracking-[0.3em] text-white/40 hover:text-white flex items-center transition-all duration-300 group/btn">
-                                {{ lang.language() === 'es' ? 'Análisis Técnico' : 'Technical Analysis' }}
+                                {{ lang.t('tech_analysis_btn') }}
                                 <svg class="w-3.5 h-3.5 ml-2 transform group-hover/btn:translate-x-1 transition-transform opacity-70"
                                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path d="M13 7l5 5-5 5M6 7l5 5-5 5" stroke-width="3" />
@@ -111,8 +110,7 @@
                 <div class="max-w-xl">
                     <h2 class="text-5xl font-black text-neutral-900 mb-6 tracking-tighter leading-none uppercase">{{
                         lang.t('case_title') }}</h2>
-                    <p class="text-lg text-neutral-500 font-medium">Detailed field studies across diverse biological and
-                        industrial environments.</p>
+                    <p class="text-lg text-neutral-500 font-medium">{{ lang.t('case_studies_desc') }}</p>
                 </div>
                 <div class="h-2 w-32 rounded-full mb-4" [ngClass]="themeColorClass"></div>
             </div>

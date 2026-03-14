@@ -4,8 +4,8 @@
 
             <div *ngIf="!product" class="min-h-screen flex items-center justify-center">
                 <div class="text-center">
-                    <h2 class="text-2xl font-bold mb-4">Product not found</h2>
-                    <a routerLink="/products" class="text-indigo-600 hover:underline">Back to Products</a>
+                    <h2 class="text-2xl font-bold mb-4">{{ lang.t('product_not_found') }}</h2>
+                    <a routerLink="/products" class="text-indigo-600 hover:underline">{{ lang.t('back_to_products') }}</a>
                 </div>
             </div>
 
@@ -168,8 +168,9 @@
             <section *ngIf="product" class="py-32 bg-neutral-50 border-t border-neutral-200 mt-32">
                 <div class="max-w-7xl mx-auto px-4 text-center">
                     <h2 class="text-4xl font-black text-neutral-900 mb-12 tracking-tight uppercase">
-                        {{ lang.language() === 'en' ? 'More ' + categoryName + ' Solutions' : 'Más Soluciones de ' +
-                        categoryName }}
+                        {{ lang.language() === 'en' ? 'More ' : 'Más Soluciones de ' }}
+                        {{ categoryName }}
+                        {{ lang.language() === 'en' ? ' Solutions' : '' }}
                     </h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                         <a *ngFor="let m of otherProducts"
@@ -187,7 +188,7 @@
                                     {{ m.name }}</h3>
                                 <div
                                     class="inline-flex items-center space-x-3 text-white font-black uppercase tracking-widest text-[10px]">
-                                    <span>{{ lang.language() === 'en' ? 'View Details' : 'Ver Detalles' }}</span>
+                                    <span>{{ lang.t('view_details') }}</span>
                                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
                                             d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -208,7 +209,7 @@
                                     </svg>
                                 </div>
                                 <h3 class="text-2xl font-black text-neutral-900 uppercase tracking-tight">{{
-                                    lang.language() === 'en' ? 'View all products' : 'Ver todos los productos' }}</h3>
+                                    lang.t('view_all_products') }}</h3>
                             </div>
                         </a>
                     </div>

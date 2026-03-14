@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-footer',
@@ -14,14 +15,13 @@ import { filter } from 'rxjs/operators';
         <div class="w-12 h-12 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl mx-auto flex items-center justify-center mb-8">
           <img src="/images/logo.png" alt="Logo" class="w-6 h-6 object-contain opacity-50" />
         </div>
-        <p class="text-neutral-400 text-[10px] font-black uppercase tracking-[0.4em] mb-6">Flowform Eco-Technology Research</p>
+        <p class="text-neutral-400 text-[10px] font-black uppercase tracking-[0.4em] mb-6">{{ lang.t('footer_research') }}</p>
         <div class="w-12 h-px bg-white/10 mx-auto mb-6"></div>
         <p class="text-neutral-50 text-[10px] max-w-xl mx-auto leading-loose uppercase tracking-widest font-medium opacity-60">
-          Advanced biomimetic solutions for structural and biochemical water stabilization. <br />
-          Supporting global ecological restoration since 1970.
+          {{ lang.t('footer_desc') }}
         </p>
         <div class="mt-12 text-[9px] font-black text-neutral-600 uppercase tracking-widest leading-none">
-          © {{ currentYear }} Flowform. All rights reserved.
+          © {{ currentYear }} Flowform. {{ lang.t('footer_rights') }}
         </div>
       </div>
     </footer>
@@ -31,6 +31,7 @@ import { filter } from 'rxjs/operators';
   `]
 })
 export class FooterComponent {
+  lang = inject(LanguageService);
   private router = inject(Router);
   showFooter = true;
   currentYear = new Date().getFullYear();

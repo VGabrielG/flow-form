@@ -1,7 +1,7 @@
 
 import { Routes } from '@angular/router';
 import { LandingComponent } from './pages/landing/landing';
-import { HomeComponent } from './pages/home/home';
+import { HomeComponent } from './pages/products/home';
 import { ModelDetailsComponent } from './pages/model-details/model-details';
 import { BiochemistryComponent } from './pages/biochemistry/biochemistry';
 import { WineryComponent } from './pages/winery/winery';
