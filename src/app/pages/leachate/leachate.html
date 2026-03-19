@@ -1,0 +1,185 @@
+<div class="animate-fadeIn min-h-screen bg-white text-neutral-900 font-outfit">
+    <!-- Hero Section -->
+    <header class="pt-32 pb-24 text-white relative overflow-hidden bg-stone-950 border-b border-stone-800">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-amber-950/30 via-transparent to-stone-950/50 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="flex-1 text-left">
+
+                    <h1 class="text-6xl md:text-7xl font-black mb-8 tracking-tighter leading-none uppercase">
+                        {{ lang.language() === 'es' ? 'LIXIVIADOS (JUGO DE BASURA)' : 'LANDFILL LEACHATE' }}
+                    </h1>
+                    <p class="text-xl text-stone-300 leading-relaxed font-medium max-w-xl">
+                        {{ lang.language() === 'es'
+                        ? 'Remediación de alta intensidad para los efluentes más tóxicos del urbanismo mediante oxidación rítmica avanzada.'
+                        : 'High-intensity remediation for the most toxic urban effluents through advanced rhythmic oxidation.' }}
+                    </p>
+                </div>
+                <div class="flex-1 flex justify-center items-center">
+                    <div class="w-full max-w-md aspect-square bg-stone-900/40 rounded-3xl border border-white/10 flex items-center justify-center p-12 backdrop-blur-sm relative group overflow-hidden shadow-2xl">
+                         <div class="absolute inset-0 bg-gradient-to-tr from-orange-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                         <span class="text-[12rem] drop-shadow-2xl filter group-hover:scale-110 transition-transform duration-700">🏗️</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-20 pb-32 pt-12">
+        <!-- Toggle Buttons -->
+        <div class="flex flex-wrap justify-center gap-4 mb-16">
+            <button (click)="toggleViewMode('process')"
+                [class.bg-orange-900]="viewMode === 'process'"
+                [class.text-white]="viewMode === 'process'"
+                [class.shadow-lg]="viewMode === 'process'"
+                [class.bg-white]="viewMode !== 'process'"
+                [class.text-slate-600]="viewMode !== 'process'"
+                [class.hover:bg-orange-50]="viewMode !== 'process'"
+                class="px-8 py-4 rounded-full font-black uppercase tracking-widest text-sm transition-all border-2 border-orange-900/10">
+                {{ lang.language() === 'es' ? 'El Proceso Técnico' : 'The Technical Process' }}
+            </button>
+            <button (click)="toggleViewMode('analysis')"
+                [class.bg-orange-900]="viewMode === 'analysis'"
+                [class.text-white]="viewMode === 'analysis'"
+                [class.shadow-lg]="viewMode === 'analysis'"
+                [class.bg-white]="viewMode !== 'analysis'"
+                [class.text-slate-600]="viewMode !== 'analysis'"
+                [class.hover:bg-orange-50]="viewMode !== 'analysis'"
+                class="px-8 py-4 rounded-full font-black uppercase tracking-widest text-sm transition-all border-2 border-orange-900/10">
+                {{ lang.language() === 'es' ? 'Análisis de la Industria' : 'Industry Analysis' }}
+            </button>
+        </div>
+
+        <!-- THE PROCESS VIEW -->
+        <div *ngIf="viewMode === 'process'" class="animate-fadeIn">
+            <div class="mb-16 text-center">
+                <h2 class="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter leading-none uppercase mb-6">
+                    {{ lang.language() === 'es' ? 'El Proceso Técnico Completo' : 'The Complete Technical Process' }}
+                </h2>
+            </div>
+
+            <!-- Bottleneck block -->
+            <div class="border-b border-slate-200 pb-16 mb-16">
+                <div class="flex items-center gap-4 mb-8">
+                    <span class="text-4xl text-red-500">❌</span>
+                    <h3 class="text-2xl md:text-3xl font-black uppercase tracking-tight text-slate-900">
+                        {{ lang.language() === 'es' ? '1. El Problema: El "Lixiviado Letal"' : '1. The Industry Problem: The "Lethal Leachate"' }}
+                    </h3>
+                </div>
+                
+                <div class="space-y-8 text-lg text-slate-700 font-medium leading-relaxed max-w-5xl">
+                    <p>
+                        <strong class="text-slate-900 block mb-2">{{ lang.language() === 'es' ? 'La "Sopa Negra" Tóxica:' : 'The Toxic "Black Soup":' }}</strong>
+                        {{ lang.language() === 'es' 
+                        ? 'El jugo de basura es una mezcla negra y densa cargada de amoníaco, metales pesados e hidrocarburos. Es el residuo más difícil de tratar en la ingeniería civil debido a su altísima DQO.' 
+                        : 'Landfill leachate is a black, dense soup loaded with ammonia, heavy metals, and hydrocarbons. It is the most difficult residue to treat in civil engineering due to its extremely high COD.' }}
+                    </p>
+                    <div class="text-red-700 bg-red-50/50 p-6 rounded-2xl border border-red-100">
+                        <strong class="text-red-900 block mb-2">{{ lang.language() === 'es' ? 'El Punto de Falla:' : 'The Failure Point:' }}</strong>
+                        <p>
+                        {{ lang.language() === 'es' 
+                        ? 'Si la aireación mecánica se detiene, el lixiviado se vuelve anaeróbico en minutos, emitiendo olores nauseabundos que provocan cierres por denuncias comunitarias y multas millonarias.' 
+                        : 'If mechanical aeration stops, leachate turns anaerobic in minutes, emitting nauseating odors that lead to community complaints, shutdowns, and multi-million dollar fines.' }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Steps Block -->
+            <div class="mb-20">
+                <div class="flex flex-col gap-10">
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+                        <div class="shrink-0 w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center border-2 border-orange-200 text-2xl font-black text-orange-800">1</div>
+                        <div class="flex-1">
+                            <h4 class="text-xl font-black uppercase text-stone-950 mb-2">{{ lang.language() === 'es' ? 'Bio-Aumentación Extrema' : 'Extreme Bio-Augmentation' }}</h4>
+                            <p class="text-lg text-slate-600 font-medium leading-relaxed">{{ lang.language() === 'es' ? 'Se siembra el jugo con bacterias capaces de degradar químicos complejos.' : 'Seed the leachate with bacteria capable of degrading complex chemicals.' }}</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+                        <div class="shrink-0 w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center border-2 border-orange-200 text-2xl font-black text-orange-800">2</div>
+                        <div class="flex-1">
+                            <h4 class="text-xl font-black uppercase text-stone-950 mb-2">{{ lang.language() === 'es' ? 'Oxigenación Rítmica' : 'Rhythmic Oxygenation' }}</h4>
+                            <p class="text-lg text-slate-600 font-medium leading-relaxed">{{ lang.language() === 'es' ? 'El lixiviado cae por cascadas Flowform inyectando oxígeno a niveles de saturación total sin sopladores.' : 'Leachate falls through Flowform cascades, injecting oxygen to total saturation levels without blowers.' }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100">
+                    <thead class="bg-stone-950 text-stone-50 uppercase text-[10px] tracking-widest font-black">
+                        <tr>
+                            <th class="p-4">{{ lang.language() === 'es' ? 'ETAPA' : 'STAGE' }}</th>
+                            <th class="p-4 bg-red-950 text-red-100">{{ lang.language() === 'es' ? 'RIESGO TRADICIONAL' : 'TRADITIONAL RISK' }}</th>
+                            <th class="p-4 bg-orange-800">{{ lang.language() === 'es' ? 'VALOR FLOWFORM' : 'FLOWFORM VALUE' }}</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm font-medium text-slate-700">
+                        <tr class="border-b border-slate-100">
+                            <td class="p-4 uppercase font-black text-slate-900 border-r border-slate-100">Energía</td>
+                            <td class="p-4 text-red-800 bg-red-50">Altísimo (Sopladores 24/7)</td>
+                            <td class="p-4 text-orange-800 bg-orange-50">Casi Cero (Gravedad)</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 uppercase font-black text-slate-900 border-r border-slate-100">Olores</td>
+                            <td class="p-4 text-red-800 bg-red-50">Alto Riesgo constante</td>
+                            <td class="p-4 text-orange-800 bg-orange-50">Nulo (Estado Aeróbico)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- THE ANALYSIS VIEW -->
+        <div *ngIf="viewMode === 'analysis'" class="animate-fadeIn">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+                <div class="p-8 rounded-[2rem] border-2 border-neutral-100 bg-white shadow-sm hover:border-red-200 hover:shadow-md transition-all">
+                    <div class="flex justify-between items-start mb-6">
+                        <h4 class="text-xl font-black uppercase text-slate-900 max-w-[70%]">1. Gestión de Plásticos</h4>
+                        <span class="px-3 py-1 bg-red-50 text-red-600 border border-red-200 rounded-full text-xs font-black uppercase tracking-widest whitespace-nowrap">Nota: 10/10 Priority</span>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-neutral-50 border border-neutral-200 border-l-4 border-l-red-500">
+                        <h5 class="text-[10px] font-black uppercase tracking-widest text-red-500 mb-2">Flowform Contribution: NO</h5>
+                        <p class="text-sm font-medium text-slate-600">Flowform no detiene la generación de microplásticos en el vertedero.</p>
+                    </div>
+                </div>
+                <div class="p-8 rounded-[2rem] border-2 border-neutral-100 bg-white shadow-sm hover:border-red-200 hover:shadow-md transition-all">
+                    <div class="flex justify-between items-start mb-6">
+                        <h4 class="text-xl font-black uppercase text-slate-900 max-w-[70%]">2. Gas Metano Interno</h4>
+                        <span class="px-3 py-1 bg-red-50 text-red-600 border border-red-200 rounded-full text-xs font-black uppercase tracking-widest whitespace-nowrap">Nota: 9/10 Priority</span>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-neutral-50 border border-neutral-200 border-l-4 border-l-red-500">
+                        <h5 class="text-[10px] font-black uppercase tracking-widest text-red-500 mb-2">Flowform Contribution: NO</h5>
+                        <p class="text-sm font-medium text-slate-600">El gas producido dentro de la basura debe ser capturado por pozos; Flowform no actúa en zona seca.</p>
+                    </div>
+                </div>
+            </div>
+
+            <section class="mb-20">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="p-8 rounded-[2rem] border-2 border-orange-100 bg-gradient-to-br from-orange-50/50 to-white shadow-sm hover:shadow-lg transition-all flex flex-col">
+                        <div class="flex justify-between items-start mb-6">
+                            <h4 class="text-xl font-black uppercase text-stone-950">Filtro Social y Olores</h4>
+                            <span class="px-3 py-1 bg-orange-100 text-orange-700 border border-orange-200 rounded-full text-xs font-black uppercase tracking-widest">9/10 Priority</span>
+                        </div>
+                        <p class="text-slate-700 font-medium leading-relaxed mb-6">Un vertedero que no huele es aceptado. Flowform asegura la Licencia Social eliminando olores de forma pasiva.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="p-10 md:p-14 rounded-[3rem] bg-stone-950 border-2 border-stone-900 text-white relative overflow-hidden group">
+                    <div class="relative z-10 flex flex-col md:flex-row items-center gap-8">
+                        <span class="text-4xl shrink-0">⚖️</span>
+                        <div>
+                            <h3 class="text-sm font-black uppercase tracking-[0.2em] text-orange-400 mb-3">VEREDICTO DE INVERSIÓN</h3>
+                            <p class="text-xl text-slate-200 font-medium leading-relaxed">Presentar Flowform como un blindaje reputacional. Garantiza una operación sin olores y reduce costo eléctrico, siendo la única forma de que un vertedero sea aceptado a largo plazo.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

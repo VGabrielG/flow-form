@@ -40,34 +40,46 @@ export class MetricCardComponent {
     @Input() value: string = '';
     @Input() study: string = '';
     @Input() language: string = 'en';
-    @Input() variant: 'red' | 'blue' | 'cyan' | 'green' = 'red';
+    @Input() variant: 'red' | 'blue' | 'cyan' | 'green' | 'stone' | 'slate' | 'amber' | 'emerald' = 'red';
 
     get borderClass() {
-        const classes: any = {
+        const classes: Record<string, string> = {
             'red': 'border-l-red-900/20',
             'blue': 'border-l-blue-900/20',
             'cyan': 'border-l-cyan-900/20',
-            'green': 'border-l-green-900/20'
+            'green': 'border-l-green-900/20',
+            'stone': 'border-l-stone-900/20',
+            'slate': 'border-l-slate-900/20',
+            'amber': 'border-l-amber-900/20',
+            'emerald': 'border-l-emerald-900/20'
         };
         return classes[this.variant] || 'border-l-red-900/20';
     }
 
     get textClass() {
-        const classes: any = {
+        const classes: Record<string, string> = {
             'red': 'text-red-900',
             'blue': 'text-blue-900',
             'cyan': 'text-cyan-900',
-            'green': 'text-green-900'
+            'green': 'text-green-900',
+            'stone': 'text-stone-900',
+            'slate': 'text-slate-900',
+            'amber': 'text-amber-900',
+            'emerald': 'text-emerald-900'
         };
         return classes[this.variant] || 'text-red-900';
     }
 
     get hoverTextClass() {
-        const classes: any = {
+        const classes: Record<string, string> = {
             'red': 'hover:text-red-900',
             'blue': 'hover:text-blue-900',
             'cyan': 'hover:text-cyan-900',
-            'green': 'hover:text-green-900'
+            'green': 'hover:text-green-900',
+            'stone': 'hover:text-stone-900',
+            'slate': 'hover:text-slate-900',
+            'amber': 'hover:text-amber-900',
+            'emerald': 'hover:text-emerald-900'
         };
         return classes[this.variant] || 'hover:text-red-900';
     }

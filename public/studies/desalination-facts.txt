@@ -1,0 +1,10 @@
+ESTUDIOS Y FUENTES: DESALINIZACIÓN Y OSMOSIS INVERSA
+
+1. Acidez y ausencia de vitalidad biológica del efluente purificado
+- Condición: El agua procesada por membrana de osmosis inversa cuenta con valores de pH fuertemente inclinados a la acidez (comúnmente pH ≈ 5.5 - 6.0) y un nivel de Oxígeno Disuelto prácticamente nulo.
+- Razón Científica: El proceso extremo de filtrado remueven iones tampón (buffer) como calcio y magnesio. Al estar el agua despojada de alcalinidad, el CO2 del aire penetra la molécula libre formando ácido carbónico, desplomando el pH. 
+- Acción de Flowform: El vórtice continuo induce oxigenación forzada devolviendo el oxígeno disuelto a saturación normal y corrige pasivamente el pH para desplazar los altos niveles de ácido gaseoso.
+
+- Vínculos Referenciales a la literatura de Osmosis Inversa (RO System Water pH studies):
+  * https://www.culliganla.com/
+  * https://www.osmotics.co.uk/

@@ -1,0 +1,130 @@
+<div class="ep-page">
+
+    <!-- Hero Section -->
+    <header class="ep-hero">
+        <div class="ep-hero__glow"></div>
+        <div class="ep-hero__rings">
+            <div class="ep-hero__ring ep-hero__ring--lg"></div>
+            <div class="ep-hero__ring ep-hero__ring--sm"></div>
+        </div>
+
+        <div class="ep-container ep-hero__inner">
+            <!-- Text -->
+            <div class="ep-hero__text">
+
+                <h1 class="ep-hero__title">
+                    {{ lang.t('pool_title') }}
+                </h1>
+                <p class="ep-hero__subtitle">
+                    {{
+                        lang.language() === 'es'
+                        ? 'El agua de las piscinas ecológicas se vuelve verde y sucia incluso con plantas purificadoras. Flowform® resuelve ese problema.'
+                        : 'Ecological pool water turns green and dirty even with purifying plants. Flowform® solves that problem.'
+                    }}
+                </p>
+
+                <div class="ep-hero__pills">
+                    <span class="ep-pill ep-pill--emerald">
+                        {{ lang.language() === 'es' ? 'Sin Algas' : 'Algae-Free' }}
+                    </span>
+                    <span class="ep-pill ep-pill--teal">
+                        {{ lang.language() === 'es' ? 'Agua Cristalina' : 'Crystal Clear Water' }}
+                    </span>
+                    <span class="ep-pill ep-pill--cyan">
+                        {{ lang.language() === 'es' ? '0% Cloro' : '0% Chlorine' }}
+                    </span>
+                </div>
+            </div>
+
+            <!-- Image -->
+            <div class="ep-hero__image-wrap">
+                <div class="ep-hero__image-glow"></div>
+                <img
+                    src="/images/picina-ecológica.jpg"
+                    alt="Piscina Ecológica con Flowform"
+                    class="ep-hero__image" />
+            </div>
+        </div>
+    </header>
+
+    <div class="ep-container ep-body">
+
+        <!-- The Problem -->
+        <section class="ep-problem">
+            <div class="ep-problem__badge">
+                {{ lang.language() === 'es' ? 'EL PROBLEMA' : 'THE PROBLEM' }}
+            </div>
+            <h2 class="ep-section-title">
+                {{
+                    lang.language() === 'es'
+                    ? '¿Por qué el agua se vuelve verde?'
+                    : 'Why Does the Water Turn Green?'
+                }}
+            </h2>
+            <p class="ep-problem__text">
+                {{
+                    lang.language() === 'es'
+                    ? 'Las piscinas ecológicas dependen de plantas purificadoras y microorganismos para limpiar el agua. Sin embargo, sin oxigenación adecuada, las bacterias aeróbicas no pueden dominar el ecosistema: las algas y los patógenos se multiplican, el agua se vuelve verde y turbia, y el equilibrio biológico colapsa — incluso con el mejor diseño de piscina natural.'
+                    : 'Ecological pools rely on purifying plants and microorganisms to clean the water. However, without adequate oxygenation, aerobic bacteria cannot dominate the ecosystem: algae and pathogens multiply, water turns green and murky, and the biological balance collapses — even with the best natural pool design.'
+                }}
+            </p>
+
+            <div class="ep-problem__cards">
+                <div class="ep-problem__card" *ngFor="let p of problems">
+                    <div class="ep-problem__card-icon">{{ p.icon }}</div>
+                    <div class="ep-problem__card-label">{{ p.label }}</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Technology -->
+        <section class="ep-tech">
+            <app-core-technology-section themeColor="emerald"></app-core-technology-section>
+        </section>
+
+        <!-- Benefits: what Flowform specifically fixes -->
+        <section class="ep-benefits">
+            <h2 class="ep-section-title">
+                {{ lang.language() === 'es' ? 'Lo que Flowform® le aporta a tu piscina' : 'What Flowform® Brings to Your Pool' }}
+            </h2>
+            <p class="ep-benefits__intro">
+                {{
+                    lang.language() === 'es'
+                    ? 'Flowform® no es solo decorativo. Es la pieza tecnológica que faltaba para que una piscina ecológica funcione de verdad.'
+                    : 'Flowform® is not just decorative. It is the missing technological piece that makes an ecological pool truly work.'
+                }}
+            </p>
+
+            <div class="ep-benefits__grid">
+                <div class="ep-benefit-card" *ngFor="let b of benefits; let i = index"
+                    [attr.data-index]="i">
+                    <div class="ep-benefit-card__icon">{{ b.icon }}</div>
+                    <h3 class="ep-benefit-card__title">{{ b.title }}</h3>
+                    <p class="ep-benefit-card__desc">{{ b.desc }}</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Metrics -->
+        <section class="mb-32">
+            <div class="flex items-center space-x-5 mb-20">
+                <h2 class="text-4xl font-black text-neutral-900 tracking-tight leading-none uppercase">
+                    {{ lang.language() === 'es' ? 'Métricas de Validación Técnica' : 'Technical Validation Metrics' }}
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <app-metric-card
+                    *ngFor="let fact of scienceFacts"
+                    [label]="fact.label"
+                    [value]="fact.value"
+                    [study]="fact.pdf"
+                    [language]="lang.language()"
+                    variant="cyan">
+                </app-metric-card>
+            </div>
+        </section>
+
+        <app-technical-evaluation-cta variant="municipalities"></app-technical-evaluation-cta>
+
+    </div>
+</div>

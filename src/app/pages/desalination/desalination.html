@@ -1,0 +1,419 @@
+<div class="min-h-screen bg-white text-neutral-900 font-outfit">
+
+  <!-- Hero Section -->
+  <header class="pt-32 pb-24 text-white relative overflow-hidden bg-blue-950 border-b border-blue-900/30">
+    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-transparent to-cyan-950/60 pointer-events-none"></div>
+
+    <!-- Animated wave rings -->
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[900px] h-[400px] opacity-10 pointer-events-none">
+      <div class="absolute inset-0 rounded-[50%] border border-blue-400 animate-ping" style="animation-duration:4s"></div>
+      <div class="absolute inset-8 rounded-[50%] border border-cyan-400 animate-ping" style="animation-duration:5s;animation-delay:1s"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="flex-1 text-left">
+
+
+          <h1 class="text-6xl md:text-7xl font-black mb-8 tracking-tighter leading-none uppercase">
+            {{ lang.language() === 'es' ? 'DESALINIZACIÓN VITAL' : 'VITAL DESALINATION' }}
+          </h1>
+          <p class="text-xl text-blue-200/80 leading-relaxed font-medium max-w-xl">
+            {{ lang.language() === 'es'
+              ? 'La osmosis inversa produce agua químicamente pura pero biológicamente muerta. Flowform® devuelve el oxígeno, equilibra el pH y reduce el biofouling en cada etapa del proceso.'
+              : 'Reverse osmosis produces chemically pure but biologically dead water. Flowform® restores oxygen, balances pH, and reduces biofouling at each stage of the process.' }}
+          </p>
+
+
+
+          <div class="mt-8">
+            <a href="/studies/desalination-facts.txt" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-blue-600/20 text-blue-200 border border-blue-500/30 hover:bg-blue-600/40 transition-colors text-xs font-black uppercase tracking-widest shadow-sm">
+              <span>📄</span> {{ lang.language() === 'es' ? 'Ver Estudio y Fuentes' : 'View Study and Sources' }}
+            </a>
+          </div>
+        </div>
+
+        <div class="flex-1 flex justify-center items-center">
+                    <div class="w-full max-w-md aspect-square bg-blue-900/40 rounded-3xl border border-white/10 flex items-center justify-center p-12 backdrop-blur-sm relative group overflow-hidden shadow-2xl">
+                         <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                         <span class="text-[12rem] drop-shadow-2xl filter group-hover:scale-110 transition-transform duration-700">🌊</span>
+                    </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-20 pb-32 pt-12">
+        
+        <!-- Toggle Buttons -->
+        <div class="flex flex-wrap justify-center gap-4 mb-16">
+            <button (click)="toggleViewMode('process')"
+                [class.bg-blue-900]="viewMode === 'process'"
+                [class.text-white]="viewMode === 'process'"
+                [class.shadow-lg]="viewMode === 'process'"
+                [class.bg-white]="viewMode !== 'process'"
+                [class.text-slate-600]="viewMode !== 'process'"
+                [class.hover:bg-blue-50]="viewMode !== 'process'"
+                class="px-8 py-4 rounded-full font-black uppercase tracking-widest text-sm transition-all border-2 border-blue-900/10">
+                {{ lang.language() === 'es' ? 'El Proceso Técnico' : 'The Technical Process' }}
+            </button>
+            <button (click)="toggleViewMode('analysis')"
+                [class.bg-blue-900]="viewMode === 'analysis'"
+                [class.text-white]="viewMode === 'analysis'"
+                [class.shadow-lg]="viewMode === 'analysis'"
+                [class.bg-white]="viewMode !== 'analysis'"
+                [class.text-slate-600]="viewMode !== 'analysis'"
+                [class.hover:bg-blue-50]="viewMode !== 'analysis'"
+                class="px-8 py-4 rounded-full font-black uppercase tracking-widest text-sm transition-all border-2 border-blue-900/10">
+                {{ lang.language() === 'es' ? 'Análisis de la Industria' : 'Industry Analysis' }}
+            </button>
+        </div>
+
+        <!-- THE PROCESS VIEW -->
+        <div *ngIf="viewMode === 'process'" class="animate-fadeIn">
+            <div class="mb-16 text-center">
+                <h2 class="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter leading-none uppercase mb-6">
+                    {{ lang.language() === 'es' ? 'El Proceso Técnico Completo' : 'The Complete Technical Process' }}
+                </h2>
+                <p class="text-xl text-slate-600 font-medium leading-relaxed max-w-4xl mx-auto">
+                    {{ lang.language() === 'es' 
+                    ? 'Flowform se integra en el ciclo de Desalinización para romper el bloqueo ambiental y operativo (Biofouling y Salmuera).' 
+                    : 'How Flowform technology integrates into the desalination lifecycle to break the environmental and operational deadlock.' }}
+                </p>
+            </div>
+
+            <!-- Bottleneck block -->
+            <div class="border-b border-slate-200 pb-16 mb-16">
+                <!-- Title -->
+                <div class="flex items-center gap-4 mb-8">
+                    <span class="text-4xl text-red-500">❌</span>
+                    <h3 class="text-2xl md:text-3xl font-black uppercase tracking-tight text-slate-900">
+                        {{ lang.language() === 'es' ? '1. El Problema: "El Cuello de Botella de Salmuera y Permisos"' : '1. The Industry Problem: "The Brine and Bio-Permit Bottleneck"' }}
+                    </h3>
+                </div>
+                
+                <!-- Explanation -->
+                <div class="space-y-8 text-lg text-slate-700 font-medium leading-relaxed max-w-5xl">
+                    <p>
+                        <strong class="text-slate-900 block mb-2">{{ lang.language() === 'es' ? 'La Crisis de la "Zona Muerta":' : 'The "Dead Zone" Crisis:' }}</strong>
+                        {{ lang.language() === 'es' 
+                        ? 'En el sector en 2026, el desafío pasó de "¿Cómo sacamos la sal?" a "¿Qué hacemos con lo que descargamos al mar?". El subproducto principal es la salmuera (brine): un líquido hipersalino de alta temperatura críticamente carente de oxígeno. Al devolverse al océano, esta salmuera densa se hunde hacia el lecho marino creando un choque osmótico e hipoxia profunda que asfixia de inmediato a los ecosistemas marinos periféricos. Las comunidades costeras y cortes ambientales ahora bloquean sistemáticamente nuevos proyectos basándose únicamente en este riesgo de "Zona Muerta".' 
+                        : 'In the desalination sector of 2026, the challenge has shifted from "How do we remove salt?" to "How do we handle what is left behind?" The primary byproduct of desalination is brine—a hypersaline, high-temperature liquid that is critically depleted of oxygen. When discharged back into the ocean, it sinks to the seafloor, creating "osmotic shock" and hypoxic conditions that suffocate marine ecosystems. Environmental courts and coastal communities are now blocking projects specifically over this "dead zone" risk.' }}
+                    </p>
+                    <p>
+                        <strong class="text-slate-900 block mb-2">{{ lang.language() === 'es' ? 'El "Impuesto" del Biofouling Estructural:' : 'The Structural Biofouling Tax:' }}</strong>
+                        {{ lang.language() === 'es' 
+                        ? 'Al entrar el agua cruda, innumerables microorganismos se asientan naturalmente formando muros de limo sobre las críticas membranas de Ósmosis Inversa (RO). Para combatir esto en el diseño tradicional, las plantas arruinan el agua usando toneladas de biocidas agresivos (cloro e hipoclorito de sodio). Lo perjudicial de depender de químicos es no solo que son caros, sino que dañan el material de las membranas acortando su vida útil, y además crean perjudiciales subproductos clorados tóxicos en el agua arrojada al mar, complicando severamente la evaluación del EIA.' 
+                        : 'At the intake stage, microorganisms naturally settle on the Reverse Osmosis (RO) membranes. To fight this, plants use massive amounts of biocides (like sodium hypochlorite). The Downside: These harsh chemicals are expensive, they steadily damage the delicate membranes over time, and they fundamentally create toxic "chlorinated byproducts" in the discharge water, further severely complicating future environmental permits.' }}
+                    </p>
+                    <div class="text-red-700 bg-red-50/50 p-6 rounded-2xl border border-red-100">
+                        <strong class="text-red-900 block mb-2">{{ lang.language() === 'es' ? 'El Punto de Falla (La Paradoja Energía-Oxígeno):' : 'The Failure Point (The Energy-Oxygen Paradox):' }}</strong>
+                        <p>
+                        {{ lang.language() === 'es' 
+                        ? 'Para cumplir con los estándares de agua potable humana requeridos por ordenanza pública, el agua que logra permear y salir limpia del sistema RO es literalmente un líquido "muerto". Este requiere re-oxigenarse y re-mineralizarse. Sin embargo, los métodos tradicionales de aeración forzada exigen devorar una salvaje cantidad de energía suplementaria (o bien forzar agresiva dosificación de químicos que dañan el balance de pH).' 
+                        : 'To strictly meet drinking water standards, the "dead" permeate (RO water) must be completely re-oxygenated and re-mineralized. Traditional methods, however, foolishly rely upon energy-hungry submerged bubble aerators or highly corrosive chemical continuous dosing.' }}
+                        </p>
+                        <p class="mt-4">
+                        {{ lang.language() === 'es' 
+                        ? 'El resultado final de este cuello de botella: Los mega-proyectos de desalinización en el país se estancan a nivel de Estudios de Impacto Ambiental. Sin tener una forma incuestionable de probar ante un tribunal que la salmuera arrojada es "segura" y que la huella tóxica de cloros se minimizó, todo proyecto se congela: la necesaria Licencia Social para Operar se deniega de plano, y multimillonarias plantas vitales quedan muertas en el papel.' 
+                        : 'The Bottleneck Result: Multi-billion dollar infrastructure projects are stalling fatally at the Environmental Impact Assessment (EIA) stage. Without a functional, flawless way to legally prove that the discharged brine is "safe" over time and that chemical use is comprehensively minimized, the "Social License to Operate" is permanently withheld, bringing investments down.' }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Steps Block -->
+            <div class="mb-20">
+                <div class="flex items-center gap-4 mb-10">
+                    <span class="text-4xl">✅</span>
+                    <h3 class="text-2xl font-black uppercase tracking-tight text-slate-900">
+                        {{ lang.language() === 'es' ? '2. El Proceso Flowform en Desalinización: Paso a Paso' : '2. The Flowform Process in Desalination: Step-by-Step' }}
+                    </h3>
+                </div>
+
+                <div class="flex flex-col gap-10">
+                    <!-- Step 1 -->
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+                        <div class="shrink-0 w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center border-2 border-blue-200 text-2xl font-black text-blue-800">1</div>
+                        <div class="flex-1">
+                            <h4 class="text-xl font-black uppercase text-blue-950 mb-2">
+                                {{ lang.language() === 'es' ? 'Pre-Tratamiento Bio-Inhibitorio Temprano' : 'Bio-Inhibitory Early Pre-Treatment' }}
+                            </h4>
+                            <p class="text-lg text-slate-600 font-medium leading-relaxed">
+                                {{ lang.language() === 'es' 
+                                ? 'Antes de que el agua marina cruda alcance remotamente las críticas membranas RO, transita primero por un flujo en inmensas Cascadas Flowform. El vigoroso movimiento rítmico en forma de ocho interrumpe implacablemente y a nivel físico la "señalización biológica" que incita y ordena a las bacterias formar su indestructible y opresivo limo adherible de colonización.' 
+                                : 'Well before any incoming raw seawater reaches the critical RO membranes, it systematically passes through an initial massive Flowform Cascade mechanism. The intense, rhythmic, figure-eight movement relentlessly disrupts and breaks the ambient biological "signaling" that essentially orders free-flowing bacteria to settle and aggressively anchor as a biofilm.' }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+                        <div class="shrink-0 w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center border-2 border-blue-200 text-2xl font-black text-blue-800">2</div>
+                        <div class="flex-1">
+                            <h4 class="text-xl font-black uppercase text-blue-950 mb-2">
+                                {{ lang.language() === 'es' ? 'Bio-Aumentación Especializada de Ingreso' : 'Specialized Intake Bio-Augmentation' }}
+                            </h4>
+                            <p class="text-lg text-slate-600 font-medium leading-relaxed">
+                                {{ lang.language() === 'es' 
+                                ? 'En los reservorios gigantes de recolección primaria, el líquido salobre se siembra proactivamente con bacterias aeróbicas inocuas. Aquí la hiperoxigenación natural creada por Flowform entrega a estos micro-ayudantes inofensivos una abrumadora ventaja competitiva que expulsa, ahoga o reemplaza por completo a las bacterias originales que producen taponamiento (fouling).' 
+                                : 'Out in the principal oceanic intake reservoirs, the raw water is intentionally seeded alongside specific harmless aerobic bacteria strains. Flowform continuous cascades actively uphold a profound hyper-aerobic state that reliably permits these "cleaner" bacteria to fully rule their ecosystem—vastly outcompeting and crowding out those damaging, slime-generating bacteria.' }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+                        <div class="shrink-0 w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center border-2 border-blue-200 text-2xl font-black text-blue-800">3</div>
+                        <div class="flex-1">
+                            <h4 class="text-xl font-black uppercase text-blue-950 mb-2">
+                                {{ lang.language() === 'es' ? 'Vitalización e Iluminación Natural del Permeado' : 'Permeate "Vitalization" (Post-Treatment)' }}
+                            </h4>
+                            <p class="text-lg text-slate-600 font-medium leading-relaxed">
+                                {{ lang.language() === 'es' 
+                                ? 'Una vez el agua sobrepasa la alta presión y sobrevive químicamente limpia su fase RO, se halla decantada como agua "muerta", desabrida y peligrosamente suboxicada (pH ácido ~5.5). Inmediatamente entra a descender gravitacionalmente por un equipo post-Flowform que de manera autónoma atrapa ferozmente O₂ del aire logrando extraer además agresivamente en desgasado el CO₂ sobrante.' 
+                                : 'Once the severely pressurized water violently emerges chemically clean through RO membrane walls, it remains inherently biologically "dead" (sporting severely low pH alongside zero oxygen). It casually proceeds to tumble naturally through a free-falling post-Flowform array. This system autonomously drives and drags infinite oxygen strictly from the thin air.' }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+                        <div class="shrink-0 w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center border-2 border-blue-200 text-2xl font-black text-blue-800">4</div>
+                        <div class="flex-1">
+                            <h4 class="text-xl font-black uppercase text-blue-950 mb-2">
+                                {{ lang.language() === 'es' ? 'Pulido Aeróbico de Salmuera y Descarga' : 'Highly Crucial Brine Polishing & Marine Discharge' }}
+                            </h4>
+                            <p class="text-lg text-slate-600 font-medium leading-relaxed">
+                                {{ lang.language() === 'es' 
+                                ? 'Esta es la clave para gozar Licencia Social: antes de lanzar o sepultar el sobrante final de salmuera tóxica espesa (brine) al fondo marino, es vertida e impulsada a través de generadores Flowform de ultra-caudal. Se satura fuertemente la salmuera estéril con altísima cantidad protectora de Oxígeno biológicamente puro. Al precipitar finalmente contra el océano crudo, deja de funcionar en absoluto como un "sumidero tóxico" y recobra la vida natural reduciendo el radio de dilución de catástrofes en el lecho marino.' 
+                                : 'This acts as the undisputed keystone for any "Social License": Right before the dense hypersaline reject brine descends permanently to a profound outfall, it cascades aggressively passed through a final tremendous-volume flow sequence. It comprehensively super-saturates the entire brine with oxygen, resulting in dramatic and incredibly fast diffusion when the dense hot fluid strikes natural ocean seawater.' }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Value Table -->
+            <div>
+                <div class="flex items-center gap-4 mb-8">
+                    <span class="text-4xl">💰</span>
+                    <h3 class="text-2xl font-black uppercase tracking-tight text-slate-900">
+                        {{ lang.language() === 'es' ? '3. Resumen de Valor Agregado en Desalinización' : '3. Summary of Value Added in Desalination' }}
+                    </h3>
+                </div>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100">
+                        <thead class="bg-blue-950 text-blue-50 uppercase text-[10px] tracking-widest font-black">
+                            <tr>
+                                <th class="p-4">{{ lang.language() === 'es' ? 'ETAPA DEL PROCESO' : 'PROCESS STAGE' }}</th>
+                                <th class="p-4 bg-red-950 text-red-100">{{ lang.language() === 'es' ? 'RIESGO TRADICIONAL' : 'TRADITIONAL RISK' }}</th>
+                                <th class="p-4 bg-blue-800">{{ lang.language() === 'es' ? 'VALOR FLOWFORM' : 'FLOWFORM OPTIMIZATION VALUE' }}</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm font-medium text-slate-700">
+                            <tr class="border-b border-slate-100">
+                                <td class="p-4 uppercase font-black text-slate-900 border-r border-slate-100">
+                                    {{ lang.language() === 'es' ? 'Longevidad de la Membrana RO' : 'RO Membrane Lifespan' }}
+                                </td>
+                                <td class="p-4 text-red-800 bg-red-50">
+                                    {{ lang.language() === 'es' ? 'Rupura y desgaste drástico por uso duro de biocidas/fouling' : 'Severely reduced by foul scaling and harsh chemicals/bleach' }}
+                                </td>
+                                <td class="p-4 text-blue-800 bg-blue-50">
+                                    {{ lang.language() === 'es' ? 'Ampliación sustancial ante inhibición kinética de biofilm' : 'Greatly extended simply by physical biofilm kinetic starvation' }}
+                                </td>
+                            </tr>
+                            <tr class="border-b border-slate-100">
+                                <td class="p-4 uppercase font-black text-slate-900 border-r border-slate-100">
+                                    {{ lang.language() === 'es' ? 'Gasto OpEx Químico ($)' : 'Annual Chemical OpEx ($)' }}
+                                </td>
+                                <td class="p-4 text-red-800 bg-red-50">
+                                    {{ lang.language() === 'es' ? 'Insostenible: miles de químicos para balance de pH o limpieza' : 'Unsustainable high operational cost on biocides/pH dosers' }}
+                                </td>
+                                <td class="p-4 text-blue-800 bg-blue-50">
+                                    {{ lang.language() === 'es' ? 'Desplome agresivo de la compra con aireación pasiva viva' : 'Smashed incredibly low by passive zero-energy air stabilization' }}
+                                </td>
+                            </tr>
+                            <tr class="border-b border-slate-100">
+                                <td class="p-4 uppercase font-black text-slate-900 border-r border-slate-100">
+                                    {{ lang.language() === 'es' ? 'Permisología Ambiental EIA' : 'EIA Permit Approval Cycle' }}
+                                </td>
+                                <td class="p-4 text-red-800 bg-red-50">
+                                    {{ lang.language() === 'es' ? 'Congelados masivamente por peligro ciego de tóxicos al mar' : 'Blocked rapidly in court over blind mass brine toxicity zones' }}
+                                </td>
+                                <td class="p-4 text-blue-800 bg-blue-50">
+                                    {{ lang.language() === 'es' ? 'Aceleramiento radical al probar descarga aeróba pacífica' : 'Unblocked fast by heavily proving O2 saturated safe brine' }}
+                                </td>
+                            </tr>
+                            <tr class="border-b border-slate-100">
+                                <td class="p-4 uppercase font-black text-slate-900 border-r border-slate-100">
+                                    {{ lang.language() === 'es' ? 'Gasto Energético Extremo' : 'Extreme Heavy Energy Usage' }}
+                                </td>
+                                <td class="p-4 text-red-800 bg-red-50">
+                                    {{ lang.language() === 'es' ? 'Aeradores inmensos de burbujas en el agua final post-filtro' : 'Usage of wildly immense post-RO submerged bubble aerators' }}
+                                </td>
+                                <td class="p-4 text-blue-800 bg-blue-50">
+                                    {{ lang.language() === 'es' ? 'Aplastado a cero (tecnología dependiente solo gravedad pura)' : 'Crushed to flat zero via passive gravity fluid mechanics only' }}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- THE ANALYSIS VIEW -->
+        <div *ngIf="viewMode === 'analysis'" class="animate-fadeIn">
+            <div class="mb-16">
+                <h2 class="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter leading-none uppercase mb-6">
+                    {{ lang.language() === 'es' ? 'Evaluación frente a Prioridades de la Industria' : 'Evaluation Against Top Industry Priorities' }}
+                </h2>
+                <p class="text-xl text-slate-600 font-medium leading-relaxed max-w-4xl">
+                    {{ lang.language() === 'es' 
+                    ? 'Como evaluador de proyectos, es crítico separar los problemas de "alta importancia" de los nichos específicos donde Flowform realmente puede ayudar.' 
+                    : 'As a project evaluator, it is critical to separate "high-importance" problems from the specific niches where Flowform can actually help.' }}
+                </p>
+            </div>
+
+            <!-- Existential Problems -->
+            <section class="mb-20">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center border-2 border-red-200 shrink-0">
+                        <span class="text-xl">⚠️</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-black uppercase tracking-tight text-slate-900">
+                            {{ lang.language() === 'es' ? 'Los Problemas "Existenciales"' : 'The "Existential" Problems' }}
+                        </h3>
+                        <p class="text-sm font-black uppercase tracking-widest text-red-500">
+                            {{ lang.language() === 'es' ? 'Donde Flowform NO Contribuye' : 'Where Flowform Does Not Contribute' }}
+                        </p>
+                    </div>
+                </div>
+                
+                <p class="text-lg text-slate-600 font-medium mb-10 max-w-3xl">
+                    {{ lang.language() === 'es' 
+                    ? 'Las prioridades críticas actuales (Puntuaciones 9-10) de la industria son áreas donde se están invirtiendo miles de millones, pero Flowform no puede ofrecer una solución directa.' 
+                    : 'The current critical priorities (Scores 9-10) for the industry are areas where billions are being spent, but Flowform cannot offer a direct solution.' }}
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Item 1 -->
+                    <div class="p-8 rounded-[2rem] border-2 border-neutral-100 bg-white shadow-sm hover:border-red-200 hover:shadow-md transition-all">
+                        <div class="flex justify-between items-start mb-6">
+                            <h4 class="text-xl font-black uppercase text-slate-900 max-w-[70%]">1. Energy & Carbon Costs</h4>
+                            <span class="px-3 py-1 bg-red-50 text-red-600 border border-red-200 rounded-full text-xs font-black uppercase tracking-widest whitespace-nowrap">10/10 Priority</span>
+                        </div>
+                        <div class="mb-6">
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">The Problem</h5>
+                            <p class="text-slate-700 font-medium leading-relaxed">Desalination is incredibly energy-intensive. As countries implement carbon taxes (such as in Chile and the EU), the absolute top priority is reducing the energy required to push water through membranes and powering the process with renewable sources (solar, wind, storage).</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-neutral-50 border border-neutral-200 border-l-4 border-l-red-500">
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-red-500 mb-2">Flowform Contribution: NO</h5>
+                            <p class="text-sm font-medium text-slate-600">While passive, it does not reduce the fundamental energy needed for reverse osmosis.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="p-8 rounded-[2rem] border-2 border-neutral-100 bg-white shadow-sm hover:border-red-200 hover:shadow-md transition-all">
+                        <div class="flex justify-between items-start mb-6">
+                            <h4 class="text-xl font-black uppercase text-slate-900 max-w-[70%]">2. PFAS & Emerging Toxins</h4>
+                            <span class="px-3 py-1 bg-red-50 text-red-600 border border-red-200 rounded-full text-xs font-black uppercase tracking-widest whitespace-nowrap">9/10 Priority</span>
+                        </div>
+                        <div class="mb-6">
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">The Problem</h5>
+                            <p class="text-slate-700 font-medium leading-relaxed">Regulatory standards in 2026 are tightening dramatically around "forever chemicals" (PFAS) and microplastics. Existing plants are being forced to add entirely new, extremely expensive treatment stages just to legally comply and remain operational.</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-neutral-50 border border-neutral-200 border-l-4 border-l-red-500">
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-red-500 mb-2">Flowform Contribution: NO</h5>
+                            <p class="text-sm font-medium text-slate-600">This requires chemical or molecular-level filtration that Flowform does not provide.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- High-Value Niches -->
+            <section class="mb-20">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center border-2 border-blue-200 shrink-0">
+                        <span class="text-xl">💎</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-black uppercase tracking-tight text-slate-900">
+                            {{ lang.language() === 'es' ? 'Los Nichos de "Alto Valor"' : 'The "High-Value" Niches' }}
+                        </h3>
+                        <p class="text-sm font-black uppercase tracking-widest text-blue-600">
+                            {{ lang.language() === 'es' ? 'Donde Flowform Ofrece Valor Estratégico' : 'Where Flowform Offers Strategic Value' }}
+                        </p>
+                    </div>
+                </div>
+                
+                <p class="text-lg text-slate-600 font-medium mb-10 max-w-3xl">
+                    {{ lang.language() === 'es' 
+                    ? 'La verdadera viabilidad de mercado de Flowform radica en su capacidad para resolver problemas operativos y ambientales específicos y de alta importancia (Puntuación 7-8). Estas son las áreas donde la inversión es más probable.' 
+                    : 'Flowform\'s true market viability lies in its ability to solve specific, high-importance (Score 7-8) operational and environmental problems. These are the areas where industry investment is most likely.' }}
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Item 1 -->
+                    <div class="p-8 rounded-[2rem] border-2 border-blue-100 bg-gradient-to-br from-blue-50/50 to-white shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
+                        <div class="flex justify-between items-start mb-6">
+                            <h4 class="text-xl font-black uppercase text-blue-950 max-w-[70%]">1. Brine Environmental Impact</h4>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 border border-blue-200 rounded-full text-xs font-black uppercase tracking-widest whitespace-nowrap">8/10 Priority</span>
+                        </div>
+                        <div class="mb-6">
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-blue-400 mb-2">The Problem</h5>
+                            <p class="text-slate-700 font-medium leading-relaxed">Brine discharge is often concentrated, dense, high-temperature, and critically low in oxygen. It sinks to the seafloor, creating localized "dead zones" that devastate marine life. Regulators are increasingly using brine impact as the primary reason to deny or delay plant permits.</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-white border border-blue-100 border-l-4 border-l-emerald-400 shadow-sm">
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-emerald-600 mb-2 flex items-center gap-2">Flowform Contribution: YES (HIGH VALUE)</h5>
+                            <p class="text-sm font-medium text-slate-600">Flowform's capability for passive aeration directly targets this. By pre-treating brine with oxygen before discharge, it lowers the environmental risk and simplifies the regulatory approval process.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="p-8 rounded-[2rem] border-2 border-blue-100 bg-gradient-to-br from-blue-50/50 to-white shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
+                        <div class="flex justify-between items-start mb-6">
+                            <h4 class="text-xl font-black uppercase text-blue-950 max-w-[70%]">2. Membrane Biofouling</h4>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 border border-blue-200 rounded-full text-xs font-black uppercase tracking-widest whitespace-nowrap">7/10 Priority</span>
+                        </div>
+                        <div class="mb-6">
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-blue-400 mb-2">The Problem</h5>
+                            <p class="text-slate-700 font-medium leading-relaxed">Bacteria constantly build layers of biofilm on the membranes. This forces operators to increase pumping pressure (wasting energy) and perform frequent, harsh chemical cleanings that shorten the membrane lifespan. It is a constant, expensive $Opex$ drain.</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-white border border-blue-100 border-l-4 border-l-emerald-400 shadow-sm">
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-emerald-600 mb-2 flex items-center gap-2">Flowform Contribution: YES (HIGH VALUE)</h5>
+                            <p class="text-sm font-medium text-slate-600">The unique, rhythmic movement of the water disrupts the initial settling of bacteria. If used in pre-treatment, it can reduce the need for biocides (chlorine) and extend the life of the primary reverse osmosis membranes.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Verdict -->
+            <section>
+                <div class="p-10 md:p-14 rounded-[3rem] bg-slate-900 border-2 border-slate-800 text-white relative overflow-hidden group hover:border-blue-900 transition-colors duration-500">
+                    <div class="absolute -top-32 -right-32 w-96 h-96 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none group-hover:bg-cyan-500/20 transition-all duration-700"></div>
+                    <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-blue-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+                    
+                    <div class="relative z-10 flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
+                        <div class="shrink-0 w-20 h-20 rounded-2xl border border-cyan-500/30 flex items-center justify-center bg-gradient-to-br from-cyan-500/20 to-blue-500/10 shadow-[0_0_30px_rgba(6,182,212,0.15)]">
+                            <span class="text-4xl">⚖️</span>
+                        </div>
+                        <div class="text-center md:text-left">
+                            <h3 class="text-sm font-black uppercase tracking-[0.2em] text-cyan-400 mb-3">
+                                {{ lang.language() === 'es' ? 'VEREDICTO DE INVERSIÓN' : 'FINAL INVESTMENT VERDICT' }}
+                            </h3>
+                            <p class="text-xl md:text-2xl text-slate-200 font-medium leading-relaxed tracking-tight">
+                                {{ lang.language() === 'es' 
+                                ? 'Para un operador de desalinización o inversor, la elección es clara: Flowform no es una alternativa a las soluciones energéticas (10/10) ni a la eliminación de PFAS (9/10). Pero Flowform asegura la Licencia Social aprobando el cuello de botella más grande: la mitigación tóxica de bio-fouling y salmuera oceánica.'
+                                : 'For a desalination operator or investor, the choice is clear: Flowform is not an alternative to energy solutions (10/10) or PFAS removal (9/10). However, Flowform secures the foundational Social License by unblocking the major bottleneck: toxic oceanic brine and bio-fouling mitigation.' }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

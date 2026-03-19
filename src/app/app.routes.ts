@@ -9,6 +9,13 @@ import { MeatIndustryComponent } from './pages/meat-industry/meat-industry';
 import { MiningComponent } from './pages/mining/mining';
 import { MunicipalitiesComponent } from './pages/municipalities/municipalities';
 import { ContactComponent } from './pages/contact/contact';
+import { EcologicalPoolComponent } from './pages/ecological-pool/ecological-pool';
+import { ThermalWatersComponent } from './pages/thermal-waters/thermal-waters';
+import { DesalinationComponent } from './pages/desalination/desalination';
+import { DataCentersComponent } from './pages/data-centers/data-centers';
+import { TextileIndustryComponent } from './pages/textile-industry/textile-industry';
+import { GreenHydrogenComponent } from './pages/green-hydrogen/green-hydrogen';
+import { LeachateComponent } from './pages/leachate/leachate';
 
 export const routes: Routes = [
     { path: '', component: LandingComponent },
@@ -20,6 +27,13 @@ export const routes: Routes = [
     { path: 'meat-industry', component: MeatIndustryComponent },
     { path: 'mining', component: MiningComponent },
     { path: 'municipalities', component: MunicipalitiesComponent },
+    { path: 'ecological-pool', component: EcologicalPoolComponent },
+    { path: 'thermal-waters', component: ThermalWatersComponent },
+    { path: 'desalination', component: DesalinationComponent },
+    { path: 'data-centers', component: DataCentersComponent },
+    { path: 'textile-industry', component: TextileIndustryComponent },
+    { path: 'green-hydrogen', component: GreenHydrogenComponent },
+    { path: 'leachate', component: LeachateComponent },
     { path: 'contact', component: ContactComponent },
     { path: '**', redirectTo: '' }
 ];

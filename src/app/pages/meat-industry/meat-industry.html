@@ -12,8 +12,6 @@
             <div class="flex flex-col md:flex-row items-center gap-12">
                 <!-- Text side -->
                 <div class="flex-1 text-left">
-                    <app-animated-pulse-pill [label]="lang.language() === 'es' ? 'SECTOR GANADERO' : 'LIVESTOCK SECTOR'"
-                        color="green" class="mb-8"></app-animated-pulse-pill>
                     <h1 class="text-6xl md:text-7xl font-black mb-8 tracking-tighter leading-none uppercase">
                         {{ lang.t('meat_title') }}
                     </h1>
@@ -36,178 +34,217 @@
             <app-core-technology-section themeColor="emerald"></app-core-technology-section>
         </section>
 
-        <!-- Strategic Pillars Unified -->
-        <section class="mb-32">
-            <h2 class="text-4xl md:text-5xl font-black text-neutral-900 tracking-tighter leading-none uppercase mb-12">
-                {{ lang.language() === 'es' ? 'VALOR' : 'VALUE' }}
+        <!-- ===== INDUSTRY SELECTOR BUTTONS ===== -->
+        <section class="mb-12">
+            <h2 class="text-4xl md:text-5xl font-black text-neutral-900 tracking-tighter leading-none uppercase mb-10">
+                {{ lang.language() === 'es' ? 'SELECCIONA TU INDUSTRIA' : 'SELECT YOUR INDUSTRY' }}
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                <div *ngFor="let pillar of unifiedPillars"
-                    class="p-8 rounded-[2.5rem] border-2 border-green-200 hover:border-green-400 hover:shadow-lg transition-all"
-                    [ngClass]="pillar.color">
-                    <div class="text-4xl mb-6">{{ pillar.icon }}</div>
-                    <h3 class="text-xl font-black mb-4 uppercase tracking-tight">{{ pillar.title }}</h3>
-                    <p class="text-sm font-medium leading-relaxed opacity-80">{{ pillar.desc }}</p>
-                </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <button *ngFor="let industry of industries"
+                    (click)="toggleIndustry(industry.id)"
+                    [id]="'industry-btn-' + industry.id"
+                    class="group relative flex flex-col items-center justify-center gap-3 p-6 rounded-[2rem] border-2 font-black uppercase tracking-tight transition-all duration-300 focus:outline-none"
+                    [ngClass]="activeIndustry === industry.id
+                        ? industry.theme.btnActive
+                        : 'bg-white border-neutral-200 text-neutral-800 ' + industry.theme.btnHover">
+
+                    <!-- Glow when active -->
+                    <div *ngIf="activeIndustry === industry.id"
+                        class="absolute inset-0 rounded-[2rem] bg-black/5 pointer-events-none"></div>
+
+                    <span class="text-4xl transition-transform duration-300 group-hover:scale-110">{{ industry.icon }}</span>
+                    <span class="text-sm text-center leading-tight">
+                        {{ lang.language() === 'es' ? industry.labelEs : industry.labelEn }}
+                    </span>
+
+                    <!-- Indicator arrow -->
+                    <div class="text-xs font-black transition-all duration-300"
+                        [ngClass]="activeIndustry === industry.id ? industry.theme.bannerLabel + ' opacity-100' : 'text-neutral-300 opacity-0 group-hover:opacity-100'">
+                        ▼
+                    </div>
+                </button>
             </div>
         </section>
 
-        <!-- Application Areas -->
-        <section class="mb-32">
-            <h2 class="text-4xl md:text-5xl font-black text-neutral-900 tracking-tighter leading-none uppercase mb-12">
-                {{ lang.language() === 'es' ? 'ÁREAS DE APLICACIÓN' : 'APPLICATION AREAS' }}
-            </h2>
-            <div class="flex flex-col gap-4">
-                <div *ngFor="let area of applicationAreas"
-                    class="rounded-[2rem] border-2 border-neutral-100 overflow-hidden bg-white shadow-sm hover:border-green-200 transition-all duration-300">
-                    <button (click)="toggleArea(area.id)"
-                        class="w-full px-8 py-6 flex items-center justify-between text-left focus:outline-none focus:bg-green-50/30 transition-colors group">
-                        <span
-                            class="text-xl font-black text-neutral-900 tracking-tight uppercase group-hover:text-green-700 transition-colors">
-                            {{ lang.language() === 'es' ? area.titleEs : area.titleEn }}
-                        </span>
-                        <div class="w-12 h-12 rounded-full border-2 border-neutral-100 flex items-center justify-center bg-white shrink-0 shadow-sm transition-transform duration-500 group-hover:border-green-200"
-                            [class.rotate-45]="activeArea === area.id" [class.bg-green-50]="activeArea === area.id">
-                            <span class="text-2xl font-black text-green-500 leading-none"
-                                style="margin-top: -2px;">+</span>
-                        </div>
-                    </button>
-                    <!-- Content Panel -->
-                    <div class="overflow-hidden transition-all duration-500 ease-in-out bg-neutral-50"
-                        [style.maxHeight]="activeArea === area.id ? '500px' : '0px'"
-                        [style.opacity]="activeArea === area.id ? '1' : '0'">
-                        <div class="px-8 pb-8 pt-6 border-t border-neutral-100">
-                            <div
-                                class="mb-6 inline-block px-4 py-2 bg-white border-2 border-green-100 rounded-full text-green-800 text-xs font-black uppercase tracking-[0.15em] shadow-sm">
-                                <span class="opacity-60">{{ lang.language() === 'es' ? 'UBICACIÓN:' : 'LOCATION:'
-                                    }}</span>
-                                <span class="ml-2">{{ lang.language() === 'es' ? area.locationEs : area.locationEn
-                                    }}</span>
-                            </div>
-                            <p class="text-neutral-700 text-lg font-medium leading-relaxed max-w-4xl">
-                                {{ lang.language() === 'es' ? area.detailsEs : area.detailsEn }}
+        <!-- ===== EXPANDABLE INDUSTRY CONTENT ===== -->
+        <div class="transition-all duration-700 ease-in-out overflow-hidden"
+            [style.maxHeight]="activeIndustry ? '9999px' : '0px'"
+            [style.opacity]="activeIndustry ? '1' : '0'">
+
+            <div *ngIf="activeIndustryData" class="pt-2 pb-8">
+
+                <!-- EMPTY STATE (Piscicultura) -->
+                <div *ngIf="activeIndustryData.empty"
+                    class="flex flex-col items-center justify-center py-24 rounded-[2.5rem] border-2 border-dashed border-neutral-200 bg-neutral-50 text-center">
+                    <span class="text-6xl mb-6">{{ activeIndustryData.icon }}</span>
+                    <h3 class="text-3xl font-black uppercase tracking-tight text-neutral-400 mb-3">
+                        {{ lang.language() === 'es' ? '¡Próximamente!' : 'Coming Soon!' }}
+                    </h3>
+                    <p class="text-neutral-400 font-medium max-w-sm">
+                        {{ lang.language() === 'es'
+                            ? 'Estamos preparando el contenido de piscicultura. Vuelve pronto.'
+                            : 'We are preparing fish farming content. Check back soon.' }}
+                    </p>
+                </div>
+
+                <!-- FULL CONTENT FOR NON-EMPTY INDUSTRIES -->
+                <div *ngIf="!activeIndustryData.empty">
+
+                    <!-- Industry Title Banner -->
+                    <div class="flex items-center gap-4 mb-16 p-8 rounded-[2rem] transition-colors duration-500"
+                         [ngClass]="activeIndustryData.theme.bannerBg">
+                        <span class="text-5xl">{{ activeIndustryData.icon }}</span>
+                        <div>
+                            <p class="text-xs font-black uppercase tracking-widest mb-1 transition-colors duration-500"
+                               [ngClass]="activeIndustryData.theme.bannerLabel">
+                                {{ lang.language() === 'es' ? 'INDUSTRIA SELECCIONADA' : 'SELECTED INDUSTRY' }}
                             </p>
+                            <h2 class="text-4xl font-black uppercase tracking-tighter">
+                                {{ lang.language() === 'es' ? activeIndustryData.labelEs : activeIndustryData.labelEn }}
+                            </h2>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Success Stories (Narrative Section) -->
-        <section class="mb-32">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16">
-                <div class="max-w-2xl">
-                    <h2
-                        class="text-4xl md:text-5xl font-black text-neutral-900 tracking-tighter leading-none uppercase">
-                        {{ lang.language() === 'es' ? 'CASOS DE ÉXITO' : 'SUCCESS STORIES' }}
-                    </h2>
-                </div>
-            </div>
+                    <!-- VALUE Section -->
+                    <section class="mb-20">
+                        <h3 class="text-3xl md:text-4xl font-black text-neutral-900 tracking-tighter leading-none uppercase mb-10">
+                            {{ lang.language() === 'es' ? 'VALOR' : 'VALUE' }}
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <div *ngFor="let pillar of activeIndustryData.pillars"
+                                class="p-8 rounded-[2.5rem] border-2 transition-all duration-500"
+                                [ngClass]="[activeIndustryData.theme.cardBg, activeIndustryData.theme.cardBorder, activeIndustryData.theme.cardHover]">
+                                <div class="text-4xl mb-5">{{ pillar.icon }}</div>
+                                <h4 class="text-lg font-black uppercase tracking-tight mb-3 transition-colors duration-500"
+                                    [ngClass]="activeIndustryData.theme.cardTitle">
+                                    {{ lang.language() === 'es' ? pillar.titleEs : pillar.titleEn }}
+                                </h4>
+                                <p class="text-sm font-medium leading-relaxed transition-colors duration-500"
+                                   [ngClass]="activeIndustryData.theme.cardDesc">
+                                    {{ lang.language() === 'es' ? pillar.descEs : pillar.descEn }}
+                                </p>
+                            </div>
+                        </div>
+                    </section>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                <!-- Story 1: Hohepa Farm -->
-                <div
-                    class="group relative overflow-hidden rounded-[2.5rem] bg-neutral-900 text-white p-8 flex flex-col justify-between min-h-[450px] border border-white/5 hover:border-green-500/30 transition-all duration-500">
-                    <div
-                        class="absolute top-0 right-0 w-64 h-64 bg-green-500/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 group-hover:bg-green-500/30 transition-all duration-700">
-                    </div>
-                    <div>
-                        <div
-                            class="inline-block px-3 py-1 bg-green-500/10 border border-green-500/20 backdrop-blur-md rounded-full text-green-300 text-[9px] font-black uppercase tracking-[0.2em] mb-6 shadow-[0_0_15px_rgba(34,197,94,0.3)]">
-                            {{ lang.language() === 'es' ? 'LECHERÍA' : 'DAIRY FARM' }}
-                        </div>
-                        <h4 class="text-2xl font-black leading-tight mb-4 tracking-tight">
-                            {{ lang.language() === 'es' ? 'El Ciclo de Rechazo' : 'The Rejection Cycle' }}
-                        </h4>
-                        <p class="text-neutral-400 text-sm font-medium leading-relaxed mb-6">
-                            {{ lang.language() === 'es'
-                            ? 'Las vacas rechazaban pastar zonas regadas con efluente por 14 días. Con Flowform, el
-                            efluente se volvió inodoro y las vacas volvieron en solo 4 días.'
-                            : 'Cows refused to graze effluent-irrigated zones for 14 days. With Flowform, effluent
-                            became odorless and cows returned in just 4 days.' }}
-                        </p>
-                    </div>
-                    <div class="pt-6 border-t border-white/10 grid grid-cols-2 gap-4 mb-6">
-                        <div>
-                            <div class="text-[9px] text-neutral-500 uppercase tracking-widest mb-1">{{ lang.language()
-                                === 'es' ? 'ANTES' : 'BEFORE' }}</div>
-                            <div class="text-xl font-black text-neutral-400">14 {{ lang.language() === 'es' ? 'Días' :
-                                'Days' }}</div>
-                        </div>
-                        <div>
-                            <div class="text-[9px] text-green-400 uppercase tracking-widest mb-1">{{ lang.language() ===
-                                'es' ? 'AHORA' : 'NOW' }}</div>
-                            <div class="text-2xl font-black text-green-400 tracking-tighter">4 {{ lang.language() === 'es' ? 'Días' :
-                                'Days' }}</div>
-                        </div>
-                    </div>
-                    <a href="/studies/Farming/11.Report on HOHEPA Farm use of Flowform treated effluent.pdf"
-                        target="_blank" rel="noopener noreferrer"
-                        class="w-full py-3 bg-white/5 border border-white/10 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-green-500 hover:text-white transition-all text-center">
-                        {{ lang.language() === 'es' ? 'VER REPORTE DE CAMPO' : 'VIEW FIELD REPORT' }}
-                    </a>
-                </div>
+                    <!-- APPLICATION AREAS Section -->
+                    <section class="mb-20">
+                        <h3 class="text-3xl md:text-4xl font-black text-neutral-900 tracking-tighter leading-none uppercase mb-10">
+                            {{ lang.language() === 'es' ? 'ÁREAS DE APLICACIÓN' : 'APPLICATION AREAS' }}
+                        </h3>
+                        <div class="flex flex-col gap-4">
+                            <div *ngFor="let area of activeIndustryData.applicationAreas"
+                                class="rounded-[2rem] border-2 border-neutral-100 overflow-hidden bg-white shadow-sm transition-all duration-300"
+                                [ngClass]="activeIndustryData.theme.cardHover">
+                                <button (click)="toggleArea(area.id)"
+                                    class="w-full px-8 py-6 flex items-center justify-between text-left focus:outline-none transition-colors group"
+                                    [ngClass]="activeArea === area.id ? activeIndustryData.theme.cardBg : 'hover:bg-neutral-50/50'">
+                                    <span class="text-xl font-black text-neutral-900 tracking-tight uppercase group-hover:opacity-80 transition-opacity">
+                                        {{ lang.language() === 'es' ? area.titleEs : area.titleEn }}
+                                    </span>
+                                    <div class="w-12 h-12 rounded-full border-2 border-neutral-100 flex items-center justify-center bg-white shrink-0 shadow-sm transition-transform duration-500"
+                                        [ngClass]="activeArea === area.id ? ['rotate-45', activeIndustryData.theme.cardBg, activeIndustryData.theme.cardBorder] : ''">
+                                        <span class="text-2xl font-black leading-none" style="margin-top: -2px;"
+                                              [ngClass]="activeIndustryData.theme.cardTitle">+</span>
+                                    </div>
+                                </button>
+                                <div class="overflow-hidden transition-all duration-500 ease-in-out bg-neutral-50"
+                                    [style.maxHeight]="activeArea === area.id ? '500px' : '0px'"
+                                    [style.opacity]="activeArea === area.id ? '1' : '0'">
+                                    <div class="px-8 pb-8 pt-6 border-t border-neutral-100">
+                                        <div class="mb-6 inline-block px-4 py-2 bg-white border-2 rounded-full text-xs font-black uppercase tracking-[0.15em] shadow-sm transition-colors duration-500"
+                                             [ngClass]="[activeIndustryData.theme.cardBorder, activeIndustryData.theme.cardTitle]">
+                                            <span class="opacity-60">{{ lang.language() === 'es' ? 'UBICACIÓN:' : 'LOCATION:' }}</span>
 
-                <!-- Story 2: Rawhiti Piggery -->
-                <div
-                    class="group relative overflow-hidden rounded-[2.5rem] bg-neutral-900 text-white p-8 flex flex-col justify-between min-h-[450px] border border-white/5 hover:border-green-500/30 transition-all duration-500">
-                    <div
-                        class="absolute bottom-0 left-0 w-64 h-64 bg-green-900/40 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2 group-hover:bg-green-800/50 transition-all duration-700">
-                    </div>
-                    <div>
-                        <div
-                            class="inline-block px-3 py-1 bg-green-500/10 border border-green-500/20 backdrop-blur-md rounded-full text-green-300 text-[9px] font-black uppercase tracking-[0.2em] mb-6 shadow-[0_0_15px_rgba(34,197,94,0.3)]">
-                            {{ lang.language() === 'es' ? 'PORCINOS' : 'PIGGERY' }}
+                                            <span class="ml-2">{{ lang.language() === 'es' ? area.locationEs : area.locationEn }}</span>
+                                        </div>
+                                        <p class="text-neutral-700 text-lg font-medium leading-relaxed max-w-4xl">
+                                            {{ lang.language() === 'es' ? area.detailsEs : area.detailsEn }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <h4 class="text-2xl font-black leading-tight mb-4 tracking-tight">
-                            {{ lang.language() === 'es' ? 'Evitando el Cierre' : 'Avoiding Closure' }}
-                        </h4>
-                        <p class="text-neutral-400 text-sm font-medium leading-relaxed mb-6">
-                            {{ lang.language() === 'es'
-                            ? 'Enfrentando cierre por olores ofensivos y multas. El sistema Vortex transformó la laguna,
-                            eliminó el olor y convirtió el problema en fertilizante.'
-                            : 'Facing closure due to offensive odors and fines. The Vortex system transformed the
-                            lagoon, eliminated odor, and turned the problem into fertilizer.' }}
-                        </p>
-                    </div>
-                    <div class="pt-6 border-t border-white/10 grid grid-cols-2 gap-4 mb-6">
-                        <div>
-                            <div class="text-[9px] text-neutral-500 uppercase tracking-widest mb-1">{{ lang.language()
-                                === 'es' ? 'MULTAS' : 'FINES' }}</div>
-                            <div class="text-xl font-black text-red-400/80 line-through">$$$</div>
-                        </div>
-                        <div>
-                            <div class="text-[9px] text-green-400 uppercase tracking-widest mb-1">{{ lang.language() ===
-                                'es' ? 'RESULTADO' : 'RESULT' }}</div>
-                            <div class="text-xl font-black text-green-400">{{ lang.language() === 'es' ? 'OPERATIVO' :
-                                'OPERATIONAL' }}</div>
-                        </div>
-                    </div>
-                    <a href="/studies/Farming/5. Agricultural_Effluent_Brochure.pdf" target="_blank"
-                        rel="noopener noreferrer"
-                        class="w-full py-3 bg-white/5 border border-white/10 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-green-500 hover:text-white transition-all text-center">
-                        {{ lang.language() === 'es' ? 'VER BROCHURE TÉCNICO' : 'VIEW TECHNICAL BROCHURE' }}
-                    </a>
-                </div>
-            </div>
-        </section>
+                    </section>
 
-        <!-- Technical Metrics Grid -->
-        <section class="mb-32">
-            <div class="flex items-center space-x-5 mb-20">
-                <h2 class="text-4xl font-black text-neutral-900 tracking-tight leading-none uppercase">
-                    {{ lang.language() === 'es' ? 'Métricas de Reducción de Impacto' : 'Impact Reduction Metrics' }}
-                </h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                <app-metric-card *ngFor="let fact of scienceFacts" [label]="fact.label" [value]="fact.value"
-                    [study]="fact.pdf" [language]="lang.language()" variant="green"></app-metric-card>
-            </div>
-        </section>
+                    <!-- SUCCESS STORIES Section -->
+                    <section class="mb-20">
+                        <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                            <div class="max-w-2xl">
+                                <h3 class="text-3xl md:text-4xl font-black text-neutral-900 tracking-tighter leading-none uppercase">
+                                    {{ lang.language() === 'es' ? 'CASOS DE ÉXITO' : 'SUCCESS STORIES' }}
+                                </h3>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                            <div *ngFor="let story of activeIndustryData.successStories"
+                                class="group relative overflow-hidden rounded-[2.5rem] bg-neutral-900 text-white p-8 flex flex-col justify-between min-h-[400px] border border-white/5 transition-all duration-500"
+                                [ngClass]="activeIndustryData.theme.cardHover">
+                                <div class="absolute top-0 right-0 w-64 h-64 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 transition-all duration-700"
+                                     [ngClass]="['bg-' + activeIndustryData.theme.metricVariant + '-500/20', 'group-hover:bg-' + activeIndustryData.theme.metricVariant + '-500/30']"></div>
+                                <div>
+                                    <div class="inline-block px-3 py-1 border backdrop-blur-md rounded-full text-[9px] font-black uppercase tracking-[0.2em] mb-6 transition-colors duration-500"
+                                         [ngClass]="['bg-' + activeIndustryData.theme.metricVariant + '-500/10', 'border-' + activeIndustryData.theme.metricVariant + '-500/20', 'text-' + activeIndustryData.theme.metricVariant + '-300']">
+                                        {{ lang.language() === 'es' ? story.labelEs : story.labelEn }}
+                                    </div>
+                                    <h4 class="text-2xl font-black leading-tight mb-4 tracking-tight">
+                                        {{ lang.language() === 'es' ? story.titleEs : story.titleEn }}
+                                    </h4>
+                                    <p class="text-neutral-400 text-sm font-medium leading-relaxed mb-6">
+                                        {{ lang.language() === 'es' ? story.bodyEs : story.bodyEn }}
+                                    </p>
+                                </div>
+                                <div class="pt-6 border-t border-white/10 grid grid-cols-2 gap-4 mb-6">
+                                    <div>
+                                        <div class="text-[9px] text-neutral-500 uppercase tracking-widest mb-1">{{ story.beforeLabel }}</div>
+                                        <div class="text-xl font-black text-red-400/80 line-through">{{ story.beforeValue }}</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-[9px] uppercase tracking-widest mb-1 transition-colors duration-500"
+                                             [ngClass]="'text-' + activeIndustryData.theme.metricVariant + '-400'">{{ story.afterLabel }}</div>
+                                        <div class="text-2xl font-black tracking-tighter transition-colors duration-500"
+                                             [ngClass]="'text-' + activeIndustryData.theme.metricVariant + '-400'">{{ story.afterValue }}</div>
+                                    </div>
+                                </div>
+                                <a [href]="story.pdf" target="_blank" rel="noopener noreferrer"
+                                    class="w-full py-3 bg-white/5 border border-white/10 rounded-xl text-[10px] font-black uppercase tracking-widest hover:text-white transition-all text-center"
+                                    [ngClass]="'hover:bg-' + activeIndustryData.theme.metricVariant + '-500'">
+                                    {{ story.pdfLabel }}
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- IMPACT REDUCTION METRICS Section -->
+                    <section class="mb-12">
+                        <div class="flex items-center space-x-5 mb-12">
+                            <h3 class="text-3xl md:text-4xl font-black text-neutral-900 tracking-tight leading-none uppercase">
+                                {{ lang.language() === 'es' ? 'MÉTRICAS DE REDUCCIÓN DE IMPACTO' : 'IMPACT REDUCTION METRICS' }}
+                            </h3>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                            <app-metric-card
+                                *ngFor="let fact of activeIndustryData.metrics"
+                                [label]="fact.label"
+                                [value]="fact.value"
+                                [study]="fact.pdf"
+                                [language]="lang.language()"
+                                [variant]="activeIndustryData.theme.metricVariant">
+                            </app-metric-card>
+                        </div>
+                    </section>
+
+                </div><!-- end !empty -->
+            </div><!-- end activeIndustryData -->
+        </div><!-- end expandable container -->
 
         <app-technical-evaluation-cta variant="livestock" [titleEs]="'La Eficiencia es Biológica'"
             [titleEn]="'Efficiency is Biological'"
             [descEs]="'No luche contra la naturaleza con químicos costosos. Únase a la revolución rítmica y convierta sus residuos en su recurso más valioso.'"
-            [descEn]="'Don\'t fight nature with expensive chemicals. Join the rhythmic revolution and turn your waste into your most valuable resource.'"></app-technical-evaluation-cta>
+            [descEn]="'Don\'t fight nature with expensive chemicals. Join the rhythmic revolution and turn your waste into your most valuable resource.'">
+        </app-technical-evaluation-cta>
     </div>
+
 </div>

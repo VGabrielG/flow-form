@@ -1,0 +1,22 @@
+DOCUMENTACIÓN DE FUENTES PARA "FUTURE SOLUTIONS"
+
+1. DATA CENTERS (Centros de Datos)
+   - Fact: Google consumió 397 millones de litros de agua en su data center de Quilicura en 2023.
+     Fuente: Informes sobre el consumo hídrico global de Google en 2023 y artículos de prensa.
+     URL: https://qz.com/google-data-centers-6-billion-gallons-water-consumed-in-2023 y https://www.bnamericas.com/
+
+   - Fact: Proyecto bloqueado en Cerrillos (7.6 millones de litros/día proyectados).
+     Fuente: Rechazo del tribunal ambiental al proyecto original de Google debido a la preocupación por el acuífero de Santiago Centro ante la escasez hídrica.
+     URL: https://www.apnews.com/ y https://www.business-humanrights.org/
+
+2. DESALINIZACIÓN (Desalination)
+   - Fact: El agua que sale de la membrana (Osmosis Inversa) tiene pH ácido (≈5.5) y oxígeno casi nulo.
+     Fuente: El agua de osmosis inversa pierde sus minerales y absorbe CO2 atmosférico, formando ácido carbónico, lo que comúnmente reduce su pH a niveles cercanos a 5.5.
+     URLs: https://www.culliganla.com/ y https://www.osmotics.co.uk/
+
+3. TEXTILE INDUSTRY (Tratamiento Textil)
+   - Acción tomada: Se eliminaron las métricas que estaban siendo mostradas (Odor Neutralization 100%, DO 6.5+ ppm, COD reduction 17%+) debido a que las fuentes citadas (/studies/Farming/...) correspondían a estudios de agricultura y granjas de animales de Flowform (HOHEPA Farm), y no había suficiente base documental específica para dichas métricas cuantitativas en la industria textil. Se decidió dejar las descripciones cualitativas de tecnología de aireación rítmica y remediación aeróbica.
+
+4. THERMAL WATERS (Aguas Termales)
+   - Fact: pH óptimo para la piel (6.5 - 7.5).
+     Fuente: Estándares dermatológicos generales y de la calidad del agua recreacional donde un pH neutro/ligeramente ácido-alcalino es el objetivo.

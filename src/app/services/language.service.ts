@@ -30,11 +30,20 @@ const translations: Record<Language, Record<string, string>> = {
         // Navigation
         nav_home: "Home",
         nav_products: "Products",
+        nav_industries: "Industries",
         nav_contact: "Contact",
         nav_winery: "Wine",
         nav_meat: "Animal Agriculture",
         nav_mining: "Mining",
         nav_municipalities: "Public Spaces",
+        nav_ecological_pool: "Ecological Pool",
+        nav_future_solutions: "Future Solutions",
+        nav_desalination: "Desalination",
+        nav_data_centers: "Data Centers",
+        nav_thermal_waters: "Thermal Waters",
+        nav_textile_industry: "Textile Industry",
+        nav_green_hydrogen: "Green Hydrogen",
+        nav_leachate: "Leachate",
 
         // Landing Page
         landing_title: "Flowform® Eco-Tech",
@@ -205,7 +214,7 @@ const translations: Record<Language, Record<string, string>> = {
 
         // Meat Industry Specific
         meat_title: "Animal Agriculture",
-        meat_desc: "Advanced effluent remediation and animal health solutions for Dairy, Piggery, and Poultry operations.",
+        meat_desc: "Advanced effluent remediation and animal health solutions for Piggery, Dairy, and Fish Farming operations.",
         meat_pillar_1_title: "Odor Elimination",
         meat_pillar_1_desc: "Complete neutralization of H2S and Ammonia odors in lagoons and effluent ponds.",
         meat_pillar_2_title: "Regulatory Compliance",
@@ -213,18 +222,31 @@ const translations: Record<Language, Record<string, string>> = {
         meat_pillar_3_title: "Waste-to-Fertilizer",
         meat_pillar_3_desc: "Convert basic anaerobic sludge into high-value, nutrient-rich aerobic liquid fertilizer.",
         meat_pillar_4_title: "Animal Health",
-        meat_pillar_4_desc: "Improve hydration and feed conversion ratios with vitalized, pathogen-free water."
+        meat_pillar_4_desc: "Improve hydration and feed conversion ratios with vitalized, pathogen-free water.",
+
+        // Ecological Pool Specific
+        pool_title: "Ecological Pool",
+        pool_desc: "A chemical-free swimming experience powered by living water. Flowform® technology creates a natural, self-sustaining aquatic ecosystem for your pool.",
 
     },
     es: {
         // Navegación
         nav_home: "Inicio",
         nav_products: "Productos",
+        nav_industries: "Industrias",
         nav_contact: "Contacto",
         nav_winery: "Vinos",
         nav_meat: "Agricultura Animal",
         nav_mining: "Minería",
         nav_municipalities: "Espacios Públicos",
+        nav_ecological_pool: "Piscina Ecológica",
+        nav_future_solutions: "Futuras Soluciones",
+        nav_desalination: "Desalinización",
+        nav_data_centers: "Centros de Datos",
+        nav_thermal_waters: "Aguas Termales",
+        nav_textile_industry: "Industria Textil",
+        nav_green_hydrogen: "Hidrógeno Verde",
+        nav_leachate: "Lixiviados",
 
         // Página de Inicio
         landing_title: "Flowform® Eco-Tech",
@@ -394,7 +416,7 @@ const translations: Record<Language, Record<string, string>> = {
 
         // Meat Industry Specific
         meat_title: "Agricultura Animal",
-        meat_desc: "Soluciones avanzadas de remediación de efluentes y salud animal para operaciones lecheras, porcinas y avícolas.",
+        meat_desc: "Soluciones avanzadas de remediación de efluentes y salud animal para criaderos de cerdos, lecherías y piscicultura.",
         meat_pillar_1_title: "Eliminación de Olores",
         meat_pillar_1_desc: "Neutralización completa de olores de H2S y Amoníaco en lagunas y estanques de efluentes.",
         meat_pillar_2_title: "Cumplimiento Normativo",
@@ -402,6 +424,10 @@ const translations: Record<Language, Record<string, string>> = {
         meat_pillar_3_title: "Residuos a Fertilizante",
         meat_pillar_3_desc: "Convierta lodos anaeróbicos básicos en fertilizante líquido aeróbico rico en nutrientes y de alto valor.",
         meat_pillar_4_title: "Salud Animal",
-        meat_pillar_4_desc: "Mejore la hidratación y las tasas de conversión alimenticia con agua vitalizada libre de patógenos."
+        meat_pillar_4_desc: "Mejore la hidratación y las tasas de conversión alimenticia con agua vitalizada libre de patógenos.",
+
+        // Piscina Ecológica
+        pool_title: "Piscina Ecológica",
+        pool_desc: "Una experiencia de natación sin productos químicos, impulsada por agua viva. La tecnología Flowform® crea un ecosistema acuático natural y autosustentable para su piscina."
     }
 };

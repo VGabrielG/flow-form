@@ -4,20 +4,16 @@ import { LanguageService } from '../../services/language.service';
 import { AnimatedPulsePillComponent } from '../../components/animated-pulse-pill/animated-pulse-pill.component';
 
 @Component({
-  selector: 'app-mining',
+  selector: 'app-desalination',
   standalone: true,
-  imports: [
-    CommonModule,
-    AnimatedPulsePillComponent
-  ],
-  templateUrl: './mining.html',
-  styleUrl: './mining.css'
+  imports: [CommonModule, AnimatedPulsePillComponent],
+  templateUrl: './desalination.html',
 })
-export class MiningComponent {
+export class DesalinationComponent {
   lang = inject(LanguageService);
-  viewMode: any = 'process';
+  viewMode: 'process' | 'analysis' = 'process';
 
-  toggleViewMode(mode: string) {
+  toggleViewMode(mode: 'process' | 'analysis') {
     this.viewMode = mode;
   }
 }

@@ -1,19 +1,16 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LanguageService } from '../../services/language.service';
 import { AnimatedPulsePillComponent } from '../../components/animated-pulse-pill/animated-pulse-pill.component';
 
 @Component({
-  selector: 'app-mining',
+  selector: 'app-leachate',
   standalone: true,
-  imports: [
-    CommonModule,
-    AnimatedPulsePillComponent
-  ],
-  templateUrl: './mining.html',
-  styleUrl: './mining.css'
+  imports: [CommonModule, AnimatedPulsePillComponent],
+  templateUrl: './leachate.html',
+  styleUrl: './leachate.css'
 })
-export class MiningComponent {
+export class LeachateComponent {
   lang = inject(LanguageService);
   viewMode: any = 'process';
 

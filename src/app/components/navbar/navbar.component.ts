@@ -29,10 +29,7 @@ import { CommonModule } from '@angular/common';
               class="px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300 text-neutral-500 hover:text-neutral-900 pointer-events-auto">
               {{ lang.t('nav_meat') }}
             </a>
-            <a routerLink="/mining" routerLinkActive="bg-neutral-950 text-white shadow-xl"
-              class="px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300 text-neutral-500 hover:text-neutral-900 pointer-events-auto">
-              {{ lang.t('nav_mining') }}
-            </a>
+
             <a routerLink="/municipalities" routerLinkActive="bg-neutral-950 text-white shadow-xl"
               class="px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300 text-neutral-500 hover:text-neutral-900 pointer-events-auto">
               {{ lang.t('nav_municipalities') }}

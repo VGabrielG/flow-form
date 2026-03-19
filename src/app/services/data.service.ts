@@ -37,12 +37,12 @@ export const SCIENCE_STATS: Record<string, Record<string, ScienceFact[]>> = {
         industrial: [
             { label: 'Dissolved Oxygen (DO)', value: '6.3 ppm', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
             { label: 'Odor Neutralization', value: '100%', pdf: '/studies/Farming/11.Report on HOHEPA Farm use of Flowform treated effluent.pdf', page: '1' },
-            { label: 'DQO / COD (Chem. Oxygen Demand) Reduction', value: '17%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' }
+            { label: 'Reducción de Demanda Química de Oxígeno (DQO) / Chemical Oxygen Demand (COD) Reduction', value: '17%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' }
         ],
         municipal: [
-            { label: 'Phosphorus (P) Removal', value: '96%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '2' },
-            { label: 'Nitrogen (N) Removal', value: '92%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '2' },
-            { label: 'Pathogen Elimination', value: '99.9%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '2' }
+            { label: 'Phosphorus (P) Removal', value: '87%', pdf: '/studies/human aplications/7. Improving water quality of polluted urban lakes Thi Thuy 2019.pdf', page: '1' },
+            { label: 'Nitrogen (N) Removal', value: '13-97%', pdf: '/studies/human aplications/15. Thyu hong, Combining flowform cascade with constructed wetland to enhance domestic wastewater treatment, avril 2022[1].pdf', page: '1' },
+            { label: 'Pathogen Elimination', value: '99.9%', pdf: '/studies/human aplications/15. Thyu hong, Combining flowform cascade with constructed wetland to enhance domestic wastewater treatment, avril 2022[1].pdf', page: '1' }
         ],
         winery: [
             { label: 'Dissolved Oxygen (DO)', value: '6.3 ppm', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
@@ -55,25 +55,33 @@ export const SCIENCE_STATS: Record<string, Record<string, ScienceFact[]>> = {
             { label: 'Pathogen Removal', value: '99.9%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
             { label: 'Nitrogen (N) Removal', value: 'High', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '2' },
             { label: 'Phosphorus (P) Removal', value: 'High', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '2' },
-            { label: 'COD (Chem. Oxygen Demand) / DQO Reduction', value: 'Reduced', pdf: '/studies/Farming/5. Agricultural_Effluent_Brochure.pdf', page: '1' },
+            { label: 'Chemical Oxygen Demand (COD) / Reducción de Demanda Química de Oxígeno (DQO)', value: 'Reduced', pdf: '/studies/Farming/5. Agricultural_Effluent_Brochure.pdf', page: '1' },
             { label: 'pH Stabilization', value: '6.5 - 7.5', pdf: '/studies/Farming/10. Animal effluent treatment chemistry by Peter Bacchus.pdf', page: '1' }
         ],
         mining: [
             { label: 'Dissolved Oxygen (DO)', value: '6.3 ppm', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
-            { label: 'Nitrogen (N) Removal', value: '92%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '2' },
-            { label: 'Phosphorus (P) Removal', value: '96%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '2' },
+            { label: 'Nitrogen (N) Removal', value: '13-97%', pdf: '/studies/human aplications/15. Thyu hong, Combining flowform cascade with constructed wetland to enhance domestic wastewater treatment, avril 2022[1].pdf', page: '1' },
+            { label: 'Phosphorus (P) Removal', value: '87%', pdf: '/studies/human aplications/7. Improving water quality of polluted urban lakes Thi Thuy 2019.pdf', page: '1' },
             { label: 'Odor Neutralization', value: '100%', pdf: '/studies/Farming/11.Report on HOHEPA Farm use of Flowform treated effluent.pdf', page: '1' },
-            { label: 'COD (Chem. Oxygen Demand) Reduction', value: '17%', pdf: '/studies/Farming/10. Animal effluent treatment chemistry by Peter Bacchus.pdf', page: '1' },
+            { label: 'Chemical Oxygen Demand (COD) Reduction', value: '17%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
             { label: 'pH Stabilization', value: '6.5-7.5', pdf: '/studies/Farming/10. Animal effluent treatment chemistry by Peter Bacchus.pdf', page: '1' },
-            { label: 'Pathogen Elimination', value: '99.9%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
+            { label: 'Pathogen Elimination', value: '99.9%', pdf: '/studies/human aplications/15. Thyu hong, Combining flowform cascade with constructed wetland to enhance domestic wastewater treatment, avril 2022[1].pdf', page: '1' },
             { label: 'Heavy Metal Precipitation', value: 'Enhanced', pdf: '/studies/human aplications/7. Improving water quality of polluted urban lakes Thi Thuy 2019.pdf', page: '1' }
         ],
         meatIndustry: [
             { label: 'Odor Neutralization', value: '100%', pdf: '/studies/Farming/11.Report on HOHEPA Farm use of Flowform treated effluent.pdf', page: '1' },
             { label: 'Dissolved Oxygen (DO)', value: '6.3 ppm', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
-            { label: 'COD (Chem. Oxygen Demand) / DQO Reduction', value: '17%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
+            { label: 'Chemical Oxygen Demand (COD) / Reducción de Demanda Química de Oxígeno (DQO)', value: '17%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
             { label: 'Biomass Weight Gain', value: '+32.5%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
             { label: 'Root System Expansion', value: '+9.5%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' }
+        ],
+        ecological_pool: [
+            { label: 'Dissolved Oxygen (DO)', value: '6.3 ppm', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
+            { label: 'Phosphorus (P) Removal', value: '87%', pdf: '/studies/human aplications/7. Improving water quality of polluted urban lakes Thi Thuy 2019.pdf', page: '1' },
+            { label: 'Nitrogen (N) Removal', value: '13-97%', pdf: '/studies/human aplications/15. Thyu hong, Combining flowform cascade with constructed wetland to enhance domestic wastewater treatment, avril 2022[1].pdf', page: '1' },
+            { label: 'Water Quality Improvement', value: 'Verified', pdf: '/studies/human aplications/7. Improving water quality of polluted urban lakes Thi Thuy 2019.pdf', page: '1' },
+            { label: 'pH Stabilization', value: '6.5 – 7.5', pdf: '/studies/Farming/10. Animal effluent treatment chemistry by Peter Bacchus.pdf', page: '1' },
+            { label: 'Pond & Wetland Remediation', value: 'Validated', pdf: '/studies/human aplications/18. Hawkwood Ponds and Wetlands Sewage System.pdf', page: '1' }
         ]
     },
     es: {
@@ -85,12 +93,12 @@ export const SCIENCE_STATS: Record<string, Record<string, ScienceFact[]>> = {
         industrial: [
             { label: 'Oxígeno Disuelto (OD)', value: '6.3 ppm', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
             { label: 'Neutralización de Olores', value: '100%', pdf: '/studies/Farming/11.Report on HOHEPA Farm use of Flowform treated effluent.pdf', page: '1' },
-            { label: 'Reducción de DQO (Demanda Química de Oxígeno)', value: '17%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' }
+            { label: 'Reducción de Demanda Química de Oxígeno (DQO)', value: '17%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' }
         ],
         municipal: [
-            { label: 'Remoción de Fósforo (P)', value: '96%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '2' },
-            { label: 'Remoción de Nitrógeno (N)', value: '92%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '2' },
-            { label: 'Eliminación de Patógenos', value: '99.9%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '2' }
+            { label: 'Remoción de Fósforo (P)', value: '87%', pdf: '/studies/human aplications/7. Improving water quality of polluted urban lakes Thi Thuy 2019.pdf', page: '1' },
+            { label: 'Remoción de Nitrógeno (N)', value: '13-97%', pdf: '/studies/human aplications/15. Thyu hong, Combining flowform cascade with constructed wetland to enhance domestic wastewater treatment, avril 2022[1].pdf', page: '1' },
+            { label: 'Eliminación de Patógenos', value: '99.9%', pdf: '/studies/human aplications/15. Thyu hong, Combining flowform cascade with constructed wetland to enhance domestic wastewater treatment, avril 2022[1].pdf', page: '1' }
         ],
         winery: [
             { label: 'Oxígeno Disuelto (OD)', value: '6.3 ppm', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
@@ -103,25 +111,33 @@ export const SCIENCE_STATS: Record<string, Record<string, ScienceFact[]>> = {
             { label: 'Eliminación de Patógenos', value: '99.9%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
             { label: 'Remoción de Nitrógeno (N)', value: 'Alta', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '2' },
             { label: 'Remoción de Fósforo (P)', value: 'Alta', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '2' },
-            { label: 'Reducción de DQO (Demanda Química de Oxígeno)', value: 'Reducida', pdf: '/studies/Farming/5. Agricultural_Effluent_Brochure.pdf', page: '1' },
+            { label: 'Reducción de Demanda Química de Oxígeno (DQO)', value: 'Reducida', pdf: '/studies/Farming/5. Agricultural_Effluent_Brochure.pdf', page: '1' },
             { label: 'Estabilización de pH', value: '6.5 - 7.5', pdf: '/studies/Farming/10. Animal effluent treatment chemistry by Peter Bacchus.pdf', page: '1' }
         ],
         mining: [
             { label: 'Oxígeno Disuelto (OD)', value: '6.3 ppm', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
-            { label: 'Remoción de Nitrógeno (N)', value: '92%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '2' },
-            { label: 'Remoción de Fósforo (P)', value: '96%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '2' },
+            { label: 'Remoción de Nitrógeno (N)', value: '13-97%', pdf: '/studies/human aplications/15. Thyu hong, Combining flowform cascade with constructed wetland to enhance domestic wastewater treatment, avril 2022[1].pdf', page: '1' },
+            { label: 'Remoción de Fósforo (P)', value: '87%', pdf: '/studies/human aplications/7. Improving water quality of polluted urban lakes Thi Thuy 2019.pdf', page: '1' },
             { label: 'Neutralización de Olores', value: '100%', pdf: '/studies/Farming/11.Report on HOHEPA Farm use of Flowform treated effluent.pdf', page: '1' },
-            { label: 'Reducción de DQO (Demanda Química de Oxígeno)', value: '17%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
+            { label: 'Reducción de Demanda Química de Oxígeno (DQO)', value: '17%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
             { label: 'Estabilización de pH', value: '6.5-7.5', pdf: '/studies/Farming/10. Animal effluent treatment chemistry by Peter Bacchus.pdf', page: '1' },
-            { label: 'Eliminación de Patógenos', value: '99.9%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
+            { label: 'Eliminación de Patógenos', value: '99.9%', pdf: '/studies/human aplications/15. Thyu hong, Combining flowform cascade with constructed wetland to enhance domestic wastewater treatment, avril 2022[1].pdf', page: '1' },
             { label: 'Precipitación Metales Pesados', value: 'Mejorada', pdf: '/studies/human aplications/7. Improving water quality of polluted urban lakes Thi Thuy 2019.pdf', page: '1' }
         ],
         meatIndustry: [
             { label: 'Neutralización de Olores', value: '100%', pdf: '/studies/Farming/11.Report on HOHEPA Farm use of Flowform treated effluent.pdf', page: '1' },
             { label: 'Oxígeno Disuelto (OD)', value: '6.3 ppm', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
-            { label: 'Reducción de DQO (Demanda Química de Oxígeno)', value: '17%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
+            { label: 'Reducción de Demanda Química de Oxígeno (DQO)', value: '17%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
             { label: 'Ganancia Peso Biomasa', value: '+32.5%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
             { label: 'Expansión Radicular', value: '+9.5%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' }
+        ],
+        ecological_pool: [
+            { label: 'Oxígeno Disuelto (OD)', value: '6.3 ppm', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '1' },
+            { label: 'Remoción de Fósforo (P)', value: '96%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '2' },
+            { label: 'Remoción de Nitrógeno (N)', value: '92%', pdf: '/studies/Farming/13. Research data on livestock and agriculture.doc.pdf', page: '2' },
+            { label: 'Mejora de Calidad del Agua', value: 'Verificada', pdf: '/studies/human aplications/7. Improving water quality of polluted urban lakes Thi Thuy 2019.pdf', page: '1' },
+            { label: 'Estabilización de pH', value: '6.5 – 7.5', pdf: '/studies/Farming/10. Animal effluent treatment chemistry by Peter Bacchus.pdf', page: '1' },
+            { label: 'Remediación Estanques y Humedales', value: 'Validada', pdf: '/studies/human aplications/18. Hawkwood Ponds and Wetlands Sewage System.pdf', page: '1' }
         ]
     }
 };

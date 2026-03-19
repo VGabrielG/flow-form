@@ -11,61 +11,94 @@
                     {{ lang.t('nav_contact') }}
                 </h1>
                 <p class="text-xl text-neutral-500 font-medium">
-                    {{ lang.language() === 'es' ? 'Póngase en contacto con nuestro equipo para consultas de evaluación
-                    técnica.' : 'Get in touch with our team for technical evaluation inquiries.' }}
+                    {{ lang.language() === 'es' ? 'Póngase en contacto con nuestro equipo para consultas de evaluación técnica.' : 'Get in touch with our team for technical evaluation inquiries.' }}
                 </p>
             </div>
 
-            <div class="bg-neutral-50 rounded-[2.5rem] p-10 md:p-16 border border-neutral-100 shadow-xl">
-                <form class="space-y-8">
+            <div class="bg-neutral-50 rounded-[2.5rem] p-10 md:p-16 border border-neutral-100 shadow-xl relative overflow-hidden">
+                <!-- Status Message Overlay -->
+                <div *ngIf="status === 'success'" class="absolute inset-0 bg-neutral-950 flex flex-col items-center justify-center z-50 p-8 text-center animate-in fade-in duration-500">
+                    <div class="w-20 h-20 bg-emerald-500 rounded-full flex items-center justify-center mb-6 shadow-2xl">
+                        <svg class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
+                    <h2 class="text-2xl font-black text-white uppercase tracking-widest mb-2 italic">
+                        {{ lang.language() === 'es' ? '¡Mensaje Enviado!' : 'Message Sent!' }}
+                    </h2>
+                    <p class="text-neutral-400 font-medium max-w-sm mx-auto">
+                        {{ lang.language() === 'es' ? 'Gracias por contactarnos. Revisaremos su consulta y nos pondremos en contacto pronto.' : 'Thank you for contacting us. We will review your inquiry and get back to you shortly.' }}
+                    </p>
+                    <button (click)="status = 'idle'" class="mt-8 px-8 py-3 rounded-full border border-white/20 text-white/60 hover:text-white transition-colors text-[10px] font-black uppercase tracking-widest">
+                        Ok
+                    </button>
+                </div>
+
+                <form (submit)="sendEmail($event)" class="space-y-8" *ngIf="status !== 'success'">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div class="space-y-2">
-                            <label
-                                class="text-xs font-black uppercase tracking-widest text-neutral-400 pl-4">Name</label>
+                            <label class="text-xs font-black uppercase tracking-widest text-neutral-400 pl-4">Name</label>
                             <input
+                                required
+                                name="name"
+                                [(ngModel)]="formData.name"
                                 class="w-full bg-white border border-neutral-200 rounded-2xl px-6 py-4 text-neutral-900 font-medium focus:outline-none focus:border-neutral-400 transition-colors"
                                 placeholder="John Doe" type="text" />
                         </div>
                         <div class="space-y-2">
-                            <label
-                                class="text-xs font-black uppercase tracking-widest text-neutral-400 pl-4">Email</label>
+                            <label class="text-xs font-black uppercase tracking-widest text-neutral-400 pl-4">Email</label>
                             <input
+                                required
+                                name="email"
+                                [(ngModel)]="formData.email"
                                 class="w-full bg-white border border-neutral-200 rounded-2xl px-6 py-4 text-neutral-900 font-medium focus:outline-none focus:border-neutral-400 transition-colors"
                                 placeholder="john@example.com" type="email" />
                         </div>
                     </div>
 
                     <div class="space-y-2">
-                        <label class="text-xs font-black uppercase tracking-widest text-neutral-400 pl-4">{{
-                            lang.language() === 'es' ? 'Mensaje' : 'Message' }}</label>
-                        <textarea rows="6"
+                        <label class="text-xs font-black uppercase tracking-widest text-neutral-400 pl-4">
+                            {{ lang.language() === 'es' ? 'Mensaje' : 'Message' }}
+                        </label>
+                        <textarea 
+                            required
+                            name="message"
+                            [(ngModel)]="formData.message"
+                            rows="6"
                             class="w-full bg-white border border-neutral-200 rounded-2xl px-6 py-4 text-neutral-900 font-medium focus:outline-none focus:border-neutral-400 transition-colors resize-none"
                             [placeholder]="lang.language() === 'es' ? '¿Cómo podemos ayudar a su operación?' : 'How can we help your operation?'"></textarea>
                     </div>
 
-                    <button type="button"
-                        class="w-full bg-neutral-950 text-white font-black uppercase tracking-[0.2em] py-5 rounded-2xl hover:bg-neutral-800 transition-colors shadow-lg">
-                        {{ lang.language() === 'es' ? 'ENVIAR MENSAJE' : 'SEND MESSAGE' }}
+                    <button 
+                        type="submit"
+                        [disabled]="isSending"
+                        [ngClass]="isSending ? 'opacity-50 cursor-wait' : ''"
+                        class="w-full bg-neutral-950 text-white font-black uppercase tracking-[0.2em] py-5 rounded-2xl hover:bg-neutral-800 transition-all shadow-lg active:scale-[0.98] flex items-center justify-center gap-3">
+                        <span *ngIf="isSending" class="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
+                        {{ isSending ? (lang.language() === 'es' ? 'ENVIANDO...' : 'SENDING...') : (lang.language() === 'es' ? 'ENVIAR MENSAJE' : 'SEND MESSAGE') }}
                     </button>
+
+                    <p *ngIf="status === 'error'" class="text-red-500 text-[10px] font-black uppercase tracking-widest text-center animate-bounce">
+                        {{ lang.language() === 'es' ? 'Ocurrió un error. Por favor intente de nuevo.' : 'An error occurred. Please try again.' }}
+                    </p>
                 </form>
 
-                <div
-                    class="mt-16 pt-16 border-t border-neutral-200 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+                <div class="mt-16 pt-16 border-t border-neutral-200 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
                     <div>
                         <h3 class="font-black uppercase tracking-widest text-xs text-neutral-400 mb-2">Email</h3>
-                        <p class="font-medium text-neutral-900">{{ lang.language() === 'es' ? 'contacto@sucorreo.com' :
-                            'contact@yourdomain.com' }}</p>
+                        <p class="font-medium text-neutral-900 italic">hello&#64;flowform.tech</p>
                     </div>
                     <div>
-                        <h3 class="font-black uppercase tracking-widest text-xs text-neutral-400 mb-2">{{
-                            lang.language() === 'es' ? 'Teléfono' : 'Phone' }}</h3>
-                        <p class="font-medium text-neutral-900">+ (XXX) XXX-XXXX</p>
+                        <h3 class="font-black uppercase tracking-widest text-xs text-neutral-400 mb-2">
+                            {{ lang.language() === 'es' ? 'Soporte' : 'Support' }}
+                        </h3>
+                        <p class="font-medium text-neutral-900">Flowform® Global</p>
                     </div>
                     <div>
-                        <h3 class="font-black uppercase tracking-widest text-xs text-neutral-400 mb-2">{{
-                            lang.language() === 'es' ? 'Ubicación' : 'Location' }}</h3>
-                        <p class="font-medium text-neutral-900">{{ lang.language() === 'es' ? 'Sede Central' :
-                            'Headquarters' }}</p>
+                        <h3 class="font-black uppercase tracking-widest text-xs text-neutral-400 mb-2">
+                            {{ lang.language() === 'es' ? 'Ubicación' : 'Location' }}
+                        </h3>
+                        <p class="font-medium text-neutral-900">New Zealand | Global HQ</p>
                     </div>
                 </div>
             </div>

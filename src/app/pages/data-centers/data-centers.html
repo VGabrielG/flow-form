@@ -1,0 +1,521 @@
+<div class="min-h-screen bg-white text-neutral-900 font-outfit">
+
+  <!-- Hero Section -->
+  <header class="pt-32 pb-24 text-white relative overflow-hidden bg-neutral-950 border-b border-neutral-800">
+    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-indigo-950/40 via-transparent to-neutral-950/80 pointer-events-none"></div>
+
+    <!-- Grid pattern overlay -->
+    <div class="absolute inset-0 opacity-5 pointer-events-none"
+      style="background-image: linear-gradient(rgba(99,102,241,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,0.5) 1px, transparent 1px); background-size: 50px 50px;">
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="flex-1 text-left">
+
+
+          <h1 class="text-6xl md:text-7xl font-black mb-8 tracking-tighter leading-none uppercase">
+            {{ lang.language() === 'es' ? 'CENTROS DE DATOS' : 'DATA CENTERS' }}
+          </h1>
+          <p class="text-xl text-neutral-400 leading-relaxed font-medium max-w-xl">
+            {{ lang.language() === 'es'
+              ? 'Los Centros de Datos enfrentan una crisis hídrica global. Flowform® estabiliza las aguas de refrigeración, reduce el biofilm y elimina la dependencia crítica de biocidas químicos agresivos.'
+              : 'Data Centers face a global water crisis. Flowform® stabilizes cooling waters, reduces biofilm, and eliminates critical dependence on aggressive chemical biocides.' }}
+          </p>
+
+          <div class="flex flex-wrap gap-3 mt-10">
+            <span class="px-4 py-2 bg-indigo-900/60 border border-indigo-700/50 rounded-full text-[10px] font-black uppercase tracking-widest text-indigo-300">
+              {{ lang.language() === 'es' ? 'Sin Biocidas' : 'No Biocides' }}
+            </span>
+            <span class="px-4 py-2 bg-neutral-800/80 border border-neutral-700 rounded-full text-[10px] font-black uppercase tracking-widest text-neutral-300">
+              {{ lang.language() === 'es' ? 'Anti Legionella' : 'Anti-Legionella' }}
+            </span>
+            <span class="px-4 py-2 bg-indigo-900/60 border border-indigo-700/50 rounded-full text-[10px] font-black uppercase tracking-widest text-indigo-300">
+              {{ lang.language() === 'es' ? 'Menor Consumo Hídrico' : 'Lower Water Consumption' }}
+            </span>
+          </div>
+
+          <div class="mt-8">
+            <a href="/studies/data-centers-facts.txt" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-indigo-600/20 text-indigo-300 border border-indigo-500/30 hover:bg-indigo-600/40 transition-colors text-xs font-black uppercase tracking-widest shadow-sm">
+              <span>📄</span> {{ lang.language() === 'es' ? 'Ver Estudio y Fuentes' : 'View Study and Sources' }}
+            </a>
+          </div>
+        </div>
+
+        <!-- Image side -->
+        <div class="flex-1 flex justify-center items-center">
+            <div class="w-full max-w-md aspect-square bg-indigo-900/40 rounded-3xl border border-white/10 flex items-center justify-center p-12 backdrop-blur-sm relative group overflow-hidden shadow-2xl">
+                 <div class="absolute inset-0 bg-gradient-to-tr from-indigo-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                 <span class="text-[12rem] drop-shadow-2xl filter group-hover:scale-110 transition-transform duration-700">🌐</span>
+            </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-20 pb-32 pt-12">
+        
+        <!-- Toggle Buttons -->
+        <div class="flex flex-wrap justify-center gap-4 mb-16">
+            <button (click)="toggleViewMode('process')"
+                [class.bg-indigo-900]="viewMode === 'process'"
+                [class.text-white]="viewMode === 'process'"
+                [class.shadow-lg]="viewMode === 'process'"
+                [class.bg-white]="viewMode !== 'process'"
+                [class.text-slate-600]="viewMode !== 'process'"
+                [class.hover:bg-indigo-50]="viewMode !== 'process'"
+                class="px-8 py-4 rounded-full font-black uppercase tracking-widest text-sm transition-all border-2 border-indigo-900/10">
+                {{ lang.language() === 'es' ? 'El Proceso Técnico' : 'The Technical Process' }}
+            </button>
+            <button (click)="toggleViewMode('analysis')"
+                [class.bg-indigo-900]="viewMode === 'analysis'"
+                [class.text-white]="viewMode === 'analysis'"
+                [class.shadow-lg]="viewMode === 'analysis'"
+                [class.bg-white]="viewMode !== 'analysis'"
+                [class.text-slate-600]="viewMode !== 'analysis'"
+                [class.hover:bg-indigo-50]="viewMode !== 'analysis'"
+                class="px-8 py-4 rounded-full font-black uppercase tracking-widest text-sm transition-all border-2 border-indigo-900/10">
+                {{ lang.language() === 'es' ? 'Análisis de la Industria' : 'Industry Analysis' }}
+            </button>
+        </div>
+
+        <!-- NEW CONTENT: THE PROCESS -->
+        <div *ngIf="viewMode === 'process'" class="animate-fadeIn">
+            
+            <div class="mb-16 text-center">
+                <h2 class="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter leading-none uppercase mb-6">
+                    {{ lang.language() === 'es' ? 'El Proceso Técnico Completo' : 'The Complete Technical Process' }}
+                </h2>
+
+            </div>
+
+            <!-- Bottleneck block (Vertical layout: Title top, text below) -->
+            <div class="border-b border-slate-200 pb-16 mb-16">
+                <!-- Title -->
+                <div class="flex items-center gap-4 mb-8">
+                    <span class="text-4xl text-red-500">❌</span>
+                    <h3 class="text-2xl md:text-3xl font-black uppercase tracking-tight text-slate-900">
+                        {{ lang.language() === 'es' ? '1. El Problema: "El Cuello de Botella Hidráulico-Social"' : '1. The Industry Problem: "The Hydraulic-Social Bottleneck"' }}
+                    </h3>
+                </div>
+                
+                <!-- Explanation -->
+                <div class="space-y-8 text-lg text-slate-700 font-medium leading-relaxed max-w-5xl">
+                    <p>
+                        <strong class="text-slate-900 block mb-2">{{ lang.language() === 'es' ? 'El Contexto y La Guerra por el Recurso:' : 'The Context and The Resource War:' }}</strong>
+                        {{ lang.language() === 'es' 
+                        ? 'En el contexto de 2026, este cuello de botella es la mayor amenaza para la ambición de ser "Hub Digital". Ya no es un mero desafío técnico de enfriar servidores, sino un desafío político de supervivencia y de convencer de tu derecho a existir dentro de una comunidad. Las grandes regiones viven bajo estrés hídrico permanente. Si un Data Center anuncia que consumirá millones de litros de agua dulce o de pozos al día, la comunidad local lo percibe de forma instantánea como un robo de su propio futuro. Esto ha liderado el drástico aumento de bloqueos judiciales y la cancelación repentina de inversiones ultra millonarias (los grandes casos de Cerrillos y Quilicura).' 
+                        : 'In the context of 2026, this bottleneck is the single greatest threat to the "Digital Hub" ambition. It is no longer a mere technical challenge of cooling servers, but a political and survival challenge of securing the right to exist within a community. Central zones exist in a state of permanent water stress. When a Data Center project announces it will consume millions of liters of freshwater per day, it is immediately perceived by local communities as an unforgivable theft of their future. This has led directly to high-profile judicial freezes and the cancellation of massive investments (such as in Cerrillos and Quilicura).' }}
+                    </p>
+                    <p>
+                        <strong class="text-slate-900 block mb-2">{{ lang.language() === 'es' ? 'El Muro Químico contra la Circularidad (Proceso Tradicional):' : 'Traditional Process & The "Chemical Wall" Against Circularity:' }}</strong>
+                        {{ lang.language() === 'es' 
+                        ? 'Para resolver el conflicto de la sequía, los operadores intentan usar aguas grises o agua reciclada. Sin embargo, este líquido reciclado es altamente activo de manera biológica, muy propenso a crear algas (fouling) rápidamente bajo temperatura. Frente a este desafío, la respuesta en la industria es arcaica: "bombardear" rutinariamente y a gran escala la red de enfriamiento con altísimas concentraciones de cloro, inhibidores y biocidas tóxicos.' 
+                        : 'To solve the water shortage conflict, operators attempt to use recycled greywater. However, this fluid is biologically active and intensely prone to rapid fouling. Faced with this, the traditional industry response is archaic: to heavily "carpet-bomb" the cooling system on a routine basis with massive concentrations of chlorine, chemical inhibitors, and toxic biocides.' }}
+                    </p>
+                    <div class="text-red-700 bg-red-50/50 p-6 rounded-2xl border border-red-100">
+                        <strong class="text-red-900 block mb-2">{{ lang.language() === 'es' ? 'El Punto de Falla y Cierres (Callejón Tóxico):' : 'The Failure Point (The Toxic Dead-End):' }}</strong>
+                        <p>
+                        {{ lang.language() === 'es' 
+                        ? 'Estos químicos severos crean dos problemas devastadores. Primero, corroen agresivamente la costosa infraestructura de enfriamiento general (disparando absurdamente los gastos de OpEx). Y segundo, y más grave, transforman todo el agua de descarga continua (purga) en residuo ambientalmente peligroso.' 
+                        : 'These severe chemicals create two major devastating problems. First, they aggressively corrode the expensive cooling infrastructure (needlessly inflating OpEx). Second, and more critical, they transform the entire water discharge process into hazardous environmental waste.' }}
+                        </p>
+                        <p class="mt-4">
+                        {{ lang.language() === 'es' 
+                        ? 'La Consecuencia: Dado que esta agua es ahora tóxica, no puede legalmente reusarse ni devolverse para el riego local, parques o infiltrarlo a los bordes fluviales. Este simple hecho imposibilita rotundamente la "Economía Circular", una obligación legal exigida por gobiernos y entidades ESG modernas hoy. Sin una forma segura de mantener el agua de refrigeración estable sin depender de químicos extremos, la industria alcanza un límite de crecimiento ineludible: La Licencia Social es arrebatada para operar y las negaciones de permisos de construcción prosperan en cascada.' 
+                        : 'The Bottleneck Result: Because the discharge is now highly toxic, it cannot legally be reused or returned for local agricultural irrigation, parks, or groundwater recharge. This simple fact completely prevents the "Circular Economy," a legal obligation increasingly demanded by governments and modern ESG entities. Without a concrete way to keep cooling water stable without heavy chemicals, the entire industry faces a hard and unyielding ceiling on growth: The "Social License to Operate" is revoked, and permits are denied sequentially.' }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flowform Steps (Vertical layout) -->
+            <div class="mb-20">
+                <div class="flex items-center gap-4 mb-10">
+                    <span class="text-4xl">✅</span>
+                    <h3 class="text-2xl font-black uppercase tracking-tight text-slate-900">
+                        {{ lang.language() === 'es' ? '2. El Proceso Flowform en Data Centers: Paso a Paso' : '2. The Flowform Process in Data Centers: Step-by-Step' }}
+                    </h3>
+                </div>
+
+                <div class="flex flex-col gap-10">
+                    <!-- Step 1 -->
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+                        <div class="shrink-0 w-16 h-16 rounded-full bg-indigo-100 flex items-center justify-center border-2 border-indigo-200 text-2xl font-black text-indigo-800">
+                            1
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-xl font-black uppercase text-indigo-950 mb-2">
+                                {{ lang.language() === 'es' ? 'Captación de Aguas Grises o Recicladas' : 'Intake of Recycled Greywater' }}
+                            </h4>
+                            <p class="text-lg text-slate-600 font-medium leading-relaxed">
+                                {{ lang.language() === 'es' 
+                                ? 'El Data Center utiliza desde un principio agua tratada externamente de baja calidad (proveniente de procesos municipales o plantas industriales de la zona). Esta agua se ecualiza y se inocula con Bacterias Bioaumentadas amigables que ayudan a mantenerla biológicamente de manera estable en lugar de depender de químicos abrasivos.' 
+                                : 'The Data Center uses low-quality treated water from the start (sourced via municipal or regional industrial plants). This water is equalized and inoculated with friendly Bioaugmented Bacteria that help keep it biologically stable instead of relying on abrasive and polluting chemicals.' }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+                        <div class="shrink-0 w-16 h-16 rounded-full bg-indigo-100 flex items-center justify-center border-2 border-indigo-200 text-2xl font-black text-indigo-800">
+                            2
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-xl font-black uppercase text-indigo-950 mb-2">
+                                {{ lang.language() === 'es' ? 'Los "Pulmones Aeróbicos" (El Vórtice Flowform)' : 'The "Aerobic Lungs" (The Flowform Vortex)' }}
+                            </h4>
+                            <p class="text-lg text-slate-600 font-medium leading-relaxed">
+                                {{ lang.language() === 'es' 
+                                ? 'Antes de entrar y circular por las masivas torres de enfriamiento, el flujo cruza sistemáticamente por cascadas rítmicas Flowform. La tremenda oxigenación en ochos satura el agua de oxígeno (impidiendo que bacterias anaerobias u olores actúen) mientras la estructuración física mineral mantiene el calcio en suspensión inhibiendo los taponamientos severos en intercambiadores de calor.' 
+                                : 'Before entering and circulating through the massive cooling towers, the flow systematically crosses rhythmic Flowform cascades. Oxygenation via figure-eights massively saturates the water (preventing anaerobic bacteria or foul odors from acting) while physical mineral structuring keeps calcium suspended—significantly inhibiting severe scaling in sensitive heat exchangers.' }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+                        <div class="shrink-0 w-16 h-16 rounded-full bg-indigo-100 flex items-center justify-center border-2 border-indigo-200 text-2xl font-black text-indigo-800">
+                            3
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-xl font-black uppercase text-indigo-950 mb-2">
+                                {{ lang.language() === 'es' ? 'El Ciclo de Enfriamiento Hiper-Aeróbico' : 'The Hyper-Aerobic Cooling Cycle' }}
+                            </h4>
+                            <p class="text-lg text-slate-600 font-medium leading-relaxed">
+                                {{ lang.language() === 'es' 
+                                ? 'El agua "viva" absorbe el calor abrasador de los servidores en el sistema de enfriamiento. Al vivir un entorno hiper-aeróbico vigoroso, las cepas de bacterias bioaumentadas compiten por su cuenta para matar la Legionella y cualquier formación de biofilms. Al tener superficies naturalmente destapadas y sin escamas de biofilm, la eficiencia térmica (PUE) en los disipadores rinde al máximo en todo minuto.' 
+                                : 'The "living" fluid absorbs the scorching heat from servers inside the cooling system. Living in a vigorous hyper-aerobic environment, bioaugmented bacteria autonomously outcompete Legionella and any biofilm formations. Enjoying surfaces naturally devoid of slimy biofilm scale, the thermal efficiency (PUE) operating inside the data center runs steadily at peak level.' }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+                        <div class="shrink-0 w-16 h-16 rounded-full bg-indigo-100 flex items-center justify-center border-2 border-indigo-200 text-2xl font-black text-indigo-800">
+                            4
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-xl font-black uppercase text-indigo-950 mb-2">
+                                {{ lang.language() === 'es' ? 'Lazo de Recirculación de Pulido' : 'Zero-Shock Recirculation Loop' }}
+                            </h4>
+                            <p class="text-lg text-slate-600 font-medium leading-relaxed">
+                                {{ lang.language() === 'es' 
+                                ? 'A medida que el agua recircula constantemente para dar otra ronda por el edificio, cruza y se reordena al pasar rítmicamente por Flowform. Elimina de raíz cualquier necesidad antigua de detener el sistema para aplicar salvajes y caros "choques químicos o de cloro". El agua no genera olor (punto vital para convivencia social cercana).' 
+                                : 'As the water steadily recirculates to give another cooling pass around the infrastructure, it rhythmically crosses and reorders through Flowforms. This definitively eliminates underlying needs to stop systems just to inject wildly expensive and unecological "chlorine/chemical shock waves." The water never develops odors (vital for nearby urban coexistence).' }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+                        <div class="shrink-0 w-16 h-16 rounded-full bg-indigo-100 flex items-center justify-center border-2 border-indigo-200 text-2xl font-black text-indigo-800">
+                            5
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-xl font-black uppercase text-indigo-950 mb-2">
+                                {{ lang.language() === 'es' ? 'Purga de Agua "Verde", Limpia y Segura' : 'Clear & Green Water Purge' }}
+                            </h4>
+                            <p class="text-lg text-slate-600 font-medium leading-relaxed">
+                                {{ lang.language() === 'es' 
+                                ? 'Todo cuerpo líquido requiere de purgas programadas para expulsión mineral. Pero esta purga deja de ser residuo contaminante, es ahora agua libre, ricamente oxigenada. Ya es agua que se redirige directamente frente a cámaras para el riego de la naturaleza y viveros perimetrales del corporativo y la ciudad. Cierra maravillosamente la tan esperada Economía Circular.' 
+                                : 'Every closed fluid body demands programmed purges to eject excess load. But this exact purge is no longer a polluting hazardous liquid—instead, it is highly oxygenated, highly alive water. It can directly be routed right in front of cameras towards local crop irrigation, urban green areas, entirely bypassing waste treatment—successfully cementing true corporate Circular Economy.' }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Value Summary -->
+            <div>
+                <div class="flex items-center gap-4 mb-8">
+                    <span class="text-4xl">💰</span>
+                    <h3 class="text-2xl font-black uppercase tracking-tight text-slate-900">
+                        {{ lang.language() === 'es' ? '3. Resumen de Valor Agregado en Data Centers' : '3. Summary of Value Added' }}
+                    </h3>
+                </div>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100">
+                        <thead class="bg-indigo-950 text-indigo-50 uppercase text-[10px] tracking-widest font-black">
+                            <tr>
+                                <th class="p-4">{{ lang.language() === 'es' ? 'ETAPA DEL PROCESO' : 'PROCESS STAGE' }}</th>
+                                <th class="p-4 bg-red-950 text-red-100">{{ lang.language() === 'es' ? 'RIESGO TRADICIONAL' : 'TRADITIONAL RISK' }}</th>
+                                <th class="p-4 bg-indigo-800">{{ lang.language() === 'es' ? 'FLOWFORM + BIOAUMENTADO' : 'FLOWFORM + BIOAUGMENTATION' }}</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm font-medium text-slate-700">
+                            <tr class="border-b border-slate-100">
+                                <td class="p-4 uppercase font-black text-slate-900 border-r border-slate-100">
+                                    {{ lang.language() === 'es' ? 'Resuello y Fuente de Agua' : 'Water Sourcing' }}
+                                </td>
+                                <td class="p-4 text-red-800 bg-red-50">
+                                    {{ lang.language() === 'es' ? 'Agua pura de napas (Máximo conflicto social)' : 'Clean groundwater (Maximal public hostility)' }}
+                                </td>
+                                <td class="p-4 text-indigo-800 bg-indigo-50">
+                                    {{ lang.language() === 'es' ? 'Aguas Grises/Recicladas estabilizadas de forma segura' : 'Recycled Greywater stabilized safely' }}
+                                </td>
+                            </tr>
+                            <tr class="border-b border-slate-100">
+                                <td class="p-4 uppercase font-black text-slate-900 border-r border-slate-100">
+                                    {{ lang.language() === 'es' ? 'Control Interno de Biofilm' : 'Biofilm Internal Control' }}
+                                </td>
+                                <td class="p-4 text-red-800 bg-red-50">
+                                    {{ lang.language() === 'es' ? 'Fuerte e intensiva factura química de potentes biocidas' : 'Aggressive and massive biocidal chemical dependency' }}
+                                </td>
+                                <td class="p-4 text-indigo-800 bg-indigo-50">
+                                    {{ lang.language() === 'es' ? 'Control O₂ físico. Anulación de la "Factura Química" ($)' : 'Passive O₂ defense. Neutralizes chemical OpEx ($)' }}
+                                </td>
+                            </tr>
+                            <tr class="border-b border-slate-100">
+                                <td class="p-4 uppercase font-black text-slate-900 border-r border-slate-100">
+                                    {{ lang.language() === 'es' ? 'Eficiencia en el Enfriamiento' : 'Cooling Thermal Efficiency' }}
+                                </td>
+                                <td class="p-4 text-red-800 bg-red-50">
+                                    {{ lang.language() === 'es' ? 'Degradación continua PUE por lenta incrustación de sarro' : 'PUE steadily degraded by gradual heavy scaling' }}
+                                </td>
+                                <td class="p-4 text-indigo-800 bg-indigo-50">
+                                    {{ lang.language() === 'es' ? 'Máxima limpieza prolongada de disipadores (Menos gastos MW)' : 'Prolonged maximum sink clarity (Major MW saving)' }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 uppercase font-black text-slate-900 border-r border-slate-100">
+                                    {{ lang.language() === 'es' ? 'Pública Imagen Corporativa' : 'Public Corporate Branding' }}
+                                </td>
+                                <td class="p-4 text-red-800 bg-red-50">
+                                    {{ lang.language() === 'es' ? '"Industria ajena que amenaza el recurso público"' : '"Alien corporation that threatens basic life-lines"' }}
+                                </td>
+                                <td class="p-4 text-indigo-800 bg-indigo-50">
+                                    {{ lang.language() === 'es' ? '"Centro de Datos de Círculo Regenerativo Social"' : '"Socially aligned Regenerative Circular Data Center"' }}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- CURRENT CONTENT: THE ANALYSIS -->
+        <div *ngIf="viewMode === 'analysis'" class="animate-fadeIn">
+            <!-- Existential Problems -->
+            <section class="mb-20">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center border-2 border-red-200 shrink-0">
+                        <span class="text-xl">⚠️</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-black uppercase tracking-tight text-slate-900">
+                            {{ lang.language() === 'es' ? 'Los Problemas "Existenciales"' : 'The "Existential" Problems' }}
+                        </h3>
+                        <p class="text-sm font-black uppercase tracking-widest text-red-500">
+                            {{ lang.language() === 'es' ? 'Donde Flowform NO Contribuye' : 'Where Flowform Does Not Contribute' }}
+                        </p>
+                    </div>
+                </div>
+                
+                <p class="text-lg text-slate-600 font-medium mb-10 max-w-3xl">
+                    {{ lang.language() === 'es' 
+                    ? 'En el mundo de los centros de datos, los problemas más caros y críticos están relacionados con el "white space" (los servidores) y la red eléctrica.' 
+                    : 'In the data center world, the most expensive and critical problems are related to the "white space" (the servers) and the power grid.' }}
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Item 1 -->
+                    <div class="p-8 rounded-[2rem] border-2 border-neutral-100 bg-white shadow-sm hover:border-red-200 hover:shadow-md transition-all">
+                        <div class="flex justify-between items-start mb-6">
+                            <h4 class="text-xl font-black uppercase text-slate-900 max-w-[70%]">
+                                {{ lang.language() === 'es' ? '1. Eficiencia Energética y PUE' : '1. Energy Efficiency & PUE' }}
+                            </h4>
+                            <span class="px-3 py-1 bg-red-50 text-red-600 border border-red-200 rounded-full text-xs font-black uppercase tracking-widest whitespace-nowrap">10/10 Priority</span>
+                        </div>
+                        <div class="mb-6">
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">
+                                {{ lang.language() === 'es' ? 'El Problema' : 'The Problem' }}
+                            </h5>
+                            <p class="text-slate-700 font-medium leading-relaxed">
+                                {{ lang.language() === 'es' 
+                                ? 'El PUE (Efectividad del Uso de Energía) es la métrica de oro. Los operadores están obsesionados con reducir la energía utilizada por los equipos que no son de computación.' 
+                                : 'Power Usage Effectiveness (PUE) is the gold standard metric. Operators are obsessed with reducing the energy used by non-computing equipment.' }}
+                            </p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-neutral-50 border border-neutral-200 border-l-4 border-l-red-500">
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-red-500 mb-2">Flowform Contribution: NO</h5>
+                            <p class="text-sm font-medium text-slate-600">
+                                {{ lang.language() === 'es' 
+                                ? 'Aunque Flowform es pasiva y casi no consume energía, no reduce directamente la carga eléctrica masiva requerida por los chillers o los propios servidores.' 
+                                : 'While Flowform is passive and consumes almost no energy, it does not directly reduce the massive electrical load required by chillers or the servers themselves.' }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="p-8 rounded-[2rem] border-2 border-neutral-100 bg-white shadow-sm hover:border-red-200 hover:shadow-md transition-all">
+                        <div class="flex justify-between items-start mb-6">
+                            <h4 class="text-xl font-black uppercase text-slate-900 max-w-[70%]">
+                                {{ lang.language() === 'es' ? '2. Estabilidad de Red y Descarbonización' : '2. Grid Stability & Decarbonization' }}
+                            </h4>
+                            <span class="px-3 py-1 bg-red-50 text-red-600 border border-red-200 rounded-full text-xs font-black uppercase tracking-widest whitespace-nowrap">9/10 Priority</span>
+                        </div>
+                        <div class="mb-6">
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">
+                                {{ lang.language() === 'es' ? 'El Problema' : 'The Problem' }}
+                            </h5>
+                            <p class="text-slate-700 font-medium leading-relaxed">
+                                {{ lang.language() === 'es' 
+                                ? 'Los centros de datos (como en Chile) deben demostrar que funcionan 100% con energía renovable para cumplir con objetivos ESG corporativos globales.' 
+                                : 'Data centers in Chile must prove they run on 100% renewable energy (solar/wind) to meet global corporate ESG goals.' }}
+                            </p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-neutral-50 border border-neutral-200 border-l-4 border-l-red-500">
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-red-500 mb-2">Flowform Contribution: NO</h5>
+                            <p class="text-sm font-medium text-slate-600">
+                                {{ lang.language() === 'es' 
+                                ? 'Es una tecnología "verde", pero no resuelve el desafío del suministro constante (24/7) de energía limpia ni el almacenamiento en baterías.' 
+                                : 'It is a "green" technology, but it doesn\'t solve the challenge of 24/7 clean energy supply or battery storage.' }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- High-Value Niches -->
+            <section class="mb-20">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center border-2 border-indigo-200 shrink-0">
+                        <span class="text-xl">💎</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-black uppercase tracking-tight text-slate-900">
+                            {{ lang.language() === 'es' ? 'Los Nichos de "Alto Valor"' : 'The "High-Value" Niches' }}
+                        </h3>
+                        <p class="text-sm font-black uppercase tracking-widest text-indigo-600">
+                            {{ lang.language() === 'es' ? 'Donde Flowform Ofrece Valor Estratégico' : 'Where Flowform Offers Strategic Value' }}
+                        </p>
+                    </div>
+                </div>
+                
+                <p class="text-lg text-slate-600 font-medium mb-10 max-w-3xl">
+                    {{ lang.language() === 'es' 
+                    ? 'Aquí es donde Flowform puede resolver el "problema chileno" específico que actualmente amenaza el crecimiento de la industria de datos.' 
+                    : 'This is where Flowform can solve the specific "Chilean problem" that currently threatens the industry\'s growth.' }}
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Item 1 -->
+                    <div class="p-8 rounded-[2rem] border-2 border-indigo-100 bg-gradient-to-br from-indigo-50/50 to-white shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col">
+                        <div class="flex justify-between items-start mb-6">
+                            <h4 class="text-xl font-black uppercase text-indigo-950 max-w-[70%]">
+                                {{ lang.language() === 'es' ? '1. Escasez Hídrica y Licencia Social' : '1. Water Scarcity & Social License' }}
+                            </h4>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-700 border border-indigo-200 rounded-full text-xs font-black uppercase tracking-widest whitespace-nowrap">10/10 Priority</span>
+                        </div>
+                        <div class="mb-6 flex-grow">
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-indigo-400 mb-2">
+                                {{ lang.language() === 'es' ? 'El Problema' : 'The Problem' }}
+                            </h5>
+                            <p class="text-slate-700 font-medium leading-relaxed">
+                                {{ lang.language() === 'es' 
+                                ? 'Comunidades y tribunales han bloqueado proyectos por el consumo de agua dulce para enfriamiento. La industria es forzada a usar aguas grises o sistemas de lazo cerrado.' 
+                                : 'Communities and environmental courts have successfully blocked projects due to high freshwater consumption for cooling. The industry is forced to shift to closed-loop systems.' }}
+                            </p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-white border border-indigo-100 border-l-4 border-l-emerald-400 shadow-sm mt-auto">
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-emerald-600 mb-2 flex items-center gap-2">Flowform Contribution: YES (STRATEGIC)</h5>
+                            <p class="text-sm font-medium text-slate-600">
+                                {{ lang.language() === 'es' 
+                                ? 'Al usar agua reciclada en piscinas (que suele oler mal), Flowform la oxigena y la mantiene "viva" sin químicos, facilitando la aceptación social y regulatoria.' 
+                                : 'If using recycled water in cooling ponds (which gets foul), Flowform keeps it oxygenated without heavy chemicals, making the project acceptable to regulators.' }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="p-8 rounded-[2rem] border-2 border-indigo-100 bg-gradient-to-br from-indigo-50/50 to-white shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col">
+                        <div class="flex justify-between items-start mb-6">
+                            <h4 class="text-xl font-black uppercase text-indigo-950 max-w-[70%]">
+                                {{ lang.language() === 'es' ? '2. Control de Biofouling (Torres)' : '2. Biofouling & Legionella Control' }}
+                            </h4>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-700 border border-indigo-200 rounded-full text-xs font-black uppercase tracking-widest whitespace-nowrap">8/10 Priority</span>
+                        </div>
+                        <div class="mb-6 flex-grow">
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-indigo-400 mb-2">
+                                {{ lang.language() === 'es' ? 'El Problema' : 'The Problem' }}
+                            </h5>
+                            <p class="text-slate-700 font-medium leading-relaxed">
+                                {{ lang.language() === 'es' 
+                                ? 'El agua cálida cría algas, biofilms y bacterias (Legionella), requiriendo costosos "choques" constantes de biocidas que son peligrosos y corrosivos.' 
+                                : 'Warm water in cooling towers is a breeding ground for algae, biofilm, and dangerous bacteria like Legionella. This requires constant, expensive chemical "shocks" (biocides).' }}
+                            </p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-white border border-indigo-100 border-l-4 border-l-emerald-400 shadow-sm mt-auto">
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-emerald-600 mb-2 flex items-center gap-2">Flowform Contribution: YES (OPERATIONAL)</h5>
+                            <p class="text-sm font-medium text-slate-600">
+                                {{ lang.language() === 'es' 
+                                ? 'Interrumpe la fijación bacteriana e inhibe el biofilm físicamente. Reduce la "factura química" y evita el aislamiento biológico que hace el enfriamiento menos eficiente.' 
+                                : 'Implementing Flowform disrupts bacteria attachment and inhibits biofilm growth physically. Reduces the chemical bill and prevents biological "insulation".' }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="col-span-1 md:col-span-2 lg:col-span-1 p-8 rounded-[2rem] border-2 border-indigo-100 bg-gradient-to-br from-indigo-50/50 to-white shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col">
+                        <div class="flex justify-between items-start mb-6">
+                            <h4 class="text-xl font-black uppercase text-indigo-950 max-w-[70%]">
+                                {{ lang.language() === 'es' ? '3. Diseño Bioclimático Empresarial' : '3. Corporate ESG & Biophilic Design' }}
+                            </h4>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-700 border border-indigo-200 rounded-full text-xs font-black uppercase tracking-widest whitespace-nowrap">6/10 Priority</span>
+                        </div>
+                        <div class="mb-6 flex-grow">
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-indigo-400 mb-2">
+                                {{ lang.language() === 'es' ? 'El Problema' : 'The Problem' }}
+                            </h5>
+                            <p class="text-slate-700 font-medium leading-relaxed">
+                                {{ lang.language() === 'es' 
+                                ? 'Las tecnológicas modernas quieren que sus sedes reflejen sus valores ecológicos. La infraestructura clásica de enfriamiento industrial es ocultada y antiestética.' 
+                                : 'Modern tech companies want their headquarters to reflect their values. Standard industrial cooling infrastructure is ugly and hidden.' }}
+                            </p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-white border border-indigo-100 border-l-4 border-l-emerald-400 shadow-sm mt-auto">
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-emerald-600 mb-2 flex items-center gap-2">Flowform Contribution: YES</h5>
+                            <p class="text-sm font-medium text-slate-600">
+                                {{ lang.language() === 'es' 
+                                ? 'Aporta una representación funcional de sostenibilidad. Se integra en el paisajismo tratando el agua y ayudando a lograr certificaciones nivel LEED o BREEAM.' 
+                                : 'Provides a visible, aesthetic function. Integrates into landscape design, treating water while helping achieve LEED/BREEAM certifications.' }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Verdict -->
+            <section>
+                <div class="p-10 md:p-14 rounded-[3rem] bg-indigo-950 border-2 border-indigo-900 text-white relative overflow-hidden group hover:border-indigo-700 transition-colors duration-500">
+                    <div class="absolute -top-32 -right-32 w-96 h-96 bg-purple-500/20 rounded-full blur-[100px] pointer-events-none group-hover:bg-purple-500/30 transition-all duration-700"></div>
+                    <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-indigo-600/20 rounded-full blur-[100px] pointer-events-none"></div>
+                    
+                    <div class="relative z-10 flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
+                        <div class="shrink-0 w-20 h-20 rounded-2xl border border-indigo-500/30 flex items-center justify-center bg-gradient-to-br from-indigo-500/20 to-purple-500/10 shadow-[0_0_30px_rgba(99,102,241,0.15)]">
+                            <span class="text-4xl">⚖️</span>
+                        </div>
+                        <div class="text-center md:text-left">
+                            <h3 class="text-sm font-black uppercase tracking-[0.2em] text-indigo-400 mb-3">
+                                {{ lang.language() === 'es' ? 'VEREDICTO DEL EVALUADOR PARA DATA CENTERS' : 'EVALUATORS VERDICT' }}
+                            </h3>
+                            <p class="text-xl md:text-2xl text-slate-200 font-medium leading-relaxed tracking-tight mb-4">
+                                {{ lang.language() === 'es' 
+                                ? 'En Chile, la "Guerra de los Data Centers" se está peleando por el agua, no por la computación en sí.'
+                                : 'In Chile, the "Data Center War" is being fought over water.' }}
+                            </p>
+                            <p class="text-lg text-indigo-200/80 font-medium leading-relaxed">
+                                {{ lang.language() === 'es' 
+                                ? 'Los operadores NO comprarán Flowform para ahorrar energía global. Lo comprarán para preservar sus permisos de construcción y reputación social. Al presentarlo como LA tecnología indispensable para la reutilización de aguas grises urbanas sin colapso químico, Flowform ataca directamente la barrera #1 que frena las inversiones tecnológicas trillonarias de su futuro.'
+                                : 'Data center operators will not buy Flowform to save energy, but they will buy it to save their permits. By positioning Flowform as an indispensable tool that enables the use of recycled water without heavy chemicals, you directly address the #1 barrier to entry. It moves the technology from an aesthetic choice to a severe regulatory enabler.' }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

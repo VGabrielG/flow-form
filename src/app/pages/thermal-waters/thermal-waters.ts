@@ -4,18 +4,18 @@ import { LanguageService } from '../../services/language.service';
 import { AnimatedPulsePillComponent } from '../../components/animated-pulse-pill/animated-pulse-pill.component';
 
 @Component({
-  selector: 'app-mining',
+  selector: 'app-thermal-waters',
   standalone: true,
   imports: [
     CommonModule,
     AnimatedPulsePillComponent
   ],
-  templateUrl: './mining.html',
-  styleUrl: './mining.css'
+  templateUrl: './thermal-waters.html',
+  styleUrl: './thermal-waters.css'
 })
-export class MiningComponent {
+export class ThermalWatersComponent {
   lang = inject(LanguageService);
-  viewMode: any = 'process';
+  viewMode: string = 'process';
 
   toggleViewMode(mode: string) {
     this.viewMode = mode;

@@ -1,0 +1,496 @@
+<div class="min-h-screen bg-white text-neutral-900 font-outfit">
+    <!-- Hero Section - Textile Sector -->
+    <header class="pt-32 pb-24 text-white relative overflow-hidden bg-emerald-950 border-b border-emerald-900/30">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-emerald-900/20 via-transparent to-emerald-950/50 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <!-- Text side -->
+                <div class="flex-1 text-left">
+
+                    <h1 class="text-6xl md:text-7xl font-black mb-8 tracking-tighter leading-none uppercase">
+                        {{ lang.language() === 'es' ? 'Industria Textil' : 'Textile Industry' }}
+                    </h1>
+                    <p class="text-xl text-emerald-200/70 leading-relaxed font-medium max-w-xl">
+                        {{ lang.language() === 'es' 
+                            ? 'Remediación avanzada de efluentes y optimización de procesos químicos mediante tecnología de flujo rítmico.'
+                            : 'Advanced effluent remediation and chemical process optimization through rhythmic flow technology.' }}
+                    </p>
+                    <div class="mt-8">
+                        <a href="/studies/textile-industry-facts.txt" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-600/20 text-emerald-300 border border-emerald-500/30 hover:bg-emerald-600/40 transition-colors text-xs font-black uppercase tracking-widest shadow-sm">
+                            <span>📄</span> {{ lang.language() === 'es' ? 'Ver Estudio y Fuentes' : 'View Study and Sources' }}
+                        </a>
+                    </div>
+                </div>
+                <!-- Image side -->
+                <div class="flex-1 flex justify-center items-center">
+                    <div class="w-full max-w-md aspect-square bg-emerald-900/40 rounded-3xl border border-white/10 flex items-center justify-center p-12 backdrop-blur-sm relative group overflow-hidden shadow-2xl">
+                         <div class="absolute inset-0 bg-gradient-to-tr from-emerald-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                         <span class="text-[12rem] drop-shadow-2xl filter group-hover:scale-110 transition-transform duration-700">🧵</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-20 pb-32 pt-12">
+        
+        <!-- Toggle Buttons -->
+        <div class="flex flex-wrap justify-center gap-4 mb-16">
+            <button (click)="toggleViewMode('process')"
+                [class.bg-emerald-900]="viewMode === 'process'"
+                [class.text-white]="viewMode === 'process'"
+                [class.shadow-lg]="viewMode === 'process'"
+                [class.bg-white]="viewMode !== 'process'"
+                [class.text-slate-600]="viewMode !== 'process'"
+                [class.hover:bg-emerald-50]="viewMode !== 'process'"
+                class="px-8 py-4 rounded-full font-black uppercase tracking-widest text-sm transition-all border-2 border-emerald-900/10">
+                {{ lang.language() === 'es' ? 'El Proceso Técnico' : 'The Technical Process' }}
+            </button>
+            <button (click)="toggleViewMode('analysis')"
+                [class.bg-emerald-900]="viewMode === 'analysis'"
+                [class.text-white]="viewMode === 'analysis'"
+                [class.shadow-lg]="viewMode === 'analysis'"
+                [class.bg-white]="viewMode !== 'analysis'"
+                [class.text-slate-600]="viewMode !== 'analysis'"
+                [class.hover:bg-emerald-50]="viewMode !== 'analysis'"
+                class="px-8 py-4 rounded-full font-black uppercase tracking-widest text-sm transition-all border-2 border-emerald-900/10">
+                {{ lang.language() === 'es' ? 'Análisis de la Industria' : 'Industry Analysis' }}
+            </button>
+        </div>
+
+        <!-- NEW CONTENT: THE PROCESS -->
+        <div *ngIf="viewMode === 'process'" class="animate-fadeIn">
+            
+            <div class="mb-16 text-center">
+                <h2 class="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter leading-none uppercase mb-6">
+                    {{ lang.language() === 'es' ? 'El Proceso Técnico Completo' : 'The Complete Technical Process' }}
+                </h2>
+
+            </div>
+
+            <!-- Bottleneck block (Clean layout: Left title, right text) -->
+            <!-- Bottleneck block (Vertical layout: Title top, text below) -->
+            <div class="border-b border-slate-200 pb-16 mb-16">
+                <!-- Title -->
+                <div class="flex items-center gap-4 mb-8">
+                    <span class="text-4xl text-red-500">❌</span>
+                    <h3 class="text-2xl md:text-3xl font-black uppercase tracking-tight text-slate-900">
+                        {{ lang.language() === 'es' ? '1. El Problema: "El Cuello de Botella de Oxígeno"' : '1. The Industry Problem: "The Oxygen Bottleneck"' }}
+                    </h3>
+                </div>
+                
+                <!-- Explanation -->
+                <div class="space-y-8 text-lg text-slate-700 font-medium leading-relaxed max-w-5xl">
+                    <p>
+                        <strong class="text-slate-900 block mb-2">{{ lang.language() === 'es' ? 'El Escenario:' : 'Context:' }}</strong>
+                        {{ lang.language() === 'es' 
+                        ? 'El efluente de la industria textil es uno de los más difíciles de tratar en el planeta. Está severamente contaminado, cargado con una mezcla compleja de Tintes Sintéticos recalcitrantes, surfactantes químicos, metales pesados e hidrocarburos. Verter este cóctel en ríos destruiría ecosistemas enteros y acarrearía consecuencias legales inmediatas.' 
+                        : 'Industrial textile effluent is one of the most difficult to treat in the world. It is severely polluted, loaded with a complex mixture of recalcitrant Synthetic Dyes, chemical Surfactants, heavy metals, and hydrocarbons. Discharging this cocktail into rivers would immediately destroy entire ecosystems and invite swift legal consequences.' }}
+                    </p>
+                    <p>
+                        <strong class="text-slate-900 block mb-2">{{ lang.language() === 'es' ? 'Proceso Tradicional:' : 'Traditional Process:' }}</strong>
+                        {{ lang.language() === 'es' 
+                        ? 'Para evitar cierres, las fábricas son obligadas a construir inmensas lagunas de tratamiento biológico en el sitio. Ahí utilizan turbinas electromecánicas masivas o pesados difusores sumergidos para bombear y forzar oxígeno de aire al interior del agua. Este aire es vital e indispensable para que inmensas colonias de bacterias aeróbicas logren "comer" y descomponer la astronómica Demanda Química de Oxígeno (DQO/DBO) generada por estos químicos.' 
+                        : 'To avoid shutdowns, factories are forced to build immense biological treatment lagoons on site. There, they use massive electro-mechanical turbines or heavy submerged diffusers to aggressively pump and force oxygen into the water. This air is vital and indispensable so that immense colonies of aerobic bacteria can "eat" and break down the astronomically high Chemical Oxygen Demand (COD/BOD) generated by these chemicals.' }}
+                    </p>
+                    <div class="text-red-700 bg-red-50/50 p-6 rounded-2xl border border-red-100">
+                        <strong class="text-red-900 block mb-2">{{ lang.language() === 'es' ? 'El Punto de Falla:' : 'The Failure Point:' }}</strong>
+                        <p>
+                        {{ lang.language() === 'es' 
+                        ? 'Estas mega-máquinas electromecánicas son el verdadero cuello de botella existencial de la industria textil. Operar estos sopladores llega a consumir hasta el 50% de la energía eléctrica total de toda la planta de producción, atrapando a las fábricas en una crisis de rentabilidad de la que no pueden escapar.' 
+                        : 'These electro-mechanical mega-machines are the true existential bottleneck of the textile industry. Operating these submerged blowers can consume up to 50% of the total electrical energy of the entire production facility, constantly trapping factories in a profitability crisis they cannot escape.' }}
+                        </p>
+                        <p class="mt-4">
+                        {{ lang.language() === 'es' 
+                        ? 'Si la empresa decide apagarlos brevemente para ahorrar dinero u optimizar costos, o si los motores sufren fallas técnicas, los niveles de oxígeno disuelto caen a cero casi instantáneamente. Al suceder esto, millones de bacterias aeróbicas mueren por asfixia y la laguna se vuelve inmediatamente anaeróbica (comenzando a pudrirse y emitiendo mortíferos gases de sulfuro de hidrógeno (H₂S) que apestan intensamente a "huevo podrido"), conllevando a catastróficas y millonarias multas ambientales y prohibiciones operativas.' 
+                        : 'If the company decides to briefly turn them off to save money or optimize costs, or if the motors suffer technical failures, dissolved oxygen levels drop to zero almost instantly. When this happens, millions of aerobic bacteria suffocate and die, and the lagoon immediately goes anaerobic (beginning to rot and emit deadly hydrogen sulfide (H₂S) gases smelling intensely of "rotten eggs"), leading directly to catastrophic multi-million environmental fines and severe operational bans.' }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flowform Steps (Vertical layout) -->
+            <div class="mb-20">
+                <div class="flex items-center gap-4 mb-10">
+                    <span class="text-4xl">✅</span>
+                    <h3 class="text-2xl font-black uppercase tracking-tight text-slate-900">
+                        {{ lang.language() === 'es' ? '2. El Proceso Flowform: Paso a Paso' : '2. The Flowform Process: Step-by-Step' }}
+                    </h3>
+                </div>
+
+                <div class="flex flex-col gap-10">
+                    <!-- Step 1 -->
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+                        <div class="shrink-0 w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center border-2 border-emerald-200 text-2xl font-black text-emerald-800">
+                            1
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-xl font-black uppercase text-emerald-900 mb-2">
+                                {{ lang.language() === 'es' ? 'Recolección y Bio-Siembra' : 'Collection & Bio-Seeding' }}
+                            </h4>
+                            <p class="text-lg text-slate-600 font-medium leading-relaxed">
+                                {{ lang.language() === 'es' 
+                                ? 'El efluente contaminado se deposita en un estanque de ecualización. Se "siembra" el agua con bacterias cepas bioaumentadas genéticamente diseñadas para descomponer tinturas que bacterias comunes no pueden diferir.' 
+                                : 'Contaminated water is collected in an equalization tank. Here, the industry "seeds" the water with Specialized Bioaugmented Bacteria—strains engineered to break down tough synthetic dyes.' }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+                        <div class="shrink-0 w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center border-2 border-emerald-200 text-2xl font-black text-emerald-800">
+                            2
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-xl font-black uppercase text-emerald-900 mb-2">
+                                {{ lang.language() === 'es' ? 'Oxigenación Flowform' : 'The Flowform Lungs' }}
+                            </h4>
+                            <p class="text-lg text-slate-600 font-medium leading-relaxed">
+                                {{ lang.language() === 'es' 
+                                ? 'En lugar usar sopladores eléctricos inmensos, el agua rebota y fluye rítmicamente a través de cascadas Flowform creando una superficie de intercambio de gas masiva. Resultado: El Oxígeno Disuelto salta a sobresaturación (8-9 mg/L) usando solo una bomba menor de impulsión.' 
+                                : 'Instead of using a 50kW electric blower, water cascades through figure-eight vortices creating massive surface area for gas exchange. Result: DO jumps to saturation (8-9 mg/L) using only a water pump.' }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+                        <div class="shrink-0 w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center border-2 border-emerald-200 text-2xl font-black text-emerald-800">
+                            3
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-xl font-black uppercase text-emerald-900 mb-2">
+                                {{ lang.language() === 'es' ? 'Digestión Acelerada' : 'Accelerated Digestion' }}
+                            </h4>
+                            <p class="text-lg text-slate-600 font-medium leading-relaxed">
+                                {{ lang.language() === 'es' 
+                                ? 'El agua hiper-oxigenada cae hacia un Reactor Biológico (Laguna). Con niveles de O₂ al máximo, el "metabolismo" de las cepas de bacterias se acelera al límite. Devoran y cortan los polucionantes mucho más rápido que en tanques convencionales.' 
+                                : 'The hyper-oxygenated water falls into a Treatment Lagoon. Because oxygen levels are at max, bacteria metabolism accelerates. They eat pollutants significantly faster than in a traditionally aerated tank.' }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+                        <div class="shrink-0 w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center border-2 border-emerald-200 text-2xl font-black text-emerald-800">
+                            4
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-xl font-black uppercase text-emerald-900 mb-2">
+                                {{ lang.language() === 'es' ? 'El Bucle de Recirculación' : 'Recirculation Loop' }}
+                            </h4>
+                            <p class="text-lg text-slate-600 font-medium leading-relaxed">
+                                {{ lang.language() === 'es' 
+                                ? 'Una fracción de toda el agua vuelve constantemente arriba a las Flowform. Esto garantiza que el fondo de la laguna nunca se torne anaeróbico (muerto), manteniendo así a las colonias trabajando sin cansancio ni creación de malos olores.' 
+                                : 'A portion of water is constantly pumped back up to the Flowforms. This ensures the "bottom" never becomes anaerobic (dead). It keeps bacteria in a constant state of high activity breaking tough bonds.' }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+                        <div class="shrink-0 w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center border-2 border-emerald-200 text-2xl font-black text-emerald-800">
+                            5
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-xl font-black uppercase text-emerald-900 mb-2">
+                                {{ lang.language() === 'es' ? 'Clarificación y Descarga Cumplida' : 'Clarification & Compliant Discharge' }}
+                            </h4>
+                            <p class="text-lg text-slate-600 font-medium leading-relaxed">
+                                {{ lang.language() === 'es' 
+                                ? 'El agua purificada se separa del lodo biológico. Gracias a la eficiencia y el enorme aporte de aire absorbido rítmicamente, el efluente final sale libre de olores, inocuo al medio, cumpliendo estrictas normas de descarga sin riesgo de paralizaciones.' 
+                                : 'The clean water is separated from the bacterial sludge. Because the overall process is so efficient at aeration, final water is heavily oxygenated, meaning it can be safely discharged into rivers or reused without bad odor.' }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Value Comparison -->
+            <div>
+                <div class="flex items-center gap-4 mb-8">
+                    <span class="text-4xl">💰</span>
+                    <h3 class="text-2xl font-black uppercase tracking-tight text-slate-900">
+                        {{ lang.language() === 'es' ? '3. Resumen Transaccional de Valor' : '3. Summary of Value Added' }}
+                    </h3>
+                </div>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100">
+                        <thead class="bg-emerald-900 text-emerald-50 uppercase text-[10px] tracking-widest font-black">
+                            <tr>
+                                <th class="p-4">{{ lang.language() === 'es' ? 'FASE ESPERADA' : 'PROCESS STAGE' }}</th>
+                                <th class="p-4 bg-red-950 text-red-100">{{ lang.language() === 'es' ? 'RIESGO/COSTO TRADICIONAL' : 'TRADITIONAL COST/RISK' }}</th>
+                                <th class="p-4 bg-emerald-800">{{ lang.language() === 'es' ? 'VALOR DE O₂ FLOWFORM' : 'FLOWFORM + BIO VALOR' }}</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm font-medium text-slate-700">
+                            <tr class="border-b border-slate-100">
+                                <td class="p-4 uppercase font-black text-slate-900 border-r border-slate-100">
+                                    {{ lang.language() === 'es' ? 'Aireación' : 'Aeration' }}
+                                </td>
+                                <td class="p-4 text-red-800 bg-red-50">
+                                    {{ lang.language() === 'es' ? 'Alta Electricidad ($$$)' : 'High Electricity ($$$)' }}
+                                </td>
+                                <td class="p-4 text-emerald-800 bg-emerald-50">
+                                    {{ lang.language() === 'es' ? 'Baja Electricidad (Solo bomba de agua)' : 'Low Electricity (Pump only)' }}
+                                </td>
+                            </tr>
+                            <tr class="border-b border-slate-100">
+                                <td class="p-4 uppercase font-black text-slate-900 border-r border-slate-100">
+                                    {{ lang.language() === 'es' ? 'Quiebre Químico' : 'Chemical Breakdown' }}
+                                </td>
+                                <td class="p-4 text-red-800 bg-red-50">
+                                    {{ lang.language() === 'es' ? 'Lento e Incompleto' : 'Slow / Incomplete' }}
+                                </td>
+                                <td class="p-4 text-emerald-800 bg-emerald-50">
+                                    {{ lang.language() === 'es' ? 'Rápido / Completo (Cinética acelerada)' : 'Fast / Complete (High O₂ kinetics)' }}
+                                </td>
+                            </tr>
+                            <tr class="border-b border-slate-100">
+                                <td class="p-4 uppercase font-black text-slate-900 border-r border-slate-100">
+                                    {{ lang.language() === 'es' ? 'Olores Tóxicos' : 'Odors' }}
+                                </td>
+                                <td class="p-4 text-red-800 bg-red-50">
+                                    {{ lang.language() === 'es' ? 'Alto Riesgo (Putrefacción anaerobia)' : 'High Risk (Anaerobic)' }}
+                                </td>
+                                <td class="p-4 text-emerald-800 bg-emerald-50">
+                                    {{ lang.language() === 'es' ? 'Nulo (Estado permanente aeróbico)' : 'Zero (Constant Aerobic state)' }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 uppercase font-black text-slate-900 border-r border-slate-100">
+                                    {{ lang.language() === 'es' ? 'Mantenimientos' : 'Maintenance' }}
+                                </td>
+                                <td class="p-4 text-red-800 bg-red-50">
+                                    {{ lang.language() === 'es' ? 'Constante (Motores / Turbinas sumergidas)' : 'High (Motors/Blowers)' }}
+                                </td>
+                                <td class="p-4 text-emerald-800 bg-emerald-50">
+                                    {{ lang.language() === 'es' ? 'Muy Bajo (Estética pasiva robusta sin motores)' : 'Low (Passive structures)' }}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- CURRENT CONTENT: THE ANALYSIS -->
+        <div *ngIf="viewMode === 'analysis'" class="animate-fadeIn">
+            <!-- Existential Problems -->
+            <section class="mb-20">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center border-2 border-red-200 shrink-0">
+                        <span class="text-xl">⚠️</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-black uppercase tracking-tight text-slate-900">
+                            {{ lang.language() === 'es' ? 'Los Problemas "Existenciales"' : 'The "Existential" Problems' }}
+                        </h3>
+                        <p class="text-sm font-black uppercase tracking-widest text-red-500">
+                            {{ lang.language() === 'es' ? 'Donde Flowform NO Contribuye' : 'Where Flowform Does Not Contribute' }}
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Item 1 -->
+                    <div class="p-8 rounded-[2rem] border-2 border-neutral-100 bg-white shadow-sm hover:border-red-200 hover:shadow-md transition-all">
+                        <div class="flex justify-between items-start mb-6">
+                            <h4 class="text-xl font-black uppercase text-slate-900 max-w-[70%]">
+                                {{ lang.language() === 'es' ? '1. Contaminantes "Eternos" (PFAS)' : '1. "Forever" Pollutants (PFAS)' }}
+                            </h4>
+                            <span class="px-3 py-1 bg-red-50 text-red-600 border border-red-200 rounded-full text-xs font-black uppercase tracking-widest whitespace-nowrap">10/10 Priority</span>
+                        </div>
+                        <div class="mb-6">
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">
+                                {{ lang.language() === 'es' ? 'El Problema' : 'The Problem' }}
+                            </h5>
+                            <p class="text-slate-700 font-medium leading-relaxed">
+                                {{ lang.language() === 'es' 
+                                ? 'Leyes recientes prohíben estrictamente los PFAS y exigen captura de microplásticos, requiriendo filtros nanométricos o extremas oxidaciones.' 
+                                : 'Recent laws strictly prohibit PFAS and demand microplastic capture, requiring nanometric filters or extreme chemical oxidation.' }}
+                            </p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-neutral-50 border border-neutral-200 border-l-4 border-l-red-500">
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-red-500 mb-2">Flowform Contribution: NO</h5>
+                            <p class="text-sm font-medium text-slate-600">
+                                {{ lang.language() === 'es' 
+                                ? 'Flowform no tiene la capacidad de filtrar partículas microscópicas ni de romper enlaces químicos de sustancias sintéticas complejas.' 
+                                : 'Flowform does not have the capacity to filter microscopic particles or break the chemical bonds of complex synthetic substances.' }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="p-8 rounded-[2rem] border-2 border-neutral-100 bg-white shadow-sm hover:border-red-200 hover:shadow-md transition-all">
+                        <div class="flex justify-between items-start mb-6">
+                            <h4 class="text-xl font-black uppercase text-slate-900 max-w-[70%]">
+                                {{ lang.language() === 'es' ? '2. Energía y Huella de Carbono' : '2. Energy & Carbon Footprint' }}
+                            </h4>
+                            <span class="px-3 py-1 bg-red-50 text-red-600 border border-red-200 rounded-full text-xs font-black uppercase tracking-widest whitespace-nowrap">8/10 Priority</span>
+                        </div>
+                        <div class="mb-6">
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">
+                                {{ lang.language() === 'es' ? 'El Problema' : 'The Problem' }}
+                            </h5>
+                            <p class="text-slate-700 font-medium leading-relaxed">
+                                {{ lang.language() === 'es' 
+                                ? 'El secado y planchado textil consumen cantidades masivas de energía. La industria invierte en bombas de calor para mitigar emisiones.' 
+                                : 'Textile drying and ironing consume massive amounts of energy. The industry invests in heat pumps to mitigate scope 1 and 2 emissions.' }}
+                            </p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-neutral-50 border border-neutral-200 border-l-4 border-l-red-500">
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-red-500 mb-2">Flowform Contribution: NO</h5>
+                            <p class="text-sm font-medium text-slate-600">
+                                {{ lang.language() === 'es' 
+                                ? 'Como tecnología pasiva de dinámica de fluidos, no influye en el balance térmico masivo de la maquinaria de producción (calderas).' 
+                                : 'As a passive fluid dynamics technology, it does not influence the massive thermal or energy balance of production machinery (boilers).' }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- High-Value Niches -->
+            <section class="mb-20">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center border-2 border-emerald-200 shrink-0">
+                        <span class="text-xl">💎</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-black uppercase tracking-tight text-slate-900">
+                            {{ lang.language() === 'es' ? 'Los Nichos de "Alto Valor"' : 'The "High-Value" Niches' }}
+                        </h3>
+                        <p class="text-sm font-black uppercase tracking-widest text-emerald-600">
+                            {{ lang.language() === 'es' ? 'Donde Flowform Ofrece Valor Estratégico' : 'Where Flowform Offers Strategic Value' }}
+                        </p>
+                    </div>
+                </div>
+                
+                <p class="text-lg text-slate-600 font-medium mb-10 max-w-3xl">
+                    {{ lang.language() === 'es' 
+                    ? 'Es aquí donde Flowform rentabiliza las plantas biológicas ayudando al sector a cumplir normas inflexibles sin quebrar por costos operativos.' 
+                    : 'This is where Flowform makes biological plants profitable by helping the sector meet inflexible standards without going bankrupt on operational costs.' }}
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Item 1 -->
+                    <div class="p-8 rounded-[2rem] border-2 border-emerald-100 bg-gradient-to-br from-emerald-50/50 to-white shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col">
+                        <div class="flex justify-between items-start mb-6">
+                            <h4 class="text-xl font-black uppercase text-emerald-950 max-w-[70%]">
+                                {{ lang.language() === 'es' ? '1. Tratamiento de Efluentes (DQO)' : '1. Biological Treatment (COD)' }}
+                            </h4>
+                            <span class="px-3 py-1 bg-emerald-100 text-emerald-700 border border-emerald-200 rounded-full text-xs font-black uppercase tracking-widest whitespace-nowrap">9/10 Priority</span>
+                        </div>
+                        <div class="mb-6 flex-grow">
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-emerald-400 mb-2">
+                                {{ lang.language() === 'es' ? 'El Problema' : 'The Problem' }}
+                            </h5>
+                            <p class="text-slate-700 font-medium leading-relaxed">
+                                {{ lang.language() === 'es' 
+                                ? 'El agua textil lleva alta carga orgánica que agota el oxígeno de los ríos. Las lagunas biológicas son carísimas de airear mecánicamente.' 
+                                : 'Textile wastewater carries high organic loads that deplete river oxygen. Biological lagoons are extremely expensive to mechanically aerate.' }}
+                            </p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-white border border-emerald-100 border-l-4 border-l-emerald-400 shadow-sm mt-auto">
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-emerald-600 mb-2 flex items-center gap-2">Flowform Contribution: YES (CRITICAL VALUE)</h5>
+                            <p class="text-sm font-medium text-slate-600">
+                                {{ lang.language() === 'es' 
+                                ? 'Al oxigenar de forma hiper-eficiente y rítmica, estimula a las bacterias degradadoras sin el altísimo gasto KW/hora de los sopladores.' 
+                                : 'By oxygenating hyper-efficiently, it stimulates degrading bacteria without the massive KW/hour expense of industrial submerged blowers.' }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="p-8 rounded-[2rem] border-2 border-emerald-100 bg-gradient-to-br from-emerald-50/50 to-white shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col">
+                        <div class="flex justify-between items-start mb-6">
+                            <h4 class="text-xl font-black uppercase text-emerald-950 max-w-[70%]">
+                                {{ lang.language() === 'es' ? '2. Gestión de "Color"' : '2. "Color" and Discharge Management' }}
+                            </h4>
+                            <span class="px-3 py-1 bg-emerald-100 text-emerald-700 border border-emerald-200 rounded-full text-xs font-black uppercase tracking-widest whitespace-nowrap">9/10 Priority</span>
+                        </div>
+                        <div class="mb-6 flex-grow">
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-emerald-400 mb-2">
+                                {{ lang.language() === 'es' ? 'El Problema' : 'The Problem' }}
+                            </h5>
+                            <p class="text-slate-700 font-medium leading-relaxed">
+                                {{ lang.language() === 'es' 
+                                ? 'Verter agua residual coloreada es ilegal en jurisdicciones estrictas e inspira inmediato rechazo social comunitario a la planta.' 
+                                : 'Discharging colored wastewater is illegal in strict jurisdictions and inspires immediate community backlash toward the facility.' }}
+                            </p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-white border border-emerald-100 border-l-4 border-l-emerald-400 shadow-sm mt-auto">
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-emerald-600 mb-2 flex items-center gap-2">Flowform Contribution: YES (REGULATORY)</h5>
+                            <p class="text-sm font-medium text-slate-600">
+                                {{ lang.language() === 'es' 
+                                ? 'El alto oxígeno disuelto acelera la biodegradación aeróbica de moléculas de tintura recalcitrante que evitan ser descompuestas.' 
+                                : 'Constant high dissolved oxygen accelerates the aerobic biodegradation of recalcitrant dye molecules that resist breaking down.' }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="col-span-1 md:col-span-2 lg:col-span-1 p-8 rounded-[2rem] border-2 border-emerald-100 bg-gradient-to-br from-emerald-50/50 to-white shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col">
+                        <div class="flex justify-between items-start mb-6">
+                            <h4 class="text-xl font-black uppercase text-emerald-950 max-w-[70%]">
+                                {{ lang.language() === 'es' ? '3. Saturación Química' : '3. Chemical Saturation Reduction' }}
+                            </h4>
+                            <span class="px-3 py-1 bg-emerald-100 text-emerald-700 border border-emerald-200 rounded-full text-xs font-black uppercase tracking-widest whitespace-nowrap">7/10 Priority</span>
+                        </div>
+                        <div class="mb-6 flex-grow">
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-emerald-400 mb-2">
+                                {{ lang.language() === 'es' ? 'El Problema' : 'The Problem' }}
+                            </h5>
+                            <p class="text-slate-700 font-medium leading-relaxed">
+                                {{ lang.language() === 'es' 
+                                ? 'El agua reutilizada de descrudes arrastra historial químico. Para usarla de nuevo, suele necesitar más auxiliares neutralizantes.' 
+                                : 'Reused scouring water carries chemical history. To reuse it, it often requires increasingly more chemical auxiliaries.' }}
+                            </p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-white border border-emerald-100 border-l-4 border-l-emerald-400 shadow-sm mt-auto">
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-emerald-600 mb-2 flex items-center gap-2">Flowform Contribution: YES (OPERATIONAL)</h5>
+                            <p class="text-sm font-medium text-slate-600">
+                                {{ lang.language() === 'es' 
+                                ? 'Al mejorar la mezcla y desgasificar, permite dispersión uniforme y ayuda a evitar el incremento exponencial de reactivos.' 
+                                : 'By improving the mixed structure and degassing, it helps to avoid exponentially increasing reagents.' }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Verdict -->
+            <section>
+                <div class="p-10 md:p-14 rounded-[3rem] bg-emerald-950 border-2 border-emerald-900 text-white relative overflow-hidden group hover:border-emerald-700 transition-colors duration-500">
+                    <div class="absolute -top-32 -right-32 w-96 h-96 bg-teal-500/20 rounded-full blur-[100px] pointer-events-none group-hover:bg-teal-500/30 transition-all duration-700"></div>
+                    <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-emerald-600/20 rounded-full blur-[100px] pointer-events-none"></div>
+                    
+                    <div class="relative z-10 flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
+                        <div class="shrink-0 w-20 h-20 rounded-2xl border border-emerald-500/30 flex items-center justify-center bg-gradient-to-br from-emerald-500/20 to-teal-500/10 shadow-[0_0_30px_rgba(16,185,129,0.15)]">
+                            <span class="text-4xl">⚖️</span>
+                        </div>
+                        <div class="text-center md:text-left">
+                            <h3 class="text-sm font-black uppercase tracking-[0.2em] text-emerald-400 mb-3">
+                                {{ lang.language() === 'es' ? 'VEREDICTO DEL EVALUADOR PARA INDUSTRIA TEXTIL' : 'EVALUATORS VERDICT' }}
+                            </h3>
+                            <p class="text-xl md:text-2xl text-slate-200 font-medium leading-relaxed tracking-tight mb-4">
+                                {{ lang.language() === 'es' 
+                                ? 'La circularidad está empujando a las textileras al límite de sus presupuestos operativos.'
+                                : 'Circularity mandates are pushing textile mills to the absolute edge of their operational budgets.' }}
+                            </p>
+                            <p class="text-lg text-emerald-100/80 font-medium leading-relaxed">
+                                {{ lang.language() === 'es' 
+                                ? 'Vender Flowform como un purificador milagroso que destruye plásticos fracasará. Sin embargo, su rentabilidad se cristaliza de inmediato al presentarlo como el "Acelerador Aeróbico Definitivo". Elimina el costo de electricidad de masivos aireadores, solucionando una fricción financiera inmensa y permitiendo la eliminación constante del Color y DQO orgánico.'
+                                : 'Selling Flowform as a standalone miraculous filter will fail. Its true profitability crystallizes when positioned as the "Ultimate Aerobic Accelerator". It slashes the massive electric bill of mechanical blowers required to mitigate COD and organic dyes, solving a major financial friction point.' }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

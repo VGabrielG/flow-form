@@ -1,0 +1,330 @@
+<div class="animate-fadeIn min-h-screen bg-white text-neutral-900 font-outfit">
+    <!-- Hero Section - Industrial Dark Theme -->
+    <header class="pt-32 pb-24 text-white relative overflow-hidden bg-emerald-950 border-b border-emerald-900/30">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-emerald-900/30 via-transparent to-slate-900/50 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <!-- Text side -->
+                <div class="flex-1 text-left">
+
+                    <h1 class="text-6xl md:text-7xl font-black mb-8 tracking-tighter leading-none uppercase">
+                        {{ lang.language() === 'es' ? 'HIDRÓGENO VERDE' : 'GREEN HYDROGEN' }}
+                    </h1>
+                    <p class="text-xl text-emerald-100/80 leading-relaxed font-medium max-w-xl">
+                        {{ lang.language() === 'es'
+                        ? 'Asegurando la sostenibilidad total del H2V mediante la gestión circular del agua y la creación de "Oxígeno Verde".'
+                        : 'Ensuring total H2V sustainability through circular water management and the creation of "Green Oxygen".' }}
+                    </p>
+                    <div class="mt-8">
+                        <a href="/studies/h2v-facts.txt" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-600/20 text-emerald-200 border border-emerald-500/30 hover:bg-emerald-600/40 transition-colors text-xs font-black uppercase tracking-widest shadow-sm">
+                            <span>📄</span> {{ lang.language() === 'es' ? 'Ver Estudio y Fuentes' : 'View Study and Sources' }}
+                        </a>
+                    </div>
+                </div>
+                <!-- Image side -->
+                <div class="flex-1 flex justify-center items-center">
+                    <div class="w-full max-w-md aspect-square bg-emerald-900/40 rounded-3xl border border-white/10 flex items-center justify-center p-12 backdrop-blur-sm relative group overflow-hidden shadow-2xl">
+                         <div class="absolute inset-0 bg-gradient-to-tr from-emerald-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                         <span class="text-[12rem] drop-shadow-2xl filter group-hover:scale-110 transition-transform duration-700">🔋</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-20 pb-32 pt-12">
+        <!-- Toggle Buttons -->
+        <div class="flex flex-wrap justify-center gap-4 mb-16">
+            <button (click)="toggleViewMode('process')"
+                [class.bg-emerald-900]="viewMode === 'process'"
+                [class.text-white]="viewMode === 'process'"
+                [class.shadow-lg]="viewMode === 'process'"
+                [class.bg-white]="viewMode !== 'process'"
+                [class.text-slate-600]="viewMode !== 'process'"
+                [class.hover:bg-emerald-50]="viewMode !== 'process'"
+                class="px-8 py-4 rounded-full font-black uppercase tracking-widest text-sm transition-all border-2 border-emerald-900/10">
+                {{ lang.language() === 'es' ? 'El Proceso Técnico' : 'The Technical Process' }}
+            </button>
+            <button (click)="toggleViewMode('analysis')"
+                [class.bg-emerald-900]="viewMode === 'analysis'"
+                [class.text-white]="viewMode === 'analysis'"
+                [class.shadow-lg]="viewMode === 'analysis'"
+                [class.bg-white]="viewMode !== 'analysis'"
+                [class.text-slate-600]="viewMode !== 'analysis'"
+                [class.hover:bg-emerald-50]="viewMode !== 'analysis'"
+                class="px-8 py-4 rounded-full font-black uppercase tracking-widest text-sm transition-all border-2 border-emerald-900/10">
+                {{ lang.language() === 'es' ? 'Análisis de la Industria' : 'Industry Analysis' }}
+            </button>
+        </div>
+
+        <!-- THE PROCESS VIEW -->
+        <div *ngIf="viewMode === 'process'" class="animate-fadeIn">
+            <div class="mb-16 text-center">
+                <h2 class="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter leading-none uppercase mb-6">
+                    {{ lang.language() === 'es' ? 'El Proceso Técnico en H2V' : 'The Technical Process in H2V' }}
+                </h2>
+                <p class="text-xl text-slate-600 font-medium leading-relaxed max-w-4xl mx-auto">
+                    {{ lang.language() === 'es' 
+                    ? 'Así es como la tecnología Flowform se integra para asegurar que el Hidrógeno sea realmente "verde" desde el agua hasta el gas.' 
+                    : 'This is how Flowform technology integrates to ensure that Hydrogen is truly "green" from water to gas.' }}
+                </p>
+            </div>
+
+            <!-- Problem block -->
+            <div class="border-b border-slate-200 pb-16 mb-16">
+                <div class="flex items-center gap-4 mb-8">
+                    <span class="text-4xl text-red-500">❌</span>
+                    <h3 class="text-2xl md:text-3xl font-black uppercase tracking-tight text-slate-900">
+                        {{ lang.language() === 'es' ? 'El Problema: El "Cuello de Botella Hídrico-Térmico del H2V"' : 'The Problem: The "H2V Hydro-Thermal Bottleneck"' }}
+                    </h3>
+                </div>
+                
+                <div class="space-y-8 text-lg text-slate-700 font-medium leading-relaxed max-w-5xl">
+                    <p>
+                        <strong class="text-slate-900 block mb-2">{{ lang.language() === 'es' ? 'La Dependencia de la Desalinitación:' : 'Desalination Dependency:' }}</strong>
+                        {{ lang.language() === 'es' 
+                        ? 'El H2V requiere agua de ultra-alta pureza. En el desierto o en la Patagonia, esto significa desalinizar agua de mar. Como vimos, la salmuera (brine) resultante es un "paralizador" de permisos ambientales.' 
+                        : 'H2V requires ultra-high purity water. In the desert or Patagonia, this means desalinating seawater. As we have seen, the resulting brine is an environmental permit "freezer".' }}
+                    </p>
+                    <p>
+                        <strong class="text-slate-900 block mb-2">{{ lang.language() === 'es' ? 'El Biofouling en el Enfriamiento:' : 'Cooling Biofouling:' }}</strong>
+                        {{ lang.language() === 'es' 
+                        ? 'Los electrolizadores generan calor masivo. Los sistemas de enfriamiento por agua son los más eficientes, pero el crecimiento de algas y biofilm en los intercambiadores de calor reduce la eficiencia de la electrólisis, aumentando el costo del kilo de Hidrógeno (LCOH).' 
+                        : 'Electrolyzers generate massive heat. Water cooling systems are the most efficient, but algae and biofilm growth in heat exchangers reduce electrolysis efficiency, increasing the cost per kg of Hydrogen (LCOH).' }}
+                    </p>
+                    <div class="text-red-700 bg-red-50/50 p-6 rounded-2xl border border-red-100">
+                        <strong class="text-red-900 block mb-2">{{ lang.language() === 'es' ? 'El Oxígeno "Desperdiciado":' : 'The "Wasted" Oxygen:' }}</strong>
+                        <p>
+                        {{ lang.language() === 'es' 
+                        ? 'La electrólisis separa el agua en H2 y O2. Actualmente, el oxígeno se libera a la atmósfera. No hay un proceso "verde" y pasivo para re-inyectar este oxígeno en fuentes de agua degradadas cercanas a las plantas, perdiendo una oportunidad de "restauración ambiental" que validaría el proyecto ante la comunidad.' 
+                        : 'Electrolysis separates water into H2 and O2. Currently, oxygen is released into the atmosphere. There is no "green" and passive process to re-inject this oxygen into degraded water sources near plants, missing an "environmental restoration" opportunity that would validate the project for the community.' }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Steps Block -->
+            <div class="mb-20">
+                <div class="flex items-center gap-4 mb-10">
+                    <span class="text-4xl">✅</span>
+                    <h3 class="text-2xl font-black uppercase tracking-tight text-slate-900">
+                        {{ lang.language() === 'es' ? 'El Proceso Flowform en H2V: Paso a Paso' : 'The Flowform Process in H2V: Step-by-Step' }}
+                    </h3>
+                </div>
+
+                <div class="flex flex-col gap-10">
+                    <!-- Step 1 -->
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+                        <div class="shrink-0 w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center border-2 border-emerald-200 text-2xl font-black text-emerald-800">1</div>
+                        <div class="flex-1">
+                            <h4 class="text-xl font-black uppercase text-emerald-950 mb-2">
+                                {{ lang.language() === 'es' ? 'Pre-tratamiento de Agua de Alimentación' : 'Feedwater Pre-treatment' }}
+                            </h4>
+                            <p class="text-lg text-slate-600 font-medium leading-relaxed">
+                                {{ lang.language() === 'es' 
+                                ? 'Antes de que el agua de mar o reciclada entre a la planta de tratamiento para los electrolizadores, pasa por una serie de Flowforms. Reduce la carga biológica inicial de forma física, disminuyendo el uso de biocidas químicos que podrían dañar las membranas de osmosis inversa (RO).' 
+                                : 'Before seawater or recycled water enters the treatment plant for the electrolyzers, it passes through a series of Flowforms. This physically reduces the initial biological load, decreasing the use of chemical biocides that could damage Reverse Osmosis (RO) membranes.' }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+                        <div class="shrink-0 w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center border-2 border-emerald-200 text-2xl font-black text-emerald-800">2</div>
+                        <div class="flex-1">
+                            <h4 class="text-xl font-black uppercase text-emerald-950 mb-2">
+                                {{ lang.language() === 'es' ? 'Protección de Intercambiadores de Calor' : 'Heat Exchanger Protection' }}
+                            </h4>
+                            <p class="text-lg text-slate-600 font-medium leading-relaxed">
+                                {{ lang.language() === 'es' 
+                                ? 'El agua que circula enfriando los electrolizadores es tratada constantemente mediante un lazo de Flowforms. La oxigenación y el movimiento rítmico evitan que el biofilm se adhiera a las placas de enfriamiento, manteniendo la eficiencia térmica al máximo.' 
+                                : 'Water circulating to cool the electrolyzers is constantly treated through a Flowform loop. Oxygenation and rhythmic movement prevent biofilm from adhering to cooling plates, maintaining thermal efficiency at its maximum.' }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+                        <div class="shrink-0 w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center border-2 border-emerald-200 text-2xl font-black text-emerald-800">3</div>
+                        <div class="flex-1">
+                            <h4 class="text-xl font-black uppercase text-emerald-950 mb-2">
+                                {{ lang.language() === 'es' ? 'Gestión de Salmuera (Brine) "Oxigenada"' : '"Oxygenated" Brine Management' }}
+                            </h4>
+                            <p class="text-lg text-slate-600 font-medium leading-relaxed">
+                                {{ lang.language() === 'es' 
+                                ? 'Los Flowforms oxigenan la salmuera antes del vertido. Esto elimina el impacto de "zona muerta" en el lecho marino de Magallanes o Antofagasta, acelerando la aprobación de la RCA (Resolución de Calificación Ambiental).' 
+                                : 'Flowforms oxygenate the brine before discharge. This eliminates the "dead zone" impact on the seabed of Magallanes or Antofagasta, accelerating environmental permit (RCA) approval.' }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+                        <div class="shrink-0 w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center border-2 border-emerald-200 text-2xl font-black text-emerald-800">4</div>
+                        <div class="flex-1">
+                            <h4 class="text-xl font-black uppercase text-emerald-950 mb-2">
+                                {{ lang.language() === 'es' ? 'Creación de "Oxígeno Verde" Líquido' : 'Creation of Liquid "Green Oxygen"' }}
+                            </h4>
+                            <p class="text-lg text-slate-600 font-medium leading-relaxed">
+                                {{ lang.language() === 'es' 
+                                ? 'En lugar de solo ventar el O2 a la atmósfera, el sistema puede usar parte de ese oxígeno para hiper-oxigenar agua de proceso. Esta agua se utiliza para restaurar ecosistemas locales dañados, transformando la planta en un motor de restauración ambiental activa.' 
+                                : 'Instead of just venting O2 to the atmosphere, the system can use part of that oxygen to hyper-oxygenate process water. This water is used to restore damaged local ecosystems, transforming the H2V plant into a motor of active environmental restoration.' }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Value Table -->
+            <div>
+                <div class="flex items-center gap-4 mb-8">
+                    <span class="text-4xl">💰</span>
+                    <h3 class="text-2xl font-black uppercase tracking-tight text-slate-900">
+                        {{ lang.language() === 'es' ? 'Resumen del Valor Agregado en H2V' : 'Summary of Value Added in H2V' }}
+                    </h3>
+                </div>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100">
+                        <thead class="bg-emerald-950 text-emerald-50 uppercase text-[10px] tracking-widest font-black">
+                            <tr>
+                                <th class="p-4">{{ lang.language() === 'es' ? 'ETAPA DEL PROCESO' : 'PROCESS STAGE' }}</th>
+                                <th class="p-4 bg-red-950 text-red-100">{{ lang.language() === 'es' ? 'COSTO/RIESGO TRADICIONAL' : 'TRADITIONAL RISK/COST' }}</th>
+                                <th class="p-4 bg-emerald-800">{{ lang.language() === 'es' ? 'VALOR FLOWFORM' : 'FLOWFORM VALUE' }}</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm font-medium text-slate-700">
+                            <tr class="border-b border-slate-100">
+                                <td class="p-4 uppercase font-black text-slate-900 border-r border-slate-100">
+                                    {{ lang.language() === 'es' ? 'Eficiencia de Electrólisis' : 'Electrolysis Efficiency' }}
+                                </td>
+                                <td class="p-4 text-red-800 bg-red-50">
+                                    {{ lang.language() === 'es' ? 'Cae por biofilm en enfriamiento' : 'Drops due to cooling biofilm' }}
+                                </td>
+                                <td class="p-4 text-emerald-800 bg-emerald-50">
+                                    {{ lang.language() === 'es' ? 'Estable y máxima (Intercambiadores limpios)' : 'Stable and maximum (Clean exchangers)' }}
+                                </td>
+                            </tr>
+                            <tr class="border-b border-slate-100">
+                                <td class="p-4 uppercase font-black text-slate-900 border-r border-slate-100">
+                                    {{ lang.language() === 'es' ? 'Permisos Ambientales' : 'Environmental Permits' }}
+                                </td>
+                                <td class="p-4 text-red-800 bg-red-50">
+                                    {{ lang.language() === 'es' ? 'Bloqueados por impacto de salmuera' : 'Blocked by brine impact' }}
+                                </td>
+                                <td class="p-4 text-emerald-800 bg-emerald-50">
+                                    {{ lang.language() === 'es' ? 'Acelerados (Vertido de salmuera oxigenada)' : 'Accelerated (Oxygenated brine discharge)' }}
+                                </td>
+                            </tr>
+                            <tr class="border-b border-slate-100">
+                                <td class="p-4 uppercase font-black text-slate-900 border-r border-slate-100">
+                                    {{ lang.language() === 'es' ? 'Marketing del Producto' : 'Product Marketing' }}
+                                </td>
+                                <td class="p-4 text-red-800 bg-red-50">
+                                    {{ lang.language() === 'es' ? 'Hidrógeno Verde' : 'Green Hydrogen' }}
+                                </td>
+                                <td class="p-4 text-emerald-800 bg-emerald-50">
+                                    {{ lang.language() === 'es' ? 'Hidrógeno + "Oxígeno Verde" (Circularidad total)' : 'Hydrogen + "Green Oxygen" (Total circularity)' }}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- THE ANALYSIS VIEW -->
+        <div *ngIf="viewMode === 'analysis'" class="animate-fadeIn">
+            <div class="mb-16">
+                <h2 class="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter leading-none uppercase mb-6">
+                    {{ lang.language() === 'es' ? 'Análisis del Evaluador de Proyectos: H2V' : 'Project Evaluator Analysis: H2V' }}
+                </h2>
+                <p class="text-xl text-slate-600 font-medium leading-relaxed max-w-4xl">
+                    {{ lang.language() === 'es' 
+                    ? 'El hidrógeno "limpio" tiene un lado B: el manejo masivo de agua y el calor residual. Aquí el análisis estratégico.' 
+                    : '"Clean" hydrogen has a side B: massive water management and waste heat. Here is the strategic analysis.' }}
+                </p>
+            </div>
+
+            <!-- Existential Problems -->
+            <section class="mb-20">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center border-2 border-red-200 shrink-0">
+                        <span class="text-xl">⚠️</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-black uppercase tracking-tight text-slate-900">
+                            {{ lang.language() === 'es' ? 'Los Problemas "Existenciales"' : 'The "Existential" Problems' }}
+                        </h3>
+                        <p class="text-sm font-black uppercase tracking-widest text-red-500">
+                            {{ lang.language() === 'es' ? 'Desafíos Críticos de la Industria' : 'Critical Industry Challenges' }}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Item 1 -->
+                    <div class="p-8 rounded-[2rem] border-2 border-neutral-100 bg-white shadow-sm hover:border-red-200 transition-all">
+                        <h4 class="text-xl font-black uppercase text-slate-900 mb-4">
+                            {{ lang.language() === 'es' ? '1. Escasez de Agua y "Guerra del Brine"' : '1. Water Scarcity & "Brine War"' }}
+                        </h4>
+                        <p class="text-slate-700 font-medium leading-relaxed">
+                            {{ lang.language() === 'es' 
+                            ? 'La desalinización es obligatoria pero el vertido de salmuera es el principal punto de rechazo de las comunidades locales en Magallanes y Antofagasta.' 
+                            : 'Desalination is mandatory but brine discharge is the main point of rejection by local communities in Magallanes and Antofagasta.' }}
+                        </p>
+                        <div class="mt-6 p-4 rounded-xl bg-red-50 border border-red-100">
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-red-500 mb-1">Flowform Impact: High</h5>
+                            <p class="text-xs text-red-700">
+                                {{ lang.language() === 'es' ? 'Oxigenación pasiva de salmuera para eliminar zonas muertas marinas.' : 'Passive brine oxygenation to eliminate marine dead zones.' }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="p-8 rounded-[2rem] border-2 border-neutral-100 bg-white shadow-sm hover:border-red-200 transition-all">
+                        <h4 class="text-xl font-black uppercase text-slate-900 mb-4">
+                            {{ lang.language() === 'es' ? '2. El Riesgo de Greenwashing' : '2. Greenwashing Risk' }}
+                        </h4>
+                        <p class="text-slate-700 font-medium leading-relaxed">
+                            {{ lang.language() === 'es' 
+                            ? 'Si una planta usa químicos tóxicos en sus torres de enfriamiento, pierde su credibilidad "verde". La industria necesita procesos coherentes con la sostenibilidad.' 
+                            : 'If a plant uses toxic chemicals in its cooling towers, it loses its "green" credibility. The industry needs processes consistent with total sustainability.' }}
+                        </p>
+                        <div class="mt-6 p-4 rounded-xl bg-emerald-50 border border-emerald-100">
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-emerald-600 mb-1">Flowform Value</h5>
+                            <p class="text-xs text-emerald-700">
+                                {{ lang.language() === 'es' ? 'Elimina biocidas mediante oxigenación física rítmica.' : 'Eliminates biocides through physical rhythmic oxygenation.' }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Verdict -->
+            <section>
+                <div class="p-10 md:p-14 rounded-[3rem] bg-emerald-950 border-2 border-emerald-900 text-white relative overflow-hidden group hover:border-emerald-700 transition-colors duration-500">
+                    <div class="absolute -top-32 -right-32 w-96 h-96 bg-teal-500/20 rounded-full blur-[100px] pointer-events-none group-hover:bg-teal-500/30 transition-all duration-700"></div>
+                    
+                    <div class="relative z-10 flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
+                        <div class="shrink-0 w-20 h-20 rounded-2xl border border-emerald-500/30 flex items-center justify-center bg-gradient-to-br from-emerald-500/20 to-teal-500/10 shadow-[0_0_30px_rgba(16,185,129,0.15)]">
+                            <span class="text-4xl">⚖️</span>
+                        </div>
+                        <div class="text-center md:text-left">
+                            <h3 class="text-sm font-black uppercase tracking-[0.2em] text-emerald-400 mb-3">
+                                {{ lang.language() === 'es' ? 'VEREDICTO DEL EVALUADOR' : 'EVALUATOR VERDICT' }}
+                            </h3>
+                            <p class="text-xl md:text-2xl text-slate-200 font-medium leading-relaxed tracking-tight">
+                                {{ lang.language() === 'es' 
+                                ? 'En la industria del H2V en Chile, el Flowform no es un componente de la máquina de hidrógeno, es el seguro de vida del proyecto. Sin una gestión del agua que sea tan limpia como el combustible que se produce, las plantas enfrentarán una resistencia social y legal insuperable.' 
+                                : 'In the H2V industry in Chile, Flowform is not a component of the hydrogen machine, it is the project\'s life insurance. Without water management as clean as the fuel produced, plants will face insurmountable social and legal resistance.' }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
