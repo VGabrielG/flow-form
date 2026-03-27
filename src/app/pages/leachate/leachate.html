@@ -118,14 +118,14 @@
                     </thead>
                     <tbody class="text-sm font-medium text-slate-700">
                         <tr class="border-b border-slate-100">
-                            <td class="p-4 uppercase font-black text-slate-900 border-r border-slate-100">Energía</td>
-                            <td class="p-4 text-red-800 bg-red-50">Altísimo (Sopladores 24/7)</td>
-                            <td class="p-4 text-orange-800 bg-orange-50">Casi Cero (Gravedad)</td>
+                            <td class="p-4 uppercase font-black text-slate-900 border-r border-slate-100">{{ lang.language() === 'es' ? 'Energía' : 'Energy' }}</td>
+                            <td class="p-4 text-red-800 bg-red-50">{{ lang.language() === 'es' ? 'Altísimo (Sopladores 24/7)' : 'Very High (Blowers 24/7)' }}</td>
+                            <td class="p-4 text-orange-800 bg-orange-50">{{ lang.language() === 'es' ? 'Casi Cero (Gravedad)' : 'Almost Zero (Gravity)' }}</td>
                         </tr>
                         <tr>
-                            <td class="p-4 uppercase font-black text-slate-900 border-r border-slate-100">Olores</td>
-                            <td class="p-4 text-red-800 bg-red-50">Alto Riesgo constante</td>
-                            <td class="p-4 text-orange-800 bg-orange-50">Nulo (Estado Aeróbico)</td>
+                            <td class="p-4 uppercase font-black text-slate-900 border-r border-slate-100">{{ lang.language() === 'es' ? 'Olores' : 'Odors' }}</td>
+                            <td class="p-4 text-red-800 bg-red-50">{{ lang.language() === 'es' ? 'Alto Riesgo constante' : 'Constant High Risk' }}</td>
+                            <td class="p-4 text-orange-800 bg-orange-50">{{ lang.language() === 'es' ? 'Nulo (Estado Aeróbico)' : 'None (Aerobic State)' }}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -137,22 +137,34 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
                 <div class="p-8 rounded-[2rem] border-2 border-neutral-100 bg-white shadow-sm hover:border-red-200 hover:shadow-md transition-all">
                     <div class="flex justify-between items-start mb-6">
-                        <h4 class="text-xl font-black uppercase text-slate-900 max-w-[70%]">1. Gestión de Plásticos</h4>
-                        <span class="px-3 py-1 bg-red-50 text-red-600 border border-red-200 rounded-full text-xs font-black uppercase tracking-widest whitespace-nowrap">Nota: 10/10 Priority</span>
+                        <h4 class="text-xl font-black uppercase text-slate-900 max-w-[70%]">
+                            {{ lang.language() === 'es' ? '1. Gestión de Plásticos' : '1. Plastic Management' }}
+                        </h4>
+                        <span class="px-3 py-1 bg-red-50 text-red-600 border border-red-200 rounded-full text-xs font-black uppercase tracking-widest whitespace-nowrap">
+                            {{ lang.language() === 'es' ? 'Nota: 10/10 Prioridad' : 'Note: 10/10 Priority' }}
+                        </span>
                     </div>
                     <div class="p-5 rounded-2xl bg-neutral-50 border border-neutral-200 border-l-4 border-l-red-500">
                         <h5 class="text-[10px] font-black uppercase tracking-widest text-red-500 mb-2">Flowform Contribution: NO</h5>
-                        <p class="text-sm font-medium text-slate-600">Flowform no detiene la generación de microplásticos en el vertedero.</p>
+                        <p class="text-sm font-medium text-slate-600">
+                            {{ lang.language() === 'es' ? 'Flowform no detiene la generación de microplásticos en el vertedero.' : 'Flowform does not stop the generation of microplastics in the landfill.' }}
+                        </p>
                     </div>
                 </div>
                 <div class="p-8 rounded-[2rem] border-2 border-neutral-100 bg-white shadow-sm hover:border-red-200 hover:shadow-md transition-all">
                     <div class="flex justify-between items-start mb-6">
-                        <h4 class="text-xl font-black uppercase text-slate-900 max-w-[70%]">2. Gas Metano Interno</h4>
-                        <span class="px-3 py-1 bg-red-50 text-red-600 border border-red-200 rounded-full text-xs font-black uppercase tracking-widest whitespace-nowrap">Nota: 9/10 Priority</span>
+                        <h4 class="text-xl font-black uppercase text-slate-900 max-w-[70%]">
+                            {{ lang.language() === 'es' ? '2. Gas Metano Interno' : '2. Internal Methane Gas' }}
+                        </h4>
+                        <span class="px-3 py-1 bg-red-50 text-red-600 border border-red-200 rounded-full text-xs font-black uppercase tracking-widest whitespace-nowrap">
+                            {{ lang.language() === 'es' ? 'Nota: 9/10 Prioridad' : 'Note: 9/10 Priority' }}
+                        </span>
                     </div>
                     <div class="p-5 rounded-2xl bg-neutral-50 border border-neutral-200 border-l-4 border-l-red-500">
                         <h5 class="text-[10px] font-black uppercase tracking-widest text-red-500 mb-2">Flowform Contribution: NO</h5>
-                        <p class="text-sm font-medium text-slate-600">El gas producido dentro de la basura debe ser capturado por pozos; Flowform no actúa en zona seca.</p>
+                        <p class="text-sm font-medium text-slate-600">
+                            {{ lang.language() === 'es' ? 'El gas producido dentro de la basura debe ser capturado por pozos; Flowform no actúa en zona seca.' : 'The gas produced inside the waste must be captured by wells; Flowform does not act in the dry zone.' }}
+                        </p>
                     </div>
                 </div>
             </div>
@@ -161,10 +173,14 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="p-8 rounded-[2rem] border-2 border-orange-100 bg-gradient-to-br from-orange-50/50 to-white shadow-sm hover:shadow-lg transition-all flex flex-col">
                         <div class="flex justify-between items-start mb-6">
-                            <h4 class="text-xl font-black uppercase text-stone-950">Filtro Social y Olores</h4>
+                            <h4 class="text-xl font-black uppercase text-stone-950">
+                                {{ lang.language() === 'es' ? 'Filtro Social y Olores' : 'Social Filter & Odors' }}
+                            </h4>
                             <span class="px-3 py-1 bg-orange-100 text-orange-700 border border-orange-200 rounded-full text-xs font-black uppercase tracking-widest">9/10 Priority</span>
                         </div>
-                        <p class="text-slate-700 font-medium leading-relaxed mb-6">Un vertedero que no huele es aceptado. Flowform asegura la Licencia Social eliminando olores de forma pasiva.</p>
+                        <p class="text-slate-700 font-medium leading-relaxed mb-6">
+                            {{ lang.language() === 'es' ? 'Un vertedero que no huele es aceptado. Flowform asegura la Licencia Social eliminando olores de forma pasiva.' : 'A landfill that doesn\'t smell is accepted. Flowform ensures the Social License by eliminating odors passively.' }}
+                        </p>
                     </div>
                 </div>
             </section>
@@ -174,8 +190,12 @@
                     <div class="relative z-10 flex flex-col md:flex-row items-center gap-8">
                         <span class="text-4xl shrink-0">⚖️</span>
                         <div>
-                            <h3 class="text-sm font-black uppercase tracking-[0.2em] text-orange-400 mb-3">VEREDICTO DE INVERSIÓN</h3>
-                            <p class="text-xl text-slate-200 font-medium leading-relaxed">Presentar Flowform como un blindaje reputacional. Garantiza una operación sin olores y reduce costo eléctrico, siendo la única forma de que un vertedero sea aceptado a largo plazo.</p>
+                            <h3 class="text-sm font-black uppercase tracking-[0.2em] text-orange-400 mb-3">
+                                {{ lang.language() === 'es' ? 'VEREDICTO DE INVERSIÓN' : 'INVESTMENT VERDICT' }}
+                            </h3>
+                            <p class="text-xl text-slate-200 font-medium leading-relaxed">
+                                {{ lang.language() === 'es' ? 'Presentar Flowform como un blindaje reputacional. Garantiza una operación sin olores y reduce costo eléctrico, siendo la única forma de que un vertedero sea aceptado a largo plazo.' : 'Present Flowform as reputational shielding. It guarantees an odor-free operation and reduces electrical costs, being the only way a landfill is accepted long-term.' }}
+                            </p>
                         </div>
                     </div>
                 </div>

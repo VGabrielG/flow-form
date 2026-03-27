@@ -303,32 +303,56 @@
                     <!-- Item 1 -->
                     <div class="p-8 rounded-[2rem] border-2 border-neutral-100 bg-white shadow-sm hover:border-red-200 hover:shadow-md transition-all">
                         <div class="flex justify-between items-start mb-6">
-                            <h4 class="text-xl font-black uppercase text-slate-900 max-w-[70%]">1. Energy & Carbon Costs</h4>
+                            <h4 class="text-xl font-black uppercase text-slate-900 max-w-[70%]">
+                                {{ lang.language() === 'es' ? '1. Costos de Energía y Carbono' : '1. Energy & Carbon Costs' }}
+                            </h4>
                             <span class="px-3 py-1 bg-red-50 text-red-600 border border-red-200 rounded-full text-xs font-black uppercase tracking-widest whitespace-nowrap">10/10 Priority</span>
                         </div>
                         <div class="mb-6">
-                            <h5 class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">The Problem</h5>
-                            <p class="text-slate-700 font-medium leading-relaxed">Desalination is incredibly energy-intensive. As countries implement carbon taxes (such as in Chile and the EU), the absolute top priority is reducing the energy required to push water through membranes and powering the process with renewable sources (solar, wind, storage).</p>
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">
+                                {{ lang.language() === 'es' ? 'El Problema' : 'The Problem' }}
+                            </h5>
+                            <p class="text-slate-700 font-medium leading-relaxed">
+                                {{ lang.language() === 'es' 
+                                ? 'La desalinización es increíblemente intensiva en energía. A medida que los países implementan impuestos al carbono, la prioridad absoluta es reducir la energía requerida para impulsar el agua a través de las membranas.' 
+                                : 'Desalination is incredibly energy-intensive. As countries implement carbon taxes (such as in Chile and the EU), the absolute top priority is reducing the energy required to push water through membranes and powering the process with renewable sources (solar, wind, storage).' }}
+                            </p>
                         </div>
                         <div class="p-5 rounded-2xl bg-neutral-50 border border-neutral-200 border-l-4 border-l-red-500">
                             <h5 class="text-[10px] font-black uppercase tracking-widest text-red-500 mb-2">Flowform Contribution: NO</h5>
-                            <p class="text-sm font-medium text-slate-600">While passive, it does not reduce the fundamental energy needed for reverse osmosis.</p>
+                            <p class="text-sm font-medium text-slate-600">
+                                {{ lang.language() === 'es' 
+                                ? 'Aunque es pasivo, no reduce la energía fundamental necesaria para la ósmosis inversa.' 
+                                : 'While passive, it does not reduce the fundamental energy needed for reverse osmosis.' }}
+                            </p>
                         </div>
                     </div>
 
                     <!-- Item 2 -->
                     <div class="p-8 rounded-[2rem] border-2 border-neutral-100 bg-white shadow-sm hover:border-red-200 hover:shadow-md transition-all">
                         <div class="flex justify-between items-start mb-6">
-                            <h4 class="text-xl font-black uppercase text-slate-900 max-w-[70%]">2. PFAS & Emerging Toxins</h4>
+                            <h4 class="text-xl font-black uppercase text-slate-900 max-w-[70%]">
+                                {{ lang.language() === 'es' ? '2. PFAS y Toxinas Emergentes' : '2. PFAS & Emerging Toxins' }}
+                            </h4>
                             <span class="px-3 py-1 bg-red-50 text-red-600 border border-red-200 rounded-full text-xs font-black uppercase tracking-widest whitespace-nowrap">9/10 Priority</span>
                         </div>
                         <div class="mb-6">
-                            <h5 class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">The Problem</h5>
-                            <p class="text-slate-700 font-medium leading-relaxed">Regulatory standards in 2026 are tightening dramatically around "forever chemicals" (PFAS) and microplastics. Existing plants are being forced to add entirely new, extremely expensive treatment stages just to legally comply and remain operational.</p>
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">
+                                {{ lang.language() === 'es' ? 'El Problema' : 'The Problem' }}
+                            </h5>
+                            <p class="text-slate-700 font-medium leading-relaxed">
+                                {{ lang.language() === 'es' 
+                                ? 'Los estándares regulatorios en 2026 se están endureciendo drásticamente en torno a los "químicos eternos" (PFAS) y microplásticos.' 
+                                : 'Regulatory standards in 2026 are tightening dramatically around "forever chemicals" (PFAS) and microplastics. Existing plants are being forced to add entirely new, extremely expensive treatment stages just to legally comply and remain operational.' }}
+                            </p>
                         </div>
                         <div class="p-5 rounded-2xl bg-neutral-50 border border-neutral-200 border-l-4 border-l-red-500">
                             <h5 class="text-[10px] font-black uppercase tracking-widest text-red-500 mb-2">Flowform Contribution: NO</h5>
-                            <p class="text-sm font-medium text-slate-600">This requires chemical or molecular-level filtration that Flowform does not provide.</p>
+                            <p class="text-sm font-medium text-slate-600">
+                                {{ lang.language() === 'es' 
+                                ? 'Esto requiere filtración a nivel químico o molecular que Flowform no proporciona.' 
+                                : 'This requires chemical or molecular-level filtration that Flowform does not provide.' }}
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -360,32 +384,56 @@
                     <!-- Item 1 -->
                     <div class="p-8 rounded-[2rem] border-2 border-blue-100 bg-gradient-to-br from-blue-50/50 to-white shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
                         <div class="flex justify-between items-start mb-6">
-                            <h4 class="text-xl font-black uppercase text-blue-950 max-w-[70%]">1. Brine Environmental Impact</h4>
+                            <h4 class="text-xl font-black uppercase text-blue-950 max-w-[70%]">
+                                {{ lang.language() === 'es' ? '1. Impacto Ambiental de la Salmuera' : '1. Brine Environmental Impact' }}
+                            </h4>
                             <span class="px-3 py-1 bg-blue-100 text-blue-700 border border-blue-200 rounded-full text-xs font-black uppercase tracking-widest whitespace-nowrap">8/10 Priority</span>
                         </div>
                         <div class="mb-6">
-                            <h5 class="text-[10px] font-black uppercase tracking-widest text-blue-400 mb-2">The Problem</h5>
-                            <p class="text-slate-700 font-medium leading-relaxed">Brine discharge is often concentrated, dense, high-temperature, and critically low in oxygen. It sinks to the seafloor, creating localized "dead zones" that devastate marine life. Regulators are increasingly using brine impact as the primary reason to deny or delay plant permits.</p>
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-blue-400 mb-2">
+                                {{ lang.language() === 'es' ? 'El Problema' : 'The Problem' }}
+                            </h5>
+                            <p class="text-slate-700 font-medium leading-relaxed">
+                                {{ lang.language() === 'es' 
+                                ? 'La descarga de salmuera suele estar concentrada y baja en oxígeno. Se hunde en el fondo marino, creando "zonas muertas" localizadas.' 
+                                : 'Brine discharge is often concentrated, dense, high-temperature, and critically low in oxygen. It sinks to the seafloor, creating localized "dead zones" that devastate marine life. Regulators are increasingly using brine impact as the primary reason to deny or delay plant permits.' }}
+                            </p>
                         </div>
                         <div class="p-5 rounded-2xl bg-white border border-blue-100 border-l-4 border-l-emerald-400 shadow-sm">
                             <h5 class="text-[10px] font-black uppercase tracking-widest text-emerald-600 mb-2 flex items-center gap-2">Flowform Contribution: YES (HIGH VALUE)</h5>
-                            <p class="text-sm font-medium text-slate-600">Flowform's capability for passive aeration directly targets this. By pre-treating brine with oxygen before discharge, it lowers the environmental risk and simplifies the regulatory approval process.</p>
+                            <p class="text-sm font-medium text-slate-600">
+                                {{ lang.language() === 'es' 
+                                ? 'La capacidad de aireación pasiva de Flowform apunta directamente a esto, reduciendo el riesgo ambiental.' 
+                                : 'Flowform\'s capability for passive aeration directly targets this. By pre-treating brine with oxygen before discharge, it lowers the environmental risk and simplifies the regulatory approval process.' }}
+                            </p>
                         </div>
                     </div>
 
                     <!-- Item 2 -->
                     <div class="p-8 rounded-[2rem] border-2 border-blue-100 bg-gradient-to-br from-blue-50/50 to-white shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
                         <div class="flex justify-between items-start mb-6">
-                            <h4 class="text-xl font-black uppercase text-blue-950 max-w-[70%]">2. Membrane Biofouling</h4>
+                            <h4 class="text-xl font-black uppercase text-blue-950 max-w-[70%]">
+                                {{ lang.language() === 'es' ? '2. Bio-incrustación de Membranas' : '2. Membrane Biofouling' }}
+                            </h4>
                             <span class="px-3 py-1 bg-blue-100 text-blue-700 border border-blue-200 rounded-full text-xs font-black uppercase tracking-widest whitespace-nowrap">7/10 Priority</span>
                         </div>
                         <div class="mb-6">
-                            <h5 class="text-[10px] font-black uppercase tracking-widest text-blue-400 mb-2">The Problem</h5>
-                            <p class="text-slate-700 font-medium leading-relaxed">Bacteria constantly build layers of biofilm on the membranes. This forces operators to increase pumping pressure (wasting energy) and perform frequent, harsh chemical cleanings that shorten the membrane lifespan. It is a constant, expensive $Opex$ drain.</p>
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-blue-400 mb-2">
+                                {{ lang.language() === 'es' ? 'El Problema' : 'The Problem' }}
+                            </h5>
+                            <p class="text-slate-700 font-medium leading-relaxed">
+                                {{ lang.language() === 'es' 
+                                ? 'Las bacterias construyen constantemente capas de biofilm en las membranas, lo que aumenta la presión de bombeo y requiere limpiezas químicas frecuentes.' 
+                                : 'Bacteria constantly build layers of biofilm on the membranes. This forces operators to increase pumping pressure (wasting energy) and perform frequent, harsh chemical cleanings that shorten the membrane lifespan. It is a constant, expensive $Opex$ drain.' }}
+                            </p>
                         </div>
                         <div class="p-5 rounded-2xl bg-white border border-blue-100 border-l-4 border-l-emerald-400 shadow-sm">
                             <h5 class="text-[10px] font-black uppercase tracking-widest text-emerald-600 mb-2 flex items-center gap-2">Flowform Contribution: YES (HIGH VALUE)</h5>
-                            <p class="text-sm font-medium text-slate-600">The unique, rhythmic movement of the water disrupts the initial settling of bacteria. If used in pre-treatment, it can reduce the need for biocides (chlorine) and extend the life of the primary reverse osmosis membranes.</p>
+                            <p class="text-sm font-medium text-slate-600">
+                                {{ lang.language() === 'es' 
+                                ? 'El movimiento rítmico único del agua interrumpe el asentamiento inicial de las bacterias, reduciendo la necesidad de biocidas.' 
+                                : 'The unique, rhythmic movement of the water disrupts the initial settling of bacteria. If used in pre-treatment, it can reduce the need for biocides (chlorine) and extend the life of the primary reverse osmosis membranes.' }}
+                            </p>
                         </div>
                     </div>
                 </div>

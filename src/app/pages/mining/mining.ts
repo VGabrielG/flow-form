@@ -1,14 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LanguageService } from '../../services/language.service';
-import { AnimatedPulsePillComponent } from '../../components/animated-pulse-pill/animated-pulse-pill.component';
 
 @Component({
   selector: 'app-mining',
   standalone: true,
   imports: [
-    CommonModule,
-    AnimatedPulsePillComponent
+    CommonModule
   ],
   templateUrl: './mining.html',
   styleUrl: './mining.css'

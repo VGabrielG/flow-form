@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { LanguageService } from '../../services/language.service';
@@ -8,10 +8,11 @@ import { LanguageService } from '../../services/language.service';
     standalone: true,
     imports: [CommonModule, RouterLink, RouterLinkActive],
     template: `
-    <nav class="fixed top-0 left-0 right-0 z-[100] px-4 py-6 pointer-events-none">
+    <nav class="fixed top-0 left-0 right-0 z-[100] px-4 py-4 md:py-6 pointer-events-none">
       <div class="max-w-7xl mx-auto flex justify-center items-center pointer-events-auto">
+        
+        <!-- Desktop Navigation -->
         <div class="hidden md:flex space-x-2 items-center bg-white/70 backdrop-blur-3xl border border-white/20 p-2 rounded-full shadow-2xl">
-          
           <div class="flex items-center space-x-1 px-2">
             <!-- HOME -->
             <a #rlaHome="routerLinkActive"
@@ -61,8 +62,6 @@ import { LanguageService } from '../../services/language.service';
                     <span class="text-[12px] group-hover:scale-110 transition-transform">🥩</span>
                   </a>
                   
-
-                  
                   <a #rlaMuni="routerLinkActive" routerLink="/municipalities" routerLinkActive="bg-neutral-950 text-white shadow-md"
                     [ngClass]="rlaMuni.isActive ? 'hover:text-white' : 'text-neutral-500 hover:bg-neutral-100 hover:text-neutral-950'"
                     class="px-5 py-3 rounded-2xl text-[9px] font-black uppercase tracking-[0.2em] transition-colors flex items-center justify-between">
@@ -93,7 +92,6 @@ import { LanguageService } from '../../services/language.service';
                 <div class="absolute -top-4 left-0 right-0 h-4 pointer-events-auto"></div>
                 <div class="bg-white/90 backdrop-blur-3xl border border-neutral-200/50 rounded-3xl shadow-2xl p-2 flex flex-col gap-1">
                   
-                  <!-- Mining -->
                   <a routerLink="/mining" class="px-5 py-3 rounded-2xl flex items-center justify-between hover:bg-neutral-100 transition-colors group/item shadow-sm">
                     <div class="flex-1">
                       <div class="text-[9px] font-black uppercase tracking-[0.2em] text-neutral-700 group-hover/item:text-neutral-950 flex items-center justify-between pr-4">
@@ -109,7 +107,6 @@ import { LanguageService } from '../../services/language.service';
                     </span>
                   </a>
 
-                  <!-- Desalination -->
                   <a routerLink="/desalination" class="px-5 py-3 rounded-2xl flex items-center justify-between hover:bg-neutral-100 transition-colors group/item">
                     <div class="flex-1">
                       <div class="text-[9px] font-black uppercase tracking-[0.2em] text-neutral-700 group-hover/item:text-neutral-950 flex items-center justify-between pr-4">
@@ -125,7 +122,6 @@ import { LanguageService } from '../../services/language.service';
                     </span>
                   </a>
 
-                  <!-- Data Centers -->
                   <a routerLink="/data-centers" class="px-5 py-3 rounded-2xl flex items-center justify-between hover:bg-neutral-100 transition-colors group/item">
                     <div class="flex-1">
                       <div class="text-[9px] font-black uppercase tracking-[0.2em] text-neutral-700 group-hover/item:text-neutral-950 flex items-center justify-between pr-4">
@@ -141,7 +137,6 @@ import { LanguageService } from '../../services/language.service';
                     </span>
                   </a>
 
-                  <!-- Thermal Waters -->
                   <a routerLink="/thermal-waters" class="px-5 py-3 rounded-2xl flex items-center justify-between hover:bg-neutral-100 transition-colors group/item shadow-sm">
                     <div class="flex-1">
                       <div class="text-[9px] font-black uppercase tracking-[0.2em] text-neutral-700 group-hover/item:text-neutral-950 flex items-center justify-between pr-4">
@@ -157,7 +152,6 @@ import { LanguageService } from '../../services/language.service';
                     </span>
                   </a>
 
-                  <!-- Textile Industry -->
                   <a routerLink="/textile-industry" class="px-5 py-3 rounded-2xl flex items-center justify-between hover:bg-neutral-100 transition-colors group/item shadow-sm">
                     <div class="flex-1">
                       <div class="text-[9px] font-black uppercase tracking-[0.2em] text-neutral-700 group-hover/item:text-neutral-950 flex items-center justify-between pr-4">
@@ -173,7 +167,6 @@ import { LanguageService } from '../../services/language.service';
                     </span>
                   </a>
 
-                  <!-- Green Hydrogen -->
                   <a routerLink="/green-hydrogen" class="px-5 py-3 rounded-2xl flex items-center justify-between hover:bg-neutral-100 transition-colors group/item shadow-sm">
                     <div class="flex-1">
                       <div class="text-[9px] font-black uppercase tracking-[0.2em] text-neutral-700 group-hover/item:text-neutral-950 flex items-center justify-between pr-4">
@@ -189,7 +182,6 @@ import { LanguageService } from '../../services/language.service';
                     </span>
                   </a>
 
-                  <!-- Leachate -->
                   <a routerLink="/leachate" class="px-5 py-3 rounded-2xl flex items-center justify-between hover:bg-neutral-100 transition-colors group/item shadow-sm">
                     <div class="flex-1">
                       <div class="text-[9px] font-black uppercase tracking-[0.2em] text-neutral-700 group-hover/item:text-neutral-950 flex items-center justify-between pr-4">
@@ -201,7 +193,6 @@ import { LanguageService } from '../../services/language.service';
                       {{ lang.language() === 'es' ? 'Próximamente' : 'Soon' }}
                     </span>
                   </a>
-
                 </div>
               </div>
             </div>
@@ -237,8 +228,114 @@ import { LanguageService } from '../../services/language.service';
             </button>
           </div>
         </div>
+
+        <!-- Mobile Navigation Button -->
+        <div class="flex md:hidden items-center bg-white/70 backdrop-blur-3xl border border-white/20 p-1.5 rounded-full shadow-2xl space-x-2">
+          <!-- Language Toggle (Mini) -->
+          <div class="flex items-center bg-neutral-100/50 rounded-full p-0.5 border border-neutral-200/50">
+            <button
+              (click)="lang.setLanguage(lang.language() === 'en' ? 'es' : 'en')"
+              class="px-3 py-1.5 rounded-full text-[9px] font-black tracking-widest transition-all duration-300 text-neutral-700 bg-white shadow-sm uppercase"
+            >
+              {{ lang.language() }}
+            </button>
+          </div>
+          
+          <button (click)="isMenuOpen.set(!isMenuOpen())" 
+            class="p-2 rounded-full bg-neutral-950 text-white shadow-lg focus:outline-none transition-transform active:scale-95"
+          >
+            @if (!isMenuOpen()) {
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"/>
+              </svg>
+            }
+            @if (isMenuOpen()) {
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+            }
+          </button>
+        </div>
+
       </div>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    @if (isMenuOpen()) {
+      <div 
+        class="fixed inset-0 z-[90] md:hidden bg-white/95 backdrop-blur-xl transition-all duration-500 flex flex-col pt-24 px-8 overflow-y-auto"
+      >
+        <div class="flex flex-col gap-6 pb-12">
+          <a routerLink="/" (click)="isMenuOpen.set(false)" class="text-2xl font-black uppercase tracking-tighter text-neutral-900 border-b border-neutral-100 pb-4 flex items-center justify-between">
+            {{ lang.t('nav_home') }}
+            <span class="text-sm opacity-30">01</span>
+          </a>
+          <a routerLink="/products" (click)="isMenuOpen.set(false)" class="text-2xl font-black uppercase tracking-tighter text-neutral-900 border-b border-neutral-100 pb-4 flex items-center justify-between">
+            {{ lang.t('nav_products') }}
+            <span class="text-sm opacity-30">02</span>
+          </a>
+          <div class="flex flex-col gap-4">
+            <div class="text-[10px] font-black uppercase tracking-[0.3em] text-neutral-400">
+              {{ lang.t('nav_industries') }}
+            </div>
+            <div class="grid grid-cols-1 gap-2">
+              <a routerLink="/winery" (click)="isMenuOpen.set(false)" class="px-4 py-3 bg-neutral-50 rounded-2xl font-bold text-sm text-neutral-700 flex items-center justify-between">
+                {{ lang.t('nav_winery') }} 🍷
+              </a>
+              <a routerLink="/meat-industry" (click)="isMenuOpen.set(false)" class="px-4 py-3 bg-neutral-50 rounded-2xl font-bold text-sm text-neutral-700 flex items-center justify-between">
+                {{ lang.t('nav_meat') }} 🥩
+              </a>
+              <a routerLink="/municipalities" (click)="isMenuOpen.set(false)" class="px-4 py-3 bg-neutral-50 rounded-2xl font-bold text-sm text-neutral-700 flex items-center justify-between">
+                {{ lang.t('nav_municipalities') }} 🏛️
+              </a>
+              <a routerLink="/ecological-pool" (click)="isMenuOpen.set(false)" class="px-4 py-3 bg-neutral-50 rounded-2xl font-bold text-sm text-neutral-700 flex items-center justify-between">
+                {{ lang.t('nav_ecological_pool') }} 🏊
+              </a>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-4">
+            <div class="text-[10px] font-black uppercase tracking-[0.3em] text-neutral-400">
+              {{ lang.language() === 'es' ? 'Futuras Soluciones' : 'Future Solutions' }}
+            </div>
+            <div class="grid grid-cols-2 gap-2">
+              <a routerLink="/mining" (click)="isMenuOpen.set(false)" class="px-3 py-2 bg-neutral-50 rounded-xl font-bold text-[10px] text-neutral-600 flex items-center gap-2">
+                <span>⛏️</span> {{ lang.t('nav_mining') }}
+              </a>
+              <a routerLink="/desalination" (click)="isMenuOpen.set(false)" class="px-3 py-2 bg-neutral-50 rounded-xl font-bold text-[10px] text-neutral-600 flex items-center gap-2">
+                <span>🌊</span> {{ lang.language() === 'es' ? 'Desalinización' : 'Desalination' }}
+              </a>
+              <a routerLink="/data-centers" (click)="isMenuOpen.set(false)" class="px-3 py-2 bg-neutral-50 rounded-xl font-bold text-[10px] text-neutral-600 flex items-center gap-2">
+                <span>🌐</span> {{ lang.language() === 'es' ? 'Data Centers' : 'Data Centers' }}
+              </a>
+              <a routerLink="/thermal-waters" (click)="isMenuOpen.set(false)" class="px-3 py-2 bg-neutral-50 rounded-xl font-bold text-[10px] text-neutral-600 flex items-center gap-2">
+                <span>♨️</span> {{ lang.language() === 'es' ? 'Aguas Termales' : 'Thermal Waters' }}
+              </a>
+              <a routerLink="/textile-industry" (click)="isMenuOpen.set(false)" class="px-3 py-2 bg-neutral-50 rounded-xl font-bold text-[10px] text-neutral-600 flex items-center gap-2">
+                <span>🧵</span> {{ lang.language() === 'es' ? 'Textil' : 'Textile' }}
+              </a>
+              <a routerLink="/green-hydrogen" (click)="isMenuOpen.set(false)" class="px-3 py-2 bg-neutral-50 rounded-xl font-bold text-[10px] text-neutral-600 flex items-center gap-2">
+                <span>🔋</span> {{ lang.language() === 'es' ? 'Hidrógeno' : 'Hydrogen' }}
+              </a>
+              <a routerLink="/leachate" (click)="isMenuOpen.set(false)" class="px-3 py-2 bg-neutral-50 rounded-xl font-bold text-[10px] text-neutral-600 flex items-center gap-2 col-span-2">
+                <span>🏗️</span> {{ lang.language() === 'es' ? 'Lixiviados' : 'Leachate' }}
+              </a>
+            </div>
+          </div>
+
+          <a routerLink="/contact" (click)="isMenuOpen.set(false)" class="text-2xl font-black uppercase tracking-tighter text-neutral-900 border-b border-neutral-100 pb-4 flex items-center justify-between">
+            {{ lang.t('nav_contact') }}
+            <span class="text-sm opacity-30">03</span>
+          </a>
+        </div>
+        
+        <div class="mt-auto mb-12 flex flex-col gap-4">
+          <div class="text-center text-[10px] font-medium text-neutral-400">
+            Flowform® Eco-Technology
+          </div>
+        </div>
+      </div>
+    }
   `,
     styles: [`
     :host { display: block; }
@@ -246,4 +343,5 @@ import { LanguageService } from '../../services/language.service';
 })
 export class HeaderComponent {
     lang = inject(LanguageService);
+    isMenuOpen = signal(false);
 }

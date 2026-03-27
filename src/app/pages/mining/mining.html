@@ -58,85 +58,85 @@
             </button>
         </div>
 
-        <!-- THE PROCESS VIEW -->
-        <div *ngIf="viewMode === 'process'" class="animate-fadeIn">
-            <div class="mb-16 text-center">
-                <h2 class="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter leading-none uppercase mb-6">
-                    {{ lang.language() === 'es' ? 'El Proceso Técnico Completo' : 'The Complete Technical Process' }}
-                </h2>
-                <p class="text-xl text-slate-600 font-medium leading-relaxed max-w-4xl mx-auto">
-                    {{ lang.language() === 'es' 
-                    ? 'Así es como la tecnología se integra pasivamente para mitigar los críticos Pasivos Ambientales Mineros.' 
-                    : 'This is how Flowform technology integrates passively to mitigate Critical Mining Environmental Liabilities.' }}
-                </p>
-            </div>
-
-            <!-- Bottleneck block -->
-            <div class="border-b border-slate-200 pb-16 mb-16">
-                <!-- Title -->
-                <div class="flex items-center gap-4 mb-8">
-                    <span class="text-4xl text-red-500">❌</span>
-                    <h3 class="text-2xl md:text-3xl font-black uppercase tracking-tight text-slate-900">
-                        {{ lang.language() === 'es' ? '1. El Problema: El "Pasivo Ambiental Crítico"' : '1. The Industry Problem: The "Critical Environmental Liability"' }}
-                    </h3>
+        @if (viewMode === 'process') {
+            <div class="animate-fadeIn">
+                <div class="mb-16 text-center">
+                    <h2 class="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter leading-none uppercase mb-6">
+                        {{ lang.language() === 'es' ? 'El Proceso Técnico Completo' : 'The Complete Technical Process' }}
+                    </h2>
+                    <p class="text-xl text-slate-600 font-medium leading-relaxed max-w-4xl mx-auto">
+                        {{ lang.language() === 'es' 
+                        ? 'Así es como la tecnología se integra pasivamente para mitigar los críticos Pasivos Ambientales Mineros.' 
+                        : 'This is how Flowform technology integrates passively to mitigate Critical Mining Environmental Liabilities.' }}
+                    </p>
                 </div>
-                
-                <!-- Explanation -->
-                <div class="space-y-8 text-lg text-slate-700 font-medium leading-relaxed max-w-5xl">
-                    <p>
-                        <strong class="text-slate-900 block mb-2">{{ lang.language() === 'es' ? 'El Contexto de Carga de Desechos:' : 'The Heavy Waste Context:' }}</strong>
-                        {{ lang.language() === 'es' 
-                        ? 'La vasta industria minera genera inexorablemente aguas con niveles extremadamente altos de peligrosos metales pesados disueltos (Hierro, Cobre, Arsénico) emparejados con mortíferos compuestos tóxicos adicionales (como concentraciones residuales de Cianuro letal o excesos ciegos de Sulfatos opresivos).' 
-                        : 'The massive mining industry invariably and consistently generates waters heavily loaded with high concentrations of dangerous dissolved heavy metals (Iron, Copper, Arsenic) rigidly paired with devastating additional toxic chemical compounds (such as strong leftover Cyanide streams or overpowering opaque Sulfates).' }}
-                    </p>
-                    <p>
-                        <strong class="text-slate-900 block mb-2">{{ lang.language() === 'es' ? 'El Proceso Tradicional:' : 'The Traditional Process:' }}</strong>
-                        {{ lang.language() === 'es' 
-                        ? 'Se utiliza el arcaico uso de plantas de tratamiento físico y químico abrumadoramente grandes. Éstas increíblemente consumen y queman toneladas métricas y masivas de cal industrial bruta simplemente para obligar artificialmente el alza del pH del agua enferma. Esto se complementa obligatoriamente conectándole un desgarrador voltaje a unas turbinas gigantes dedicadas a mover violentamente aire dentro de inmensas piscinas de lodo.' 
-                        : 'Facilities constantly install wildly archaic usage of physically overwhelming huge chemical processing treatment megaplants. These inexplicably burn and utterly consume huge metric tons of brute raw quicklime solely to forcefully artificialize pushing upwards the pH of dying thick waters. This naturally mandates hooking up a massive high electrical voltage purely to command giant steel turbines to forcibly and violently drive air down below immense pools of pure mud.' }}
-                    </p>
-                    <div class="text-red-700 bg-red-50/50 p-6 rounded-2xl border border-red-100">
-                        <strong class="text-red-900 block mb-2">{{ lang.language() === 'es' ? 'El Feroz Punto de Falla Sistémico:' : 'The Ferocious Systemic Failure Point:' }}</strong>
-                        <p>
-                        {{ lang.language() === 'es' 
-                        ? 'Si el suministro forzado de aire mecánico se detiene, sufre fallas, o se pierde la constante y desgastante maquinaria, sorprendentemente veloz toda la piscina y sus millones de litros alojados se convierten en una bomba líquida que muta en segundos a agua puramente anóxica. Tristemente, debido a la ausencia real de O₂, los metales mortales fracasan rotundamente en poder precipitarse (no logran en absoluto la importante "oxidación" como la que precisa solidificarlos y apartarlos inertes hacia el suelo). Entonces, trágicamente agua horriblemente ácida repletita de mortales compuestos avanza en fuga filtrándose de bajada llegando agresivamente hasta vulnerables napas de aguas subterráneas vírgenes o limpios ecosistemas vecinos.' 
-                        : 'Should the forcible supply of raw mechanically powered aeration falter, outright break, or experience power failures stopping the harsh machinery, startlingly swiftly the entire deep broad pool containing massive million-liter liquid payloads turns instantly entirely strictly into a totally anoxic unbreathable water bomb. Tragically due to zero genuine O₂ layers actively permeating it, all dangerous resident deadly metals fail catastrophically and emphatically exactly at adequately precipitating (strictly being utterly unable to achieve proper "oxidation" to basically harden and solidify into rock-state safely on the basin floor). Suddenly heavily vicious harsh acidic water fully jammed and armed completely to the limits drops escaping directly downwards aggressively effectively penetrating totally innocent weak and sensitive delicate raw deep fresh underground pristine drinking groundwater table supplies.' }}
-                        </p>
-                        <p class="mt-4">
-                        {{ lang.language() === 'es' 
-                        ? 'Esta grave desconexión termina sin sorpresa protagonizando uno de los peores desastres medioambientales. Automáticamente desata sin asombro multas económicas paralizantes, paradas brutales forzosas de la mina base y una total quema irreversible a futuro cercano de las obligatorias Licencias Sociales Ambientales.' 
-                        : 'This extreme fundamental disconnection finishes flawlessly unfortunately always resulting abruptly acting flawlessly actively starring directly entirely heavily as the worst irreversible massive environmental ecological horrific catastrophes. It abruptly sparks severe totally paralyzing mass strict economic immediate fines, totally forces raw strict mine complex rigid outright shutdowns, completely brutally incinerating automatically future valid crucial regional heavy Environmental Social Operational Permits forever.' }}
-                        </p>
+
+                <!-- Bottleneck block -->
+                <div class="border-b border-slate-200 pb-16 mb-16">
+                    <!-- Title -->
+                    <div class="flex items-center gap-4 mb-8">
+                        <span class="text-4xl text-red-500">❌</span>
+                        <h3 class="text-2xl md:text-3xl font-black uppercase tracking-tight text-slate-900">
+                            {{ lang.language() === 'es' ? '1. El Problema: El "Pasivo Ambiental Crítico"' : '1. The Industry Problem: The "Critical Environmental Liability"' }}
+                        </h3>
                     </div>
-                </div>
-            </div>
-
-            <!-- Steps Block -->
-            <div class="mb-20">
-                <div class="flex items-center gap-4 mb-10">
-                    <span class="text-4xl">✅</span>
-                    <h3 class="text-2xl font-black uppercase tracking-tight text-slate-900">
-                        {{ lang.language() === 'es' ? '2. El Proceso Flowform en Minería: Paso a Paso' : '2. The Flowform Process in Mining: Step-by-Step' }}
-                    </h3>
-                </div>
-
-                <div class="flex flex-col gap-10">
-                    <!-- Step 1 -->
-                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
-                        <div class="shrink-0 w-16 h-16 rounded-full bg-cyan-100 flex items-center justify-center border-2 border-cyan-200 text-2xl font-black text-cyan-800">1</div>
-                        <div class="flex-1">
-                            <h4 class="text-xl font-black uppercase text-cyan-950 mb-2">
-                                {{ lang.language() === 'es' ? 'Captación y Siembra de Bacterias "Mineras"' : 'Intake and Seeding of "Mining" Bacteria' }}
-                            </h4>
-                            <p class="text-lg text-slate-600 font-medium leading-relaxed">
-                                {{ lang.language() === 'es' 
-                                ? 'El masivo e hirviente líquido remanente ya sea desde altamente ácidas descargas o desde relaves tóxicos, se aglomera inteligentemente al inicio acumulando un colosal acopio en formidables seguras piscinas controladas nombradas pozas de ecualización. De forma táctica, aquí en el frente es inoculada masiva y estrictamente en dosis perfectas empleando implacables colonias de puras increíbles "Bacterias Extremófilas" (notablemente conocidas cepas nativas tipo inmortales maravillas como únicas Acidithiobacillus), las cuales están brillantemente diseñadas por biogenética molecular explícitamente y rigurosamente solo para destrozar destrozando brutal y naturalmente las feroces enlaces gruesos blindados altamente venenosos atando al concentrado cianuro incluso operando excelentemente prosperando con vida dentro y soportando asombrosamente los hostilmente venenosos climas peores jamás hallados ácidos absolutos de las lagunas extremas.' 
-                                : 'The massive continuously violently churning severe extreme highly vicious liquid totally strictly completely either aggressively natively originating directly from severe raw acidic extreme drainage or alternatively directly from intensely hazardous strictly lethal raw unmanageable completely highly toxic tailings pools intentionally correctly safely amasses rapidly actively strongly entirely pooling intelligently straight first deep within formidable completely strictly contained highly secure heavy structured equalization retaining basin holding pools. Very cleanly right completely proactively upfront here it intentionally perfectly effectively uniformly rigorously fully receives completely successfully exactly right strictly heavy massive targeted incredibly resilient invincible flawless highly miraculous purely exclusively rare natively pure strictly extremely rugged unkillable incredibly "Extremophile Bacteria" (most remarkably famous specifically naturally brilliant native immortal uniquely perfectly highly incredibly flawless extremely pure exclusively Acidithiobacillus natural strict biological pure strains), genetically entirely inherently biologically extremely remarkably brilliantly designed specifically absolutely only naturally physically rigorously naturally fiercely brutally aggressively effortlessly easily effortlessly destroying and completely effortlessly utterly smashing completely to absolute completely native raw totally bare raw base pieces physically severing highly dangerous severe intense heavily vicious totally exclusively completely shielded uniquely heavily strictly pure completely totally pure fully intense fully exclusively intensely dense extreme cyanide thick absolute pure heavily deep dark tight incredibly extremely powerful strict base base tight strong molecules uniformly absolutely remarkably thriving alive exceptionally natively totally excellently well alive well alive exceptionally remarkably naturally well exactly within the incredibly completely hostile terrible naturally entirely wholly naturally deeply natively purely utterly strictly incredibly totally brutally absolutely fundamentally fundamentally profoundly incredibly purely uniquely fundamentally wholly utterly intensely absolutely deeply uniquely truly purely natively completely extreme pure unique acid unique totally totally unique severe severe deep purely purely native severely entirely uniquely entirely entirely totally highly worst uniquely fully fully raw acid environments.' }}
+                    
+                    <!-- Explanation -->
+                    <div class="space-y-8 text-lg text-slate-700 font-medium leading-relaxed max-w-5xl">
+                        <p>
+                            <strong class="text-slate-900 block mb-2">{{ lang.language() === 'es' ? 'El Contexto de Carga de Desechos:' : 'The Heavy Waste Context:' }}</strong>
+                            {{ lang.language() === 'es' 
+                            ? 'La industria minera genera aguas con altas concentraciones de metales pesados disueltos (Hierro, Cobre, Arsénico) y compuestos tóxicos como Cianuro o excesos de Sulfatos.' 
+                            : 'Mining operations generate wastewater with high concentrations of dissolved heavy metals (Iron, Copper, Arsenic) and toxic compounds such as Cyanide or excess Sulfates.' }}
+                        </p>
+                        <p>
+                            <strong class="text-slate-900 block mb-2">{{ lang.language() === 'es' ? 'El Proceso Tradicional:' : 'The Traditional Process:' }}</strong>
+                            {{ lang.language() === 'es' 
+                            ? 'Tradicionalmente se utilizan plantas de tratamiento químico masivas que consumen grandes cantidades de cal para elevar el pH, además de requerir aireación mecánica forzada de alto consumo energético.' 
+                            : 'Traditional methods rely on massive chemical treatment plants consuming large quantities of lime to raise pH, paired with energy-intensive mechanical aeration systems.' }}
+                        </p>
+                        <div class="text-red-700 bg-red-50/50 p-6 rounded-2xl border border-red-100">
+                            <strong class="text-slate-900 block mb-2">{{ lang.language() === 'es' ? 'El Punto de Falla Sistémico:' : 'The Systemic Failure Point:' }}</strong>
+                            <p>
+                            {{ lang.language() === 'es' 
+                            ? 'Si la aireación mecánica falla el sistema colapsa rápidamente hacia la anoxia. Sin oxígeno, los metales no pueden oxidarse ni precipitar, fugándose hacia el medio ambiente y arriesgando multas severas o la pérdida de la licencia social.' 
+                            : 'If mechanical aeration fails, the system rapidly becomes anoxic. Without oxygen, metals cannot oxidize or precipitate, leading to environmental leakage, severe fines, and the potential loss of the social license to operate.' }}
+                            </p>
+                            <p class="mt-4">
+                            {{ lang.language() === 'es' 
+                            ? 'Esta desconexión técnica resulta en desastres medioambientales que gatillan multas paralizantes y el cierre forzoso de operaciones por falta de cumplimiento normativo.' 
+                            : 'This technical disconnection results in environmental disasters that trigger paralyzing fines and the forced closure of operations due to lack of regulatory compliance.' }}
                             </p>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Step 2 -->
+                <!-- Steps Block -->
+                <div class="mb-20">
+                    <div class="flex items-center gap-4 mb-10">
+                        <span class="text-4xl">✅</span>
+                        <h3 class="text-2xl font-black uppercase tracking-tight text-slate-900">
+                            {{ lang.language() === 'es' ? '2. El Proceso Flowform en Minería: Paso a Paso' : '2. The Flowform Process in Mining: Step-by-Step' }}
+                        </h3>
+                    </div>
+
+                    <div class="flex flex-col gap-10">
+                        <!-- Step 1 -->
+                        <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+                            <div class="shrink-0 w-16 h-16 rounded-full bg-cyan-100 flex items-center justify-center border-2 border-cyan-200 text-2xl font-black text-cyan-800">1</div>
+                            <div class="flex-1">
+                                <h4 class="text-xl font-black uppercase text-cyan-950 mb-2">
+                                    {{ lang.language() === 'es' ? 'Captación y Siembra de Bacterias "Mineras"' : 'Intake and Seeding of "Mining" Bacteria' }}
+                                </h4>
+                                <p class="text-lg text-slate-600 font-medium leading-relaxed">
+                                    {{ lang.language() === 'es' 
+                                    ? 'El efluente minero se recolecta en piscinas de ecualización donde se inoculan bacterias extremófilas capaces de degradar compuestos complejos en condiciones de extrema acidez.' 
+                                    : 'Mining effluent is collected in equalization pools and inoculated with extremophile bacteria capable of degrading complex compounds under acidic conditions.' }}
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
                     <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
                         <div class="shrink-0 w-16 h-16 rounded-full bg-cyan-100 flex items-center justify-center border-2 border-cyan-200 text-2xl font-black text-cyan-800">2</div>
                         <div class="flex-1">
@@ -145,28 +145,27 @@
                             </h4>
                             <p class="text-lg text-slate-600 font-medium leading-relaxed">
                                 {{ lang.language() === 'es' 
-                                ? 'Todo el poderoso masivo y denso caldo fluye a propulsión levemente hacia la alta cúspide originando las majestuosas inmensas caídas gravitacionales encadenadas asombrosas Flowforms. Su fenomenal caída a su vez impulsa intensamente un proceso atómico de fenomenal Oxigenación Extrema pasiva. Esto inyecta implacablemente sin descanso O₂ puro. En esta furia de oxígeno, el terrible Hierro Ferroso mortal disuelto (Fe²⁺) se fuerza sí o sí a lograr asombrosamente precipitación sólida cediendo sus últimos perversos electrones transicionando por pura presión y asfixia por oxígeno milagrosamente directo ahora y con impecable control transformándose directo a un estado totalmente rocoso físico y pesado hierro conocido sin toxicidad severa bautizado Hierro Férrico (Fe³⁺). Durante exactamente este violento batido en simultáneo increíble desgasificado ocurre al agua logrando sacarle masiva pureza extrema botando CO₂ molecular atado inútil disuelto que al forzosamente ser expulsado al aire automáticamente corrige purificando altamente impulsando natural y orgánicamente a elevar totalmente por magia y termodinámica solas tremendamente y brutal el asfixiante bajo mortífero peligroso inicial trágico hundido mortalmente puro puro puro ácido trágico de pH base originario del agua subiéndolo totalmente sin emplear una gramaje adicional químico bruto.' 
-                                : 'All the incredibly immensely powerful intensely natively phenomenally severe thick liquid exclusively strictly gently entirely entirely pumps upwards entirely heavily directly simply exactly simply right completely accurately naturally correctly up towards the towering highest precise very highest purely top start strictly totally naturally heavily beginning precise unique absolute start unique completely strictly originating naturally directly natively originating completely directly the beautifully beautifully completely majestic incredible incredibly totally native completely massive completely extremely massive towering phenomenally utterly huge extremely massive gravity-flow linked chained Flowforms. The resulting phenomenal intense totally severe extremely extremely massive completely heavy purely naturally naturally gravity naturally totally absolutely effectively incredibly wildly wildly totally extremely utterly phenomenal naturally brutally perfectly purely entirely successfully completely natively extremely drives effectively intensely natively deeply naturally purely fully directly natively purely successfully genuinely perfectly exclusively precisely absolutely effectively intensely actively extremely thoroughly extremely fully perfectly strictly fundamentally extremely perfectly intensely uniquely essentially fiercely completely purely uniquely extremely deeply exactly absolutely remarkably deeply fully powerfully purely totally forcefully completely intensely intensely incredibly severely intensely beautifully completely effectively fully wholly strictly uniquely totally purely purely uniquely deeply profoundly fundamentally effectively incredibly perfectly flawlessly perfectly phenomenally perfectly exactly effectively genuinely strictly precisely effectively completely natively wholly accurately naturally beautifully smoothly safely purely deeply beautifully uniquely heavily flawlessly highly beautifully thoroughly flawlessly totally fully utterly fully purely intensely highly perfectly highly completely effectively genuinely absolutely totally fully smoothly effectively phenomenally highly entirely fully extremely fully perfectly fully fiercely passively naturally entirely natively exactly completely perfectly absolutely entirely strongly organically purely exclusively cleanly purely strictly powerfully actively utterly uniquely deeply absolutely naturally intensely purely natively directly actively successfully absolutely actively intensely deeply organically actively truly highly naturally inherently absolutely functionally purely heavily deeply exactly heavily effectively precisely deeply perfectly strongly purely aggressively powerfully completely firmly highly remarkably natively directly wholly actively beautifully incredibly accurately successfully organically strictly natively flawlessly intensely completely highly actively deeply entirely successfully truly successfully purely strongly perfectly uniquely completely effectively wonderfully totally successfully naturally natively strongly physically naturally effectively actively aggressively completely firmly fully totally actively powerfully entirely cleanly strongly purely completely totally deeply intensely flawlessly successfully extremely exclusively cleanly precisely efficiently safely seamlessly deeply natively essentially physically deeply effectively dynamically directly successfully seamlessly totally successfully completely powerfully inherently effectively actively powerfully precisely correctly successfully completely successfully completely purely actively perfectly successfully beautifully utterly fully totally seamlessly organically powerfully cleanly absolutely truly intrinsically intrinsically cleanly intrinsically clearly strictly directly accurately inherently reliably extremely totally completely clearly reliably powerfully clearly completely successfully deeply precisely inherently completely accurately purely natively clearly genuinely accurately genuinely organically functionally practically clearly cleanly purely naturally naturally reliably clearly naturally powerfully functionally firmly functionally cleanly dynamically physically thoroughly gracefully fully intrinsically flawlessly purely genuinely thoroughly actively strictly profoundly smoothly smoothly wonderfully directly inherently physically gracefully purely incredibly reliably flawlessly actively carefully safely firmly genuinely naturally inherently functionally deeply strongly purely clearly deeply functionally carefully intrinsically effectively organically fundamentally seamlessly deeply thoroughly firmly absolutely highly seamlessly naturally flawlessly natively heavily dynamically powerfully thoroughly inherently inherently actively cleanly seamlessly securely deeply heavily firmly seamlessly physically reliably perfectly essentially actively thoroughly actively powerfully absolutely dynamically robustly actively flawlessly natively naturally flawlessly functionally gracefully seamlessly successfully essentially flawlessly successfully seamlessly completely functionally essentially naturally organically perfectly organically physically naturally intrinsically cleanly solidly profoundly robustly perfectly solidly completely genuinely fully securely reliably incredibly highly perfectly successfully reliably deeply directly thoroughly successfully essentially reliably reliably perfectly organically seamlessly firmly naturally completely thoroughly cleanly beautifully successfully successfully successfully successfully completely successfully safely securely heavily thoroughly successfully completely cleanly powerfully directly profoundly securely incredibly thoroughly robustly robustly dynamically essentially organically directly deeply profoundly totally flawlessly entirely seamlessly carefully carefully forcefully inherently dynamically extremely organically flawlessly carefully effortlessly seamlessly actively powerfully reliably purely organically gracefully effectively firmly powerfully dynamically effectively perfectly physically efficiently completely effortlessly deeply safely practically physically profoundly flawlessly safely perfectly securely solidly clearly beautifully heavily deeply beautifully robustly practically physically firmly fundamentally solidly fundamentally thoroughly effortlessly thoroughly effectively thoroughly perfectly flawlessly safely clearly accurately completely essentially completely successfully seamlessly carefully efficiently smoothly naturally fully deeply entirely totally effectively completely totally cleanly inherently fully fundamentally safely efficiently exactly incredibly safely deeply effectively cleanly deeply efficiently seamlessly cleanly effectively effectively reliably clearly securely beautifully effectively cleanly naturally fundamentally entirely thoroughly essentially cleanly profoundly naturally highly correctly safely efficiently exactly carefully completely correctly deeply accurately effectively entirely functionally seamlessly fully safely securely entirely deeply perfectly seamlessly smoothly cleanly deeply effectively carefully easily effectively fundamentally thoroughly correctly deeply naturally fundamentally fully successfully clearly efficiently actively practically correctly easily dynamically gracefully successfully cleanly profoundly effectively effortlessly practically profoundly thoroughly effectively efficiently seamlessly perfectly smoothly reliably easily smoothly carefully smoothly clearly smoothly correctly perfectly securely tightly quickly cleanly rapidly cleanly well flawlessly efficiently.' }}
+                                ? 'El flujo pasa por las cascadas Flowform, donde el movimiento rítmico genera una oxigenación pasiva que oxida metales disueltos (como el Hierro Ferroso a Férrico) y eleva el pH de forma natural.' 
+                                : 'The water flows through Flowform cascades, where rhythmic movement generates passive oxygenation that oxidizes dissolved metals (such as Ferrous to Ferric iron) and naturally raises the pH.' }}
                             </p>
                         </div>
                     </div>
-
-                    <!-- Step 3 -->
-                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
-                        <div class="shrink-0 w-16 h-16 rounded-full bg-cyan-100 flex items-center justify-center border-2 border-cyan-200 text-2xl font-black text-cyan-800">3</div>
-                        <div class="flex-1">
-                            <h4 class="text-xl font-black uppercase text-cyan-950 mb-2">
-                                {{ lang.language() === 'es' ? 'Precipitación y Biodegradación (La Laguna)' : 'Precipitation and Biodegradation (The Lagoon)' }}
-                            </h4>
-                            <p class="text-lg text-slate-600 font-medium leading-relaxed">
-                                {{ lang.language() === 'es' 
-                                ? 'El caudal vital cae espectacular a la Laguna. Con muchísimo Oxígeno Disuelto, las bacterias aceleran vorazmente aniquilando cianuro. Metales forman "flóculos" y caen al fondo por gravedad.' 
-                                : 'The vital flow drops beautifully into the Lagoon. Stuffed with Dissolved Oxygen, bacteria enthusiastically enter overdrive attacking cyanide. Metals create heavy "flocs" and cleanly sink perfectly.' }}
-                            </p>
+                <!-- Step 3 -->
+                        <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+                            <div class="shrink-0 w-16 h-16 rounded-full bg-cyan-100 flex items-center justify-center border-2 border-cyan-200 text-2xl font-black text-cyan-800">3</div>
+                            <div class="flex-1">
+                                <h4 class="text-xl font-black uppercase text-cyan-950 mb-2">
+                                    {{ lang.language() === 'es' ? 'Precipitación y Biodegradación (La Laguna)' : 'Precipitation and Biodegradation (The Lagoon)' }}
+                                </h4>
+                                <p class="text-lg text-slate-600 font-medium leading-relaxed">
+                                    {{ lang.language() === 'es' 
+                                    ? 'El caudal vital llega a la laguna de tratamiento. Con altos niveles de oxígeno disuelto, las bacterias aceleran la degradación de contaminantes.' 
+                                    : 'The flow reaches the treatment lagoon. High levels of dissolved oxygen accelerate the biological degradation of contaminants by bacteria.' }}
+                                </p>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Step 4 -->
+                        <!-- Step 4 -->
                     <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
                         <div class="shrink-0 w-16 h-16 rounded-full bg-cyan-100 flex items-center justify-center border-2 border-cyan-200 text-2xl font-black text-cyan-800">4</div>
                         <div class="flex-1">
@@ -175,328 +174,341 @@
                             </h4>
                             <p class="text-lg text-slate-600 font-medium leading-relaxed">
                                 {{ lang.language() === 'es' 
-                                ? 'Se recircula constantemente agua al inicio. Mantiene suspensas las bacterias previniendo severamente la temida anoxia y bloqueando con contundencia letal roja y tóxica redisolución de metales.' 
-                                : 'Water continuously actively perfectly steadily smoothly fully efficiently securely reliably cleanly properly securely seamlessly reliably accurately physically successfully dynamically inherently seamlessly reliably accurately practically physically gracefully effectively seamlessly actively practically inherently recirculates deeply heavily cleanly steadily seamlessly fundamentally efficiently physically functionally carefully correctly easily accurately completely seamlessly actively practically reliably smoothly efficiently inherently easily smoothly clearly precisely beautifully organically fully automatically reliably directly fully beautifully successfully correctly organically cleanly efficiently dynamically safely functionally organically automatically perfectly easily beautifully accurately easily automatically smoothly dynamically naturally cleanly perfectly fully heavily intrinsically seamlessly inherently securely cleanly actively properly reliably automatically efficiently successfully correctly dynamically carefully safely reliably flawlessly gracefully properly gracefully profoundly automatically automatically perfectly securely safely naturally properly smoothly powerfully actively robustly efficiently easily perfectly easily cleanly thoroughly inherently properly easily practically cleanly inherently easily easily efficiently automatically effectively easily effortlessly efficiently automatically powerfully successfully successfully cleanly powerfully safely functionally seamlessly perfectly easily clearly safely accurately carefully profoundly properly dynamically purely easily rapidly carefully securely accurately seamlessly cleanly steadily actively successfully safely efficiently successfully successfully smoothly reliably easily safely cleanly correctly dynamically fully cleanly safely securely successfully effectively efficiently correctly correctly firmly flawlessly properly cleanly smoothly accurately successfully deeply safely beautifully successfully clearly carefully successfully beautifully securely accurately dynamically seamlessly cleanly easily properly cleanly easily smoothly effectively appropriately cleanly effectively strictly deeply naturally seamlessly properly securely effortlessly securely properly steadily cleanly rapidly effectively reliably securely safely effectively intelligently automatically quickly cleanly correctly firmly correctly flawlessly optimally correctly naturally quickly consistently accurately safely securely successfully reliably natively tightly automatically continuously directly perfectly appropriately easily fully effortlessly appropriately optimally cleanly flawlessly properly flawlessly reliably efficiently carefully seamlessly appropriately gracefully accurately quickly efficiently purely reliably consistently tightly quickly correctly efficiently carefully firmly efficiently efficiently smoothly securely seamlessly safely properly fully efficiently clearly naturally dependably continuously properly effectively securely inherently dynamically securely effectively confidently easily dependably flawlessly beautifully automatically effortlessly intuitively accurately fully organically steadily perfectly cleanly elegantly simply safely properly precisely successfully perfectly precisely perfectly smoothly swiftly correctly absolutely efficiently intelligently successfully confidently consistently accurately reliably accurately steadily continuously gracefully effortlessly clearly flawlessly effortlessly accurately fully strictly optimally efficiently wonderfully automatically effortlessly automatically intuitively completely optimally successfully intuitively appropriately continuously tightly correctly completely strictly totally effortlessly seamlessly efficiently fully confidently clearly efficiently carefully dynamically safely consistently dependably fully perfectly firmly cleanly successfully confidently carefully carefully precisely comfortably precisely automatically appropriately confidently simply fully fully steadily safely quickly deeply correctly seamlessly consistently comfortably correctly completely optimally effortlessly seamlessly simply wonderfully solidly perfectly automatically flawlessly efficiently steadily perfectly quickly easily properly effectively flawlessly intelligently carefully smoothly correctly gracefully carefully deeply smartly quickly seamlessly completely rapidly continuously comfortably correctly successfully rapidly intelligently fully effectively totally confidently effortlessly automatically purely strictly optimally intelligently securely completely cleanly effectively optimally correctly cleanly carefully absolutely properly properly successfully wonderfully easily brilliantly dynamically absolutely rapidly successfully flawlessly nicely correctly effortlessly confidently swiftly smoothly beautifully swiftly appropriately elegantly rapidly automatically beautifully comfortably fully consistently consistently completely accurately effortlessly elegantly optimally tightly dynamically easily properly strictly carefully confidently cleanly quickly strongly intuitively reliably seamlessly dependably flawlessly intelligently completely powerfully completely completely totally continuously properly cleanly rapidly swiftly securely effortlessly intelligently rapidly cleanly neatly effectively smoothly cleanly securely flawlessly dependably safely safely confidently neatly gracefully effectively safely securely intelligently completely firmly flawlessly correctly optimally nicely neatly carefully comfortably absolutely precisely cleanly sharply effectively effectively correctly effortlessly successfully effectively fully directly exactly gracefully neatly smartly brilliantly properly confidently flawlessly optimally continuously simply simply optimally successfully neatly comfortably elegantly comfortably seamlessly properly flawlessly completely beautifully easily carefully perfectly efficiently safely exactly cleanly effectively confidently seamlessly smartly simply dynamically nicely safely expertly precisely elegantly rapidly naturally simply deeply smartly optimally deeply smoothly simply elegantly automatically seamlessly flawlessly carefully rapidly neatly fully confidently effectively smoothly effortlessly seamlessly naturally firmly tightly smoothly smoothly completely gracefully expertly quickly properly simply precisely cleanly firmly successfully fully purely securely naturally correctly sharply successfully safely smoothly seamlessly nicely strongly purely intelligently exactly exactly effortlessly totally firmly comfortably simply smoothly flawlessly confidently totally gracefully smoothly seamlessly elegantly purely effortlessly effortlessly effortlessly effectively effectively rapidly firmly carefully neatly correctly correctly purely completely perfectly properly effectively tightly perfectly expertly correctly flawlessly smoothly correctly seamlessly totally perfectly properly seamlessly elegantly sharply fully correctly cleanly correctly nicely fully purely properly tightly purely strictly flawlessly efficiently fully simply purely correctly purely successfully perfectly seamlessly precisely securely properly beautifully correctly deeply truly successfully safely smoothly accurately completely smartly confidently purely efficiently nicely neatly nicely deeply confidently perfectly purely easily correctly deeply accurately flawlessly neatly reliably exactly naturally purely securely clearly purely neatly seamlessly properly reliably effectively efficiently confidently solidly correctly natively easily effortlessly exactly natively clearly beautifully sharply completely seamlessly precisely confidently cleanly properly exactly effectively optimally naturally successfully simply clearly accurately fully accurately purely properly effortlessly seamlessly exactly perfectly cleanly intelligently brilliantly perfectly correctly strictly purely cleanly carefully cleanly dynamically naturally effortlessly purely tightly excellently successfully cleanly efficiently cleanly brilliantly brilliantly neatly excellently dynamically automatically optimally elegantly solidly cleanly dynamically exactly brilliantly reliably naturally beautifully cleanly fully optimally cleanly beautifully accurately sharply properly beautifully safely flawlessly clearly beautifully automatically seamlessly powerfully solidly sharply neatly brilliantly dynamically precisely purely correctly smartly safely smoothly automatically neatly firmly directly automatically cleanly securely easily flawlessly reliably smoothly sharply flawlessly perfectly simply clearly smoothly flawlessly naturally strongly beautifully dependably perfectly naturally powerfully accurately safely clearly naturally automatically completely correctly solidly automatically effortlessly solidly flawlessly precisely securely accurately effortlessly perfectly squarely reliably flawlessly flawlessly gracefully absolutely neatly precisely purely strictly exactly correctly flawlessly perfectly smoothly dependably purely absolutely properly effortlessly reliably perfectly completely precisely absolutely exactly absolutely precisely firmly flawlessly purely flawlessly precisely definitively fully optimally exactly neatly securely flawlessly cleanly cleanly exclusively cleanly reliably exactly precisely dependably genuinely cleanly elegantly purely specifically absolutely reliably strictly accurately seamlessly securely reliably absolutely purely definitely correctly faithfully flawlessly properly exclusively strictly precisely efficiently exactly tightly securely optimally precisely definitively strictly accurately cleanly exactly securely strictly rigorously precisely fully absolutely correctly exactly definitely perfectly genuinely perfectly correctly fully exclusively effectively rigorously efficiently completely seamlessly consistently cleanly optimally neatly correctly properly safely correctly directly accurately accurately appropriately fully genuinely smoothly completely firmly deeply seamlessly reliably thoroughly successfully perfectly exactly successfully successfully exactly seamlessly securely efficiently well completely efficiently correctly smoothly flawlessly effectively firmly smoothly exactly right.
-                        </p>
+                                ? 'Se recircula constantemente el agua al inicio del proceso para mantener las condiciones aeróbicas y optimizar la actividad biológica en todo el sistema.' 
+                                : 'Water is continuously recirculated to the start of the process to maintain aerobic conditions and optimize biological activity throughout the system.' }}
+                            </p>
+                        </div>
                     </div>
-                </div>
-
                 <!-- Step 5 -->
-                <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
-                    <div class="shrink-0 w-16 h-16 rounded-full bg-cyan-100 flex items-center justify-center border-2 border-cyan-200 text-2xl font-black text-cyan-800">5</div>
-                    <div class="flex-1">
-                        <h4 class="text-xl font-black uppercase text-cyan-950 mb-2">
-                            {{ lang.language() === 'es' ? 'Descarga Completamente Segura o Reuso Integral de Mina' : 'Safe Compliant Polished Discharge Or Process Reuse' }}
-                        </h4>
-                        <p class="text-lg text-slate-600 font-medium leading-relaxed">
-                            {{ lang.language() === 'es' 
-                            ? 'Agua purificada se encuentra apta para emitirse legalmente sin miedos.' 
-                            : 'Cleansed pristine strictly unhazardous water flows flawlessly directly compliant with environmental standards.' }}
-                        </p>
+                        <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+                            <div class="shrink-0 w-16 h-16 rounded-full bg-cyan-100 flex items-center justify-center border-2 border-cyan-200 text-2xl font-black text-cyan-800">5</div>
+                            <div class="flex-1">
+                                <h4 class="text-xl font-black uppercase text-cyan-950 mb-2">
+                                    {{ lang.language() === 'es' ? 'Descarga Completamente Segura o Reuso Integral de Mina' : 'Safe Compliant Polished Discharge Or Process Reuse' }}
+                                </h4>
+                                <p class="text-lg text-slate-600 font-medium leading-relaxed">
+                                    
+                                {{ lang.language() === 'es' 
+                                ? 'El agua tratada cumple con los estándares ambientales para su descarga segura o su reutilización en el proceso de la operación minera.' 
+                                : 'Treated water meets environmental standards for safe discharge or internal reuse within the mining operation.' }}
+                            </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Value Table -->
-            <div>
-                <div class="flex items-center gap-4 mb-8">
-                    <span class="text-4xl">💰</span>
-                    <h3 class="text-2xl font-black uppercase tracking-tight text-slate-900">
-                        {{ lang.language() === 'es' ? '3. Resumen de Valor Agregado en Minería' : '3. Summary of Value Added in Mining' }}
-                    </h3>
-                </div>
-                
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left border-collapse bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100">
-                        <thead class="bg-cyan-950 text-cyan-50 uppercase text-[10px] tracking-widest font-black">
-                            <tr>
-                                <th class="p-4">{{ lang.language() === 'es' ? 'ETAPA DEL PROCESO' : 'PROCESS STAGE' }}</th>
-                                <th class="p-4 bg-red-950 text-red-100">{{ lang.language() === 'es' ? 'RIESGO TRADICIONAL' : 'TRADITIONAL RISK' }}</th>
-                                <th class="p-4 bg-cyan-800">{{ lang.language() === 'es' ? 'VALOR FLOWFORM' : 'FLOWFORM OPTIMIZATION VALUE' }}</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-sm font-medium text-slate-700">
-                            <tr class="border-b border-slate-100">
-                                <td class="p-4 uppercase font-black text-slate-900 border-r border-slate-100">
-                                    {{ lang.language() === 'es' ? 'Oxidación de Metales' : 'Metal Oxidation' }}
-                                </td>
-                                <td class="p-4 text-red-800 bg-red-50">
-                                    {{ lang.language() === 'es' ? 'Lenta y dependiente de químicos' : 'Slow and highly chemical-dependent' }}
-                                </td>
-                                <td class="p-4 text-cyan-800 bg-cyan-50">
-                                    {{ lang.language() === 'es' ? 'Rápida y natural (cinética brutal acelerada)' : 'Fast and natural (accelerated kinetic movement)' }}
-                                </td>
-                            </tr>
-                            <tr class="border-b border-slate-100">
-                                <td class="p-4 uppercase font-black text-slate-900 border-r border-slate-100">
-                                    {{ lang.language() === 'es' ? 'Ajuste Incesante de pH' : 'Continuous pH Adjustment' }}
-                                </td>
-                                <td class="p-4 text-red-800 bg-red-50">
-                                    {{ lang.language() === 'es' ? 'Descomunal alto consumo de cal viva ($$$)' : 'Astounding high quicklime consumption ($$$)' }}
-                                </td>
-                                <td class="p-4 text-cyan-800 bg-cyan-50">
-                                    {{ lang.language() === 'es' ? 'Gran ahorro en químicos logrados por desgasificación atómica pasiva' : 'Major widespread chemical savings natively through passive atomic degassing' }}
-                                </td>
-                            </tr>
-                            <tr class="border-b border-slate-100">
-                                <td class="p-4 uppercase font-black text-slate-900 border-r border-slate-100">
-                                    {{ lang.language() === 'es' ? 'Energía Bruta de Aireación' : 'Gross Aeration Energy Requirement' }}
-                                </td>
-                                <td class="p-4 text-red-800 bg-red-50">
-                                    {{ lang.language() === 'es' ? 'Uso continuo extremo de sopladores eléctricos de gran devoradora potencia' : 'Extreme continuous heavy load use of severe large electric aeration blowers' }}
-                                </td>
-                                <td class="p-4 text-cyan-800 bg-cyan-50">
-                                    {{ lang.language() === 'es' ? 'Costo perpetuo casi cero al depender infinitamente sólo tracción y gravedad (bombeo)' : 'Stunning infinite near-zero expenditure effectively simply utilizing raw physics (low-head lifting)' }}
-                                </td>
-                            </tr>
-                            <tr class="border-b border-slate-100">
-                                <td class="p-4 uppercase font-black text-slate-900 border-r border-slate-100">
-                                    {{ lang.language() === 'es' ? 'Retención de Licencia Social Operativa' : 'Social License Retention' }}
-                                </td>
-                                <td class="p-4 text-red-800 bg-red-50">
-                                    {{ lang.language() === 'es' ? 'Altísimo peligro tóxico colateral desatado y mortales denuncias de malos olores nauseabundos asfixiantes' : 'Wild massive toxic breakdown risk matched steadily causing extreme nauseous sickening mass community foul odors' }}
-                                </td>
-                                <td class="p-4 text-cyan-800 bg-cyan-50">
-                                    {{ lang.language() === 'es' ? 'Despliegue operativo puramente biológicamente pasivo, impecable, orgánico y nítidamente sin mal olor' : 'Showcases effectively organic pure operational execution undeniably clean fundamentally zero putrid smell complaints' }}
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <!-- THE ANALYSIS VIEW -->
-        <div *ngIf="viewMode === 'analysis'" class="animate-fadeIn">
-            <div class="mb-16">
-                <h2 class="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter leading-none uppercase mb-6">
-                    {{ lang.language() === 'es' ? 'Evaluación frente a Prioridades de la Industria' : 'Evaluation Against Top Industry Priorities' }}
-                </h2>
-                <p class="text-xl text-slate-600 font-medium leading-relaxed max-w-4xl">
-                    {{ lang.language() === 'es' 
-                    ? 'Como evaluador de proyectos, es crítico separar los problemas de "alta importancia" de los nichos específicos donde Flowform realmente puede ayudar.' 
-                    : 'As a project evaluator, it is critical to separate "high-importance" problems from the specific niches where Flowform can actually help.' }}
-                </p>
-            </div>
-
-            <!-- Existential Problems -->
-            <section class="mb-20">
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center border-2 border-red-200 shrink-0">
-                        <span class="text-xl">⚠️</span>
-                    </div>
-                    <div>
+                <!-- Value Table -->
+                <div>
+                    <div class="flex items-center gap-4 mb-8">
+                        <span class="text-4xl">💰</span>
                         <h3 class="text-2xl font-black uppercase tracking-tight text-slate-900">
-                            {{ lang.language() === 'es' ? 'Los Problemas "Existenciales"' : 'The "Existential" Problems' }}
+                            {{ lang.language() === 'es' ? '3. Resumen de Valor Agregado en Minería' : '3. Summary of Value Added in Mining' }}
                         </h3>
-                        <p class="text-sm font-black uppercase tracking-widest text-red-500">
-                            {{ lang.language() === 'es' ? 'Donde Flowform NO Contribuye' : 'Where Flowform Does Not Contribute' }}
-                        </p>
                     </div>
-                </div>
-                
-                <p class="text-lg text-slate-600 font-medium mb-10 max-w-3xl">
-                    {{ lang.language() === 'es' 
-                    ? 'En 2026, la minería está destinando la mayor parte de su presupuesto a cambios estructurales donde el movimiento del agua no es el factor determinante.' 
-                    : 'In 2026, mining is allocating most of its budget to structural changes where water movement is not the determining factor.' }}
-                </p>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Item 1 -->
-                    <div class="p-8 rounded-[2rem] border-2 border-neutral-100 bg-white shadow-sm hover:border-red-200 hover:shadow-md transition-all">
-                        <div class="flex justify-between items-start mb-6">
-                            <h4 class="text-xl font-black uppercase text-slate-900 max-w-[70%]">
-                                {{ lang.language() === 'es' ? '1. Descarbonización y Energía' : '1. Decarbonization & Energy' }}
-                            </h4>
-                            <span class="px-3 py-1 bg-red-50 text-red-600 border border-red-200 rounded-full text-xs font-black uppercase tracking-widest whitespace-nowrap">10/10 Priority</span>
-                        </div>
-                        <div class="mb-6">
-                            <h5 class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">
-                                {{ lang.language() === 'es' ? 'El Problema' : 'The Problem' }}
-                            </h5>
-                            <p class="text-slate-700 font-medium leading-relaxed">
-                                {{ lang.language() === 'es' 
-                                ? 'La industria está bajo una presión inmensa para llegar al "Net Zero". Esto implica electrificar flotas de camiones gigantes y cambiar el uso de diésel por hidrógeno verde o energías renovables.' 
-                                : 'The industry is under immense pressure to reach "Net Zero". This implies electrifying giant truck fleets and swapping diesel usage for green hydrogen or renewable energy.' }}
-                            </p>
-                        </div>
-                        <div class="p-5 rounded-2xl bg-neutral-50 border border-neutral-200 border-l-4 border-l-red-500">
-                            <h5 class="text-[10px] font-black uppercase tracking-widest text-red-500 mb-2">Flowform Contribution: NO</h5>
-                            <p class="text-sm font-medium text-slate-600">
-                                {{ lang.language() === 'es' 
-                                ? 'Aunque es una tecnología pasiva que no consume energía, no soluciona la demanda masiva de electricidad necesaria para la molienda o el transporte de mineral.' 
-                                : 'Although a passive technology that requires no energy, it does not solve the massive electricity demand needed for ore milling and transport.' }}
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Item 2 -->
-                    <div class="p-8 rounded-[2rem] border-2 border-neutral-100 bg-white shadow-sm hover:border-red-200 hover:shadow-md transition-all">
-                        <div class="flex justify-between items-start mb-6">
-                            <h4 class="text-xl font-black uppercase text-slate-900 max-w-[70%]">
-                                {{ lang.language() === 'es' ? '2. Optimización de la Recuperación' : '2. Ore Recovery Optimization' }}
-                            </h4>
-                            <span class="px-3 py-1 bg-red-50 text-red-600 border border-red-200 rounded-full text-xs font-black uppercase tracking-widest whitespace-nowrap">9/10 Priority</span>
-                        </div>
-                        <div class="mb-6">
-                            <h5 class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">
-                                {{ lang.language() === 'es' ? 'El Problema' : 'The Problem' }}
-                            </h5>
-                            <p class="text-slate-700 font-medium leading-relaxed">
-                                {{ lang.language() === 'es' 
-                                ? 'Las leyes (pureza) de los yacimientos están bajando. Las mineras invierten en IA y sistemas de clasificación de roca (ore sorting) para extraer más valor de menos material.' 
-                                : 'Ore grades are declining. Mining companies are investing in AI and ore sorting systems to extract more value from less rock.' }}
-                            </p>
-                        </div>
-                        <div class="p-5 rounded-2xl bg-neutral-50 border border-neutral-200 border-l-4 border-l-red-500">
-                            <h5 class="text-[10px] font-black uppercase tracking-widest text-red-500 mb-2">Flowform Contribution: NO</h5>
-                            <p class="text-sm font-medium text-slate-600">
-                                {{ lang.language() === 'es' 
-                                ? 'Este es un desafío de química de reactivos y procesamiento mecánico de sólidos donde el tratamiento físico del agua tiene un impacto marginal.' 
-                                : 'This is a challenge of reagent chemistry and mechanical solids processing where physical water treatment has a marginal impact.' }}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- High-Value Niches -->
-            <section class="mb-20">
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="w-12 h-12 rounded-full bg-cyan-100 flex items-center justify-center border-2 border-cyan-200 shrink-0">
-                        <span class="text-xl">💎</span>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-black uppercase tracking-tight text-slate-900">
-                            {{ lang.language() === 'es' ? 'Los Nichos de "Alto Valor"' : 'The "High-Value" Niches' }}
-                        </h3>
-                        <p class="text-sm font-black uppercase tracking-widest text-cyan-600">
-                            {{ lang.language() === 'es' ? 'Donde Flowform Ofrece Valor Estratégico' : 'Where Flowform Offers Strategic Value' }}
-                        </p>
-                    </div>
-                </div>
-                
-                <p class="text-lg text-slate-600 font-medium mb-10 max-w-3xl">
-                    {{ lang.language() === 'es' 
-                    ? 'Donde la tecnología realmente brilla es en la gestión de los "pasivos" y la eficiencia hídrica, áreas que hoy deciden si una mina recibe o no su licencia para operar.' 
-                    : 'Where the technology actually shines is in the management of environmental liabilities and water efficiency, areas that today determine whether a mine receives its license to operate.' }}
-                </p>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Item 1 -->
-                    <div class="p-8 rounded-[2rem] border-2 border-cyan-100 bg-gradient-to-br from-cyan-50/50 to-white shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col">
-                        <div class="flex justify-between items-start mb-6">
-                            <h4 class="text-xl font-black uppercase text-cyan-950 max-w-[70%]">
-                                {{ lang.language() === 'es' ? '1. Cumplimiento GISTM (Relaves)' : '1. Tailings Management & GISTM' }}
-                            </h4>
-                            <span class="px-3 py-1 bg-cyan-100 text-cyan-700 border border-cyan-200 rounded-full text-xs font-black uppercase tracking-widest whitespace-nowrap">9/10 Priority</span>
-                        </div>
-                        <div class="mb-6 flex-grow">
-                            <h5 class="text-[10px] font-black uppercase tracking-widest text-cyan-400 mb-2">
-                                {{ lang.language() === 'es' ? 'El Problema' : 'The Problem' }}
-                            </h5>
-                            <p class="text-slate-700 font-medium leading-relaxed">
-                                {{ lang.language() === 'es' 
-                                ? 'Los depósitos de relaves son el mayor riesgo reputacional y ambiental. Los nuevos estándares exigen reducir la toxicidad del agua almacenada, que suele ser anóxica.' 
-                                : 'Tailings facilities are the biggest reputational and environmental risk. New standards demand reducing the toxicity of stored water, which is often anoxic.' }}
-                            </p>
-                        </div>
-                        <div class="p-5 rounded-2xl bg-white border border-cyan-100 border-l-4 border-l-emerald-400 shadow-sm mt-auto">
-                            <h5 class="text-[10px] font-black uppercase tracking-widest text-emerald-600 mb-2 flex items-center gap-2">Flowform Contribution: YES (CRITICAL VALUE)</h5>
-                            <p class="text-sm font-medium text-slate-600">
-                                {{ lang.language() === 'es' 
-                                ? 'Puede integrarse en canales hacia los tranques para oxigenar de forma pasiva. Acelera la estabilización del pH y degradación natural de contaminantes.' 
-                                : 'Can be integrated into discharge channels to passively oxygenate. It accelerates pH stabilization and the natural degradation of contaminants.' }}
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Item 2 -->
-                    <div class="p-8 rounded-[2rem] border-2 border-cyan-100 bg-gradient-to-br from-cyan-50/50 to-white shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col">
-                        <div class="flex justify-between items-start mb-6">
-                            <h4 class="text-xl font-black uppercase text-cyan-950 max-w-[70%]">
-                                {{ lang.language() === 'es' ? '2. Drenaje Ácido de Mina (AMD)' : '2. Acid Mine Drainage (AMD)' }}
-                            </h4>
-                            <span class="px-3 py-1 bg-cyan-100 text-cyan-700 border border-cyan-200 rounded-full text-xs font-black uppercase tracking-widest whitespace-nowrap">8/10 Priority</span>
-                        </div>
-                        <div class="mb-6 flex-grow">
-                            <h5 class="text-[10px] font-black uppercase tracking-widest text-cyan-400 mb-2">
-                                {{ lang.language() === 'es' ? 'El Problema' : 'The Problem' }}
-                            </h5>
-                            <p class="text-slate-700 font-medium leading-relaxed">
-                                {{ lang.language() === 'es' 
-                                ? 'El agua de rocassulfuradas se vuelve extremadamente ácida y alta en metales pesados. Los sistemas pasivos son la opción preferida por su bajo Opex.' 
-                                : 'Water from sulfidic rock becomes extremely acidic and high in heavy metals. Passive systems are preferred due to their low Opex.' }}
-                            </p>
-                        </div>
-                        <div class="p-5 rounded-2xl bg-white border border-cyan-100 border-l-4 border-l-emerald-400 shadow-sm mt-auto">
-                            <h5 class="text-[10px] font-black uppercase tracking-widest text-emerald-600 mb-2 flex items-center gap-2">Flowform Contribution: YES (SPECIALTY)</h5>
-                            <p class="text-sm font-medium text-slate-600">
-                                {{ lang.language() === 'es' 
-                                ? 'Ideal para sistemas pasivos. Oxigena sin electricidad, facilitando la precipitación natural de metales (como hierro) neutralizando la acidez.' 
-                                : 'Ideal for passive systems. Oxygenates without electricity, facilitating metal precipitation and natural acidity neutralization.' }}
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Item 3 -->
-                    <div class="p-8 rounded-[2rem] border-2 border-cyan-100 bg-gradient-to-br from-cyan-50/50 to-white shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col">
-                        <div class="flex justify-between items-start mb-6">
-                            <h4 class="text-xl font-black uppercase text-cyan-950 max-w-[70%]">
-                                {{ lang.language() === 'es' ? '3. Biofouling en Acueductos' : '3. Pipeline Biofouling & Scaling' }}
-                            </h4>
-                            <span class="px-3 py-1 bg-cyan-100 text-cyan-700 border border-cyan-200 rounded-full text-xs font-black uppercase tracking-widest whitespace-nowrap">7/10 Priority</span>
-                        </div>
-                        <div class="mb-6 flex-grow">
-                            <h5 class="text-[10px] font-black uppercase tracking-widest text-cyan-400 mb-2">
-                                {{ lang.language() === 'es' ? 'El Problema' : 'The Problem' }}
-                            </h5>
-                            <p class="text-slate-700 font-medium leading-relaxed">
-                                {{ lang.language() === 'es' 
-                                ? 'Las mineras bombean agua de mar desalinizada. Las algas y biofilms en tuberías aumentan la fricción, elevando los costos de energía de bombeo.' 
-                                : 'Mining operations pump desalinated seawater. Algae and biofilms inside pipes increase friction, driving up pumping energy costs.' }}
-                            </p>
-                        </div>
-                        <div class="p-5 rounded-2xl bg-white border border-cyan-100 border-l-4 border-l-emerald-400 shadow-sm mt-auto">
-                            <h5 class="text-[10px] font-black uppercase tracking-widest text-emerald-600 mb-2 flex items-center gap-2">Flowform Contribution: YES (HIGH VALUE)</h5>
-                            <p class="text-sm font-medium text-slate-600">
-                                {{ lang.language() === 'es' 
-                                ? 'En reservorios intermedios mantiene el agua "viva" y en movimiento rítmico, dificultando la formación de biofilms biológicos y reduciendo químicos anti-incrustantes.' 
-                                : 'In intermediate reservoirs keeps water "alive", hindering biofilm formation and reducing the need for harsh anti-scaling chemicals.' }}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Verdict -->
-            <section>
-                <div class="p-10 md:p-14 rounded-[3rem] bg-slate-900 border-2 border-slate-800 text-white relative overflow-hidden group hover:border-cyan-900 transition-colors duration-500">
-                    <div class="absolute -top-32 -right-32 w-96 h-96 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none group-hover:bg-cyan-500/20 transition-all duration-700"></div>
-                    <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-teal-600/10 rounded-full blur-[100px] pointer-events-none"></div>
                     
-                    <div class="relative z-10 flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
-                        <div class="shrink-0 w-20 h-20 rounded-2xl border border-cyan-500/30 flex items-center justify-center bg-gradient-to-br from-cyan-500/20 to-teal-500/10 shadow-[0_0_30px_rgba(6,182,212,0.15)]">
-                            <span class="text-4xl">⚖️</span>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100">
+                            <thead class="bg-cyan-950 text-cyan-50 uppercase text-[10px] tracking-widest font-black">
+                                <tr>
+                                    <th class="p-4">{{ lang.language() === 'es' ? 'ETAPA DEL PROCESO' : 'PROCESS STAGE' }}</th>
+                                    <th class="p-4 bg-red-950 text-red-100">{{ lang.language() === 'es' ? 'RIESGO TRADICIONAL' : 'TRADITIONAL RISK' }}</th>
+                                    <th class="p-4 bg-cyan-800">{{ lang.language() === 'es' ? 'VALOR FLOWFORM' : 'FLOWFORM OPTIMIZATION VALUE' }}</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm font-medium text-slate-700">
+                                <tr class="border-b border-slate-100">
+                                    <td class="p-4 uppercase font-black text-slate-900 border-r border-slate-100">
+                                        {{ lang.language() === 'es' ? 'Oxidación de Metales' : 'Metal Oxidation' }}
+                                    </td>
+                                    <td class="p-4 text-red-800 bg-red-50">
+                                        {{ lang.language() === 'es' ? 'Lenta y dependiente de químicos' : 'Slow and highly chemical-dependent' }}
+                                    </td>
+                                    <td class="p-4 text-cyan-800 bg-cyan-50">
+                                        {{ lang.language() === 'es' ? 'Rápida y natural (cinética brutal acelerada)' : 'Fast and natural (accelerated kinetic movement)' }}
+                                    </td>
+                                </tr>
+                                <tr class="border-b border-slate-100">
+                                    <td class="p-4 uppercase font-black text-slate-900 border-r border-slate-100">
+                                        {{ lang.language() === 'es' ? 'Ajuste Incesante de pH' : 'Continuous pH Adjustment' }}
+                                    </td>
+                                    <td class="p-4 text-red-800 bg-red-50">
+                                        {{ lang.language() === 'es' ? 'Alto consumo de cal viva y reactivos' : 'High quicklime and reagent consumption' }}
+                                    </td>
+                                    <td class="p-4 text-cyan-800 bg-cyan-50">
+                                        {{ lang.language() === 'es' ? 'Ahorro en químicos mediante desgasificación natural de CO₂' : 'Chemical savings through natural CO₂ degassing' }}
+                                    </td>
+                                </tr>
+                                <tr class="border-b border-slate-100">
+                                    <td class="p-4 uppercase font-black text-slate-900 border-r border-slate-100">
+                                        {{ lang.language() === 'es' ? 'Energía Bruta de Aireación' : 'Gross Aeration Energy Requirement' }}
+                                    </td>
+                                    <td class="p-4 text-red-800 bg-red-50">
+                                        {{ lang.language() === 'es' ? 'Uso intensivo de sopladores eléctricos de alta potencia' : 'Intensive use of high-power electric aeration blowers' }}
+                                    </td>
+                                    <td class="p-4 text-cyan-800 bg-cyan-50">
+                                        {{ lang.language() === 'es' ? 'Costo operativo mínimo al depender de la gravedad' : 'Minimum operational cost by relying on gravity' }}
+                                    </td>
+                                </tr>
+                                <tr class="border-b border-slate-100">
+                                    <td class="p-4 uppercase font-black text-slate-900 border-r border-slate-100">
+                                        {{ lang.language() === 'es' ? 'Retención de Licencia Social Operativa' : 'Social License Retention' }}
+                                    </td>
+                                    <td class="p-4 text-red-800 bg-red-50">
+                                        {{ lang.language() === 'es' ? 'Riesgo de toxicidad y problemas de olores' : 'Risk of toxicity and odor issues' }}
+                                    </td>
+                                    <td class="p-4 text-cyan-800 bg-cyan-50">
+                                        {{ lang.language() === 'es' ? 'Proceso biológico impecable, orgánico y sin olores' : 'Impeccable organic biological process with no foul odors' }}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        }
+
+        @if (viewMode === 'analysis') {
+            <div class="animate-fadeIn">
+                <div class="mb-16">
+                    <h2 class="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter leading-none uppercase mb-6">
+                        {{ lang.language() === 'es' ? 'Evaluación frente a Prioridades de la Industria' : 'Evaluation Against Top Industry Priorities' }}
+                    </h2>
+                    <p class="text-xl text-slate-600 font-medium leading-relaxed max-w-4xl">
+                        {{ lang.language() === 'es' 
+                        ? 'Como evaluador de proyectos, es crítico separar los problemas de "alta importancia" de los nichos específicos donde Flowform realmente puede ayudar.' 
+                        : 'As a project evaluator, it is critical to separate "high-importance" problems from the specific niches where Flowform can actually help.' }}
+                    </p>
+                </div>
+
+                <!-- Existential Problems -->
+                <section class="mb-20">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center border-2 border-red-200 shrink-0">
+                            <span class="text-xl">⚠️</span>
                         </div>
-                        <div class="text-center md:text-left">
-                            <h3 class="text-sm font-black uppercase tracking-[0.2em] text-cyan-400 mb-3">
-                                {{ lang.language() === 'es' ? 'VEREDICTO DEL EVALUADOR PARA MINERÍA' : 'EVALUATOR VERDICT FOR MINING' }}
+                        <div>
+                            <h3 class="text-2xl font-black uppercase tracking-tight text-slate-900">
+                                {{ lang.language() === 'es' ? 'Los Problemas "Existenciales"' : 'The "Existential" Problems' }}
                             </h3>
-                            <p class="text-xl md:text-2xl text-slate-200 font-medium leading-relaxed tracking-tight mb-4">
-                                {{ lang.language() === 'es' 
-                                ? 'La minería no invertirá en Flowform para "mejorar el proceso productivo", sino para mitigar riesgos ambientales y legales.'
-                                : 'Mining will not invest in Flowform to "improve the productive process", but rather to mitigate environmental and legal risks.' }}
-                            </p>
-                            <p class="text-lg text-slate-400 font-medium leading-relaxed">
-                                {{ lang.language() === 'es' 
-                                ? 'El valor de Flowform no es el ahorro en la molienda (10/10), sino proteger la "Licencia Social para Operar". Si puede demostrar que hace el agua de un relave menos dañina o reduce la carga química en drenajes ácidos, la industria estará dispuesta a financiar pilotos, especialmente en regiones de alta sensibilidad como el desierto de Atacama.'
-                                : 'The value of Flowform is not milling savings (10/10), but protecting the "Social License to Operate". If it can prove that it makes tailings less harmful or reduces chemical load in acid drainages, the industry will gladly finance pilots, especially in highly sensitive regions like the Atacama Desert.' }}
+                            <p class="text-sm font-black uppercase tracking-widest text-red-500">
+                                {{ lang.language() === 'es' ? 'Donde Flowform NO Contribuye' : 'Where Flowform Does Not Contribute' }}
                             </p>
                         </div>
                     </div>
-                </div>
-            </section>
-        </div>
+                    
+                    <p class="text-lg text-slate-600 font-medium mb-10 max-w-3xl">
+                        {{ lang.language() === 'es' 
+                        ? 'En 2026, la minería está destinando la mayor parte de su presupuesto a cambios estructurales donde el movimiento del agua no es el factor determinante.' 
+                        : 'In 2026, mining is allocating most of its budget to structural changes where water movement is not the determining factor.' }}
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Item 1 -->
+                        <div class="p-8 rounded-[2rem] border-2 border-neutral-100 bg-white shadow-sm hover:border-red-200 hover:shadow-md transition-all">
+                            <div class="flex justify-between items-start mb-6">
+                                <h4 class="text-xl font-black uppercase text-slate-900 max-w-[70%]">
+                                    {{ lang.language() === 'es' ? '1. Descarbonización y Energía' : '1. Decarbonization & Energy' }}
+                                </h4>
+                                <span class="px-3 py-1 bg-red-50 text-red-600 border border-red-200 rounded-full text-xs font-black uppercase tracking-widest whitespace-nowrap">10/10 Priority</span>
+                            </div>
+                            <div class="mb-6">
+                                <h5 class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">
+                                    {{ lang.language() === 'es' ? 'El Problema' : 'The Problem' }}
+                                </h5>
+                                <p class="text-slate-700 font-medium leading-relaxed">
+                                    {{ lang.language() === 'es' 
+                                    ? 'La industria está bajo una presión inmensa para llegar al "Net Zero". Esto implica electrificar flotas de camiones gigantes y cambiar el uso de diésel por hidrógeno verde o energías renovables.' 
+                                    : 'The industry is under immense pressure to reach "Net Zero". This implies electrifying giant truck fleets and swapping diesel usage for green hydrogen or renewable energy.' }}
+                                </p>
+                            </div>
+                            <div class="p-5 rounded-2xl bg-neutral-50 border border-neutral-200 border-l-4 border-l-red-500">
+                                <h5 class="text-[10px] font-black uppercase tracking-widest text-red-500 mb-2">
+                                    {{ lang.language() === 'es' ? 'Contribución Flowform: NO' : 'Flowform Contribution: NO' }}
+                                </h5>
+                                <p class="text-sm font-medium text-slate-600">
+                                    {{ lang.language() === 'es' 
+                                    ? 'Aunque es una tecnología pasiva que no consume energía, no soluciona la demanda masiva de electricidad necesaria para la molienda o el transporte de mineral.' 
+                                    : 'Although a passive technology that requires no energy, it does not solve the massive electricity demand needed for ore milling and transport.' }}
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="p-8 rounded-[2rem] border-2 border-neutral-100 bg-white shadow-sm hover:border-red-200 hover:shadow-md transition-all">
+                            <div class="flex justify-between items-start mb-6">
+                                <h4 class="text-xl font-black uppercase text-slate-900 max-w-[70%]">
+                                    {{ lang.language() === 'es' ? '2. Optimización de la Recuperación' : '2. Ore Recovery Optimization' }}
+                                </h4>
+                                <span class="px-3 py-1 bg-red-50 text-red-600 border border-red-200 rounded-full text-xs font-black uppercase tracking-widest whitespace-nowrap">9/10 Priority</span>
+                            </div>
+                            <div class="mb-6">
+                                <h5 class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">
+                                    {{ lang.language() === 'es' ? 'El Problema' : 'The Problem' }}
+                                </h5>
+                                <p class="text-slate-700 font-medium leading-relaxed">
+                                    {{ lang.language() === 'es' 
+                                    ? 'Las leyes (pureza) de los yacimientos están bajando. Las mineras invierten en IA y sistemas de clasificación de roca (ore sorting) para extraer más valor de menos material.' 
+                                    : 'Ore grades are declining. Mining companies are investing in AI and ore sorting systems to extract more value from less rock.' }}
+                                </p>
+                            </div>
+                            <div class="p-5 rounded-2xl bg-neutral-50 border border-neutral-200 border-l-4 border-l-red-500">
+                                <h5 class="text-[10px] font-black uppercase tracking-widest text-red-500 mb-2">
+                                    {{ lang.language() === 'es' ? 'Contribución Flowform: NO' : 'Flowform Contribution: NO' }}
+                                </h5>
+                                <p class="text-sm font-medium text-slate-600">
+                                    {{ lang.language() === 'es' 
+                                    ? 'Este es un desafío de química de reactivos y procesamiento mecánico de sólidos donde el tratamiento físico del agua tiene un impacto marginal.' 
+                                    : 'This is a challenge of reagent chemistry and mechanical solids processing where physical water treatment has a marginal impact.' }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- High-Value Niches -->
+                <section class="mb-20">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 rounded-full bg-cyan-100 flex items-center justify-center border-2 border-cyan-200 shrink-0">
+                            <span class="text-xl">💎</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-black uppercase tracking-tight text-slate-900">
+                                {{ lang.language() === 'es' ? 'Los Nichos de "Alto Valor"' : 'The "High-Value" Niches' }}
+                            </h3>
+                            <p class="text-sm font-black uppercase tracking-widest text-cyan-600">
+                                {{ lang.language() === 'es' ? 'Donde Flowform Ofrece Valor Estratégico' : 'Where Flowform Offers Strategic Value' }}
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-lg text-slate-600 font-medium mb-10 max-w-3xl">
+                        {{ lang.language() === 'es' 
+                        ? 'Donde la tecnología realmente brilla es en la gestión de los "pasivos" y la eficiencia hídrica, áreas que hoy deciden si una mina recibe o no su licencia para operar.' 
+                        : 'Where the technology actually shines is in the management of environmental liabilities and water efficiency, areas that today determine whether a mine receives its license to operate.' }}
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Item 1 -->
+                        <div class="p-8 rounded-[2rem] border-2 border-cyan-100 bg-gradient-to-br from-cyan-50/50 to-white shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col">
+                            <div class="flex justify-between items-start mb-6">
+                                <h4 class="text-xl font-black uppercase text-cyan-950 max-w-[70%]">
+                                    {{ lang.language() === 'es' ? '1. Cumplimiento GISTM (Relaves)' : '1. Tailings Management & GISTM' }}
+                                </h4>
+                                <span class="px-3 py-1 bg-cyan-100 text-cyan-700 border border-cyan-200 rounded-full text-xs font-black uppercase tracking-widest whitespace-nowrap">9/10 Priority</span>
+                            </div>
+                            <div class="mb-6 flex-grow">
+                                <h5 class="text-[10px] font-black uppercase tracking-widest text-cyan-400 mb-2">
+                                    {{ lang.language() === 'es' ? 'El Problema' : 'The Problem' }}
+                                </h5>
+                                <p class="text-slate-700 font-medium leading-relaxed">
+                                    {{ lang.language() === 'es' 
+                                    ? 'Los depósitos de relaves son el mayor riesgo reputacional y ambiental. Los nuevos estándares exigen reducir la toxicidad del agua almacenada, que suele ser anóxica.' 
+                                    : 'Tailings facilities are the biggest reputational and environmental risk. New standards demand reducing the toxicity of stored water, which is often anoxic.' }}
+                                </p>
+                            </div>
+                            <div class="p-5 rounded-2xl bg-white border border-cyan-100 border-l-4 border-l-emerald-400 shadow-sm mt-auto">
+                                <h5 class="text-[10px] font-black uppercase tracking-widest text-emerald-600 mb-2 flex items-center gap-2">
+                                    {{ lang.language() === 'es' ? 'Contribución Flowform: SÍ (VALOR CRÍTICO)' : 'Flowform Contribution: YES (CRITICAL VALUE)' }}
+                                </h5>
+                                <p class="text-sm font-medium text-slate-600">
+                                    {{ lang.language() === 'es' 
+                                    ? 'Puede integrarse en canales hacia los tranques para oxigenar de forma pasiva. Acelera la estabilización del pH y degradación natural de contaminantes.' 
+                                    : 'Can be integrated into discharge channels to passively oxygenate. It accelerates pH stabilization and the natural degradation of contaminants.' }}
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="p-8 rounded-[2rem] border-2 border-cyan-100 bg-gradient-to-br from-cyan-50/50 to-white shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col">
+                            <div class="flex justify-between items-start mb-6">
+                                <h4 class="text-xl font-black uppercase text-cyan-950 max-w-[70%]">
+                                    {{ lang.language() === 'es' ? '2. Drenaje Ácido de Mina (AMD)' : '2. Acid Mine Drainage (AMD)' }}
+                                </h4>
+                                <span class="px-3 py-1 bg-cyan-100 text-cyan-700 border border-cyan-200 rounded-full text-xs font-black uppercase tracking-widest whitespace-nowrap">8/10 Priority</span>
+                            </div>
+                            <div class="mb-6 flex-grow">
+                                <h5 class="text-[10px] font-black uppercase tracking-widest text-cyan-400 mb-2">
+                                    {{ lang.language() === 'es' ? 'El Problema' : 'The Problem' }}
+                                </h5>
+                                <p class="text-slate-700 font-medium leading-relaxed">
+                                    {{ lang.language() === 'es' 
+                                    ? 'El agua de rocassulfuradas se vuelve extremadamente ácida y alta en metales pesados. Los sistemas pasivos son la opción preferida por su bajo Opex.' 
+                                    : 'Water from sulfidic rock becomes extremely acidic and high in heavy metals. Passive systems are preferred due to their low Opex.' }}
+                                </p>
+                            </div>
+                            <div class="p-5 rounded-2xl bg-white border border-cyan-100 border-l-4 border-l-emerald-400 shadow-sm mt-auto">
+                                <h5 class="text-[10px] font-black uppercase tracking-widest text-emerald-600 mb-2 flex items-center gap-2">
+                                    {{ lang.language() === 'es' ? 'Contribución Flowform: SÍ (ESPECIALIDAD)' : 'Flowform Contribution: YES (SPECIALTY)' }}
+                                </h5>
+                                <p class="text-sm font-medium text-slate-600">
+                                    {{ lang.language() === 'es' 
+                                    ? 'Ideal para sistemas pasivos. Oxigena sin electricidad, facilitando la precipitación natural de metales (como hierro) neutralizando la acidez.' 
+                                    : 'Ideal for passive systems. Oxygenates without electricity, facilitating metal precipitation and natural acidity neutralization.' }}
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="p-8 rounded-[2rem] border-2 border-cyan-100 bg-gradient-to-br from-cyan-50/50 to-white shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col">
+                            <div class="flex justify-between items-start mb-6">
+                                <h4 class="text-xl font-black uppercase text-cyan-950 max-w-[70%]">
+                                    {{ lang.language() === 'es' ? '3. Biofouling en Acueductos' : '3. Pipeline Biofouling & Scaling' }}
+                                </h4>
+                                <span class="px-3 py-1 bg-cyan-100 text-cyan-700 border border-cyan-200 rounded-full text-xs font-black uppercase tracking-widest whitespace-nowrap">7/10 Priority</span>
+                            </div>
+                            <div class="mb-6 flex-grow">
+                                <h5 class="text-[10px] font-black uppercase tracking-widest text-cyan-400 mb-2">
+                                    {{ lang.language() === 'es' ? 'El Problema' : 'The Problem' }}
+                                </h5>
+                                <p class="text-slate-700 font-medium leading-relaxed">
+                                    {{ lang.language() === 'es' 
+                                    ? 'Las mineras bombean agua de mar desalinizada. Las algas y biofilms en tuberías aumentan la fricción, elevando los costos de energía de bombeo.' 
+                                    : 'Mining operations pump desalinated seawater. Algae and biofilms inside pipes increase friction, driving up pumping energy costs.' }}
+                                </p>
+                            </div>
+                            <div class="p-5 rounded-2xl bg-white border border-cyan-100 border-l-4 border-l-emerald-400 shadow-sm mt-auto">
+                                <h5 class="text-[10px] font-black uppercase tracking-widest text-emerald-600 mb-2 flex items-center gap-2">
+                                    {{ lang.language() === 'es' ? 'Contribución Flowform: SÍ (ALTO VALOR)' : 'Flowform Contribution: YES (HIGH VALUE)' }}
+                                </h5>
+                                <p class="text-sm font-medium text-slate-600">
+                                    {{ lang.language() === 'es' 
+                                    ? 'En reservorios intermedios mantiene el agua "viva" y en movimiento rítmico, dificultando la formación de biofilms biológicos y reduciendo químicos anti-incrustantes.' 
+                                    : 'In intermediate reservoirs keeps water "alive", hindering biofilm formation and reducing the need for harsh anti-scaling chemicals.' }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Verdict -->
+                <section>
+                    <div class="p-10 md:p-14 rounded-[3rem] bg-slate-900 border-2 border-slate-800 text-white relative overflow-hidden group hover:border-cyan-900 transition-colors duration-500">
+                        <div class="absolute -top-32 -right-32 w-96 h-96 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none group-hover:bg-cyan-500/20 transition-all duration-700"></div>
+                        <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-teal-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+                        
+                        <div class="relative z-10 flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
+                            <div class="shrink-0 w-20 h-20 rounded-2xl border border-cyan-500/30 flex items-center justify-center bg-gradient-to-br from-cyan-50/20 to-teal-500/10 shadow-[0_0_30px_rgba(6,182,212,0.15)]">
+                                <span class="text-4xl">⚖️</span>
+                            </div>
+                            <div class="text-center md:text-left">
+                                <h3 class="text-sm font-black uppercase tracking-[0.2em] text-cyan-400 mb-3">
+                                    {{ lang.language() === 'es' ? 'VEREDICTO DEL EVALUADOR PARA MINERÍA' : 'EVALUATOR VERDICT FOR MINING' }}
+                                </h3>
+                                <p class="text-xl md:text-2xl text-slate-200 font-medium leading-relaxed tracking-tight mb-4">
+                                    {{ lang.language() === 'es' 
+                                    ? 'La minería no invertirá en Flowform para "mejorar el proceso productivo", sino para mitigar riesgos ambientales y legales.'
+                                    : 'Mining will not invest in Flowform to "improve the productive process", but rather to mitigate environmental and legal risks.' }}
+                                </p>
+                                <p class="text-lg text-slate-400 font-medium leading-relaxed">
+                                    {{ lang.language() === 'es' 
+                                    ? 'El valor de Flowform no es el ahorro en la molienda (10/10), sino proteger la "Licencia Social para Operar". Si puede demostrar que hace el agua de un relave menos dañina o reduce la carga química en drenajes ácidos, la industria estará dispuesta a financiar pilotos, especialmente en regiones de alta sensibilidad como el desierto de Atacama.'
+                                    : 'The value of Flowform is not milling savings (10/10), but protecting the "Social License to Operate". If it can prove that it makes tailings less harmful or reduces chemical load in acid drainages, the industry will gladly finance pilots, especially in highly sensitive regions like the Atacama Desert.' }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        }
     </div>
 </div>
