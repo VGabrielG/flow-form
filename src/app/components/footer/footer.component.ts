@@ -9,7 +9,7 @@ import { LanguageService } from '../../services/language.service';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <footer *ngIf="showFooter" class="bg-neutral-950 text-white py-24 relative overflow-hidden bg-grid-technical border-t border-white/5">
+    <footer *ngIf="showFooter" class="bg-neutral-950 text-white py-8 relative overflow-hidden bg-grid-technical border-t border-white/5">
       <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 to-transparent pointer-events-none"></div>
       <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
         <div class="w-12 h-12 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl mx-auto flex items-center justify-center mb-8">
@@ -37,10 +37,6 @@ export class FooterComponent {
   currentYear = new Date().getFullYear();
 
   constructor() {
-    this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    ).subscribe((event: any) => {
-      this.showFooter = event.url !== '/' && event.urlAfterRedirects !== '/';
-    });
+    // Footer is now shown on all pages including home
   }
 }

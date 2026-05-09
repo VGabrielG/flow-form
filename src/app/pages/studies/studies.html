@@ -1,0 +1,55 @@
+<main class="min-h-screen bg-neutral-50 pt-32 pb-24">
+  <div class="max-w-7xl mx-auto px-4 md:px-8">
+    <div class="mb-16">
+      <h1 class="text-4xl md:text-5xl font-black text-neutral-900 tracking-tighter uppercase mb-4">
+        {{ lang.t('nav_studies') }}
+      </h1>
+      <p class="text-neutral-500 text-lg max-w-2xl">
+        {{ lang.language() === 'es' ? 'Explora nuestra colección de documentos de investigación, informes de campo y validación científica organizados por área de aplicación.' : 'Explore our collection of research documents, field reports, and scientific validation organized by application area.' }}
+      </p>
+    </div>
+
+    <div class="space-y-16">
+      @for (section of sections; track section.title) {
+        <section>
+          <div class="flex items-center gap-4 mb-8">
+            <h2 class="text-2xl font-black text-neutral-800 uppercase tracking-widest">{{ section.title }}</h2>
+            <div class="flex-1 h-px bg-neutral-200"></div>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            @for (study of section.studies; track study.path) {
+              <a [href]="study.path" target="_blank" class="group relative overflow-hidden bg-white border border-neutral-200 rounded-3xl p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full cursor-pointer">
+                <div class="absolute inset-0 bg-gradient-to-br from-neutral-50 to-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                
+                <div class="relative flex items-start gap-4 flex-1">
+                  <div class="w-12 h-12 rounded-2xl bg-red-50 text-red-500 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform shadow-sm">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  
+                  <div class="flex-1 min-w-0">
+                    <h3 class="font-bold text-neutral-800 group-hover:text-neutral-950 leading-tight mb-2 line-clamp-3">
+                      {{ study.name }}
+                    </h3>
+                  </div>
+                </div>
+                
+                <div class="relative mt-6 pt-4 border-t border-neutral-100 flex items-center justify-between text-[10px] font-black uppercase tracking-widest text-neutral-400">
+                  <span>PDF Document</span>
+                  <span class="group-hover:text-neutral-900 transition-colors flex items-center gap-1">
+                    {{ lang.language() === 'es' ? 'Ver Documento' : 'View Document' }}
+                    <svg class="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </span>
+                </div>
+              </a>
+            }
+          </div>
+        </section>
+      }
+    </div>
+  </div>
+</main>

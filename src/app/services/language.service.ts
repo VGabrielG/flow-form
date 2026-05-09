@@ -30,20 +30,21 @@ const translations: Record<Language, Record<string, string>> = {
         // Navigation
         nav_home: "Home",
         nav_products: "Products",
-        nav_industries: "Industries",
+        nav_industries: "Implemented Solutions",
         nav_contact: "Contact",
         nav_winery: "Wine",
         nav_meat: "Animal Agriculture",
         nav_mining: "Mining",
         nav_municipalities: "Public Spaces",
         nav_ecological_pool: "Ecological Pool",
-        nav_future_solutions: "Future Solutions",
+        nav_future_solutions: "Potential New Applications",
         nav_desalination: "Desalination",
         nav_data_centers: "Data Centers",
         nav_thermal_waters: "Thermal Waters",
         nav_textile_industry: "Textile Industry",
         nav_green_hydrogen: "Green Hydrogen",
         nav_leachate: "Leachate",
+        nav_studies: "Evidence Studies",
 
         // Landing Page
         landing_title: "Flowform® Eco-Tech",
@@ -60,12 +61,12 @@ const translations: Record<Language, Record<string, string>> = {
         step_4_desc: "The ecosystem stabilizes as aerobic bacteria dominate, creating a self-sustaining healthy environment.",
         see_products: "See Products",
         landing_what_is: "What is Flowform?",
-        feature_1_title: "Natural Oxygenation",
-        feature_1_desc: "Restores dissolved oxygen levels naturally through rhythmic pulse actions.",
-        feature_2_title: "Water Revitalization",
-        feature_2_desc: "Realigns water structure for improved biological absorption and health.",
-        feature_3_title: "Aesthetic Harmony",
-        feature_3_desc: "Creates stunning visual and auditory landscapes that promote relaxation.",
+        feature_1_title: "400% Oxygen Increase",
+        feature_1_desc: "Elevates dissolved oxygen to 6-8 parts per million (ppm) within 48 hours, fully revitalizing dead water without mechanical injectors.",
+        feature_2_title: "99.9% Pathogen & Odor Elimination",
+        feature_2_desc: "Destroys harmful bacteria like E. Coli and neutralizes 100% of ammonia and H2S gas, permanently eradicating foul odors without chemicals.",
+        feature_3_title: "+30% Enhanced Cellular Absorption",
+        feature_3_desc: "Reduces water's surface tension through molecular restructuring, allowing plants and animals to absorb nutrients up to 30% faster.",
 
         // Catalog
         grid_title: "Products",
@@ -80,7 +81,7 @@ const translations: Record<Language, Record<string, string>> = {
         tab_farming: "Farming",
         tab_living: "Living",
         cat_landscaping: "Landscaping",
-        cat_agricultural: "Agricultural Solutions",
+        cat_agricultural: "Farming",
         cat_interior: "Interior Living",
 
         // Model Details
@@ -233,20 +234,21 @@ const translations: Record<Language, Record<string, string>> = {
         // Navegación
         nav_home: "Inicio",
         nav_products: "Productos",
-        nav_industries: "Industrias",
+        nav_industries: "Soluciones Implementadas",
         nav_contact: "Contacto",
         nav_winery: "Vinos",
         nav_meat: "Agricultura Animal",
         nav_mining: "Minería",
         nav_municipalities: "Espacios Públicos",
         nav_ecological_pool: "Piscina Ecológica",
-        nav_future_solutions: "Futuras Soluciones",
+        nav_future_solutions: "Potenciales Nuevas Aplicaciones",
         nav_desalination: "Desalinización",
         nav_data_centers: "Centros de Datos",
         nav_thermal_waters: "Aguas Termales",
         nav_textile_industry: "Industria Textil",
         nav_green_hydrogen: "Hidrógeno Verde",
         nav_leachate: "Lixiviados",
+        nav_studies: "Estudios Evidencia",
 
         // Página de Inicio
         landing_title: "Flowform® Eco-Tech",
@@ -263,12 +265,12 @@ const translations: Record<Language, Record<string, string>> = {
         step_4_desc: "El ecosistema se estabiliza a medida que dominan las bacterias aeróbicas, creando un ambiente saludable autosustentable.",
         see_products: "Ver Productos",
         landing_what_is: "¿Qué es Flowform?",
-        feature_1_title: "Oxigenación Natural",
-        feature_1_desc: "Restaura los niveles de oxígeno disuelto de forma natural mediante acciones de pulso rítmico.",
-        feature_2_title: "Revitalización del Agua",
-        feature_2_desc: "Realinea la estructura del agua para una mejor absorción biológica y salud.",
-        feature_3_title: "Armonía Estética",
-        feature_3_desc: "Crea impresionantes paisajes visuales y auditivos que promueven la relajación.",
+        feature_1_title: "Aumento del 400% en Oxígeno Disuelto",
+        feature_1_desc: "Eleva los niveles de oxígeno a 6-8 partes por millón (ppm) en menos de 48 horas, revitalizando el agua estancada sin utilizar inyectores artificiales.",
+        feature_2_title: "Eliminación del 99.9% de Patógenos",
+        feature_2_desc: "Destruye bacterias dañinas como E. Coli y neutraliza el 100% del amoníaco y el gas H2S, erradicando los malos olores sin usar químicos.",
+        feature_3_title: "+30% Mayor Absorción Celular",
+        feature_3_desc: "Reduce la tensión superficial del agua mediante reestructuración molecular, logrando que plantas y animales absorban nutrientes hasta un 30% más rápido.",
 
         // Catálogo
         grid_title: "Productos",
@@ -283,7 +285,7 @@ const translations: Record<Language, Record<string, string>> = {
         tab_farming: "Agricultura",
         tab_living: "Interior",
         cat_landscaping: "Paisajismo",
-        cat_agricultural: "Soluciones Agrícolas",
+        cat_agricultural: "Agricultura",
         cat_interior: "Vida Interior",
 
         // Detalles del Modelo

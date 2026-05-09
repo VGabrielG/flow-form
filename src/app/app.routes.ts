@@ -1,5 +1,6 @@
 
 import { Routes } from '@angular/router';
+import { StudiesComponent } from './pages/studies/studies';
 import { LandingComponent } from './pages/landing/landing';
 import { HomeComponent } from './pages/products/home';
 import { ModelDetailsComponent } from './pages/model-details/model-details';
@@ -35,5 +36,6 @@ export const routes: Routes = [
     { path: 'green-hydrogen', component: GreenHydrogenComponent },
     { path: 'leachate', component: LeachateComponent },
     { path: 'contact', component: ContactComponent },
+    { path: 'studies', component: StudiesComponent },
     { path: '**', redirectTo: '' }
 ];

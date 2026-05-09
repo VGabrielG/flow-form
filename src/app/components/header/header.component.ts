@@ -82,7 +82,7 @@ import { LanguageService } from '../../services/language.service';
             <!-- FUTURE SOLUTIONS DROPDOWN -->
             <div class="relative group">
               <button class="px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-[0.2em] transition-all duration-300 text-neutral-400 hover:text-neutral-950 flex items-center gap-1 focus:outline-none">
-                {{ lang.language() === 'es' ? 'Futuras Soluciones' : 'Future Solutions' }}
+                {{ lang.t('nav_future_solutions') }}
                 <svg class="w-3 h-3 group-hover:rotate-180 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                 </svg>
@@ -197,6 +197,16 @@ import { LanguageService } from '../../services/language.service';
               </div>
             </div>
 
+            <!-- STUDIES -->
+            <a #rlaStudies="routerLinkActive"
+              routerLink="/studies"
+              routerLinkActive="bg-neutral-950 text-white shadow-xl"
+              [ngClass]="rlaStudies.isActive ? 'hover:text-white' : 'text-neutral-500 hover:text-neutral-950'"
+              class="px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-[0.2em] transition-all duration-300"
+            >
+              {{ lang.t('nav_studies') }}
+            </a>
+
             <!-- CONTACT -->
             <a #rlaContact="routerLinkActive"
               routerLink="/contact"
@@ -296,7 +306,7 @@ import { LanguageService } from '../../services/language.service';
 
           <div class="flex flex-col gap-4">
             <div class="text-[10px] font-black uppercase tracking-[0.3em] text-neutral-400">
-              {{ lang.language() === 'es' ? 'Futuras Soluciones' : 'Future Solutions' }}
+              {{ lang.t('nav_future_solutions') }}
             </div>
             <div class="grid grid-cols-2 gap-2">
               <a routerLink="/mining" (click)="isMenuOpen.set(false)" class="px-3 py-2 bg-neutral-50 rounded-xl font-bold text-[10px] text-neutral-600 flex items-center gap-2">
@@ -323,9 +333,14 @@ import { LanguageService } from '../../services/language.service';
             </div>
           </div>
 
+          <a routerLink="/studies" (click)="isMenuOpen.set(false)" class="text-2xl font-black uppercase tracking-tighter text-neutral-900 border-b border-neutral-100 pb-4 flex items-center justify-between">
+            {{ lang.t('nav_studies') }}
+            <span class="text-sm opacity-30">03</span>
+          </a>
+
           <a routerLink="/contact" (click)="isMenuOpen.set(false)" class="text-2xl font-black uppercase tracking-tighter text-neutral-900 border-b border-neutral-100 pb-4 flex items-center justify-between">
             {{ lang.t('nav_contact') }}
-            <span class="text-sm opacity-30">03</span>
+            <span class="text-sm opacity-30">04</span>
           </a>
         </div>
         

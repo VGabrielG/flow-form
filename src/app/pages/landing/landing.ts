@@ -16,18 +16,10 @@ export class LandingComponent {
   router = inject(Router);
 
   allOptions = [
-    { key: 'nav_products', path: '/products', color: 'hover:border-yellow-500', emoji: '📦' },
     { key: 'nav_winery', path: '/winery', color: 'hover:border-red-500', emoji: '🍷' },
     { key: 'nav_meat', path: '/meat-industry', color: 'hover:border-green-500', emoji: '🥩' },
     { key: 'nav_municipalities', path: '/municipalities', color: 'hover:border-cyan-500', emoji: '🏛️' },
-    { key: 'nav_ecological_pool', path: '/ecological-pool', color: 'hover:border-emerald-500', emoji: '🏊' },
-    { key: 'nav_mining', path: '/mining', color: 'hover:border-blue-500', emoji: '⛏️' },
-    { key: 'nav_desalination', path: '/desalination', color: 'hover:border-sky-500', emoji: '🌊' },
-    { key: 'nav_data_centers', path: '/data-centers', color: 'hover:border-indigo-500', emoji: '🌐' },
-    { key: 'nav_thermal_waters', path: '/thermal-waters', color: 'hover:border-teal-500', emoji: '♨️' },
-    { key: 'nav_textile_industry', path: '/textile-industry', color: 'hover:border-fuchsia-500', emoji: '🧵' },
-    { key: 'nav_green_hydrogen', path: '/green-hydrogen', color: 'hover:border-lime-500', emoji: '🔋' },
-    { key: 'nav_leachate', path: '/leachate', color: 'hover:border-orange-500', emoji: '🏗️' }
+    { key: 'nav_ecological_pool', path: '/ecological-pool', color: 'hover:border-emerald-500', emoji: '🏊' }
   ];
 
   features = [
